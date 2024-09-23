@@ -1,0 +1,24 @@
+/*!************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./admin/blocks//mpt-images/editor.css ***!
+  \************************************************************************************/
+/* editor.css */
+.mon-tab-panel .components-tab-panel__tabs {
+    /*border-bottom: 1px solid #ccc;*/
+}
+
+.mon-tab-panel .components-tab-panel__tabs-item {
+    /*
+    border: 1px solid #ccc;
+    border-bottom: none;
+    margin-right: -1px;*/
+}
+
+.mon-tab-panel .components-tab-panel__tabs-item.active-tab {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-bottom: none;
+}
+

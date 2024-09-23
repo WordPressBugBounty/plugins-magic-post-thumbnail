@@ -1,0 +1,3512 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MPT\n"
+"POT-Creation-Date: 2023-11-13 18:03+0100\n"
+"PO-Revision-Date: 2023-11-13 18:13+0100\n"
+"Last-Translator: \n"
+"Language-Team: contact@magic-post-thumbnail.com\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: esc_html__;esc_html_e;__;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: includes/text-miner\n"
+"X-Poedit-SearchPathExcluded-1: admin/js\n"
+"X-Poedit-SearchPathExcluded-2: admin/partials/freemius\n"
+"X-Poedit-SearchPathExcluded-3: admin/partials/monolog\n"
+
+#: admin/blocks/mpt-images/index.js:39
+msgid "Search for Images"
+msgstr "Buscar imágenes"
+
+#: admin/blocks/mpt-images/index.js:40
+msgid "Close the window"
+msgstr "Cerrar la ventana"
+
+#: admin/blocks/mpt-images/index.js:41
+msgid "Image is downloading to media, please wait a few seconds."
+msgstr "La imagen se está descargando, por favor espere unos segundos."
+
+#: admin/blocks/mpt-images/index.js:42
+msgid "Search"
+msgstr "Buscar"
+
+#: admin/blocks/mpt-images/index.js:248
+msgid "Available in the Pro version only."
+msgstr "Sólo disponible con la versión pro"
+
+#: admin/blocks/mpt-images/index.js:300
+msgid ""
+"No results were found for your search. There may be an API issue with your "
+"credentials. Please check your credentials on the "
+msgstr ""
+"No se han encontrado resultados para su búsqueda. Puede que haya un problema "
+"con tus credenciales. Compruebe sus credenciales en la"
+
+#: admin/blocks/mpt-images/index.js:304
+msgid "settings page"
+msgstr "página de configuración"
+
+#: admin/blocks/mpt-images/index.js:338
+msgid "No results found for your search."
+msgstr "No se han encontrado resultados para su búsqueda."
+
+#: admin/blocks/mpt-images/index.js:365
+msgid "Set as featured image"
+msgstr "Establecer como imagen destacada"
+
+#: admin/blocks/mpt-images/index.js:369
+msgid "Use this image"
+msgstr "Utilice esta imagen"
+
+#: admin/blocks/mpt-images/index.js:389
+msgid "PRO VERSION OF MAGIC POST THUMBNAIL"
+msgstr "VERSIÓN PRO DE MAGIC POST THUMBNAIL"
+
+#: admin/blocks/mpt-images/index.js:390
+msgid "UNLOCK MORE IMAGES WITH THE PRO VERSION"
+msgstr "DESBLOQUEA MÁS IMÁGENES CON LA VERSIÓN PRO"
+
+#: admin/class-magic-post-thumbnail-admin.php:275
+msgid "Your API key works!"
+msgstr "¡Su clave API funciona!"
+
+#: admin/class-magic-post-thumbnail-admin.php:276
+msgid "Your API key doesn't work."
+msgstr "¡Su clave API no funciona!"
+
+#: admin/class-magic-post-thumbnail-admin.php:277
+msgid "An error has occurred with the remote API."
+msgstr "Se ha producido un error con la API remota."
+
+#: admin/class-magic-post-thumbnail-admin.php:285
+msgid "Successful generation !!"
+msgstr "¡¡Generación exitosa!!"
+
+#: admin/class-magic-post-thumbnail-admin.php:286
+msgid "Error with images generation"
+msgstr "Error en la generación de imágenes"
+
+#: admin/class-magic-post-thumbnail-admin.php:287
+msgid "Error with the plugin"
+msgstr "Error con el plugin"
+
+#: admin/class-magic-post-thumbnail-admin.php:380 admin/partials/sidebar.php:48
+msgid "Generation"
+msgstr "Generación"
+
+#: admin/class-magic-post-thumbnail-admin.php:381
+msgid "Generate Automatically"
+msgstr "Generar automáticamente"
+
+#: admin/class-magic-post-thumbnail-admin.php:382
+#: admin/partials/tabs/bulk_generation.php:92
+msgid "Dall-e v3 Generation may take 20 to 40 seconds. Please be patient"
+msgstr ""
+"La Generación Dall-e v3 puede tardar entre 20 y 40 segundos. Tenga paciencia."
+
+#: admin/class-magic-post-thumbnail-admin.php:383
+msgid "Generate Manually"
+msgstr "Generar Manualmente"
+
+#: admin/class-magic-post-thumbnail-admin.php:384
+msgid "Edit your rewriting settings if you want a new image"
+msgstr "Edita tu configuración de reescritura si quieres una nueva imagen"
+
+#: admin/class-magic-post-thumbnail-admin.php:401
+#: admin/partials/tabs/compatibility.php:267 admin/partials/tabs/cron.php:284
+#: admin/partials/tabs/proxy.php:133
+msgid "Only available with the pro version"
+msgstr "Sólo disponible con la versión pro"
+
+#: admin/class-magic-post-thumbnail-admin.php:402
+msgid "Are you sure to delete all logs ?"
+msgstr "¿Está seguro de borrar todos los registros?"
+
+#: admin/class-magic-post-thumbnail-admin.php:403
+msgid "No interval"
+msgstr "Sin intervalo"
+
+#: admin/class-magic-post-thumbnail-admin.php:404
+msgid "per minute"
+msgstr "por minuto"
+
+#: admin/class-magic-post-thumbnail-admin.php:405
+msgid "per hour"
+msgstr "por hora"
+
+#: admin/class-magic-post-thumbnail-admin.php:462
+msgid "Magic Post Thumbnail Options"
+msgstr "Opciones de Magic Post Thumbnail"
+
+#: admin/class-magic-post-thumbnail-admin.php:536
+msgid "You do not have sufficient permissions."
+msgstr "No tiene permisos suficientes."
+
+#: admin/class-magic-post-thumbnail-admin.php:564
+msgid "You do not have sufficient permissions to access this page."
+msgstr "No tiene permisos suficientes para acceder a esta página."
+
+#: admin/class-magic-post-thumbnail-admin.php:1152
+#: admin/class-magic-post-thumbnail-admin.php:1181
+msgid "Generate featured images"
+msgstr "Generar imágenes destacadas"
+
+#: admin/class-magic-post-thumbnail-admin.php:1480
+#: admin/partials/sidebar.php:24
+msgid "Settings"
+msgstr "Configuración"
+
+#: admin/inc/crons.php:65
+msgid "Magic Post Thumbnail Pro - Cron"
+msgstr "Magic Post Thumbnail Pro - Cron"
+
+#: admin/partials/footer.php:22
+msgid "Website"
+msgstr "Sitio web"
+
+#: admin/partials/footer.php:23 admin/partials/tabs/dashboard.php:231
+msgid "Documentation"
+msgstr "Documentación"
+
+#: admin/partials/footer.php:24 admin/partials/tabs/dashboard.php:164
+msgid "Support Forum"
+msgstr "Foro de soporte"
+
+#: admin/partials/footer.php:25 admin/partials/tabs/dashboard.php:200
+msgid "Contact Us"
+msgstr "Contacta con nosotras"
+
+#: admin/partials/footer.php:26
+msgid "Leave a review"
+msgstr "Deja tu opinión"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:26
+msgid "Settings [Posts]"
+msgstr "Configuración [Entradas]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:30
+msgid "Settings [Block]"
+msgstr "Configuración [Block]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:34
+msgid "Settings [Images]"
+msgstr "Configuración [Imágenes]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:38
+msgid "Settings [Automatic]"
+msgstr "Configuración [Automatic]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:42
+msgid "Settings [Source]"
+msgstr "Configuración [Fuente]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:46
+msgid "Settings [Interval]"
+msgstr "Configuración [Intervalo]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:50
+msgid "Pro [Cron]"
+msgstr "Pro [Cron]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:54
+msgid "Settings [Proxy]"
+msgstr "Configuración [Proxy]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:58
+msgid "Miscellaneous [Affiliation]"
+msgstr "Varios [Afiliación]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:62
+msgid "Miscellaneous [Compatibility]"
+msgstr "Varios [Compatibilidad]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:66
+msgid "Miscellaneous [Logs]"
+msgstr "Varios [Registros]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:70
+#: admin/partials/sidebar.php:62
+msgid "Bulk Generation"
+msgstr "Generación masiva"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:74
+msgid "Bulk Generation with interval"
+msgstr "Bulk Generation with interval"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:78
+#: admin/partials/tabs/dashboard.php:142
+msgid "Account"
+msgstr "Cuenta"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:83
+msgid "Contact"
+msgstr "Contacto"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:87
+#: admin/partials/sidebar.php:21
+msgid "Dashboard"
+msgstr "Tablero"
+
+#: admin/partials/sidebar.php:27 admin/partials/tabs/banks/cc_search.php:20
+msgid "Source"
+msgstr "Fuente"
+
+#: admin/partials/sidebar.php:28 admin/partials/tabs/source.php:130
+msgid "Gutenberg Block"
+msgstr ""
+
+#: admin/partials/sidebar.php:29 admin/partials/tabs/source.php:90
+msgid "Automatic"
+msgstr ""
+
+#: admin/partials/sidebar.php:32 admin/partials/tabs/dashboard.php:12
+msgid "Pro"
+msgstr "Pro"
+
+#: admin/partials/sidebar.php:35
+msgid "Compatibility"
+msgstr "Compatibilidad"
+
+#: admin/partials/sidebar.php:36
+msgid "Cron"
+msgstr "Cron"
+
+#: admin/partials/sidebar.php:37
+msgid "Proxy"
+msgstr "Proxy"
+
+#: admin/partials/sidebar.php:40
+msgid "Miscellaneous"
+msgstr "Varios"
+
+#: admin/partials/sidebar.php:43
+msgid "Affiliation"
+msgstr "Afiliación"
+
+#: admin/partials/sidebar.php:44
+msgid "Upgrade"
+msgstr "Actualizar"
+
+#: admin/partials/sidebar.php:45
+msgid "Logs"
+msgstr "Registros"
+
+#: admin/partials/tabs/automatic.php:71
+msgid "Featured or Post Image"
+msgstr "Imagen destacada o de la entrada"
+
+#: admin/partials/tabs/automatic.php:74
+msgid "Featured Image"
+msgstr "Imagen destacada"
+
+#: admin/partials/tabs/automatic.php:75
+msgid "Top of post"
+msgstr "Principio de la publicación"
+
+#: admin/partials/tabs/automatic.php:76
+msgid "End of post"
+msgstr "Fin de la publicación"
+
+#: admin/partials/tabs/automatic.php:92
+msgid "Choose where the image will be created"
+msgstr "Elija dónde se creará la imagen"
+
+#: admin/partials/tabs/automatic.php:100
+msgid "Based on"
+msgstr "Basado en"
+
+#: admin/partials/tabs/automatic.php:103 admin/partials/tabs/automatic.php:198
+#: admin/partials/tabs/automatic.php:298
+#: admin/partials/tabs/bulk_generation.php:100
+msgid "Title"
+msgstr "Título"
+
+#: admin/partials/tabs/automatic.php:104
+msgid "Text Analyzer"
+msgstr "Analizador de texto"
+
+#: admin/partials/tabs/automatic.php:105 admin/partials/tabs/automatic.php:120
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: admin/partials/tabs/automatic.php:106 admin/partials/tabs/automatic.php:131
+msgid "Categories"
+msgstr "Categorías"
+
+#: admin/partials/tabs/automatic.php:107
+msgid "Custom Field"
+msgstr "Campo personalizado"
+
+#: admin/partials/tabs/automatic.php:108 admin/partials/tabs/automatic.php:152
+msgid "Custom Request"
+msgstr "Solicitud personalizada"
+
+#: admin/partials/tabs/automatic.php:109
+msgid "OpenAI Keyword Extractor"
+msgstr ""
+
+#: admin/partials/tabs/automatic.php:123
+msgid "First tag"
+msgstr "Primera etiqueta"
+
+#: admin/partials/tabs/automatic.php:124
+msgid "Last tag"
+msgstr "Última etiqueta"
+
+#: admin/partials/tabs/automatic.php:125
+msgid "Random tag"
+msgstr "Etiqueta aleatoria"
+
+#: admin/partials/tabs/automatic.php:134
+msgid "First category"
+msgstr "Primera categoría"
+
+#: admin/partials/tabs/automatic.php:135
+msgid "Last category"
+msgstr "Última categoría"
+
+#: admin/partials/tabs/automatic.php:136
+msgid "Random category"
+msgstr "Categoría aleatoria"
+
+#: admin/partials/tabs/automatic.php:142
+msgid "Custom field Name"
+msgstr "Campo personalizado Nombre"
+
+#: admin/partials/tabs/automatic.php:162
+#, php-format
+msgid "This is a simple request including the %%Title%%"
+msgstr "Se trata de una simple solicitud que incluye el %%Title%%"
+
+#: admin/partials/tabs/automatic.php:172
+msgid "OpenAI API Key"
+msgstr "Clave API de OpenAI"
+
+#: admin/partials/tabs/automatic.php:182
+msgid "Number of keywords to extract from title"
+msgstr "Número de palabras clave a extraer del título"
+
+#: admin/partials/tabs/automatic.php:185
+msgid "From 1 to 2 words"
+msgstr "De 1 a 2 palabras"
+
+#: admin/partials/tabs/automatic.php:186
+msgid "2 words"
+msgstr "2 palabras"
+
+#: admin/partials/tabs/automatic.php:187
+msgid "3 words"
+msgstr "3 palabras"
+
+#: admin/partials/tabs/automatic.php:201
+msgid "Full title"
+msgstr "Título completo"
+
+#: admin/partials/tabs/automatic.php:202
+msgid "Part of the title"
+msgstr "Parte del título"
+
+#: admin/partials/tabs/automatic.php:203
+msgid "first words of the title"
+msgstr "primeras palabras del título"
+
+#: admin/partials/tabs/automatic.php:209
+msgid "Post Content Language"
+msgstr "Idioma del contenido de la entrada"
+
+#: admin/partials/tabs/automatic.php:222
+#: admin/partials/tabs/banks/cc_search.php:85
+#: admin/partials/tabs/banks/google_image.php:156
+#: admin/partials/tabs/banks/google_image.php:194
+#: admin/partials/tabs/banks/google_image.php:255
+#: admin/partials/tabs/banks/google_image.php:285
+#: admin/partials/tabs/banks/google_scraping.php:125
+#: admin/partials/tabs/banks/google_scraping.php:192
+#: admin/partials/tabs/banks/google_scraping.php:226
+#: admin/partials/tabs/banks/google_scraping.php:254
+msgid "-- Default --"
+msgstr "-- Por defecto --"
+
+#: admin/partials/tabs/automatic.php:223
+#: admin/partials/tabs/banks/google_image.php:54
+#: admin/partials/tabs/banks/google_scraping.php:23
+msgid "Arabic"
+msgstr "Árabe"
+
+#: admin/partials/tabs/automatic.php:224
+#: admin/partials/tabs/banks/google_image.php:61
+#: admin/partials/tabs/banks/google_scraping.php:30
+#: admin/partials/tabs/banks/pixabay.php:106
+#: admin/partials/tabs/banks/unsplash.php:69
+msgid "Bulgarian"
+msgstr "Búlgaro"
+
+#: admin/partials/tabs/automatic.php:225
+#: admin/partials/tabs/banks/google_image.php:66
+#: admin/partials/tabs/banks/google_scraping.php:35
+#: admin/partials/tabs/banks/pexels.php:48
+#: admin/partials/tabs/banks/pixabay.php:86
+#: admin/partials/tabs/banks/unsplash.php:49
+msgid "Czech"
+msgstr "Checa"
+
+#: admin/partials/tabs/automatic.php:226
+#: admin/partials/tabs/banks/google_image.php:67
+#: admin/partials/tabs/banks/google_scraping.php:36
+#: admin/partials/tabs/banks/pexels.php:49
+#: admin/partials/tabs/banks/pixabay.php:87
+#: admin/partials/tabs/banks/unsplash.php:50
+msgid "Danish"
+msgstr "Danés"
+
+#: admin/partials/tabs/automatic.php:227
+#: admin/partials/tabs/banks/google_image.php:78
+#: admin/partials/tabs/banks/google_scraping.php:47
+#: admin/partials/tabs/banks/pexels.php:50
+#: admin/partials/tabs/banks/pixabay.php:88
+#: admin/partials/tabs/banks/unsplash.php:51
+msgid "German"
+msgstr "Alemán"
+
+#: admin/partials/tabs/automatic.php:228
+#: admin/partials/tabs/banks/google_image.php:79
+#: admin/partials/tabs/banks/google_scraping.php:48
+#: admin/partials/tabs/banks/pexels.php:71
+#: admin/partials/tabs/banks/pixabay.php:108
+#: admin/partials/tabs/banks/unsplash.php:71
+msgid "Greek"
+msgstr "Griego"
+
+#: admin/partials/tabs/automatic.php:229
+#: admin/partials/tabs/banks/google_image.php:69
+#: admin/partials/tabs/banks/google_scraping.php:38
+#: admin/partials/tabs/banks/pexels.php:51
+#: admin/partials/tabs/banks/pixabay.php:89
+#: admin/partials/tabs/banks/unsplash.php:52
+msgid "English"
+msgstr "Inglés"
+
+#: admin/partials/tabs/automatic.php:230
+#: admin/partials/tabs/banks/google_image.php:117
+#: admin/partials/tabs/banks/google_scraping.php:86
+#: admin/partials/tabs/banks/pexels.php:52
+#: admin/partials/tabs/banks/pixabay.php:90
+#: admin/partials/tabs/banks/unsplash.php:53
+msgid "Spanish"
+msgstr "Español"
+
+#: admin/partials/tabs/automatic.php:231
+#: admin/partials/tabs/banks/google_image.php:71
+#: admin/partials/tabs/banks/google_scraping.php:40
+msgid "Estonian"
+msgstr "Estonia"
+
+#: admin/partials/tabs/automatic.php:232
+#: admin/partials/tabs/banks/google_image.php:105
+#: admin/partials/tabs/banks/google_scraping.php:74
+msgid "Persian"
+msgstr "Persa"
+
+#: admin/partials/tabs/automatic.php:233
+#: admin/partials/tabs/banks/google_image.php:73
+#: admin/partials/tabs/banks/google_scraping.php:42
+#: admin/partials/tabs/banks/pexels.php:64
+#: admin/partials/tabs/banks/pixabay.php:101
+#: admin/partials/tabs/banks/unsplash.php:64
+msgid "Finnish"
+msgstr "Finlandés"
+
+#: admin/partials/tabs/automatic.php:234
+#: admin/partials/tabs/banks/google_image.php:74
+#: admin/partials/tabs/banks/google_scraping.php:43
+#: admin/partials/tabs/banks/pexels.php:54
+#: admin/partials/tabs/banks/pixabay.php:91
+#: admin/partials/tabs/banks/unsplash.php:54
+msgid "French"
+msgstr "Francés"
+
+#: admin/partials/tabs/automatic.php:235
+#: admin/partials/tabs/banks/google_image.php:81
+#: admin/partials/tabs/banks/google_scraping.php:50
+msgid "Hebrew"
+msgstr "Hebreo"
+
+#: admin/partials/tabs/automatic.php:236
+#: admin/partials/tabs/banks/google_image.php:82
+#: admin/partials/tabs/banks/google_scraping.php:51
+msgid "Hindi"
+msgstr "Hindi"
+
+#: admin/partials/tabs/automatic.php:237
+#: admin/partials/tabs/banks/google_image.php:65
+#: admin/partials/tabs/banks/google_scraping.php:34
+msgid "Croatian"
+msgstr "Croata"
+
+#: admin/partials/tabs/automatic.php:238
+#: admin/partials/tabs/banks/google_image.php:83
+#: admin/partials/tabs/banks/google_scraping.php:52
+#: admin/partials/tabs/banks/pexels.php:57
+#: admin/partials/tabs/banks/pixabay.php:94
+#: admin/partials/tabs/banks/unsplash.php:57
+msgid "Hungarian"
+msgstr "Húngaro"
+
+#: admin/partials/tabs/automatic.php:239
+msgid "Armenian"
+msgstr "Armenio"
+
+#: admin/partials/tabs/automatic.php:240
+#: admin/partials/tabs/banks/google_image.php:85
+#: admin/partials/tabs/banks/google_scraping.php:54
+#: admin/partials/tabs/banks/pexels.php:55
+#: admin/partials/tabs/banks/pixabay.php:92
+#: admin/partials/tabs/banks/unsplash.php:55
+msgid "Indonesian"
+msgstr "Indonesia"
+
+#: admin/partials/tabs/automatic.php:241
+#: admin/partials/tabs/banks/google_image.php:88
+#: admin/partials/tabs/banks/google_scraping.php:57
+#: admin/partials/tabs/banks/pexels.php:56
+#: admin/partials/tabs/banks/pixabay.php:93
+#: admin/partials/tabs/banks/unsplash.php:56
+msgid "Italian"
+msgstr "Italiano"
+
+#: admin/partials/tabs/automatic.php:242
+#: admin/partials/tabs/banks/google_image.php:89
+#: admin/partials/tabs/banks/google_scraping.php:58
+#: admin/partials/tabs/banks/pexels.php:72
+#: admin/partials/tabs/banks/pixabay.php:109
+#: admin/partials/tabs/banks/unsplash.php:72
+msgid "Japanese"
+msgstr "Japonés"
+
+#: admin/partials/tabs/automatic.php:243
+#: admin/partials/tabs/banks/google_image.php:92
+#: admin/partials/tabs/banks/google_scraping.php:61
+#: admin/partials/tabs/banks/pexels.php:73
+#: admin/partials/tabs/banks/pixabay.php:110
+#: admin/partials/tabs/banks/unsplash.php:73
+msgid "Korean"
+msgstr "Coreano"
+
+#: admin/partials/tabs/automatic.php:244
+#: admin/partials/tabs/banks/google_image.php:95
+#: admin/partials/tabs/banks/google_scraping.php:64
+msgid "Lithuanian"
+msgstr "Lituania"
+
+#: admin/partials/tabs/automatic.php:245
+#: admin/partials/tabs/banks/google_image.php:94
+#: admin/partials/tabs/banks/google_scraping.php:63
+msgid "Latvian"
+msgstr "Letón"
+
+#: admin/partials/tabs/automatic.php:246
+#: admin/partials/tabs/banks/google_image.php:68
+#: admin/partials/tabs/banks/google_scraping.php:37
+#: admin/partials/tabs/banks/pexels.php:58
+#: admin/partials/tabs/banks/pixabay.php:95
+#: admin/partials/tabs/banks/unsplash.php:58
+msgid "Dutch"
+msgstr "Holandés"
+
+#: admin/partials/tabs/automatic.php:247
+#: admin/partials/tabs/banks/google_image.php:102
+#: admin/partials/tabs/banks/google_scraping.php:71
+#: admin/partials/tabs/banks/pexels.php:59
+#: admin/partials/tabs/banks/pixabay.php:96
+#: admin/partials/tabs/banks/unsplash.php:59
+msgid "Norwegian"
+msgstr "Noruega"
+
+#: admin/partials/tabs/automatic.php:248
+#: admin/partials/tabs/banks/google_image.php:106
+#: admin/partials/tabs/banks/google_scraping.php:75
+#: admin/partials/tabs/banks/pexels.php:60
+#: admin/partials/tabs/banks/pixabay.php:97
+#: admin/partials/tabs/banks/unsplash.php:60
+msgid "Polish"
+msgstr "Polaco"
+
+#: admin/partials/tabs/automatic.php:249
+#: admin/partials/tabs/banks/pexels.php:61
+#: admin/partials/tabs/banks/pixabay.php:98
+#: admin/partials/tabs/banks/unsplash.php:61
+msgid "Portuguese"
+msgstr "Portugués"
+
+#: admin/partials/tabs/automatic.php:250
+#: admin/partials/tabs/banks/google_image.php:110
+#: admin/partials/tabs/banks/google_scraping.php:79
+#: admin/partials/tabs/banks/pexels.php:62
+#: admin/partials/tabs/banks/pixabay.php:99
+#: admin/partials/tabs/banks/unsplash.php:62
+msgid "Romanian"
+msgstr "Rumano"
+
+#: admin/partials/tabs/automatic.php:251
+#: admin/partials/tabs/banks/google_image.php:111
+#: admin/partials/tabs/banks/google_scraping.php:80
+#: admin/partials/tabs/banks/pexels.php:69
+#: admin/partials/tabs/banks/pixabay.php:107
+#: admin/partials/tabs/banks/unsplash.php:70
+msgid "Russian"
+msgstr "Ruso"
+
+#: admin/partials/tabs/automatic.php:252
+#: admin/partials/tabs/banks/google_image.php:115
+#: admin/partials/tabs/banks/google_scraping.php:84
+#: admin/partials/tabs/banks/pexels.php:63
+#: admin/partials/tabs/banks/pixabay.php:100
+#: admin/partials/tabs/banks/unsplash.php:63
+msgid "Slovak"
+msgstr "Eslovaquia"
+
+#: admin/partials/tabs/automatic.php:253
+#: admin/partials/tabs/banks/google_image.php:116
+#: admin/partials/tabs/banks/google_scraping.php:85
+msgid "Slovenian"
+msgstr "Eslovenia"
+
+#: admin/partials/tabs/automatic.php:254
+#: admin/partials/tabs/banks/google_image.php:120
+#: admin/partials/tabs/banks/google_scraping.php:89
+#: admin/partials/tabs/banks/pexels.php:65
+#: admin/partials/tabs/banks/pixabay.php:102
+#: admin/partials/tabs/banks/unsplash.php:65
+msgid "Swedish"
+msgstr "Sueco"
+
+#: admin/partials/tabs/automatic.php:255
+#: admin/partials/tabs/banks/google_image.php:124
+#: admin/partials/tabs/banks/google_scraping.php:93
+#: admin/partials/tabs/banks/pexels.php:68
+#: admin/partials/tabs/banks/pixabay.php:105
+#: admin/partials/tabs/banks/unsplash.php:68
+msgid "Thai"
+msgstr "Tailandés"
+
+#: admin/partials/tabs/automatic.php:256
+#: admin/partials/tabs/banks/google_image.php:126
+#: admin/partials/tabs/banks/google_scraping.php:95
+#: admin/partials/tabs/banks/pexels.php:66
+#: admin/partials/tabs/banks/pixabay.php:103
+#: admin/partials/tabs/banks/unsplash.php:66
+msgid "Turkish"
+msgstr "Turco"
+
+#: admin/partials/tabs/automatic.php:257
+#: admin/partials/tabs/banks/google_image.php:130
+#: admin/partials/tabs/banks/google_scraping.php:99
+#: admin/partials/tabs/banks/pexels.php:67
+#: admin/partials/tabs/banks/pixabay.php:104
+#: admin/partials/tabs/banks/unsplash.php:67
+msgid "Vietnamese"
+msgstr "Vietnamita"
+
+#: admin/partials/tabs/automatic.php:258
+#: admin/partials/tabs/banks/pexels.php:74
+#: admin/partials/tabs/banks/pixabay.php:111
+#: admin/partials/tabs/banks/unsplash.php:74
+msgid "Chinese"
+msgstr "Chino"
+
+#: admin/partials/tabs/automatic.php:273
+msgid "Translate to English"
+msgstr "Traducir al inglés"
+
+#: admin/partials/tabs/automatic.php:276
+#: node_modules/@wordpress/i18n/benchmark/index.js:15
+msgid "Translate"
+msgstr "Traducir"
+
+#: admin/partials/tabs/automatic.php:278
+msgid ""
+"The \"based on\" phrase /keywords will be translated into English. This "
+"helps to get better results with most image databases."
+msgstr ""
+"La frase /palabras clave \"based on\" se traducirá al inglés. Esto ayuda a "
+"obtener mejores resultados con la mayoría de las bases de datos de imágenes."
+
+#: admin/partials/tabs/automatic.php:285
+msgid "Selected Image "
+msgstr "Imagen seleccionada "
+
+#: admin/partials/tabs/automatic.php:288
+msgid "First result"
+msgstr "Primer resultado"
+
+#: admin/partials/tabs/automatic.php:289
+msgid "Random result"
+msgstr "Resultado aleatorio"
+
+#: admin/partials/tabs/automatic.php:295
+msgid "Image Filename "
+msgstr "Nombre del archivo de imagen "
+
+#: admin/partials/tabs/automatic.php:299
+msgid "Date"
+msgstr "Fecha"
+
+#: admin/partials/tabs/automatic.php:300
+msgid "Random number"
+msgstr "Número aleatorio"
+
+#: admin/partials/tabs/automatic.php:306
+msgid "Overwrite existing images"
+msgstr "Reescribir imágenes existentes"
+
+#: admin/partials/tabs/automatic.php:309
+msgid "Overwrite"
+msgstr "Vuelva a escribir"
+
+#: admin/partials/tabs/automatic.php:311
+msgid "Warning: This option will overwrite existing images"
+msgstr "Advertencia: Esta opción reescribirá las imágenes existentes"
+
+#: admin/partials/tabs/automatic.php:318
+msgid "Image Shuffle"
+msgstr "Barajar imágenes"
+
+#: admin/partials/tabs/automatic.php:321
+msgid "Flip horizontally"
+msgstr "Voltear horizontalmente"
+
+#: admin/partials/tabs/automatic.php:322
+msgid "Crop Image by 10%\t"
+msgstr "Recortar imagen en un 10 %\t"
+
+#: admin/partials/tabs/automatic.php:340
+msgid ""
+"Enable the \"save_post\" hook. <br/><br/>What does it means Everytime you "
+"create or update a post, an image will be generated.<br/><br/>Warning: Use "
+"it precautionary. If you don't understand what it is, disable it."
+msgstr ""
+"Habilite hook \"save_post\". <br/><br/>¿Qué significa? Cada vez que cree o "
+"actualice una publicación, se generará una imagen.<br/><br/>Advertencia: "
+"utilícelo con precaución. Si no entiende lo que es, desactívelo."
+
+#: admin/partials/tabs/automatic.php:349
+msgid "\"Save Post\" Hook"
+msgstr "Hook \"Save Post\""
+
+#: admin/partials/tabs/automatic.php:361 admin/partials/tabs/cron.php:64
+msgid "Interval"
+msgstr "Intervalo"
+
+#: admin/partials/tabs/automatic.php:365
+msgid "Recommended Interval"
+msgstr "Intervalo recomendado"
+
+#: admin/partials/tabs/banks/cc_search.php:13
+msgid ""
+"<a target=\"_blank\" href=\"https://oldsearch.creativecommons.org/\">CC "
+"Search</a> provides Creative Commons images. You can search these images "
+"manually from <a target=\"_blank\" href=\"https://wordpress.org/openverse/"
+"\">Openverse (WordPress)</a>."
+msgstr ""
+"<a target=\"_blank\" href=\"https://oldsearch.creativecommons.org/\">CC "
+"Search</a> proporciona imágenes Creative Commons. Puede buscar estas "
+"imágenes manualmente desde <a target=\"_blank\" href=\"https://wordpress.org/"
+"openverse/\">Openverse (WordPress)</a>."
+
+#: admin/partials/tabs/banks/cc_search.php:28
+msgid "All sources"
+msgstr "Todas las fuentes"
+
+#: admin/partials/tabs/banks/cc_search.php:29
+msgid "All except flickr"
+msgstr "Todos excepto flickr"
+
+#: admin/partials/tabs/banks/cc_search.php:30
+#: admin/partials/tabs/banks/flickr.php:58
+msgid "Other"
+msgstr "Otros"
+
+#: admin/partials/tabs/banks/cc_search.php:45
+#: admin/partials/tabs/banks/flickr.php:10
+#: admin/partials/tabs/banks/google_image.php:218
+#: admin/partials/tabs/banks/google_scraping.php:155
+msgid "Rights"
+msgstr "Derechos"
+
+#: admin/partials/tabs/banks/cc_search.php:49
+#: admin/partials/tabs/banks/google_image.php:222
+#: admin/partials/tabs/banks/google_scraping.php:159
+msgid ""
+"Choose these options can reduce relevance of results, but permit to use free-"
+"to-use images."
+msgstr ""
+"Elegir estas opciones puede reducir la relevancia de los resultados, pero "
+"permite usar imágenes de uso gratuito."
+
+#: admin/partials/tabs/banks/cc_search.php:53
+msgid "Zéro"
+msgstr "Cero"
+
+#: admin/partials/tabs/banks/cc_search.php:54
+msgid "Attribution-NoDerivs"
+msgstr "Atribución-SinDerivadas"
+
+#: admin/partials/tabs/banks/cc_search.php:55
+msgid "Attribution-NonCommercial"
+msgstr "Reconocimiento-No comercial"
+
+#: admin/partials/tabs/banks/cc_search.php:56
+msgid "Attribution-NonCommercial-ShareAlike"
+msgstr "Atribución-NoComercial-CompartirIgual"
+
+#: admin/partials/tabs/banks/cc_search.php:57
+msgid "Attribution-NonCommercial-NoDerivs"
+msgstr "Reconocimiento-No comercial-Sin derivados"
+
+#: admin/partials/tabs/banks/cc_search.php:58
+msgid "Attribution-ShareAlike"
+msgstr "Reconocimiento-CompartirIgual"
+
+#: admin/partials/tabs/banks/cc_search.php:59
+msgid "Attribution"
+msgstr "Atribución"
+
+#: admin/partials/tabs/banks/cc_search.php:60
+msgid "Public Domain Mark"
+msgstr "Marca de dominio público"
+
+#: admin/partials/tabs/banks/cc_search.php:77
+#: admin/partials/tabs/banks/flickr.php:47
+#: admin/partials/tabs/banks/google_image.php:277
+#: admin/partials/tabs/banks/google_scraping.php:246
+#: admin/partials/tabs/banks/pixabay.php:53
+msgid "Image Type"
+msgstr "Image Type"
+
+#: admin/partials/tabs/banks/cc_search.php:86
+#: admin/partials/tabs/banks/pixabay.php:63
+msgid "Illustration"
+msgstr "Ilustración"
+
+#: admin/partials/tabs/banks/cc_search.php:87
+msgid "Photography"
+msgstr "Fotografía"
+
+#: admin/partials/tabs/banks/cc_search.php:88
+msgid "Digitized Artwork"
+msgstr "Obra digitalizada"
+
+#: admin/partials/tabs/banks/cc_search.php:103
+msgid "Aspect Ratio"
+msgstr "Relación de aspecto"
+
+#: admin/partials/tabs/banks/cc_search.php:111
+msgid "Tall"
+msgstr "Alto"
+
+#: admin/partials/tabs/banks/cc_search.php:112
+msgid "Wide"
+msgstr "Ancho"
+
+#: admin/partials/tabs/banks/cc_search.php:113
+#: admin/partials/tabs/banks/envato.php:61
+#: admin/partials/tabs/banks/google_scraping.php:228
+#: admin/partials/tabs/banks/pexels.php:101
+msgid "Square"
+msgstr "Cuadrado"
+
+#: admin/partials/tabs/banks/dallev1.php:12
+msgid ""
+"<b>It's required</b> to provide your own <b>api key</b>. You can register in "
+"OpenAI API website <a target=\"_blank\" href=\"https://openai.com/\">here</"
+"a> and get api key."
+msgstr ""
+"<b>Es obligatorio</b> proporcionar su propia <b>clave de API</b>. Puede "
+"registrarse en el sitio web de API de OpenAI <a target=\"_blank\" "
+"href=\"https://openai.com/\">aquí</a> y obtener la clave de API."
+
+#: admin/partials/tabs/banks/dallev1.php:15
+msgid ""
+"<b>Caution: DALL-E API can take a long time</b> to generate. About 20 "
+"seconds to get a 1024x1024 image."
+msgstr ""
+"<b>Caution: La API de DALL-E puede tardar mucho tiempo</b> en generarse. "
+"Unos 20 segundos para obtener una imagen de 1024x1024."
+
+#: admin/partials/tabs/banks/dallev1.php:18
+msgid ""
+"DALL-E API has some <b>restricted words</b> that will not generate any "
+"images. Please refer to the <a href=\"https://labs.openai.com/policies/"
+"content-policy\">content policy</a> if you want more details."
+msgstr ""
+"La API DALL-E tiene algunas <b>palabras restringidas</b> que no generarán "
+"ninguna imagen. Consulte la <a href=\"https://labs.openai.com/policies/"
+"content-policy\">política de contenido</a> si desea obtener más detalles."
+
+#: admin/partials/tabs/banks/dallev1.php:25
+#: admin/partials/tabs/banks/pexels.php:19
+msgid "API Key"
+msgstr ""
+
+#: admin/partials/tabs/banks/dallev1.php:35
+#: admin/partials/tabs/banks/envato.php:42
+#: admin/partials/tabs/banks/pexels.php:29
+#: admin/partials/tabs/banks/pixabay.php:37
+#: admin/partials/tabs/banks/unsplash.php:29
+#: admin/partials/tabs/banks/youtube.php:29
+msgid "API testing"
+msgstr ""
+
+#: admin/partials/tabs/banks/dallev1.php:45
+#: admin/partials/tabs/banks/google_image.php:247
+#: admin/partials/tabs/banks/google_scraping.php:184
+msgid "Image size"
+msgstr "Tamaño de la imagen"
+
+#: admin/partials/tabs/banks/dallev1.php:53
+msgid "1024x1024"
+msgstr ""
+
+#: admin/partials/tabs/banks/dallev1.php:54
+msgid "1792x1024"
+msgstr ""
+
+#: admin/partials/tabs/banks/dallev1.php:55
+msgid "1024x1792"
+msgstr ""
+
+#: admin/partials/tabs/banks/dallev1.php:70
+msgid "PNG to JPEG"
+msgstr ""
+
+#: admin/partials/tabs/banks/dallev1.php:75
+msgid "Convert to Jpeg image extension"
+msgstr "Convertir a extensión de imagen Jpeg"
+
+#: admin/partials/tabs/banks/dallev1.php:77
+msgid ""
+"DALL-E will create a PNG file, click this option if you want to convert the "
+"file to a Jpeg image."
+msgstr ""
+"DALL-E creará un archivo PNG, haga clic en esta opción si desea convertir el "
+"archivo en una imagen Jpeg."
+
+#: admin/partials/tabs/banks/envato.php:20
+#, php-format
+msgid ""
+"You can use your Envato Elements subscription. You can sign up for <a "
+"target=\"_blank\" href=\"%1$s\">Envato Elements here</a> and <a "
+"target=\"_blank\" href=\"%2$s\">follow this link</a> to generate the token "
+"(one token per website)."
+msgstr ""
+
+#: admin/partials/tabs/banks/envato.php:31
+msgid "Envato Token"
+msgstr ""
+
+#: admin/partials/tabs/banks/envato.php:50
+#: admin/partials/tabs/banks/pexels.php:90
+#: admin/partials/tabs/banks/pixabay.php:126
+msgid "Orientation"
+msgstr "Orientación"
+
+#: admin/partials/tabs/banks/envato.php:58
+#: admin/partials/tabs/banks/envato.php:83
+#: admin/partials/tabs/banks/pexels.php:98
+msgid "All"
+msgstr "Todos"
+
+#: admin/partials/tabs/banks/envato.php:59
+#: admin/partials/tabs/banks/google_scraping.php:229
+#: admin/partials/tabs/banks/pexels.php:99
+msgid "Landscape"
+msgstr "Paisaje"
+
+#: admin/partials/tabs/banks/envato.php:60
+#: admin/partials/tabs/banks/google_scraping.php:227
+#: admin/partials/tabs/banks/pexels.php:100
+msgid "Portrait"
+msgstr "Retrato"
+
+#: admin/partials/tabs/banks/envato.php:75
+msgid "Number of people"
+msgstr ""
+
+#: admin/partials/tabs/banks/envato.php:84
+msgid "No people"
+msgstr ""
+
+#: admin/partials/tabs/banks/envato.php:85
+msgid "1 person"
+msgstr ""
+
+#: admin/partials/tabs/banks/envato.php:86
+msgid "2 people"
+msgstr ""
+
+#: admin/partials/tabs/banks/envato.php:87
+msgid "3+ people"
+msgstr ""
+
+#: admin/partials/tabs/banks/flickr.php:14
+msgid ""
+"Choose which licence works for pictures. Licences chosen are cumulative."
+msgstr ""
+"Elige la licencia que mejor se adapte a tus fotos. Las licencias elegidas "
+"son acumulables."
+
+#: admin/partials/tabs/banks/flickr.php:15
+msgid "If none of these options are chosen, every licences will be used."
+msgstr ""
+"Si no se elige ninguna de estas opciones, se utilizarán todas las licencias."
+
+#: admin/partials/tabs/banks/flickr.php:19
+msgid "All Rights Reserved"
+msgstr "Reservados todos los derechos"
+
+#: admin/partials/tabs/banks/flickr.php:20
+msgid ""
+"Attribution-NonCommercial-ShareAlike License - <i><a href=\"http://"
+"creativecommons.org/licenses/by-nc-sa/2.0/\" target=\"_blank\">More detail</"
+"a></i>"
+msgstr ""
+"Licencia Reconocimiento-NoComercial-CompartirIgual - <i><a href=\"http://"
+"creativecommons.org/licenses/by-nc-sa/2.0/\" target=\"_blank\">Más detalles</"
+"a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:21
+msgid ""
+"Attribution-NonCommercial License - <i><a href=\"http://creativecommons.org/"
+"licenses/by-nc/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Licencia de reconocimiento no comercial: <i><a href=\"http://creativecommons."
+"org/licenses/by-nc/2.0/\" target=\"_blank\">Más detalles</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:22
+msgid ""
+"Attribution-NonCommercial-NoDerivs License - <i><a href=\"http://"
+"creativecommons.org/licenses/by-nc-nd/2.0/\" target=\"_blank\">More detail</"
+"a></i>"
+msgstr ""
+"Licencia de reconocimiento, no comercial, sin derivados: <i><a href=\"http://"
+"creativecommons.org/licenses/by-nc-nd/2.0/\" target=\"_blank\">Más detalles</"
+"a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:23
+msgid ""
+"Attribution License - <i><a href=\"http://creativecommons.org/licenses/"
+"by/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Licencia de atribución: <i><a href=\"http://creativecommons.org/licenses/"
+"by/2.0/\" target=\"_blank\">Más detalles</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:24
+msgid ""
+"Attribution License - <i><a href=\"http://creativecommons.org/licenses/by-"
+"sa/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Licencia de atribución: <i><a href=\"http://creativecommons.org/licenses/by-"
+"sa/2.0/\" target=\"_blank\">Más detalles</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:25
+msgid ""
+"Attribution-NoDerivs License - <i><a href=\"http://creativecommons.org/"
+"licenses/by-nd/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Licencia de atribución sin derivaciones: <i><a href=\"http://creativecommons."
+"org/licenses/by-nd/2.0/\" target=\"_blank\">Más detalles</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:26
+msgid ""
+"No known copyright restrictions - <i><a href=\"http://flickr.com/commons/"
+"usage/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Sin restricciones conocidas de derechos de autor - <i><a href=\"http://"
+"flickr.com/commons/usage/\" target=\"_blank\">Más detalles</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:27
+msgid ""
+"United States Government Work - <i><a href=\"http://www.usa.gov/copyright."
+"shtml\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Trabajo del gobierno de los Estados Unidos - <i><a href=\"http://www.usa.gov/"
+"copyright.shtml\" target=\"_blank\">Más detalles</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:55
+#: admin/partials/tabs/banks/pixabay.php:61
+#: admin/partials/tabs/banks/pixabay.php:134
+msgid "-- All --"
+msgstr "-- Todos --"
+
+#: admin/partials/tabs/banks/flickr.php:56
+#: admin/partials/tabs/banks/google_image.php:287
+#: admin/partials/tabs/banks/google_scraping.php:256
+#: admin/partials/tabs/banks/pixabay.php:62
+msgid "Photo"
+msgstr "Foto"
+
+#: admin/partials/tabs/banks/flickr.php:57
+msgid "Screenshot"
+msgstr "Captura de pantalla"
+
+#: admin/partials/tabs/banks/flickr.php:59
+msgid "Photo and screenshot"
+msgstr "Foto y captura de pantalla"
+
+#: admin/partials/tabs/banks/flickr.php:60
+msgid "Screenshot and \"other\""
+msgstr "Captura de pantalla y \"otros"
+
+#: admin/partials/tabs/banks/flickr.php:61
+msgid "Photo and \"other\""
+msgstr "Foto y \"otros"
+
+#: admin/partials/tabs/banks/google_image.php:11
+msgid ""
+"From now on, <b>it's required</b> to provide your own Google <i>Search "
+"engine ID</i> and <b>API Key</b>. You must follow the process <a "
+"target=\"_blank\" href=\"https://developers.google.com/custom-search/json-"
+"api/v1/overview#prerequisites\">here</a>. You must get both valid "
+"<strong>Search engine ID</strong> and <strong>API Key</strong>"
+msgstr ""
+"A partir de ahora, <b>es obligatorio</b> proporcionar su propio <i>ID de "
+"motor de búsqueda</i> y <b>clave de API</b> de Google. Debes seguir el "
+"proceso <a target=\"_blank\" href=\"https://developers.google.com/custom-"
+"search/json-api/v1/overview#prerequisites\">aquí</a>. Debe obtener un "
+"<strong>identificador de motor de búsqueda</strong> y una <strong>clave de "
+"API</strong> válidos"
+
+#: admin/partials/tabs/banks/google_image.php:18
+msgid "Custom Search Engine ID"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:26
+msgid "Google API Key"
+msgstr "Clave API de Google"
+
+#: admin/partials/tabs/banks/google_image.php:42
+#: admin/partials/tabs/banks/google_scraping.php:11
+#: admin/partials/tabs/banks/pexels.php:37
+#: admin/partials/tabs/banks/pixabay.php:78
+#: admin/partials/tabs/banks/unsplash.php:38
+msgid "Choose the language"
+msgstr "Elija la lengua"
+
+#: admin/partials/tabs/banks/google_image.php:49
+#: admin/partials/tabs/banks/google_scraping.php:18
+msgid "English (default)"
+msgstr "Inglés (por defecto)"
+
+#: admin/partials/tabs/banks/google_image.php:50
+#: admin/partials/tabs/banks/google_image.php:51
+#: admin/partials/tabs/banks/google_scraping.php:19
+#: admin/partials/tabs/banks/google_scraping.php:20
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+#: admin/partials/tabs/banks/google_image.php:52
+#: admin/partials/tabs/banks/google_scraping.php:21
+msgid "Albanian"
+msgstr "Albanés"
+
+#: admin/partials/tabs/banks/google_image.php:53
+#: admin/partials/tabs/banks/google_scraping.php:22
+msgid "Amharic"
+msgstr "Amárico"
+
+#: admin/partials/tabs/banks/google_image.php:55
+#: admin/partials/tabs/banks/google_scraping.php:24
+msgid "Azerbaijani"
+msgstr "Azerbaiyán"
+
+#: admin/partials/tabs/banks/google_image.php:56
+#: admin/partials/tabs/banks/google_scraping.php:25
+msgid "Basque"
+msgstr "Vasco"
+
+#: admin/partials/tabs/banks/google_image.php:57
+#: admin/partials/tabs/banks/google_scraping.php:26
+msgid "Belarusian"
+msgstr "Bielorruso"
+
+#: admin/partials/tabs/banks/google_image.php:58
+#: admin/partials/tabs/banks/google_scraping.php:27
+msgid "Bengali"
+msgstr "Bengalí"
+
+#: admin/partials/tabs/banks/google_image.php:59
+#: admin/partials/tabs/banks/google_scraping.php:28
+msgid "Bihari"
+msgstr "Bihari"
+
+#: admin/partials/tabs/banks/google_image.php:60
+#: admin/partials/tabs/banks/google_scraping.php:29
+msgid "Bosnian"
+msgstr "Bosnia"
+
+#: admin/partials/tabs/banks/google_image.php:62
+#: admin/partials/tabs/banks/google_scraping.php:31
+#: admin/partials/tabs/banks/pexels.php:53
+msgid "Catalan"
+msgstr "Catalán"
+
+#: admin/partials/tabs/banks/google_image.php:63
+#: admin/partials/tabs/banks/google_scraping.php:32
+msgid "Chinese (Simplified)"
+msgstr "Chino (simplificado)"
+
+#: admin/partials/tabs/banks/google_image.php:64
+#: admin/partials/tabs/banks/google_scraping.php:33
+msgid "Chinese (Traditional)"
+msgstr "Chino (tradicional)"
+
+#: admin/partials/tabs/banks/google_image.php:70
+#: admin/partials/tabs/banks/google_scraping.php:39
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: admin/partials/tabs/banks/google_image.php:72
+#: admin/partials/tabs/banks/google_scraping.php:41
+msgid "Faroese"
+msgstr "Feroés"
+
+#: admin/partials/tabs/banks/google_image.php:75
+#: admin/partials/tabs/banks/google_scraping.php:44
+msgid "Frisian"
+msgstr "Frisón"
+
+#: admin/partials/tabs/banks/google_image.php:76
+#: admin/partials/tabs/banks/google_scraping.php:45
+msgid "Galician"
+msgstr "Gallego"
+
+#: admin/partials/tabs/banks/google_image.php:77
+#: admin/partials/tabs/banks/google_scraping.php:46
+msgid "Georgian"
+msgstr "Georgiano"
+
+#: admin/partials/tabs/banks/google_image.php:80
+#: admin/partials/tabs/banks/google_scraping.php:49
+msgid "Gujarati"
+msgstr "Gujarati"
+
+#: admin/partials/tabs/banks/google_image.php:84
+#: admin/partials/tabs/banks/google_scraping.php:53
+msgid "Icelandic"
+msgstr "Islandia"
+
+#: admin/partials/tabs/banks/google_image.php:86
+#: admin/partials/tabs/banks/google_scraping.php:55
+msgid "Interlingua"
+msgstr "Interlingua"
+
+#: admin/partials/tabs/banks/google_image.php:87
+#: admin/partials/tabs/banks/google_scraping.php:56
+msgid "Irish"
+msgstr "Irlandés"
+
+#: admin/partials/tabs/banks/google_image.php:90
+#: admin/partials/tabs/banks/google_scraping.php:59
+msgid "Javanese"
+msgstr "Javanés"
+
+#: admin/partials/tabs/banks/google_image.php:91
+#: admin/partials/tabs/banks/google_scraping.php:60
+msgid "Kannada"
+msgstr "Kannada"
+
+#: admin/partials/tabs/banks/google_image.php:93
+#: admin/partials/tabs/banks/google_scraping.php:62
+msgid "Latin"
+msgstr "Latín"
+
+#: admin/partials/tabs/banks/google_image.php:96
+#: admin/partials/tabs/banks/google_scraping.php:65
+msgid "Macedonian"
+msgstr "Macedonio"
+
+#: admin/partials/tabs/banks/google_image.php:97
+#: admin/partials/tabs/banks/google_scraping.php:66
+msgid "Malay"
+msgstr "Malayo"
+
+#: admin/partials/tabs/banks/google_image.php:98
+#: admin/partials/tabs/banks/google_scraping.php:67
+msgid "Malayam"
+msgstr "Malayam"
+
+#: admin/partials/tabs/banks/google_image.php:99
+#: admin/partials/tabs/banks/google_scraping.php:68
+msgid "Maltese"
+msgstr "Maltés"
+
+#: admin/partials/tabs/banks/google_image.php:100
+#: admin/partials/tabs/banks/google_scraping.php:69
+msgid "Marathi"
+msgstr "Marathi"
+
+#: admin/partials/tabs/banks/google_image.php:101
+#: admin/partials/tabs/banks/google_scraping.php:70
+msgid "Nepali"
+msgstr "Nepalí"
+
+#: admin/partials/tabs/banks/google_image.php:103
+#: admin/partials/tabs/banks/google_scraping.php:72
+msgid "Norwegian (Nynorsk)"
+msgstr "Noruego (Nynorsk)"
+
+#: admin/partials/tabs/banks/google_image.php:104
+#: admin/partials/tabs/banks/google_scraping.php:73
+msgid "Occitan"
+msgstr "Occitano"
+
+#: admin/partials/tabs/banks/google_image.php:107
+#: admin/partials/tabs/banks/google_scraping.php:76
+msgid "Portuguese (Brazil)"
+msgstr "Inglés (Brasil)"
+
+#: admin/partials/tabs/banks/google_image.php:108
+#: admin/partials/tabs/banks/google_scraping.php:77
+msgid "Portuguese (Portugal)"
+msgstr "Portugués (Portugal)"
+
+#: admin/partials/tabs/banks/google_image.php:109
+#: admin/partials/tabs/banks/google_scraping.php:78
+msgid "Punjabi"
+msgstr "Punjabi"
+
+#: admin/partials/tabs/banks/google_image.php:112
+#: admin/partials/tabs/banks/google_scraping.php:81
+msgid "Scots Gaelic"
+msgstr "Gaélico escocés"
+
+#: admin/partials/tabs/banks/google_image.php:113
+#: admin/partials/tabs/banks/google_scraping.php:82
+msgid "Serbian"
+msgstr "Serbio"
+
+#: admin/partials/tabs/banks/google_image.php:114
+#: admin/partials/tabs/banks/google_scraping.php:83
+msgid "Sinhalese"
+msgstr "Cingalés"
+
+#: admin/partials/tabs/banks/google_image.php:118
+#: admin/partials/tabs/banks/google_scraping.php:87
+msgid "Sudanese"
+msgstr "Sudán"
+
+#: admin/partials/tabs/banks/google_image.php:119
+#: admin/partials/tabs/banks/google_scraping.php:88
+msgid "Swahili"
+msgstr "Swahili"
+
+#: admin/partials/tabs/banks/google_image.php:121
+#: admin/partials/tabs/banks/google_scraping.php:90
+msgid "Tagalog"
+msgstr "Tagalo"
+
+#: admin/partials/tabs/banks/google_image.php:122
+#: admin/partials/tabs/banks/google_scraping.php:91
+msgid "Tamil"
+msgstr "Tamil"
+
+#: admin/partials/tabs/banks/google_image.php:123
+#: admin/partials/tabs/banks/google_scraping.php:92
+msgid "Telugu"
+msgstr "Telugu"
+
+#: admin/partials/tabs/banks/google_image.php:125
+#: admin/partials/tabs/banks/google_scraping.php:94
+msgid "Tigrinya"
+msgstr "Tigriña"
+
+#: admin/partials/tabs/banks/google_image.php:127
+#: admin/partials/tabs/banks/google_scraping.php:96
+#: admin/partials/tabs/banks/pexels.php:70
+msgid "Ukrainian"
+msgstr "Ucraniano"
+
+#: admin/partials/tabs/banks/google_image.php:128
+#: admin/partials/tabs/banks/google_scraping.php:97
+msgid "Urdu"
+msgstr "Urdu"
+
+#: admin/partials/tabs/banks/google_image.php:129
+#: admin/partials/tabs/banks/google_scraping.php:98
+msgid "Uzbek"
+msgstr "Uzbeko"
+
+#: admin/partials/tabs/banks/google_image.php:131
+#: admin/partials/tabs/banks/google_scraping.php:100
+msgid "Welsh"
+msgstr "Galés"
+
+#: admin/partials/tabs/banks/google_image.php:132
+#: admin/partials/tabs/banks/google_scraping.php:101
+msgid "Xhosa"
+msgstr "Xhosa"
+
+#: admin/partials/tabs/banks/google_image.php:133
+#: admin/partials/tabs/banks/google_scraping.php:102
+msgid "Zulu"
+msgstr "Zulú"
+
+#: admin/partials/tabs/banks/google_image.php:148
+#: admin/partials/tabs/banks/google_scraping.php:117
+msgid "Specified color predominantly"
+msgstr "Predominio del color especificado"
+
+#: admin/partials/tabs/banks/google_image.php:157
+#: admin/partials/tabs/banks/google_scraping.php:126
+msgid "Black"
+msgstr "Negro"
+
+#: admin/partials/tabs/banks/google_image.php:158
+#: admin/partials/tabs/banks/google_scraping.php:127
+msgid "Blue"
+msgstr "Azul"
+
+#: admin/partials/tabs/banks/google_image.php:159
+#: admin/partials/tabs/banks/google_scraping.php:128
+msgid "Brown"
+msgstr "Marrón"
+
+#: admin/partials/tabs/banks/google_image.php:160
+#: admin/partials/tabs/banks/google_scraping.php:129
+msgid "Gray"
+msgstr "Gris"
+
+#: admin/partials/tabs/banks/google_image.php:161
+#: admin/partials/tabs/banks/google_scraping.php:130
+msgid "Green"
+msgstr "Verde"
+
+#: admin/partials/tabs/banks/google_image.php:162
+#: admin/partials/tabs/banks/google_scraping.php:131
+msgid "Pink"
+msgstr "Rosa"
+
+#: admin/partials/tabs/banks/google_image.php:163
+#: admin/partials/tabs/banks/google_scraping.php:132
+msgid "Purple"
+msgstr "Morado"
+
+#: admin/partials/tabs/banks/google_image.php:164
+#: admin/partials/tabs/banks/google_scraping.php:133
+msgid "Teal"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:165
+#: admin/partials/tabs/banks/google_scraping.php:134
+msgid "White"
+msgstr "Blanco"
+
+#: admin/partials/tabs/banks/google_image.php:166
+#: admin/partials/tabs/banks/google_scraping.php:135
+msgid "Yellow"
+msgstr "Amarillo"
+
+#: admin/partials/tabs/banks/google_image.php:178
+#: admin/partials/tabs/banks/google_scraping.php:147
+msgid "Experimental"
+msgstr "Experimental"
+
+#: admin/partials/tabs/banks/google_image.php:179
+#: admin/partials/tabs/banks/google_scraping.php:148
+msgid ""
+"Restricts results to images that contain a specified color predominantly"
+msgstr ""
+"Restringe los resultados a las imágenes que contienen predominantemente un "
+"color especificado"
+
+#: admin/partials/tabs/banks/google_image.php:186
+msgid "Filetype"
+msgstr "Tipo de archivo"
+
+#: admin/partials/tabs/banks/google_image.php:195
+msgid "jpg"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:196
+msgid "png"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:197
+msgid "gif"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:198
+msgid "bmp"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:199
+msgid "webp"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:211
+msgid "Restricts image search to one of the following specific file types"
+msgstr ""
+"Restringe la búsqueda de imágenes a uno de los siguientes tipos de archivo "
+"específicos"
+
+#: admin/partials/tabs/banks/google_image.php:226
+msgid ""
+"Publicdomain - <i>restricts search results to images with the publicdomain "
+"label.</i>"
+msgstr ""
+"Dominio público: <i>restringe los resultados de búsqueda a imágenes con la "
+"etiqueta de dominio público.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:227
+msgid ""
+"Attribute - <i>restricts search results to images with the attribute label.</"
+"i>"
+msgstr ""
+"Atributo: <i>restringe los resultados de búsqueda a imágenes con la etiqueta "
+"de atributo.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:228
+msgid ""
+"Sharealike - <i>restricts search results to images with the sharealike label."
+"</i>"
+msgstr ""
+"Sharealike: <i>restringe los resultados de búsqueda a las imágenes con la "
+"etiqueta Sharealike.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:229
+msgid ""
+"Noncommercial - <i>restricts search results to images with the noncomercial "
+"label.</i>"
+msgstr ""
+"No comercial: <i>restringe los resultados de búsqueda a imágenes con la "
+"etiqueta no comercial.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:230
+msgid ""
+"Nonderived - <i>restricts search results to images with the nonderived label."
+"</i>"
+msgstr ""
+"No derivado: <i>restringe los resultados de búsqueda a imágenes con la "
+"etiqueta no derivado.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:256
+#: admin/partials/tabs/banks/google_scraping.php:193
+msgid "icon"
+msgstr "icono"
+
+#: admin/partials/tabs/banks/google_image.php:257
+msgid "small"
+msgstr "pequeño"
+
+#: admin/partials/tabs/banks/google_image.php:258
+#: admin/partials/tabs/banks/google_scraping.php:194
+msgid "medium"
+msgstr "medio"
+
+#: admin/partials/tabs/banks/google_image.php:259
+#: admin/partials/tabs/banks/google_scraping.php:195
+msgid "large"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:260
+msgid "xlarge"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:261
+msgid "xxlarge"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:262
+msgid "huge"
+msgstr "enorme"
+
+#: admin/partials/tabs/banks/google_image.php:286
+#: admin/partials/tabs/banks/google_scraping.php:255
+msgid "Face"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:288
+#: admin/partials/tabs/banks/google_scraping.php:257
+msgid "Clipart"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:289
+#: admin/partials/tabs/banks/google_scraping.php:258
+msgid "Lineart"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_image.php:303
+#: admin/partials/tabs/banks/google_scraping.php:273
+msgid "Safety level"
+msgstr "Nivel de seguridad"
+
+#: admin/partials/tabs/banks/google_image.php:311
+#: admin/partials/tabs/banks/google_scraping.php:281
+msgid "Moderate (default)"
+msgstr "Moderado (por defecto)"
+
+#: admin/partials/tabs/banks/google_image.php:312
+#: admin/partials/tabs/banks/google_scraping.php:282
+#: admin/partials/tabs/banks/pixabay.php:184
+msgid "Active"
+msgstr "Activo"
+
+#: admin/partials/tabs/banks/google_image.php:313
+#: admin/partials/tabs/banks/google_scraping.php:283
+#: admin/partials/tabs/banks/pixabay.php:183
+msgid "Off"
+msgstr ""
+
+#: admin/partials/tabs/banks/google_scraping.php:166
+msgid "Not filtered by license (default)"
+msgstr "No filtrado por licencia (por defecto)"
+
+#: admin/partials/tabs/banks/google_scraping.php:167
+msgid "Labeled for reuse with modification"
+msgstr "Etiquetado para reutilización con modificación"
+
+#: admin/partials/tabs/banks/google_scraping.php:168
+msgid "Labeled for reuse"
+msgstr "Etiquetado para reutilización"
+
+#: admin/partials/tabs/banks/google_scraping.php:169
+msgid "Labeled for noncommercial reuse with modification"
+msgstr "Etiquetado para reutilización no comercial con modificación"
+
+#: admin/partials/tabs/banks/google_scraping.php:170
+msgid "Labeled for noncommercial reuse"
+msgstr "Etiquetado para reutilización no comercial"
+
+#: admin/partials/tabs/banks/google_scraping.php:196
+msgid "More than 400x300"
+msgstr "Más de 400x300"
+
+#: admin/partials/tabs/banks/google_scraping.php:197
+msgid "More than 640x480"
+msgstr "Más de 640x480"
+
+#: admin/partials/tabs/banks/google_scraping.php:198
+msgid "More than 800x600"
+msgstr "Más de 800x600"
+
+#: admin/partials/tabs/banks/google_scraping.php:199
+msgid "More than 1024x768"
+msgstr "Más de 1024x768"
+
+#: admin/partials/tabs/banks/google_scraping.php:200
+msgid "More than 2Mpx"
+msgstr "Más de 2Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:201
+msgid "More than 4Mpx"
+msgstr "Más de 4Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:202
+msgid "More than 6Mpx"
+msgstr "Más de 6Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:203
+msgid "More than 8Mpx"
+msgstr "Más de 8Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:204
+msgid "More than 10Mpx"
+msgstr "Más de 10Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:218
+msgid "Image format"
+msgstr "Formato de imagen"
+
+#: admin/partials/tabs/banks/google_scraping.php:230
+msgid "Panoramic"
+msgstr "Panorámica"
+
+#: admin/partials/tabs/banks/google_scraping.php:259
+msgid "Animated"
+msgstr "Animación"
+
+#: admin/partials/tabs/banks/google_scraping.php:321
+msgid "Restricted domains"
+msgstr "Dominios restringidos"
+
+#: admin/partials/tabs/banks/google_scraping.php:323
+#: admin/partials/tabs/banks/google_scraping.php:359
+msgid "One domain per line"
+msgstr "Un dominio por línea"
+
+#: admin/partials/tabs/banks/google_scraping.php:324
+#: admin/partials/tabs/banks/google_scraping.php:360
+msgid "Leave empty to disable it"
+msgstr "Dejar vacío para desactivarlo"
+
+#: admin/partials/tabs/banks/google_scraping.php:329
+msgid ""
+"Add domains here if you want image <strong>only</strong> from these domains."
+msgstr ""
+"Añade dominios aquí si quieres imagen <strong>sólo</strong> de estos "
+"dominios."
+
+#: admin/partials/tabs/banks/google_scraping.php:357
+msgid "Blacklisted domains"
+msgstr "Dominios en la lista negra"
+
+#: admin/partials/tabs/banks/google_scraping.php:365
+msgid "Add domains here if you want to blacklist them from results."
+msgstr ""
+"Añada dominios aquí si desea incluirlos en una lista negra de resultados."
+
+#: admin/partials/tabs/banks/pexels.php:12
+msgid ""
+"<b>It's required</b> to provide your own Pexels <b>API Key</b>. You must "
+"follow the process. Registration is <a target=\"_blank\" href=\"https://www."
+"pexels.com/join-consumer/\">here</a>. Application creation and <a "
+"target=\"_blank\" href=\"https://www.pexels.com/api/new/\">API Id are on "
+"this page</a>."
+msgstr ""
+"<b>Es necesario</b> proporcionar su propia <b>Clave API</b> de Pexels. Debes "
+"seguir el proceso. El registro es <a target=\"_blank\" href=\"https://www."
+"pexels.com/join-consumer/\">aquí</a>. La creación de aplicaciones y el <a "
+"target=\"_blank\" href=\"https://www.pexels.com/api/new/\">ID de API se "
+"encuentran en esta página</a>."
+
+#: admin/partials/tabs/banks/pexels.php:75
+msgid "Chinese (Taiwan)"
+msgstr "Chino (Taiwan)"
+
+#: admin/partials/tabs/banks/pexels.php:115
+msgid "Resolution"
+msgstr ""
+
+#: admin/partials/tabs/banks/pexels.php:123
+msgid "Small (4MP)"
+msgstr ""
+
+#: admin/partials/tabs/banks/pexels.php:124
+msgid "Medium (12MP)"
+msgstr ""
+
+#: admin/partials/tabs/banks/pexels.php:125
+msgid "Large (24MP)"
+msgstr ""
+
+#: admin/partials/tabs/banks/pexels.php:134
+msgid "Minimum photo size"
+msgstr "Tamaño mínimo de la foto"
+
+#: admin/partials/tabs/banks/pixabay.php:12
+msgid ""
+"From now on, <b>it's required</b> to provide your own <b>username</b> and "
+"<b>api key</b>. You can register in Pixabay website <a target=\"_blank\" "
+"href=\"https://pixabay.com/en/accounts/register/\">here</a> and get api "
+"username/key <a target=\"_blank\" href=\"https://pixabay.com/api/docs/"
+"\">here</a>"
+msgstr ""
+"A partir de ahora, <b>es obligatorio</b> proporcionar su propio <b>nombre de "
+"usuario</b> y <b>clave de API</b>. Puede registrarse en el sitio web de "
+"Pixabay <a target=\"_blank\" href=\"https://pixabay.com/en/accounts/register/"
+"\">aquí</a> y obtener el nombre de usuario/clave de API <a target=\"_blank\" "
+"href=\"https://pixabay.com/api/docs/\">aquí</a>"
+
+#: admin/partials/tabs/banks/pixabay.php:19
+msgid "Pixabay username"
+msgstr "Nombre de usuario Pixabay"
+
+#: admin/partials/tabs/banks/pixabay.php:27
+#: admin/partials/tabs/banks/youtube.php:19
+msgid "Api key"
+msgstr "Clave API"
+
+#: admin/partials/tabs/banks/pixabay.php:64
+#, fuzzy
+#| msgid "Featured Image"
+msgid "Vector image"
+msgstr "Imagen destacada"
+
+#: admin/partials/tabs/banks/pixabay.php:135
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: admin/partials/tabs/banks/pixabay.php:136
+msgid "Vertical"
+msgstr "Vertical"
+
+#: admin/partials/tabs/banks/pixabay.php:151
+msgid "Minimum width"
+msgstr "Anchura mínima"
+
+#: admin/partials/tabs/banks/pixabay.php:155
+msgid "px minimum for width"
+msgstr "px mínimo de anchura"
+
+#: admin/partials/tabs/banks/pixabay.php:163
+msgid "Minimum height"
+msgstr "Altura mínima"
+
+#: admin/partials/tabs/banks/pixabay.php:167
+msgid "px minimum for height"
+msgstr "px mínimo para la altura"
+
+#: admin/partials/tabs/banks/pixabay.php:175
+msgid "Safesearch"
+msgstr ""
+
+#: admin/partials/tabs/banks/unsplash.php:12
+msgid ""
+"<b>It's required</b> to provide your own Unsplash <b>Access Key</b>. You "
+"must follow the process. Registration is <a target=\"_blank\" href=\"https://"
+"unsplash.com/join\">here</a>. Application creation and <a target=\"_blank\" "
+"href=\"https://unsplash.com/oauth/applications\">API Id are on this page</a>."
+msgstr ""
+"<b>Es necesario</b> proporcionar su propia <b>Llave de acceso</b> de "
+"Unsplash. Debes seguir el proceso. El registro es <a target=\"_blank\" "
+"href=\"https://unsplash.com/join\">aquí</a>. La creación de aplicaciones y "
+"el <a target=\"_blank\" href=\"https://unsplash.com/oauth/applications\">ID "
+"de API se encuentran en esta página</a>."
+
+#: admin/partials/tabs/banks/unsplash.php:19
+msgid "Access Key"
+msgstr "Llave de acceso"
+
+#: admin/partials/tabs/banks/youtube.php:12
+msgid ""
+"<b>It's required</b> to provide your own Google/Youtube <b>API Key</b>. You "
+"must follow the process <a target=\"_blank\" href=\"https://developers."
+"google.com/custom-search/json-api/v1/overview#prerequisites\">here</a>."
+msgstr ""
+"<b>Es necesario</b> proporcionar su propia <b>Llave de acceso</b> de Google/"
+"Youtube. Debes seguir el proceso <a target=\"_blank\" href=\"https://"
+"developers.google.com/custom-search/json-api/v1/"
+"overview#prerequisites\">aquí</a>."
+
+#: admin/partials/tabs/block.php:24
+msgid "Display manual search for featured image "
+msgstr ""
+
+#: admin/partials/tabs/block.php:43 admin/partials/tabs/compatibility.php:76
+msgid ""
+"Enable compatibility with the plugin \"Featured Image from URL\".<br><br> "
+"Warning: This option will not upload your images into your media anymore."
+"<br><br> Warning 2: Does not work with DALL-E."
+msgstr ""
+"Habilite la compatibilidad con el plugin  \"Featured Image from URL\"."
+"<br><br> Advertencia: esta opción ya no cargará sus imágenes en sus medios."
+"<br><br> Advertencia 2: no funciona con DALL-E v1."
+
+#: admin/partials/tabs/bulk_generation.php:66
+msgid "Progress"
+msgstr "Progreso"
+
+#: admin/partials/tabs/bulk_generation.php:74
+msgid "Time Before Next Generation"
+msgstr "Tiempo antes de la próxima generación"
+
+#: admin/partials/tabs/bulk_generation.php:77
+msgid "seconds"
+msgstr "segundos"
+
+#: admin/partials/tabs/bulk_generation.php:101
+msgid "Status"
+msgstr "Estado"
+
+#: admin/partials/tabs/bulk_generation.php:102
+msgid "Post Links"
+msgstr "Enlaces Entradas"
+
+#: admin/partials/tabs/bulk_generation.php:103
+msgid "Image"
+msgstr ""
+
+#: admin/partials/tabs/bulk_generation.php:121
+msgid "Waiting for generation"
+msgstr "Esperando a la generación"
+
+#: admin/partials/tabs/bulk_generation.php:123
+msgid "Successful"
+msgstr "Éxito"
+
+#: admin/partials/tabs/bulk_generation.php:124
+msgid "Failed"
+msgstr "Fallido"
+
+#: admin/partials/tabs/bulk_generation.php:125
+msgid "Error"
+msgstr "Error"
+
+#: admin/partials/tabs/bulk_generation.php:126
+msgid "Image Already Exists"
+msgstr "Imagen ya existente"
+
+#: admin/partials/tabs/bulk_generation.php:127
+msgid "No image rewriting into post content"
+msgstr "Sin reescritura de imágenes en el contenido del post"
+
+#: admin/partials/tabs/bulk_generation.php:133
+msgid "Edit"
+msgstr "Editar"
+
+#: admin/partials/tabs/bulk_generation.php:134
+msgid "View"
+msgstr "Ver"
+
+#: admin/partials/tabs/bulk_generation.php:148
+msgid "Successful Generation"
+msgstr "Generación Exitosa"
+
+#: admin/partials/tabs/bulk_generation.php:155
+msgid "Currently no generation"
+msgstr "Actualmente no hay generación"
+
+#: admin/partials/tabs/compatibility.php:30
+msgid "Compatibility with REST Requests"
+msgstr "Compatibilidad con las solicitudes REST"
+
+#: admin/partials/tabs/compatibility.php:49
+msgid ""
+"Enable compatibility with REST requests.<br><br> This can be useful, for "
+"example, if external services (such as AI posts) allow you to create posts "
+"directly in your WordPress."
+msgstr ""
+
+#: admin/partials/tabs/compatibility.php:57
+msgid "Compatibility with FIFU"
+msgstr "Compatibilidad con FIFU"
+
+#: admin/partials/tabs/compatibility.php:84
+msgid "Compatibility with WP All Import"
+msgstr "Compatibilidad con WP All Import"
+
+#: admin/partials/tabs/compatibility.php:103
+msgid "Enable compatibility with the plugin \"WP All Import\"."
+msgstr "Habilitar la compatibilidad con el plugin \"WP All Import\"."
+
+#: admin/partials/tabs/compatibility.php:111
+msgid "Compatibility with WPeMatico"
+msgstr "Compatibilidad con WPeMatico"
+
+#: admin/partials/tabs/compatibility.php:130
+msgid "Enable compatibility with the plugin \"WPeMatico\"."
+msgstr "Habilitar la compatibilidad con el plugin \"WPeMatico\"."
+
+#: admin/partials/tabs/compatibility.php:139
+msgid "Compatibility with CyberSyn"
+msgstr "Compatibilidad con CyberSyn"
+
+#: admin/partials/tabs/compatibility.php:158
+msgid "Enable compatibility with the plugin \"CyberSyn\"."
+msgstr "Habilitar la compatibilidad con el plugin \"CyberSyn\"."
+
+#: admin/partials/tabs/compatibility.php:167
+msgid "Compatibility with Rss Post Importer"
+msgstr "Compatibility with Rss Post Importer"
+
+#: admin/partials/tabs/compatibility.php:186
+msgid "Enable compatibility with the plugin \"Rss Post Importer\"."
+msgstr "Habilitar compatibilidad con el plugin \"Rss Post Importer\"."
+
+#: admin/partials/tabs/compatibility.php:194
+msgid "Compatibility with FeedWordPress"
+msgstr "Compatibilidad con FeedWordPress"
+
+#: admin/partials/tabs/compatibility.php:213
+msgid "Enable compatibility with the plugin \"FeedWordPress\"."
+msgstr "Habilitar la compatibilidad con el plugin \"FeedWordPress\"."
+
+#: admin/partials/tabs/compatibility.php:221
+msgid "Compatibility with WP Automatic Plugin"
+msgstr "Compatibilidad con WP Automatic Plugin"
+
+#: admin/partials/tabs/compatibility.php:240
+msgid "Enable compatibility with the plugin \"WP Automatic Plugin\"."
+msgstr "Habilitar la compatibilidad con el plugin \"WP Automatic Plugin\"."
+
+#: admin/partials/tabs/compatibility.php:281
+msgid ""
+"Pro version allows the plugin to be compatible with <b>REST requests</b>, "
+"<b>WP All Import</b>, <b>Fifu</b> (Featured Image from URL), <b>WPeMatico</"
+"b> and <b>FeedWordPress</b>"
+msgstr ""
+"La versión Pro permite que el complemento sea compatible con <b>solicitudes "
+"REST</b>, <b>WP All Import</b>, <b>Fifu</b> (imagen destacada de la URL), "
+"<b>WPeMatico< /b> y <b>FeedWordPress</b>"
+
+#: admin/partials/tabs/cron.php:31
+msgid "Enable cron"
+msgstr "Activar cron"
+
+#: admin/partials/tabs/cron.php:42
+msgid "Relevant post type"
+msgstr "Tipos de entradas pertinente"
+
+#: admin/partials/tabs/cron.php:67
+msgid "Every"
+msgstr "Cada"
+
+#: admin/partials/tabs/cron.php:170
+msgid "Minutes"
+msgstr "Minutas"
+
+#: admin/partials/tabs/cron.php:171 admin/partials/tabs/cron.php:219
+msgid "Hours"
+msgstr "Horas"
+
+#: admin/partials/tabs/cron.php:172 admin/partials/tabs/cron.php:220
+msgid "Days"
+msgstr "Días"
+
+#: admin/partials/tabs/cron.php:186
+msgid "Posts date"
+msgstr "Puestos fecha"
+
+#: admin/partials/tabs/cron.php:195
+msgid "All Posts"
+msgstr "Todas las entradas"
+
+#: admin/partials/tabs/cron.php:221
+msgid "ago and newer"
+msgstr "y más reciente"
+
+#: admin/partials/tabs/cron.php:229
+msgid "Number of posts"
+msgstr "Número de entradas"
+
+#: admin/partials/tabs/cron.php:255
+msgid "Number of posts to process each time the cron is run."
+msgstr "Número de entradas  a procesar cada vez que se ejecuta el cron."
+
+#: admin/partials/tabs/dashboard.php:15
+msgid "Pro (licence expired)"
+msgstr "Pro (licencia caducada)"
+
+#: admin/partials/tabs/dashboard.php:16 admin/partials/tabs/dashboard.php:23
+msgid "Upgrade the plugin"
+msgstr "Actualizar el plugin"
+
+#: admin/partials/tabs/dashboard.php:20
+msgid "Free"
+msgstr "Gratis"
+
+#: admin/partials/tabs/dashboard.php:62
+msgid "My account"
+msgstr "Mi cuenta"
+
+#: admin/partials/tabs/dashboard.php:107
+msgid "Version"
+msgstr "Versión"
+
+#: admin/partials/tabs/dashboard.php:118
+msgid "Verified"
+msgstr "Verificado"
+
+#: admin/partials/tabs/dashboard.php:127
+msgid "Not Verified"
+msgstr "No verificado"
+
+#: admin/partials/tabs/dashboard.php:167
+msgid "Access to the WordPress.org support forum."
+msgstr "Acceso al foro de soporte de WordPress.org."
+
+#: admin/partials/tabs/dashboard.php:172
+msgid "Support"
+msgstr "Ayuda"
+
+#: admin/partials/tabs/dashboard.php:189
+msgid "Get In Touch"
+msgstr "Póngase en contacto"
+
+#: admin/partials/tabs/dashboard.php:192
+msgid "If you have any questions."
+msgstr "Si tiene alguna pregunta."
+
+#: admin/partials/tabs/dashboard.php:227
+msgid "Tutorials"
+msgstr "Tutoriales"
+
+#: admin/partials/tabs/dashboard.php:246
+#, php-format
+msgid "<a href=\"%s\" target=\"_blank\">Youtube Tutorial</a>"
+msgstr ""
+
+#: admin/partials/tabs/dashboard.php:249
+msgid "Frequently Asked Questions"
+msgstr "Preguntas frecuentes"
+
+#: admin/partials/tabs/dashboard.php:274
+msgid "Reviews"
+msgstr "Reseñas"
+
+#: admin/partials/tabs/dashboard.php:277
+msgid "Like this plugin? Leave a 5-star review on WordPress."
+msgstr ""
+"¿Te gusta este complemento? Deja una reseña de 5 estrellas en WordPress."
+
+#: admin/partials/tabs/dashboard.php:279
+msgid "Write a review"
+msgstr "Escribe una reseña"
+
+#: admin/partials/tabs/dashboard.php:337
+msgid "Donate"
+msgstr "Donar"
+
+#: admin/partials/tabs/dashboard.php:341
+msgid "Make a donation"
+msgstr "Hacer un donativo"
+
+#: admin/partials/tabs/logs.php:26
+msgid "No log yet"
+msgstr "Aún no hay registro"
+
+#: admin/partials/tabs/logs.php:35
+msgid "Enable Logs"
+msgstr "Activar registros"
+
+#: admin/partials/tabs/logs.php:44
+msgid "Logs history"
+msgstr "Historial de registros"
+
+#: admin/partials/tabs/logs.php:55
+msgid "Download Log"
+msgstr "Descargar registro"
+
+#: admin/partials/tabs/logs.php:57
+msgid "Delete all logs"
+msgstr "Borrar todos los registros"
+
+#: admin/partials/tabs/logs.php:65
+msgid "Show settings config"
+msgstr "Mostrar configuración"
+
+#: admin/partials/tabs/logs.php:66
+msgid "Hide settings config"
+msgstr "Ocultar configuración"
+
+#: admin/partials/tabs/logs.php:67
+msgid "Copy settings config"
+msgstr "Copiar configuración"
+
+#: admin/partials/tabs/logs.php:68
+msgid "Copied !"
+msgstr "¡Copiado!"
+
+#: admin/partials/tabs/proxy.php:42
+msgid ""
+"If you have a free or paid proxy, you can setup it here. You must use a "
+"proxy with <strong>HTTPS protocol</strong>. Use it carefully. "
+msgstr ""
+"Si tiene un proxy gratuito o de pago, puede configurarlo aquí. Debe utilizar "
+"un proxy con <strong>protocolo HTTPS</strong>. Úselo con cuidado. "
+
+#: admin/partials/tabs/proxy.php:56
+msgid ""
+"You have also to check your hosting. Some rules can block requests from "
+"these proxies. "
+msgstr ""
+"También tienes que comprobar tu hosting. Algunas reglas pueden bloquear las "
+"peticiones de estos proxies. "
+
+#: admin/partials/tabs/proxy.php:63
+msgid "Enable Proxy"
+msgstr "Activar proxy"
+
+#: admin/partials/tabs/proxy.php:74
+msgid "Address"
+msgstr "Dirección"
+
+#: admin/partials/tabs/proxy.php:82
+msgid "Port"
+msgstr "Puerto de red"
+
+#: admin/partials/tabs/proxy.php:90
+msgid "Username"
+msgstr "Usuario"
+
+#: admin/partials/tabs/proxy.php:95
+msgid "Username if it requires authentication"
+msgstr "Nombre de usuario si requiere autenticación"
+
+#: admin/partials/tabs/proxy.php:101
+msgid "Password"
+msgstr "Contraseña"
+
+#: admin/partials/tabs/proxy.php:106
+msgid "Password if it requires authentication"
+msgstr "Contraseña si requiere autenticación"
+
+#: admin/partials/tabs/source.php:21
+msgid "Google Image (Scraping)"
+msgstr ""
+
+#: admin/partials/tabs/source.php:22
+msgid "Google Image (API)"
+msgstr ""
+
+#: admin/partials/tabs/source.php:23
+msgid "DALL·E (v3)"
+msgstr ""
+
+#: admin/partials/tabs/source.php:24 admin/partials/tabs/source.php:47
+msgid "Openverse"
+msgstr ""
+
+#: admin/partials/tabs/source.php:25 admin/partials/tabs/source.php:48
+msgid "Flickr"
+msgstr ""
+
+#: admin/partials/tabs/source.php:26 admin/partials/tabs/source.php:49
+msgid "Pixabay"
+msgstr ""
+
+#: admin/partials/tabs/source.php:27 admin/partials/tabs/source.php:37
+#: admin/partials/tabs/source.php:50 admin/partials/tabs/source.php:60
+msgid "Youtube"
+msgstr ""
+
+#: admin/partials/tabs/source.php:28 admin/partials/tabs/source.php:38
+#: admin/partials/tabs/source.php:51 admin/partials/tabs/source.php:61
+msgid "Unsplash"
+msgstr ""
+
+#: admin/partials/tabs/source.php:29 admin/partials/tabs/source.php:39
+#: admin/partials/tabs/source.php:52 admin/partials/tabs/source.php:62
+msgid "Pexels"
+msgstr ""
+
+#: admin/partials/tabs/source.php:30 admin/partials/tabs/source.php:40
+#: admin/partials/tabs/source.php:53 admin/partials/tabs/source.php:63
+msgid "Envato Elements"
+msgstr ""
+
+#: admin/partials/tabs/source.php:78
+msgid ""
+"Choose which database you want to search for pictures. You can select "
+"multiple sources, and drag & drop each banks to give priorities on image "
+"search."
+msgstr ""
+
+#: admin/partials/tabs/source.php:86
+#, fuzzy
+#| msgid "Images"
+msgid "Image Banks"
+msgstr "Imágenes"
+
+#: admin/partials/tabs/source.php:173
+#, fuzzy
+#| msgid "Settings"
+msgid "Banks Settings"
+msgstr "Configuración"
+
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:51
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:61
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:62
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:68
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:186
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:271
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:309
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:312
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:317
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:481
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:484
+#: node_modules/@wordpress/i18n/src/test/default-i18n.js:14
+#, fuzzy
+#| msgid "Yellow"
+msgid "hello"
+msgstr "Amarillo"
+
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:191
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:276
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:320
+msgid "cheeseburger"
+msgstr ""
+
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:325
+#, javascript-format
+msgid "%d cat"
+msgstr ""
+
+#: node_modules/@wordpress/i18n/src/test/subscribe-i18n.js:19
+msgid "original"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:22
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:22
+#: node_modules/underscore.string/test/speed.js:12
+msgid "  foobar  "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:46
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:189
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:190
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:191
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:46
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:189
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:190
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:191
+#: node_modules/underscore.string/test/speed.js:36
+#: node_modules/underscore.string/test/strings.js:140
+#: node_modules/underscore.string/test/strings.js:141
+#: node_modules/underscore.string/test/strings.js:142
+msgid "whitespace"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:50
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:50
+#: node_modules/underscore.string/test/speed.js:40
+msgid "Hello worls"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:54
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:215
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:216
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:54
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:215
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:216
+#: node_modules/underscore.string/test/speed.js:44
+#: node_modules/underscore.string/test/strings.js:161
+#: node_modules/underscore.string/test/strings.js:162
+#, fuzzy
+#| msgid "Yellow"
+msgid "Hello "
+msgstr "Amarillo"
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:58
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:224
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:58
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:224
+#: node_modules/underscore.string/test/speed.js:48
+#: node_modules/underscore.string/test/strings.js:167
+msgid "https://edtsech@bitbucket.org/edtsech/underscore.strings"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:73
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:237
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:73
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:237
+#: node_modules/underscore.string/test/speed.js:63
+#: node_modules/underscore.string/test/strings.js:180
+msgid "the titleize string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:77
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:81
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:203
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:204
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:205
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:327
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:328
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:342
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:77
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:81
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:203
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:204
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:205
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:327
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:328
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:342
+#: node_modules/underscore.string/test/speed.js:67
+#: node_modules/underscore.string/test/speed.js:71
+#: node_modules/underscore.string/test/strings.js:152
+#: node_modules/underscore.string/test/strings.js:153
+#: node_modules/underscore.string/test/strings.js:154
+#: node_modules/underscore.string/test/strings.js:244
+#: node_modules/underscore.string/test/strings.js:245
+#: node_modules/underscore.string/test/strings.js:256
+msgid "Hello world"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:89
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:89
+#: node_modules/underscore.string/test/speed.js:79
+msgid "<div>Blah blah blah</div>"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:93
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:93
+#: node_modules/underscore.string/test/speed.js:83
+msgid "&lt;div&gt;Blah blah blah&lt;/div&gt;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:97
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:428
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:436
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:97
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:428
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:436
+#: node_modules/underscore.string/test/speed.js:87
+#: node_modules/underscore.string/test/strings.js:316
+msgid "Hello World"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:101
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:105
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:109
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:113
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:117
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:450
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:451
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:452
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:472
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:473
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:483
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:484
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:485
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings_standalone.js:6
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:101
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:105
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:109
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:113
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:117
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:450
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:451
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:452
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:472
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:473
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:483
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:484
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:485
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings_standalone.js:6
+#: node_modules/underscore.string/test/speed.js:91
+#: node_modules/underscore.string/test/speed.js:95
+#: node_modules/underscore.string/test/speed.js:99
+#: node_modules/underscore.string/test/speed.js:103
+#: node_modules/underscore.string/test/speed.js:107
+#: node_modules/underscore.string/test/strings.js:327
+#: node_modules/underscore.string/test/strings.js:328
+#: node_modules/underscore.string/test/strings.js:329
+#: node_modules/underscore.string/test/strings.js:343
+#: node_modules/underscore.string/test/strings.js:344
+#: node_modules/underscore.string/test/strings.js:351
+#: node_modules/underscore.string/test/strings.js:352
+#: node_modules/underscore.string/test/strings.js:353
+#: node_modules/underscore.string/test/strings_standalone.js:6
+msgid "foo"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:121
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:121
+#: node_modules/underscore.string/test/speed.js:111
+msgid "10.232323"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:125
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:129
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:133
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:137
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:125
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:129
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:133
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:137
+#: node_modules/underscore.string/test/speed.js:115
+#: node_modules/underscore.string/test/speed.js:119
+#: node_modules/underscore.string/test/speed.js:123
+#: node_modules/underscore.string/test/speed.js:127
+msgid "aaa_bbb_ccc"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:141
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:141
+#: node_modules/underscore.string/test/speed.js:131
+msgid "separator"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:145
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:607
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:145
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:607
+#: node_modules/underscore.string/test/speed.js:135
+#: node_modules/underscore.string/test/strings.js:424
+msgid "Un éléphant à l'orée du bois"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:16
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:56
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:75
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:16
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:56
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:75
+#: node_modules/underscore.string/test/strings.js:10
+#: node_modules/underscore.string/test/strings.js:31
+#: node_modules/underscore.string/test/strings.js:48
+msgid " foo"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:17
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:58
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:76
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:17
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:58
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:76
+#: node_modules/underscore.string/test/strings.js:11
+#: node_modules/underscore.string/test/strings.js:33
+#: node_modules/underscore.string/test/strings.js:49
+msgid "foo "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:18
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:59
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:79
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:18
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:59
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:79
+#: node_modules/underscore.string/test/strings.js:12
+#: node_modules/underscore.string/test/strings.js:34
+#: node_modules/underscore.string/test/strings.js:52
+msgid " foo "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:19
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:20
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:19
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:20
+#: node_modules/underscore.string/test/strings.js:13
+#: node_modules/underscore.string/test/strings.js:14
+msgid "    foo     "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:21
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:21
+msgid "\t    foo \t  "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:23
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:64
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:81
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:23
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:64
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:81
+#: node_modules/underscore.string/test/strings.js:16
+#: node_modules/underscore.string/test/strings.js:37
+#: node_modules/underscore.string/test/strings.js:54
+msgid "ffoo"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:24
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:65
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:82
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:24
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:65
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:82
+#: node_modules/underscore.string/test/strings.js:17
+#: node_modules/underscore.string/test/strings.js:38
+#: node_modules/underscore.string/test/strings.js:55
+msgid "ooff"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:25
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:66
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:83
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:25
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:66
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:83
+#: node_modules/underscore.string/test/strings.js:18
+#: node_modules/underscore.string/test/strings.js:39
+#: node_modules/underscore.string/test/strings.js:56
+msgid "ffooff"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:28
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:68
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:85
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:28
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:68
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:85
+#: node_modules/underscore.string/test/strings.js:21
+#: node_modules/underscore.string/test/strings.js:41
+#: node_modules/underscore.string/test/strings.js:58
+msgid "_-foobar-_"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:30
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:74
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:30
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:74
+#: node_modules/underscore.string/test/strings.js:23
+#: node_modules/underscore.string/test/strings.js:47
+msgid "http://foo/"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:31
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:31
+#: node_modules/underscore.string/test/strings.js:24
+msgid "c:\\"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:57
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:57
+#: node_modules/underscore.string/test/strings.js:32
+msgid "    foo"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:77
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:77
+#: node_modules/underscore.string/test/strings.js:50
+msgid "foo     "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:78
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:78
+#: node_modules/underscore.string/test/strings.js:51
+msgid "foo  bar     "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:93
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:93
+#: node_modules/underscore.string/test/strings.js:64
+msgid "fabio"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:110
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:359
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:110
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:359
+#: node_modules/underscore.string/test/strings.js:76
+#: node_modules/underscore.string/test/strings.js:269
+msgid " "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:126
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:126
+#: node_modules/underscore.string/test/strings.js:89
+msgid " foo    bar   "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:137
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:148
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:137
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:148
+#: node_modules/underscore.string/test/strings.js:97
+#: node_modules/underscore.string/test/strings.js:108
+#, javascript-format
+msgid "Hello %s"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:138
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:149
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:138
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:149
+#: node_modules/underscore.string/test/strings.js:98
+#: node_modules/underscore.string/test/strings.js:109
+#, javascript-format
+msgid "hello %s"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:157
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:167
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:157
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:167
+#: node_modules/underscore.string/test/strings.js:117
+#: node_modules/underscore.string/test/strings.js:124
+msgid "foobar"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:158
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:158
+#: node_modules/underscore.string/test/strings.js:118
+msgid "oobar"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:170
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:170
+#: node_modules/underscore.string/test/strings.js:127
+msgid "fooba"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:206
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:206
+#: node_modules/underscore.string/test/strings.js:155
+msgid "x.xx....x.x"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:230
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:361
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:230
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:361
+#: node_modules/underscore.string/test/strings.js:173
+#: node_modules/underscore.string/test/strings.js:271
+msgid "a"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:231
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:231
+#: node_modules/grunt-wp-i18n/test/fixtures/translator-comments/translator-comments.php:7
+#: node_modules/underscore.string/test/strings.js:174
+msgid "A"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:232
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:232
+#: node_modules/underscore.string/test/strings.js:175
+msgid "+"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:238
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:238
+#: node_modules/underscore.string/test/strings.js:181
+msgid "the titleize string  method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:242
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:242
+msgid "let's have some fun"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:243
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:243
+msgid "a-dash-separated-string"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:244
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:244
+msgid "A-DASH-SEPARATED-STRING"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:249
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:249
+#: node_modules/underscore.string/test/strings.js:186
+msgid "the_camelize_string_method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:250
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:250
+#: node_modules/underscore.string/test/strings.js:187
+msgid "-the-camelize-string-method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:251
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:251
+#: node_modules/underscore.string/test/strings.js:188
+msgid "the camelize string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:252
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:252
+#: node_modules/underscore.string/test/strings.js:189
+msgid " the camelize  string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:253
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:253
+#: node_modules/underscore.string/test/strings.js:190
+msgid "the camelize   string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:261
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:261
+#: node_modules/underscore.string/test/strings.js:195
+msgid "the-underscored-string-method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:262
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:262
+#: node_modules/underscore.string/test/strings.js:196
+msgid "theUnderscoredStringMethod"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:263
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:263
+#: node_modules/underscore.string/test/strings.js:197
+msgid "TheUnderscoredStringMethod"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:264
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:264
+#: node_modules/underscore.string/test/strings.js:198
+msgid " the underscored  string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:272
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:272
+#: node_modules/underscore.string/test/strings.js:203
+msgid "the_dasherize_string_method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:273
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:273
+#: node_modules/underscore.string/test/strings.js:204
+msgid "TheDasherizeStringMethod"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:274
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:274
+#: node_modules/underscore.string/test/strings.js:205
+msgid "thisIsATest"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:275
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:275
+#: node_modules/underscore.string/test/strings.js:206
+msgid "this Is A Test"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:276
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:276
+#: node_modules/underscore.string/test/strings.js:207
+msgid "thisIsATest123"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:277
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:277
+#: node_modules/underscore.string/test/strings.js:208
+msgid "123thisIsATest"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:278
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:278
+#: node_modules/underscore.string/test/strings.js:209
+msgid "the dasherize string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:279
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:279
+#: node_modules/underscore.string/test/strings.js:210
+msgid "the  dasherize string method  "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:280
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:280
+#: node_modules/underscore.string/test/strings.js:211
+msgid "téléphone"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:281
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:281
+#: node_modules/underscore.string/test/strings.js:212
+msgid "foo$bar"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:296
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:296
+msgid "_som eWeird---name-"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:308
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:308
+#: node_modules/underscore.string/test/strings.js:230
+msgid "some_class_name"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:309
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:309
+msgid "my wonderfull class_name"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:310
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:310
+msgid "my wonderfull.class.name"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:314
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:314
+#: node_modules/underscore.string/test/strings.js:234
+msgid "the_humanize_string_method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:315
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:315
+#: node_modules/underscore.string/test/strings.js:235
+msgid "ThehumanizeStringMethod"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:316
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:316
+#: node_modules/underscore.string/test/strings.js:236
+msgid "the humanize string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:317
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:317
+#: node_modules/underscore.string/test/strings.js:237
+msgid "the humanize_id string method_id"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:318
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:318
+#: node_modules/underscore.string/test/strings.js:238
+msgid "the  humanize string method  "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:319
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:319
+#: node_modules/underscore.string/test/strings.js:239
+msgid "   capitalize dash-CamelCase_underscore trim  "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:329
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:419
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:329
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:419
+#: node_modules/underscore.string/test/strings.js:246
+#: node_modules/underscore.string/test/strings.js:310
+#, fuzzy
+#| msgid "Yellow"
+msgid "Hello"
+msgstr "Amarillo"
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:337
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:341
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:337
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:341
+#: node_modules/underscore.string/test/strings.js:251
+#: node_modules/underscore.string/test/strings.js:255
+msgid "Hello, cruel world"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:338
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:339
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:340
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:338
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:339
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:340
+#: node_modules/underscore.string/test/strings.js:252
+#: node_modules/underscore.string/test/strings.js:253
+#: node_modules/underscore.string/test/strings.js:254
+msgid "Hello, world"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:343
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:347
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:343
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:347
+#: node_modules/underscore.string/test/strings.js:257
+#: node_modules/underscore.string/test/strings.js:261
+msgid "Привет, жестокий мир"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:344
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:345
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:346
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:348
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:344
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:345
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:346
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:348
+#: node_modules/underscore.string/test/strings.js:258
+#: node_modules/underscore.string/test/strings.js:259
+#: node_modules/underscore.string/test/strings.js:260
+#: node_modules/underscore.string/test/strings.js:262
+msgid "Привет, мир"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:349
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:349
+msgid "alksjd!!!!!!...."
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:360
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:360
+#: node_modules/underscore.string/test/strings.js:270
+msgid "\n"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:362
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:494
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:362
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:494
+#: node_modules/underscore.string/test/strings.js:272
+#: node_modules/underscore.string/test/strings.js:359
+msgid "0"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:375
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:375
+#: node_modules/underscore.string/test/strings.js:277
+msgid "<div>Blah & \"blah\" & 'blah'</div>"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:377
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:377
+#: node_modules/underscore.string/test/strings.js:279
+msgid "&lt;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:385
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:385
+msgid ""
+"&lt;div&gt;Blah &amp; &quot;blah&quot; &amp; &apos;blah&#39;&lt;/div&gt;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:387
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:387
+#: node_modules/underscore.string/test/strings.js:287
+msgid "&amp;lt;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:388
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:388
+msgid "&apos;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:389
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:389
+#: node_modules/underscore.string/test/strings.js:288
+msgid "&#39;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:390
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:390
+#: node_modules/underscore.string/test/strings.js:289
+msgid "&#0039;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:391
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:391
+#: node_modules/underscore.string/test/strings.js:290
+msgid "&#x4a;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:392
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:392
+#: node_modules/underscore.string/test/strings.js:291
+msgid "&#x04A;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:393
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:393
+#: node_modules/underscore.string/test/strings.js:292
+msgid "&#X4A;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:394
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:394
+#: node_modules/underscore.string/test/strings.js:293
+msgid "&_#39;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:395
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:395
+#: node_modules/underscore.string/test/strings.js:294
+msgid "&#39_;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:396
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:396
+#: node_modules/underscore.string/test/strings.js:295
+msgid "&amp;#38;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:397
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:397
+#: node_modules/underscore.string/test/strings.js:296
+msgid "&#38;amp;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:406
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:406
+#: node_modules/underscore.string/test/strings.js:302
+msgid "I love you!"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:407
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:407
+#: node_modules/underscore.string/test/strings.js:303
+msgid " I    love   you!  "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:408
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:408
+#: node_modules/underscore.string/test/strings.js:304
+msgid "I_love_you!"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:409
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:409
+#: node_modules/underscore.string/test/strings.js:305
+msgid "I-love-you!"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:413
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:413
+msgid "   "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:427
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:427
+msgid "AaBbCcDdEe"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:435
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:435
+#: node_modules/underscore.string/test/strings.js:315
+msgid ""
+"Hello\n"
+"World"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:444
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:446
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:447
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:448
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:449
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:459
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:461
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:462
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:469
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:471
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:480
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:482
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:444
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:446
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:447
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:448
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:449
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:459
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:461
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:462
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:469
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:471
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:480
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:482
+#: node_modules/underscore.string/test/strings.js:321
+#: node_modules/underscore.string/test/strings.js:323
+#: node_modules/underscore.string/test/strings.js:324
+#: node_modules/underscore.string/test/strings.js:325
+#: node_modules/underscore.string/test/strings.js:326
+#: node_modules/underscore.string/test/strings.js:333
+#: node_modules/underscore.string/test/strings.js:335
+#: node_modules/underscore.string/test/strings.js:336
+#: node_modules/underscore.string/test/strings.js:340
+#: node_modules/underscore.string/test/strings.js:342
+#: node_modules/underscore.string/test/strings.js:348
+#: node_modules/underscore.string/test/strings.js:350
+msgid "1"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:492
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:492
+#: node_modules/underscore.string/test/strings.js:357
+#, fuzzy
+#| msgid "Random number"
+msgid "not a number"
+msgstr "Número aleatorio"
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:495
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:495
+msgid "0.0"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:496
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:497
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:496
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:497
+msgid "0.1"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:498
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:498
+msgid "  0.1 "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:499
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:499
+#: node_modules/underscore.string/test/strings.js:360
+msgid "0000"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:500
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:501
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:502
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:500
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:501
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:502
+#: node_modules/underscore.string/test/strings.js:361
+#: node_modules/underscore.string/test/strings.js:362
+#: node_modules/underscore.string/test/strings.js:363
+msgid "2.345"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:503
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:503
+#: node_modules/underscore.string/test/strings.js:364
+msgid "2.344"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:504
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:504
+#: node_modules/underscore.string/test/strings.js:365
+msgid "2"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:507
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:507
+#: node_modules/underscore.string/test/strings.js:368
+msgid "-2"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:533
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:534
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:535
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:536
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:537
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:538
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:546
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:547
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:548
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:549
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:550
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:558
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:559
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:560
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:561
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:562
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:570
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:571
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:572
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:573
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:574
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:533
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:534
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:535
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:536
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:537
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:538
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:546
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:547
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:548
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:549
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:550
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:558
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:559
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:560
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:561
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:562
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:570
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:571
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:572
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:573
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:574
+#: node_modules/underscore.string/test/strings.js:372
+#: node_modules/underscore.string/test/strings.js:373
+#: node_modules/underscore.string/test/strings.js:374
+#: node_modules/underscore.string/test/strings.js:375
+#: node_modules/underscore.string/test/strings.js:376
+#: node_modules/underscore.string/test/strings.js:381
+#: node_modules/underscore.string/test/strings.js:382
+#: node_modules/underscore.string/test/strings.js:383
+#: node_modules/underscore.string/test/strings.js:384
+#: node_modules/underscore.string/test/strings.js:385
+#: node_modules/underscore.string/test/strings.js:390
+#: node_modules/underscore.string/test/strings.js:391
+#: node_modules/underscore.string/test/strings.js:392
+#: node_modules/underscore.string/test/strings.js:393
+#: node_modules/underscore.string/test/strings.js:394
+#: node_modules/underscore.string/test/strings.js:399
+#: node_modules/underscore.string/test/strings.js:400
+#: node_modules/underscore.string/test/strings.js:401
+#: node_modules/underscore.string/test/strings.js:402
+#: node_modules/underscore.string/test/strings.js:403
+msgid "This_is_a_test_string"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:582
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:582
+#: node_modules/underscore.string/test/strings.js:408
+msgid "a <a href=\"#\">link</a>"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:583
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:583
+#: node_modules/underscore.string/test/strings.js:409
+msgid "a <a href=\"#\">link</a><script>alert(\"hello world!\")</script>"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:584
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:584
+#: node_modules/underscore.string/test/strings.js:410
+msgid "<html><body>hello world</body></html>"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:606
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:606
+#: node_modules/underscore.string/test/strings.js:423
+msgid "Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.$!/"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:608
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:608
+msgid "I know latin characters: á í ó ú ç ã õ ñ ü ă ș ț"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:609
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:609
+#: node_modules/underscore.string/test/strings.js:426
+msgid "I am a word too, even though I am but a single letter: i!"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:660
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:660
+msgid "false"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:667
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:667
+msgid "true"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/test_underscore/utility.js:51
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/test_underscore/utility.js:51
+#: node_modules/underscore.string/test/test_underscore/utility.js:41
+msgid "champ"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/basic-theme/exclude/file.php:3
+#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/plugin-include.php:6
+msgid "Exclude"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/include/file.php:2
+msgid "Include"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/add-domain.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:3
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:4
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:3
+msgid "String"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/translator-comments/translator-comments.php:15
+msgid "B"
+msgstr ""
+
+#: node_modules/underscore.string/test/strings.js:285
+msgid ""
+"&lt;div&gt;Blah &amp; &quot;blah&quot; &amp; &apos;blah&apos;&lt;/div&gt;"
+msgstr ""
+
+#: node_modules/underscore.string/test/strings.js:425
+msgid "I know latin characters: á í ó ú ç ã õ ñ ü"
+msgstr ""
+
+#~ msgid "Click to generate"
+#~ msgstr "Haga clic para generar"
+
+#~ msgid "Posts"
+#~ msgstr "Entradas"
+
+#~ msgid ""
+#~ "All Getty Images images can be retrieved, but they will be watermarked."
+#~ msgstr ""
+#~ "Todas las imágenes de Getty Images pueden recuperarse, pero llevarán "
+#~ "marca de agua."
+
+#~ msgid ""
+#~ "<b>It's required</b> to provide your own <b>username</b> and <b>api key</"
+#~ "b>. You can register in shutterstock website <a target=\"_blank\" "
+#~ "href=\"https://shutterstock.com/en/accounts/register/\">here</a> and get "
+#~ "api username/key <a target=\"_blank\" href=\"https://www.shutterstock.com/"
+#~ "account/developers/apps\">here</a>"
+#~ msgstr ""
+#~ "<b>Es necesario</b> proporcionar su propio <b>nombre de usuario</b> y "
+#~ "<b>clave de API</b>. Puede registrarse en el sitio web de Shutterstock <a "
+#~ "target=\"_blank\" href=\"https://shutterstock.com/en/accounts/register/"
+#~ "\">aquí</a> y obtener el nombre de usuario/clave de API <a "
+#~ "target=\"_blank\" href=\"https://www.shutterstock.com/account/developers/"
+#~ "apps\">aquí</a>"
+
+#~ msgid ""
+#~ "All Shutterstock images can be retrieved, but they will be watermarked."
+#~ msgstr ""
+#~ "Se pueden recuperar todas las imágenes de Shutterstock, pero llevarán "
+#~ "marca de agua."
+
+#~ msgid ""
+#~ "<b>It's required</b> to provide your own <b>username</b> and <b>api key</"
+#~ "b>. You can register in shutterstock website <a target=\"_blank\" "
+#~ "href=\"https://accounts.shutterstock.com/users/new\">here</a> and get api "
+#~ "username/key <a target=\"_blank\" href=\"https://shutterstock.com/api/"
+#~ "docs/\">here</a>"
+#~ msgstr ""
+#~ "<b>Es necesario</b> proporcionar su propio <b>nombre de usuario</b> y "
+#~ "<b>clave de API</b>. Puede registrarse en el sitio web de Shutterstock <a "
+#~ "target=\"_blank\" href=\"https://accounts.shutterstock.com/users/"
+#~ "new\">aquí</a> y obtener el nombre de usuario/clave de API <a "
+#~ "target=\"_blank\" href =\"https://shutterstock.com/api/docs/\">aquí</a>"
+
+#~ msgid "All languages (default)"
+#~ msgstr "Todos los idiomas (por defecto)"
+
+#~ msgid "People Age"
+#~ msgstr "Personas Edad"
+
+#~ msgid "Infants"
+#~ msgstr "Infantes"
+
+#~ msgid "Children"
+#~ msgstr "Niños"
+
+#~ msgid "Teenagers"
+#~ msgstr "Adolescentes"
+
+#~ msgid "Older"
+#~ msgstr "Más antiguos"
+
+#~ msgid "People Gender"
+#~ msgstr "Personas Género"
+
+#~ msgid "Male"
+#~ msgstr "Masculina"
+
+#~ msgid "Female"
+#~ msgstr "Femenina"
+
+#~ msgid "Both"
+#~ msgstr "Ambos"
+
+#~ msgid "Enable"
+#~ msgstr "Activar"
+
+#~ msgid "Disable"
+#~ msgstr "Desactivar"
+
+#~ msgid "Sort"
+#~ msgstr "Clasificar"
+
+#~ msgid "Popular"
+#~ msgstr "Popular"
+
+#~ msgid "Newest"
+#~ msgstr "Más reciente"
+
+#~ msgid "Relevance"
+#~ msgstr "Relevancia"
+
+#~ msgid "Random"
+#~ msgstr "Aleatorio"
+
+#~ msgid "Reviews on Wordpress.org"
+#~ msgstr "Reseñas en Wordpress.org"
+
+#~ msgid "Select all"
+#~ msgstr "Seleccionar todo"
+
+#~ msgid "Relevant categories"
+#~ msgstr "Categorías relevantes"
+
+#~ msgid "Choose which database you want to search for pictures"
+#~ msgstr "Elija la base de datos en la que desea buscar imágenes"
+
+#~ msgid ""
+#~ "Prices for the Pro version will increase soon. If you want to upgrade to "
+#~ "the Pro version. We advise you to do so quickly."
+#~ msgstr ""
+#~ "Los precios de la versión Pro aumentarán pronto. Si desea actualizar a la "
+#~ "versión Pro. Le recomendamos que lo haga rápidamente."
+
+#, php-format
+#~ msgid "Check the %sHow to%s Tutorial"
+#~ msgstr "Consulte el tutorial sobre %scómo hacerlo%s"
+
+#~ msgid "Youtube Tutorial"
+#~ msgstr "Tutorial en Youtube"
+
+#~ msgid "Posts button"
+#~ msgstr "Botón Mensajes"
+
+#~ msgid "Enable the button on posts to generate featured image."
+#~ msgstr ""
+#~ "Habilitar el botón en las entradas para generar la imagen destacada."

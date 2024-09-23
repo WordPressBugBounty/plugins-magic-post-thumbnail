@@ -1,0 +1,588 @@
+.icon-dashboard {
+    margin-right: 12px;
+}
+
+.menu-nav li.menu-section {
+    border-top: 1px solid #40404c;
+    border-bottom: 1px solid #40404c;
+}
+
+td.infos {
+    padding: 0 0 10px;
+}
+.form-control.select-interval-minutes-cron,
+.form-control.select-interval-hours-cron,
+.form-control.select-interval-days-cron,
+.form-control.select-word-cron,
+.form-control.select-interval-hours,
+.form-control.select-interval-days,
+.form-control.select-word,
+.form-control.select-custom-location {
+    display: inline-block;
+    width: auto;
+}
+
+
+.list-MPT label {
+	width: 300px;
+	display: inline-block;
+}
+
+.legend_post_type {
+	width: 300px;
+}
+#hide-before-import {
+	width: 100%;
+	padding: 25px 0 30px;
+	overflow: hidden;
+}
+#results {
+	margin-top: 25px;
+	color: red;
+	font-weight: bold;
+	width: 100%;
+	padding: 6px 0 5px 10px;
+	max-height: 200px;
+	overflow-y: scroll;
+}
+.ui-progressbar .ui-progressbar-value {
+	background-image: url( '../img/pbar-ani.gif' );
+}
+.upgrade-pro {
+	font-weight: 700;
+	color: red !important;
+}
+
+
+/* Bulk Generation Table */
+.wp-list-mpt td.column-title,
+.wp-list-mpt td.column-status,
+.wp-list-mpt td.column-edit-links,
+.wp-list-mpt td.column-image {
+	vertical-align: middle;
+	width: 25%;
+}
+
+.wp-list-mpt th.manage-column {
+	width: 25%;
+}
+
+.wp-list-mpt thead > tr > th#title {
+	padding-left: 10px;
+}
+
+
+.wp-list-mpt thead {
+	display:block;
+}
+.wp-list-mpt tbody {
+	display:block;
+	max-height:380px;
+	overflow-y:scroll;
+}
+
+.wp-list-mpt .row-actions {
+	font-weight: 400;
+	left: 0;
+	display: none;
+}
+
+.wp-list-mpt > tbody .successful-generation {
+	display: none;
+	background-color: #eee;
+}
+
+.wp-list-mpt .successful-generation strong {
+	text-align: center;
+	color: green;
+	padding: 11px 0;
+	display: block;
+	font-size: 15px;
+}
+
+.wp-list-mpt .row-status .status.successful,
+.wp-list-mpt .row-status .status.failed,
+.wp-list-mpt .row-status .status.error,
+.wp-list-mpt .row-status .status.already-done,
+.wp-list-mpt .row-status .status.no-rewrite,
+.wp-list-mpt .row-image {
+	display: none;
+}
+
+.wp-list-mpt .row-actions .dashicons {
+	font-size: 15px;
+	vertical-align: -25%;
+}
+
+.wp-list-mpt .status {
+	font-weight: 600;
+}
+
+.wp-list-mpt .successful {
+	color: green;
+}
+.wp-list-mpt .failed,
+.wp-list-mpt .error {
+	color: #c92c2c;
+}
+.wp-list-mpt .already-done,
+.wp-list-mpt .no-rewrite {
+	color: #eda567;
+}
+
+.wp-list-mpt .empty-content {
+	text-align: center;
+}
+
+
+
+/* Progressbar */
+
+.progressionbar {
+	position:relative;
+	display:block;
+	margin-bottom:15px;
+	width:100%;
+	background:#ddd;
+	height:35px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-webkit-transition:0.4s linear;
+	-moz-transition:0.4s linear;
+	-ms-transition:0.4s linear;
+	-o-transition:0.4s linear;
+	transition:0.4s linear;
+	-webkit-transition-property:width, background-color;
+	-moz-transition-property:width, background-color;
+	-ms-transition-property:width, background-color;
+	-o-transition-property:width, background-color;
+	transition-property:width, background-color;
+}
+
+.progressionbar-title {
+	position:absolute;
+	top:0;
+	left:0;
+	width:110px;
+	font-weight:bold;
+	font-size:13px;
+	color:#ffffff;
+	background:#124e8c;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+.progressionbar-title span {
+	display:block;
+	background:rgba(0, 0, 0, 0.1);
+	padding:0 20px;
+	height:35px;
+	line-height:35px;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:3px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+.progressionbar-bar {
+	height:35px;
+	width:0px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	background: linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-size: 40px 40px;
+	background-color: #428bca;
+	animation: progress-bar-stripes 2s linear infinite;
+	-webkit-transition: width .6s ease;
+	transition: width .6s ease;
+}
+
+.skill-bar-percent {
+	position:absolute;
+	right:10px;
+	top:0;
+	font-size:11px;
+	height:35px;
+	line-height:35px;
+	color:#ffffff;
+	color:rgba(0, 0, 0, 0.6);
+	background: rgba(255,255,255,0.5);
+	padding: 0 10px;
+	font-weight: 700;
+}
+
+
+
+@media only screen and (max-width: 1639px) {
+	.show-pict-desktop {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 782px) {
+	table.wp-list-mpt tr {
+		width: 100% !important;
+		display: block !important;
+	}
+}
+
+/* Time remaining */
+.time-progress {
+    position: relative;
+    /*display: none;*/
+    margin-bottom: 15px;
+    width: 100%;
+    height: 35px;
+    -webkit-border-top-left-radius:3px;
+    -webkit-border-bottom-left-radius:4px;
+    -moz-border-radius-topleft:3px;
+    -moz-border-radius-bottomleft:3px;
+    border-top-left-radius:3px;
+    border-bottom-left-radius:3px;
+}
+
+.time-progress .progressionbar-title {
+    width: auto;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+}
+.time-progress .progressionbar-title span {
+    display: inline-block;
+    padding: 0 8px;
+    background: #124e8c;
+}
+.time-progress .progressionbar-title span.remaining-time {
+    background: #afcee9;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 700;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+/*
+.time-progress .progressionbar-title p {
+    display: inline-block;
+    height: 14px;
+    background: #ddd;
+}*/
+
+
+/* Trick for settings tabs */
+.nav-tab-wrapper.main-settings-tabs > ul > .ui-tabs-active.ui-state-active > a {
+    margin-bottom: -1px;
+    border-bottom: 1px solid #f1f1f1;
+    background: #f1f1f1;
+    color: #000;
+}
+.nav-tab-wrapper.main-settings-tabs > ul > .ui-state-default:not(.ui-tabs-active.ui-state-active) > a {
+    border: 1px solid #ccc;
+    background: #e5e5e5;
+    color: #555;
+}
+
+/* Banks tabs */
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    padding: 1em 1em !important;
+}
+
+
+/* Logs */
+#logs-block {
+    border-radius: 0.3em;
+    padding: 1em;
+    overflow: auto;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    max-height: 400px;
+    max-width: 95%;
+    white-space: pre-wrap;
+}
+
+.delete-logs {
+    display:block;
+    color: #b32d2e;
+    float: right;
+    margin-right: 65px;
+    text-decoration:underline;
+}
+
+
+
+/* Progress Bar*/
+@-webkit-keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}
+@-moz-keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}
+@-o-keyframes progress-bar-stripes{from{background-position:0 0}to{background-position:40px 0}}
+@keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}
+.progress{height:20px;margin-bottom:20px;overflow:hidden;background-color:#f5f5f5;border-radius:4px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1)}
+.progress-bar{float:left;width:0;height:100%;font-size:12px;line-height:20px;color:#fff;text-align:center;background-color:#428bca;-webkit-box-shadow:inset 0 -1px 0 rgba(0,0,0,0.15);box-shadow:inset 0 -1px 0 rgba(0,0,0,0.15);-webkit-transition:width .6s ease;transition:width .6s ease}
+.progress-striped .progress-bar{background-image:-webkit-gradient(linear,0 100%,100% 0,color-stop(0.25,rgba(255,255,255,0.15)),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,rgba(255,255,255,0.15)),color-stop(0.75,rgba(255,255,255,0.15)),color-stop(0.75,transparent),to(transparent));background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);background-image:-moz-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);background-image:linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);background-size:40px 40px}
+.progress.active .progress-bar{-webkit-animation:progress-bar-stripes 2s linear infinite;animation:progress-bar-stripes 2s linear infinite}
+.progress-bar-success{background-color:#5cb85c}
+.progress-striped .progress-bar-success{background-image:-webkit-gradient(linear,0 100%,100% 0,color-stop(0.25,rgba(255,255,255,0.15)),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,rgba(255,255,255,0.15)),color-stop(0.75,rgba(255,255,255,0.15)),color-stop(0.75,transparent),to(transparent));background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);}
+
+
+
+
+/* Interval */
+.tooltip-recommended {
+    position: absolute;
+    width: 165px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    margin: -35px 0 0 0;
+    left: 46%;
+    opacity: 0;
+    transition: opacity .6s;
+}
+.tooltip-recommended.display-tootlip {
+    opacity: 1;
+}
+.tooltip-recommended:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+#value-interval {
+    cursor: auto;
+}
+
+
+
+
+#kt_aside_menu {
+    overflow-y: scroll !important;
+    margin-top: 0 !important;
+}
+
+.aside-menu,
+.brand {
+    background-color: #222 !important;
+}
+
+.aside-menu .menu-nav > .menu-item.menu-item-here > .menu-heading, .aside-menu .menu-nav > .menu-item.menu-item-here > .menu-link {
+    background-color: #161616 !important;
+}
+
+
+/* Save button */
+#kt_wrapper #submit {
+    box-shadow: 0 6px 12px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.05), 0 3px 4px rgba(0,0,0,.05);
+    color: #FFFFFF;
+    background-color: #3699FF;
+    border-color: #3699FF;
+    transition: background-color 0.15s ease;
+}
+#kt_wrapper #submit:hover {
+    background-color: #187DE4;
+}
+
+
+/* Account */
+.account-status {
+    font-size: 15px;
+    color: #3699FF;
+    font-weight: 600;
+    vertical-align: bottom;
+}
+.plugin-infos {
+    font-weight: 600 !important;
+    font-size: 1rem;
+    color: #181C32 !important;
+    line-height: 30px;
+}
+
+
+/* Generation sucsessful */
+.generation-done {
+    font-size: 15px;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: #ebfdeb;
+    color: green;
+    border: 1px solid #2e8b57;
+}
+
+
+/* Hide Freemius tab */
+h2.nav-tab-wrapper:has(a) {
+  display:none;
+}
+
+#general-options.form-table.logs {
+  table-layout: fixed;
+}
+
+.settings-logs {
+  background: #eceef6;
+}
+
+.hide-settings,
+.settings-logs,
+.copy-settings,
+.copied {
+  display: none;
+}
+
+
+/* Custom requests */
+#custom-request-buttons {
+  margin: 0 0 10px;
+}
+#custom-request-buttons p  {
+    cursor: grab;
+}
+
+#custom-request-buttons p,
+.button-custom  {
+	appearance:button;
+	display: inline-block;
+	color: #fff;
+	background-color: #3699ff;
+	padding: 2px 5px;
+	margin: 0px 2px;
+	line-height: 1.7;
+	border-radius: 15px;
+}
+
+#textarea-editable {
+	border: 1px solid #E4E6EF !important;
+    border-radius: 0.42rem;
+	padding: 7px 5px;
+}
+
+
+/* Eye to show/hide API key */
+.password input.form-control {
+  width: 90%;
+  margin-left: 47px;
+}
+
+form i#togglePassword {
+  margin-right: 2px;
+  margin-top: -38px;
+  float: left;
+  cursor: pointer;
+  height: 38px;
+  background-repeat: no-repeat;
+  width: 50px;
+  background-color: #dee2e6 !important;
+  border: solid 11px;
+  border-radius: 30px 0 0 30px;
+  color: #dee2e6;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAd5JREFUOE9tk0GIzVEUxn9fjYWQMqSkJBuKWamHaIqy8lYWVrOwI9lI2cjzlKw0K5RSmpSlpGwsJGpmoSklq1mQ7IyiYfPUp3Puve/9p/xX93/uOd/57ne+IwABjsP4E5Kx601LEMiRO7mPUJZLwg0m0URGxujln3V5EVvXt9IJSLNdsLtg6avsVUuVQQQLZ3URLDYLLtvMCQ6Mn5VZ/oRZAO4JrTW2nXqdQixg7wL9FB4YvUra6CT4utFO4JvwnOF1FDeAs4KnwAbDKnAY8Vmmb3EQ86TKtgxMg0bgc8Cz0G7GZgnYWOU4L3icSuObRgNwgPYEs0aPihD6g3wkGLwVOp5EY3Rom+yepb2YIbAjBRPzWLfB3xttw7toswLsK6KmWJuAu0IXitYJHaeHElds1ia+0Uqc+4Ln2aN8pwW/gTeGqRr7C8wKtlp6GTMOO9icySJJQ+MbpZneY58AjiIuFfbcNywilrH2F64eALfKhEvkKnAHMyXxAXMRtJiqwDHggWEGGAHXBPP10c3X6apDNkNBv9L/leYzWwQjwwtBdP7YTFbMnIaf2BM0Lblns6f69Qv2ktAPxwgzNRqXjen4u7uZbcnKG8ssii+zoCA35f+70N0RjhfHKepkc/8B2xbLMrJY+1IAAAAASUVORK5CYII=');
+  background-repeat: no-repeat;
+  background-position: 7px 0;
+}
+
+form i#togglePassword.close-eye {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAe5JREFUOE9lk0+IzXEUxT/HhJoeGyVpJLObjRlWYzuyUCxoakQ2kmT8KSu2mp2NFKV5C2p6aWIhZUeJsqBGsjIlGUsTUtM8ydG93+/7zYvf4te37z3fe88991yJ8jl+Ujn0LjOQkbwqmPogjs4nJeT/EC4RBVA40CVXJilwZc15wwpwDmklUX3A5hzgKNQjULNHrjvgM4J3wKTFotB6m73gnYKNhk/Aa8Fq024SSQbJ55TtW0BX0DEcAW0DlpAHZLYbfgBtYAb4XvrINpvm9wAPgGFJPw0T2G9qeAx0F3lU5gPoEHgxNaiAqPYNGATdkziM/RyxYHNUYgbzGPHeZguwDIwBX0LEdYZniEHMpGDJ6Krka8BAMLT5Ax4FzgLTVcenSAckscvwMSWxlx3V4ZXMfkMH2FrbPe44w41mlng4NZCYtX26Zu4ITtR5D9nMC+1DfmRrFTyVfrPmwCdzCsabQC/Bu0Fd4XGjt9WjG4DrEhfDVekEaQEzEdPoN+Zm8H3gIPAVuCJ44hBM+oU5Vpm2gEvAzcq+Z7zkEoJOIaYx4ymi6MqcB7WNR5AeYkYkbtu+HO2s2bNuSiXaQtoBjgSfgd/Vxi1BOwvBi0zQb8+yK2uu/zceY7PTgRcMrZ6RGj/2M8rHdcP7aJYCuZ3iLwCby4LrKvvhAAAAAElFTkSuQmCC');
+  background-repeat: no-repeat;
+  background-position: 7px 0;
+}
+
+.based_on_bottom {
+  border-top: 1px solid #eee;
+}
+
+.stars-review {
+  display: block;
+  margin: 15px 0 0 15px;
+}
+
+
+.chosen_api.checkbox-list {
+    display: inline-block;
+    vertical-align: top;
+}
+.chosen_api.checkbox-list:first-of-type {
+    border-right: 1px solid #EBEDF3;
+}
+
+
+
+
+.chosen_api .radio-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chosen_api .radio-list li {
+    margin: 3px 3px 3px 0;
+    padding: 0.4em;
+    padding-left: 1.5em;
+    font-size: 1.4em;
+    height: 18px;
+}
+
+
+.chosen_api .radio-list li .checkbox {
+    cursor: grab;
+}
+
+.chosen_api .radio-list li .checkbox span {
+    cursor: pointer;
+}
+
+#tabs {
+    margin-top: 20px;
+}
+
+
+.red-part {
+    color: #ff0000c7;
+}
+
+
+.dalle-wait {
+    animation: blinker 2s linear infinite;
+    color: red;
+}
+
+@keyframes blinker {
+    0% { opacity: 0.1; }
+    50% { opacity: 1; }
+    100% { opacity: 0.1; }
+}
+
+.wp_insert_post small {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#tabs table a {
+    text-decoration: underline;
+}
