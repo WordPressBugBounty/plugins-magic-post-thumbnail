@@ -1,0 +1,1 @@
+# plugins-magic-post-thumbnail
