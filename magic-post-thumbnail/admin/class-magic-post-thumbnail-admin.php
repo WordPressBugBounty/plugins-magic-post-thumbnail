@@ -510,11 +510,46 @@ class Magic_Post_Thumbnail_Admin {
         register_setting( 'MPT-plugin-banks-settings', 'MPT_plugin_banks_settings' );
         register_setting( 'MPT-plugin-interval-settings', 'MPT_plugin_interval_settings' );
         register_setting( 'MPT-plugin-cron-settings', 'MPT_plugin_cron_settings' );
+        register_setting( 'MPT-plugin-rights-settings', 'MPT_plugin_rights_settings' );
         register_setting( 'MPT-plugin-proxy-settings', 'MPT_plugin_proxy_settings' );
         register_setting( 'MPT-plugin-compatibility-settings', 'MPT_plugin_compatibility_settings' );
         register_setting( 'MPT-plugin-logs-settings', 'MPT_plugin_logs_settings' );
         require_once dirname( __FILE__ ) . '/partials/download_log.php';
         require_once dirname( __FILE__ ) . '/partials/delete_log.php';
+        add_filter(
+            'map_meta_cap',
+            array(&$this, 'mpt_map_manage_options_capability'),
+            10,
+            4
+        );
+    }
+
+    public function mpt_map_manage_options_capability(
+        $caps,
+        $cap,
+        $user_id,
+        $args
+    ) {
+        // Check if the capability being checked is 'manage_options'
+        if ( $cap === 'manage_options' ) {
+            // Check if the form is submitting a specific option related to your plugin
+            if ( isset( $_POST['option_page'] ) && in_array( $_POST['option_page'], array(
+                'MPT-plugin-proxy-settings',
+                'MPT-plugin-main-settings',
+                'MPT-plugin-block-settings',
+                'MPT-plugin-compatibility-settings',
+                'MPT-plugin-cron-settings',
+                'MPT-plugin-logs-settings',
+                'MPT-plugin-rights-settings',
+                'MPT-plugin-banks-settings'
+            ) ) ) {
+                // If the user has the 'mpt_manage' capability, grant access to manage the options
+                if ( current_user_can( 'mpt_manage' ) ) {
+                    $caps = array('mpt_manage');
+                }
+            }
+        }
+        return $caps;
     }
 
     /**
@@ -755,6 +790,21 @@ class Magic_Post_Thumbnail_Admin {
     public function MPT_default_options_cron_settings( $never_set = FALSE ) {
         $default_options = array(
             'enable_cron' => 'disable',
+        );
+        return $default_options;
+    }
+
+    /**
+     * Default values for Rights admin tabs
+     *
+     * @since    5.2.11
+     */
+    public function MPT_default_options_rights_settings( $never_set = FALSE ) {
+        $default_options = array(
+            'rights_editor'      => '',
+            'rights_author'      => '',
+            'rights_contributor' => '',
+            'rights_subscriber'  => '',
         );
         return $default_options;
     }

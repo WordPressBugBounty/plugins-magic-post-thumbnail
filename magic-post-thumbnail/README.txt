@@ -1,6 +1,6 @@
 === Generate Images - Magic Post Thumbnail ===
 Plugin Name:       Generate Images - Magic Post Thumbnail
-Version:           5.2.10
+Version:           5.2.11
 Tags:              generate, image, dalle, pixabay, mpt
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
@@ -8,7 +8,7 @@ Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
 Tested up to:      6.6.1
-Stable tag:        5.2.10
+Stable tag:        5.2.11
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -121,6 +121,11 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 
 == Changelog ==
+
+= 5.2.11 - October 03, 2024 =
+* Update Freemius version
+* PRO: Add "Category Level" option for "Based on Custom Request"
+* Add "Rights" tab options to allow roles to access the plugin dashboard
 
 = 5.2.10 - August 12, 2024 =
 * Fix security problem (level of privilege required)

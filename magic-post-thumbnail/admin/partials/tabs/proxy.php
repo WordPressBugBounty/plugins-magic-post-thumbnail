@@ -15,7 +15,6 @@ settings_errors();
 
         <form method="post" action="options.php" id="tabs">
 
-
         <?php 
 settings_fields( 'MPT-plugin-proxy-settings' );
 $options = wp_parse_args( get_option( 'MPT_plugin_proxy_settings' ), $this->MPT_default_options_proxy_settings( FALSE ) );

@@ -10,7 +10,7 @@
  * Plugin Name:       Magic Post Thumbnail
  * Plugin URI:        http://wordpress.org/plugins/magic-post-thumbnail/
  * Description:       Transform your posts with stunning images effortlessly! Magic Post Thumbnail includes many image banks to automatically get featured images for your posts.
- * Version:           5.2.10
+ * Version:           5.2.11
  * Author:            Magic Post Thumbnail
  * Author URI:        https://magic-post-thumbnail.com/
  * License:           GPL-2.0+
@@ -72,7 +72,7 @@ if ( function_exists( 'mpt_freemius' ) ) {
      * Start at version 1.0.0 and use SemVer - https://semver.org
      * Rename this for your plugin and update it as you release new versions.
      */
-    define( 'MAGIC_POST_THUMBNAIL_VERSION', '5.2.10' );
+    define( 'MAGIC_POST_THUMBNAIL_VERSION', '5.2.11' );
     /**
      * The code that runs during plugin activation.
      * This action is documented in includes/class-magic-post-thumbnail-activator.php
@@ -102,9 +102,31 @@ if ( function_exists( 'mpt_freemius' ) ) {
      * Add capabilities
      */
     function MPT_add_capability() {
-        $role = get_role( 'administrator' );
-        // Add capabilitiy.
-        $role->add_cap( 'mpt_manage', true );
+        $options = get_option( 'MPT_plugin_rights_settings' );
+        // Administrators always have the capability
+        $admin_role = get_role( 'administrator' );
+        if ( $admin_role ) {
+            $admin_role->add_cap( 'mpt_manage', true );
+        }
+        // Manage other roles by adding or removing capabilities according to options
+        $roles = array(
+            'editor'      => 'rights_editor',
+            'author'      => 'rights_author',
+            'contributor' => 'rights_contributor',
+            'subscriber'  => 'rights_subscriber',
+        );
+        foreach ( $roles as $role_name => $option_key ) {
+            $role = get_role( $role_name );
+            if ( $role ) {
+                if ( isset( $options[$option_key] ) && $options[$option_key] === 'true' ) {
+                    // Adds capacity if the option is enabled
+                    $role->add_cap( 'mpt_manage', true );
+                } else {
+                    // Removes the capacity if the option is deactivated
+                    $role->remove_cap( 'mpt_manage' );
+                }
+            }
+        }
     }
 
     /**
@@ -151,6 +173,7 @@ if ( function_exists( 'mpt_freemius' ) ) {
         delete_option( 'MPT_plugin_banks_settings' );
         delete_option( 'MPT_plugin_interval_settings' );
         delete_option( 'MPT_plugin_cron_settings' );
+        delete_option( 'MPT_plugin_rights_settings' );
         delete_option( 'MPT_plugin_proxy_settings' );
         delete_option( 'MPT_plugin_compatibility_settings' );
         delete_option( 'MPT_plugin_logs_settings' );

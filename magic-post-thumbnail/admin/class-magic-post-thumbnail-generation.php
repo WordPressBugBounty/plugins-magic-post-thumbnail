@@ -953,4 +953,62 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         );
     }
 
+    /**
+     * Function to get the depth of a category
+     *
+     * @since    5.2.11
+     */
+    private function get_category_depth( $cat_id, $current_depth = 0 ) {
+        $category = get_category( $cat_id );
+        if ( $category->parent == 0 ) {
+            return $current_depth;
+        } else {
+            return $this->get_category_depth( $category->parent, $current_depth + 1 );
+        }
+    }
+
+    /**
+     * Function to get the desired category based on the user's choice
+     *
+     * @since    5.2.11
+     */
+    private function get_desired_category( $post_id, $category_choice ) {
+        // Retrieve the categories of the post
+        $postcategories = get_the_category( $post_id );
+        $categories_with_depth = array();
+        // Check if the post has any categories
+        if ( empty( $postcategories ) ) {
+            // Handle the case where no categories are associated
+            return null;
+        }
+        // Get the depth of each category associated with the post
+        foreach ( $postcategories as $category ) {
+            $depth = $this->get_category_depth( $category->term_id );
+            // Store the category with its depth as the key
+            $categories_with_depth[$depth] = $category;
+        }
+        // Find the category with the greatest depth (most specific)
+        $max_depth = max( array_keys( $categories_with_depth ) );
+        $child_category = $categories_with_depth[$max_depth];
+        // Determine the category to use based on the user's choice
+        $desired_category = $child_category;
+        if ( $category_choice && $child_category ) {
+            if ( $category_choice == 'second_level' ) {
+                if ( $child_category->parent ) {
+                    $desired_category = get_category( $child_category->parent );
+                }
+            } elseif ( $category_choice == 'third_level' ) {
+                if ( $child_category->parent ) {
+                    $parent_category = get_category( $child_category->parent );
+                    if ( $parent_category->parent ) {
+                        $desired_category = get_category( $parent_category->parent );
+                    } else {
+                        $desired_category = $parent_category;
+                    }
+                }
+            }
+        }
+        return $desired_category;
+    }
+
 }

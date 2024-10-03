@@ -78,6 +78,7 @@ if ( ! function_exists( 'add_filter' ) ) {
                                 $banks_settings 		= array( get_option( 'MPT_plugin_banks_settings' ) );
                                 $compatibility_settings	= array( get_option( 'MPT_plugin_compatibility_settings' ) );
                                 $cron_settings			= array( get_option( 'MPT_plugin_cron_settings' ) );
+                                $rights_settings		= array( get_option( 'MPT_plugin_rights_settings' ) );
                                 $proxy_settings			= array( get_option( 'MPT_plugin_proxy_settings' ) );
 
                                 $settings = json_encode(
@@ -86,6 +87,7 @@ if ( ! function_exists( 'add_filter' ) ) {
                                         $banks_settings,
                                         $compatibility_settings,
                                         $cron_settings,
+                                        $rights_settings,
                                         $proxy_settings
                                     ) );
                             ?>

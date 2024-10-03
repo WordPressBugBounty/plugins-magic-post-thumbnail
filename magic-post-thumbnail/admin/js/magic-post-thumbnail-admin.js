@@ -247,6 +247,7 @@ jQuery(document).ready(function() {
             #general-options .result_position .radio-disabled, \n\
             #general-options .shuffle_image .checkbox-disabled, \n\
             #general-options .translation_EN .checkbox-disabled, \n\
+            #general-options .category_choice .checkbox-disabled, \n\
             #general-options .choosed_banks .checkbox-disabled"
     ).click(function(e) {
         var alertProVersion = translationsJsVars.translations.pro_version;
@@ -298,6 +299,7 @@ jQuery(document).ready(function() {
                     jQuery( ".section_categories" ).hide( 'fast' );
                     jQuery( ".section_custom_field" ).hide( 'fast' );
                     jQuery( ".section_custom_request" ).hide( 'fast' );
+                    jQuery( ".category_choice" ).hide( 'fast' );
                     jQuery( ".section_openai_extractor" ).hide( 'fast' );
             }
 
@@ -308,6 +310,7 @@ jQuery(document).ready(function() {
                     jQuery( ".section_categories" ).hide( 'fast' );
                     jQuery( ".section_custom_field" ).hide( 'fast' );
                     jQuery( ".section_custom_request" ).hide( 'fast' );
+                    jQuery( ".category_choice" ).hide( 'fast' );
                     jQuery( ".section_openai_extractor" ).hide( 'fast' );
             }
 
@@ -323,6 +326,7 @@ jQuery(document).ready(function() {
                       jQuery( ".section_custom_field" ).hide( 'fast' );
                       jQuery( ".section_text_analyser" ).hide( 'fast' );
                       jQuery( ".section_custom_request" ).hide( 'fast' );
+                      jQuery( ".category_choice" ).hide( 'fast' );
                       jQuery( ".section_openai_extractor" ).hide( 'fast' );
                   }
 
@@ -333,6 +337,7 @@ jQuery(document).ready(function() {
                     jQuery( ".section_custom_field" ).hide( 'fast' );
                     jQuery( ".section_text_analyser" ).hide( 'fast' );
                     jQuery( ".section_custom_request" ).hide( 'fast' );
+                    jQuery( ".category_choice" ).hide( 'fast' );
                     jQuery( ".section_openai_extractor" ).hide( 'fast' );
                   }
 
@@ -343,6 +348,7 @@ jQuery(document).ready(function() {
                     jQuery( ".section_tags" ).hide( 'fast' );
                     jQuery( ".section_text_analyser" ).hide( 'fast' );
                     jQuery( ".section_custom_request" ).hide( 'fast' );
+                    jQuery( ".category_choice" ).hide( 'fast' );
                     jQuery( ".section_openai_extractor" ).hide( 'fast' );
                   }
 
@@ -353,6 +359,7 @@ jQuery(document).ready(function() {
                     jQuery( ".section_tags" ).hide( 'fast' );
                     jQuery( ".section_text_analyser" ).hide( 'fast' );
                     jQuery( ".section_custom_request" ).show( 'fast' );
+                    jQuery( ".category_choice" ).show( 'fast' );
                     jQuery( ".section_openai_extractor" ).hide( 'fast' );
                   }
 
@@ -363,6 +370,7 @@ jQuery(document).ready(function() {
                     jQuery( ".section_tags" ).hide( 'fast' );
                     jQuery( ".section_text_analyser" ).hide( 'fast' );
                     jQuery( ".section_custom_request" ).hide( 'fast' );
+                    jQuery( ".category_choice" ).hide( 'fast' );
                     jQuery( ".section_openai_extractor" ).show( 'fast' );
                   }
             		} else {

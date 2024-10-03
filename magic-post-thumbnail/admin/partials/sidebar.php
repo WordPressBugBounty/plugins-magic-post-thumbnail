@@ -40,6 +40,7 @@
 					<h4 class="menu-text"><?php esc_html_e( 'Miscellaneous', 'mpt' ); ?></h4>
 				</li>
 
+				<?php $this->MPT_submenu( esc_html__( 'Rights', 'mpt' ), 'rights', 'rights.png' ); ?>
 				<?php $this->MPT_submenu( esc_html__( 'Affiliation', 'mpt' ), 'affiliation', 'affiliation.png' ); ?>
 				<?php $this->MPT_submenu( esc_html__( 'Upgrade', 'mpt' ), 'upgrade', 'upgrade.png' ); ?>
 				<?php $this->MPT_submenu( esc_html__( 'Logs', 'mpt' ), 'logs', 'logs.png' ); ?>

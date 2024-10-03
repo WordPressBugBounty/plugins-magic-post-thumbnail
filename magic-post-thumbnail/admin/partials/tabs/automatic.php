@@ -396,6 +396,44 @@ if ( true === $this->MPT_freemius()->is__premium_only() ) {
                                         </td>
                                 </tr>
 
+                                <tr valign="top" class="category_choice based_on_bottom" <?php 
+        echo ( $options['based_on'] != 'custom_request' ? 'style="display:none;"' : '' );
+        ?>>
+                                    <th scope="row">
+                                            <label for="hseparator"><?php 
+        esc_html_e( 'Category Level', 'mpt' );
+        ?></label>
+                                            <p class="description">
+                                                <?php 
+        esc_html_e( 'Choose the category level to use.', 'mpt' );
+        ?>
+                                            </p>
+                                    </th>
+                                    <td class="result_position radio-inline">
+                                        <label  class="radio radio-outline radio-outline-2x radio-primary"><input value="first_level" name="MPT_plugin_main_settings[category_choice] " type="radio" <?php 
+        echo ( !empty( $options['category_choice'] ) && $options['category_choice'] == 'first_level' ? 'checked' : '' );
+        ?> ><span></span> <?php 
+        esc_html_e( 'Child category', 'mpt' );
+        ?></label><br/>
+                                        <label  class="radio radio-outline radio-outline-2x radio-primary <?php 
+        echo $class_disabled;
+        ?>"><input value="second_level" name="MPT_plugin_main_settings[category_choice] " type="radio" <?php 
+        echo ( !empty( $options['category_choice'] ) && $options['category_choice'] == 'second_level' ? 'checked' : '' );
+        echo $disabled;
+        ?> ><span></span> <?php 
+        esc_html_e( 'Parent category', 'mpt' );
+        ?></label>
+                                        <label  class="radio radio-outline radio-outline-2x radio-primary <?php 
+        echo $class_disabled;
+        ?>"><input value="third_level" name="MPT_plugin_main_settings[category_choice] " type="radio" <?php 
+        echo ( !empty( $options['category_choice'] ) && $options['category_choice'] == 'third_level' ? 'checked' : '' );
+        echo $disabled;
+        ?> ><span></span> <?php 
+        esc_html_e( 'Grandparent category', 'mpt' );
+        ?></label>                                        
+                                    </td>
+                                </tr>
+
 								<tr valign="top" class="section_openai_extractor" <?php 
         echo ( $options['based_on'] != 'openai_extractor' ? 'style="display:none;"' : '' );
         ?>>

@@ -62,6 +62,10 @@ switch ( $module ) {
         $title = esc_html__( 'Miscellaneous [Compatibility]', 'mpt' );
         $tab   = 'compatibility.php';
         break;
+    case 'rights':
+        $title = esc_html__( 'Miscellaneous [Rights]', 'mpt' );
+        $tab   = 'rights.php';
+        break;
     case 'logs':
         $title = esc_html__( 'Miscellaneous [Logs]', 'mpt' );
         $tab   = 'logs.php';
