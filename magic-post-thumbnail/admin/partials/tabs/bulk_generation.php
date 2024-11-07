@@ -9,6 +9,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 <div class="wrap">
 
         <?php
+
                 $options_banks = wp_parse_args( get_option( 'MPT_plugin_banks_settings' ), $this->MPT_default_options_banks_settings( TRUE ) );
                 $value_bulk_generation_interval = ( isset( $options['bulk_generation_interval'] ) )? (int)$options['bulk_generation_interval'] : 0;
 
@@ -100,7 +101,7 @@ if ( ! function_exists( 'add_filter' ) ) {
                   <th scope="col" id="title" class="manage-column column-primary"><?php esc_html_e( 'Title', 'mpt' ); ?></th>
                   <th scope="col" id="status" class="manage-column"><?php esc_html_e( 'Status', 'mpt' ); ?></th>
                   <th scope="col" id="categories" class="manage-column"><?php esc_html_e( 'Post Links', 'mpt' ); ?></th>
-                  <th scope="col" id="tags" class="manage-column"><?php esc_html_e( 'Image', 'mpt' ); ?></th>
+                  <th scope="col" id="tags" class="manage-column"><?php esc_html_e( 'Images', 'mpt' ); ?></th>
                 </tr>
               </thead>
 
@@ -118,14 +119,17 @@ if ( ! function_exists( 'add_filter' ) ) {
                                 </strong>
                         </td>
                         <td class="column-status column-primary">
-                                <span class="empty-content"><img src="<?php echo esc_url( get_admin_url() . 'images/spinner.gif' ); ?>" title="<?php esc_html_e( 'Waiting for generation', 'mpt' ); ?>" /></span>
                                 <div class="row-status">
-                                        <span class="status successful"><?php esc_html_e( 'Successful', 'mpt' ); ?></span>
-                                        <span class="status failed"><?php esc_html_e( 'Failed', 'mpt' ); ?></span>
-                                        <span class="status error"><?php esc_html_e( 'Error', 'mpt' ); ?></span>
-                                        <span class="status already-done"><?php esc_html_e( 'Image Already Exists', 'mpt' ); ?></span>
-                                        <span class="status no-rewrite"><?php esc_html_e( 'No image rewriting into post content', 'mpt' ); ?></span>
+                                        <span class="status raw successful"><?php esc_html_e( 'Successful', 'mpt' ); ?></span>
+                                        <span class="status raw failed"><?php esc_html_e( 'Failed', 'mpt' ); ?></span>
+                                        <span class="status raw error"><?php esc_html_e( 'Error', 'mpt' ); ?></span>
+                                        <span class="status raw already-done"><?php esc_html_e( 'Image Already Exists', 'mpt' ); ?></span>
+                                        <span class="status raw no-rewrite"><?php esc_html_e( 'No image rewriting into post content', 'mpt' ); ?></span>
                                 </div>
+                                <span class="empty-content"><img src="<?php echo esc_url( get_admin_url() . 'images/spinner.gif' ); ?>" title="<?php esc_html_e( 'Waiting for generation', 'mpt' ); ?>" /></span>
+                                <p class="show-image-details"><a href="#"><?php esc_html_e( 'Show Image Details', 'mpt' ); ?></a></p>
+                                <p class="hide-image-details"><a href="#"><?php esc_html_e( 'Hide Image Details', 'mpt' ); ?></a></p>
+                                <div class="image-details"></div>
                         </td>
                         <td class="column-edit-links">
                                 <span class="empty-content">-</span>

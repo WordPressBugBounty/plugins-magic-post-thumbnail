@@ -164,6 +164,7 @@ class Magic_Post_Thumbnail {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
     	$this->loader->add_action( 'admin_menu', $plugin_admin, 'MPT_main_settings' );
+		$this->loader->add_filter( 'submenu_file', $plugin_admin, 'MPT_submenu_class' );
 
     	$this->loader->add_action( 'init', $plugin_admin, 'MPT_main_actions' );
 

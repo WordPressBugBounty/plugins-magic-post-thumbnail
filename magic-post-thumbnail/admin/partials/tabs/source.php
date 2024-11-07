@@ -18,18 +18,7 @@ settings_errors();
 settings_fields( 'MPT-plugin-banks-settings' );
 $options = wp_parse_args( get_option( 'MPT_plugin_banks_settings' ), $this->MPT_default_options_banks_settings( FALSE ) );
 /* Banks for Automatic Bulk */
-$list_api_auto = array(
-    esc_html__( 'Google Image (Scraping)', 'mpt' ) => array('google_scraping', true),
-    esc_html__( 'Google Image (API)', 'mpt' )      => array('google_image', true),
-    esc_html__( 'DALL·E (v3)', 'mpt' )            => array('dallev1', true),
-    esc_html__( 'Openverse', 'mpt' )               => array('cc_search', true),
-    esc_html__( 'Flickr', 'mpt' )                  => array('flickr', true),
-    esc_html__( 'Pixabay', 'mpt' )                 => array('pixabay', true),
-    esc_html__( 'Youtube', 'mpt' )                 => array('youtube', false),
-    esc_html__( 'Unsplash', 'mpt' )                => array('unsplash', false),
-    esc_html__( 'Pexels', 'mpt' )                  => array('pexels', false),
-    esc_html__( 'Envato Elements', 'mpt' )         => array('envato', false),
-);
+$list_api_auto = $this->MPT_banks_name_auto();
 /* Banks for Manual Search with Gutenberg Block */
 $list_api_manual = array(
     esc_html__( 'Openverse', 'mpt' )       => array('openverse', true),
@@ -146,9 +135,9 @@ foreach ( $ar_list_banks_manual as $ar_list_banks_val ) {
 
 			<hr/>
 
-			<h2><?php 
+			<h3><?php 
 esc_html_e( 'Banks Settings', 'mpt' );
-?></h2>
+?></h3>
 
 			<div id="tabs">
 				<ul>

@@ -8,6 +8,13 @@ if ( !function_exists( 'add_filter' ) ) {
 ?>
 
 <tr valign="top">
+	<td colspan="2" class="source-logo"><img alt="Google Images Logo" src="<?php 
+echo plugin_dir_url( __FILE__ );
+?>/img/google_images.png"></td>
+</tr>
+
+<tr valign="top">
+	
 	<th scope="row">
 		<label for="hseparator"><?php 
 esc_html_e( 'Choose the language', 'mpt' );

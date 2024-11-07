@@ -10,9 +10,6 @@ jQuery(function($) {
     });
     $(".chosen_api .radio-list").disableSelection();
 
-
-    // Tabs for banks settings
-    $('#tabs').tabs();
 });
 
 
@@ -94,6 +91,43 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
+
+
+
+// Stability AI
+document.addEventListener("DOMContentLoaded", function() {
+    const btnStability          = document.getElementById("btnStability");
+    const resultStability       = document.getElementById("resultStability");
+    const apiKeyInputStability  = document.querySelector('input[name="MPT_plugin_banks_settings[stability][apikey]"]');
+    const imageStability        = document.querySelector("#resultStability img");
+
+    btnStability.addEventListener("click", function() {
+
+        imageStability.classList.remove("hidden");
+
+        //  Sending the request to check the API Stability AI key
+        fetch("https://api.stability.ai/v1/user/account", {
+            method: "GET",
+            headers: {
+                "Authorization": "Bearer " + apiKeyInputStability.value
+            }
+        })
+        .then(response => {
+            if (response.status === 200) {
+                resultStability.innerHTML = '<span class="text-success">' + apisTestingAjax.successful_testing + '</span>';
+            } else if (response.status === 401) {
+                resultStability.innerHTML = '<span class="text-warning">' + apisTestingAjax.error_key + '</span>';
+            } else {
+                resultStability.innerHTML = '<span class="text-warning">Erreur inattendue : ' + response.status + '</span>';
+            }
+            return response.json();
+        })
+        .catch(error => {
+            resultStability.innerHTML = '<span class="text-warning">' + apisTestingAjax.error_testing + '</span>';
+        });
+    });
+});
 
 
 

@@ -805,6 +805,9 @@ var KTBootstrapSwitch = function() {
 
 jQuery(document).ready(function() {
     KTBootstrapSwitch.init();
+
+    // Tabs for settings
+    jQuery('#tabs').tabs();
 });
 
 

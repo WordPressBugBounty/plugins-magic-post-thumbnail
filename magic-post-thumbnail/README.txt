@@ -1,14 +1,14 @@
 === Generate Images - Magic Post Thumbnail ===
 Plugin Name:       Generate Images - Magic Post Thumbnail
-Version:           5.2.11
-Tags:              generate, image, dalle, pixabay, mpt
+Version:           6.0.0
+Tags:              generate, image, dalle, stable diffusion, mpt
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
 Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
-Tested up to:      6.6.1
-Stable tag:        5.2.11
+Tested up to:      6.6.2
+Stable tag:        6.0.0
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,7 +19,7 @@ Get images for your posts with automatic generation & multiple banks. Generate a
 
 **Easily create eye-catching images for your posts automatically with Magic Post Thumbnail!**
 
-Retrieve images from Google Images, DALL·E, Pexels, Unsplash, Envato Elements or Pixabay thanks to API, **based on your post title**, text analysis and much more. The plugin add picture as your **featured thumbnail** or **inside the post** when you publish the post.
+Retrieve images from Google Images, DALL·E, Stable Diffusion, Pexels, Unsplash, Envato Elements or Pixabay thanks to API, **based on your post title**, text analysis and much more. The plugin add picture as your **featured thumbnail** or **inside the post** when you publish the post.
 
 The plugin allows you to configure some settings for your automatic images : **Image bank**, language search, selected post types, image type, free-to-use or not, image size and much more.
 
@@ -39,10 +39,12 @@ https://www.youtube.com/watch?v=eNb5MXg5e4I
 <ul>
 <li>Generate Thumbnail for one post</li>
 <li><strong>Generate Thumbnails</strong> for Posts, Pages & Custom Post Types</li>
+<li><strong>new: Insert Image anywhere in your post content!</strong></li>
 <li>Image <strong>based on Titles</strong> or Text Analysis</li>
 <li><strong>New</strong>: Gutenberg Block for searching and adding images to your posts</li>
 <li>Images from Google Image, Google API, Pixabay, Openverse, DALL·E or Flickr</li>
 <li><strong>Mass Image Generation</strong> for chosen posts or chosen taxonomies</li>
+<li>Image generated randomized</li>
 </ul>
 
 = Magic Post Thumbnail PRO =
@@ -50,18 +52,20 @@ https://www.youtube.com/watch?v=eNb5MXg5e4I
 Upgrade to our PRO version to unlock even more **advanced features** and take your blog to the next level!
 
 <ul>
-<li><strong>new: Insert Image anywhere in your post content!</strong></li>
+
 <li>Customisable <strong>Crons</strong></li>
-<li>Images from Youtube, <strong>Unsplash</strong>, <strong>Pexels</strong> or <strong>Envato Elements</strong></li>
+<li>Set different image locations for each post generation.</li>
+<li>Images from Youtube, <strong>Stable Diffusion</strong>, Unsplash, Pexels or <strong>Envato Elements</strong></li>
 <li>More images with the Gutenberg Block</li>
-<li>Image based on Tags, Categories, Custom Fields, Custom Request and <strong>OpenAI Keyword Extractor</strong></li>
-<li>Image generated randomized</li>
-<li>Image Shuffle: Flip horizontally and/or Crop Image by 10%</li>
-<li><strong>Compatibility</strong> with REST requests, WPeMatico, FeedWordPress, WP All Import and Featured Image from URL.</li>
+<li>Image search based on Tags, Categories, Text Analyser per paragraph Custom Fields, Custom Request and <strong>OpenAI Keyword Extractor</strong></li>
+<li>Image Modifications: Flip horizontally and/or Crop Image by 10%</li>
+<li><strong>Compatibility</strong> with REST requests, WPeMatico, FeedWordPress, WP All Import, Featured Image from URL, CMB2, ACF and metabox.io</li>
 <li>Restricted domains</li>
 <li>Setup a proxy</li>
 <li><strong>24h Support</strong></li>
 </ul>
+
+**<a target="_blank" href="https://www.youtube.com/watch?v=crI3V-Kkb8k">Youtube Tutorial</a>**
 
 == Translations ==
 * French
@@ -71,11 +75,12 @@ Upgrade to our PRO version to unlock even more **advanced features** and take yo
 1. Magic Post Thumbnail : Bulk Generation
 2. Magic Post Thumbnail : Gutenberg Block
 3. Magic post Thumbnail : Settings
-4. Magic post Thumbnail : Image Banks
-5. Magic post Thumbnail : Generate featured images for post types
-6. Magic post Thumbnail : Generate featured images for taxonomies
-7. Magic post Thumbnail : Generate featured images for each post individually
-8. Magic post Thumbnail : Crons
+4. Magic post Thumbnail : Post-Processing Settings
+5. Magic post Thumbnail : Generate images for post types
+6. Magic post Thumbnail : Image Banks
+7. Magic post Thumbnail : Generate featured images for taxonomies
+8. Magic post Thumbnail : Generate featured images for each post individually
+9. Magic post Thumbnail : Crons
 
 == Support the plugin ==
 If you've found the plugin useful, please consider <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url">making a donation</a>. Thank you for your support !
@@ -121,6 +126,21 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 
 == Changelog ==
+
+= 6.0.0 - November 7, 2024 =
+* PRO: Change automatic settings: Ability to add multiple images during generation
+* PRO: Add Compatibility with CMB2, ACF & Meta Box (metabox.io)
+* PRO: Add Image bank "Stable Diffusion"
+* PRO: Strict Search Mode: include quotes inside the search term
+* PRO: Add text analyzer per paragraph
+* Add images inside content: Previously in paid version, now free.
+* Add "random" image selection: Previously in paid version, now free.
+* Add caption on images to mention author
+* Improve "Custom Request" ("based on" option) by including taxonomies
+* Improve text analyzer included with the plugin ("based on" option)
+* "Inside content" option : add "div" and "a" as possible tags
+* Add submenus into the sidebar
+* Other minor code improvements
 
 = 5.2.11 - October 03, 2024 =
 * Update Freemius version
@@ -203,123 +223,3 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 * Remove Image Banks "Shutterstock" & "Getty Images", not very usefull
 * Add API tester for settings to check API key validity
 * Change Dall-e v2 to Dall-e v3
-
-= 4.1.13 - July 5, 2023 =
-* Update Freemius to 2.5.10
-* Add conversion from png to jpg with dalle
-
-= 4.1.12 - April 25, 2023 =
-* Fix bug with bulk menu action
-* Changed text for DALL-E: API already uses v2
-
-= 4.1.11 - March 31, 2023 =
-* Security : Removed a useless div in the "Bulk Generation"
-* Update Freemius 2.5.6
-
-= 4.1.10 - March 25, 2023 =
-* PRO: If "Translate to English" feature is enabled, set original search for image name (instead of translated)
-* Update Freemius 2.5.5: Should fix problems with "Fatal error: Uncaught Error: Call to undefined method Freemius_Api_WordPress::RemoteRequest()"
-* Update some dashboard links
-* Tests with WordPress 6.2 ok
-
-= 4.1.9.1 - March 18, 2023 =
-* Fix bug with Freemius
-* Fix few JS errors
-* Update some translations
-* PRO: Fix bug with FeedWordPress
-* PRO: Add compatibility with REST requests from external services
-
-= 4.1.8 - March 08, 2023 =
-* Update Freemius
-* Change CSS for "Based on" list (remove inline style)
-* PRO: Add Envato Elements as Image Database (requires Envato Elements subscription)
-* PRO: Changed "text-davinci-003" to "gpt-3.5-turbo" for OpenAI Keyword Extractor (cheaper & better)
-* PRO: Add option to translate the "based on" phrase/keywords with Google Translation (for better results)
-
-= 4.1.7 - February 28, 2023 =
-* Update words & translations for Pixabay
-* Update link for Shutterstock API key
-* Pixabay : update webformatURL to largeImageURL to get larger images
-* Add documentation link (dashboard & readme)
-* PRO : Add "OpenAI Keyword Extractor" to extract main keyword from title
-
-= 4.1.6 =
-* Semantic change : "rewrite" to "overwrite"
-* PRO : Improve Cron by avoiding posts with images & limiting the number of posts
-
-= 4.1.5 =
-* Shutterstock options: update input type password
-* Add informative sentences for Shutterstock, getty images & creative commons sources
-* Prepare wp_insert_post() compatibility for future update
-* PRO : Add "WordPress Automatic Plugin" for compatibility
-
-= 4.1.4 =
-* PRO : Add Pexels as database
-* Add few translations
-
-= 4.1.3 =
-* Add show/hide icon for API keys
-* PRO : Improve results with Unsplash (more coming soon)
-
-= 4.1.2 =
-* PRO : Add "Custom Request" for "Based on" images: allows a custom search (screenshot 2)
-* Changed back-office title for panel options  (french version only)
-* More results with Pixabay (200 instead of 100)
-
-= 4.1.1 =
-* Add webp as supported filetype for Google Image API
-* Add link to youtube video according the WP language
-* Change some spanish translations
-* Fix bug with tags (several words into a tag didn't work)
-* More results with Pixabay & Unsplash (useful for random results)
-* PRO : Add language for Unsplash options
-
-= 4.1 =
-* Fix CSS bug when a new post is created
-* Fix displaying of the button to generate
-* Change some translations
-* Add plugin translation in spanish
-* Add message when settings are updated
-* Update Freemius
-* Change CSS for logs page to avoid width problem
-* Add "settings config" into logs to copy current plugin settings
-* PRO : Fix bug with cron form (Interval & Posts date)
-
-= 4.0.6 =
-* Include main CSS file only for the plugin dashboard
-* Add CSS file only for post editor
-
-= 4.0.5 =
-* Remove useless function
-* Add option to add save_post hook (Tab "Posts")
-
-= 4.0.4 =
-* Update Freemius
-* PRO : @shuffle() instead of shuffle()
-
-= 4.0.3 =
-* Fix Text Analyser with free version
-* Fix Text Analyser for few languages (due to stop-words and special characters)
-* Add webp filetype images
-* PRO : Fix div not showing when choosing Based on "Categories" & "Custom Field"
-
-= 4.0.2 =
-* Update some conditions with pro version
-* Fix return error on generation.js
-* Remove .tabs() on magic-post-thumbnail-admin.js
-* Remove "-webkit-scrollbar" display:none on magic-post-thumbnail-admin.css
-
-= 4.0.1 =
-* Change screenshots & plugin description
-
-= 4.0 =
-* Re-worked plugin framework and classes
-* Re-worked Text Analyser
-* Re-worked graphic interface
-* Add button on post editor to generate images (instead of save_post hook)
-* Add custom interval between each image generation
-* Add Creative Commons & DALL·E API (v1) as Sources
-* After uninstall plugin : Remove plugin options & logs
-* Update Freemius
-* PRO : Add Image shuffle - flip horizontally & crop image
-* PRO : Update compatibility with WPeMatico & FeedWordPress

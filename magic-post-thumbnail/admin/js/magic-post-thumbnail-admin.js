@@ -27,8 +27,6 @@ function manualActionHandler() {
   const { select, dispatch } = wp.data;
   const block = select('core/block-editor').getSelectedBlock();
 
-  //console.log('launch click');
-
   if (block && block.name === 'mpt/mpt-images') {
       dispatch('core/block-editor').updateBlockAttributes(block.clientId, { content: 'Nouveau contenu' });
   }
@@ -75,7 +73,7 @@ function displayGenerationButton(gutenbergEditor = true) {
         jQuery( "#postimagediv > .inside" ).before( outline );
     } else {}
 
-    // Generationon sidebar with classic & Gutenberg Editor
+    // Generation sidebar with classic & Gutenberg Editor
     jQuery( '#post-button-generate.'+uniqueButtonIdentifier ).click(function(e) {
 
         e.preventDefault();
@@ -110,8 +108,12 @@ function displayGenerationButton(gutenbergEditor = true) {
                     data : {
                             action             : 'generate_image',
                             ids_mpt_generation : generationSpecificPostJsVars.postgeneration.postID,
-                            a                  : 1,
+                            currentPostIndex   : 1,
                             count              : 1,
+                            totalBlocks        : 1, // Number of img block
+                            imageCounter       : 0, // Number of img
+                            blockIndex         : 0,
+                            buttonAutoGenerate : true,
                             nonce              : generationSpecificPostJsVars.postgeneration.nonce
                     },
                     success: function( data ) {
@@ -281,104 +283,218 @@ jQuery(document).ready(function() {
     });*/
 
 
-    jQuery("#general-options .image_location input[type='radio']").change(function(){
-      if( jQuery(this).val() == 'custom' ) {
-        jQuery( ".section_custom_image_position" ).show( 'slow' );
-        jQuery( ".section_custom_image_size" ).show( 'slow' );
+    jQuery(document).on('change', ".image-location-template .image_location input[type='radio']", function() {
+      // Find the closest parent tr with the class image-location-template
+      var closestTr = jQuery(this).closest('tr.image-location-template');
+  
+      // Extract the image-block-X class and get the number
+      var blockClass = closestTr.attr('class').match(/image-block-(\d+)/);
+      var blockNumber = blockClass ? blockClass[1] : null; // Get the number part of image-block-X
+  
+      // Check if the radio input has the value 'custom'
+      if (jQuery(this).val() === 'custom' && blockNumber) {
+        // Find and remove the hidden class from all elements with .image-block-X.hidden
+        jQuery('.image-inside-content.image-block-' + blockNumber + ' option_analyzer.hidden').removeClass('hidden');
+        jQuery('.image-block-' + blockNumber + ' .option_analyzer.hidden').removeClass('hidden');
+
+        jQuery( '.image-inside-content.image-block-' + blockNumber + '.section_custom_image_position' ).show( 'slow' );
+        jQuery( '.image-inside-content.image-block-' + blockNumber + '.section_custom_image_size' ).show( 'slow' );
       } else {
-        jQuery( ".section_custom_image_position" ).hide( 'fast' );
-        jQuery( ".section_custom_image_size" ).hide( 'fast' );
+        jQuery('.image-inside-content.image-block-' + blockNumber).addClass('hidden');
+        jQuery('.image-block-' + blockNumber + ' .option_analyzer').addClass('hidden');
+
+        jQuery( '.image-inside-content.image-block-' + blockNumber + '.section_custom_image_position' ).hide( 'slow' );
+        jQuery( '.image-inside-content.image-block-' + blockNumber + '.section_custom_image_size' ).hide( 'slow' );
       }
+
+      // Check if the radio input has the value 'cmb2'
+      if (['cmb2', 'acf', 'metaboxio'].includes(jQuery(this).val()) && blockNumber) {
+        // Find and remove the hidden class from all elements with .image-block-X.hidden
+        jQuery('.image-field-content.image-block-' + blockNumber + '.hidden').removeClass('hidden');
+      } else {
+        jQuery('.image-field-content.image-block-' + blockNumber).addClass('hidden');
+      }
+  
+    });
+  
+  
+    jQuery(document).on('change', ".section_basedon .based_on select.select-custom-location", function() {
+
+      // Find the closest parent tr with the class image-location-template
+      var closestTr = jQuery(this).closest('tr.image-location-template');
+  
+      // Extract the image-block-X class and get the number
+      var blockClass = closestTr.attr('class').match(/image-block-(\d+)/);
+      var blockNumber = blockClass ? blockClass[1] : null; // Get the number part of image-block-X
+
+      hideAPIKey('.image-block-' + blockNumber + ' #password-openai');
+
+      if( jQuery(this).val() == 'title' && blockNumber ) {
+              jQuery( '.image-block-' + blockNumber + '.section_title').show( 'slow' );
+              jQuery( '.image-block-' + blockNumber + '.section_text_analyser' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_tags' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_categories' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_custom_field' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_custom_request' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.category_choice' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_openai_extractor' ).hide( 'fast' );
+      }
+
+      if( 
+        (
+          jQuery(this).val() == 'text_analyser' || 
+          jQuery(this).val() == 'text_analyser_previous_paragraph' || 
+          jQuery(this).val() == 'text_analyser_next_paragraph'
+        ) && blockNumber
+      ) {
+              jQuery( '.image-block-' + blockNumber + '.section_text_analyser' ).show( 'slow' );
+              jQuery( '.image-block-' + blockNumber + '.section_title' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_tags' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_categories' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_custom_field' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_custom_request' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.category_choice' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_openai_extractor' ).hide( 'fast' );
+      }
+
+      var basedOnSelected = [ 'tags', 'categories', 'custom_field', 'custom_request', 'openai_extractor' ];
+
+      if( basedOnSelected.indexOf(jQuery(this).val()) !== -1 ) {
+          if( true === checkRights() ) {
+
+            if( jQuery(this).val() == 'tags' && blockNumber ) {
+                jQuery( '.image-block-' + blockNumber + '.section_title' ).hide( 'fast' );
+                jQuery( '.image-block-' + blockNumber + '.section_tags' ).show( 'slow' );
+                jQuery( '.image-block-' + blockNumber + '.section_categories' ).hide( 'fast' );
+                jQuery( '.image-block-' + blockNumber + '.section_custom_field' ).hide( 'fast' );
+                jQuery( '.image-block-' + blockNumber + '.section_text_analyser' ).hide( 'fast' );
+                jQuery( '.image-block-' + blockNumber + '.section_custom_request' ).hide( 'fast' );
+                jQuery( '.image-block-' + blockNumber + '.category_choice' ).hide( 'fast' );
+                jQuery( '.image-block-' + blockNumber + '.section_openai_extractor' ).hide( 'fast' );
+            }
+
+            if( jQuery(this).val() == 'categories' && blockNumber ) {
+              jQuery( '.image-block-' + blockNumber + '.section_title' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_categories' ).show( 'slow' );
+              jQuery( '.image-block-' + blockNumber + '.section_tags' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_custom_field' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_text_analyser' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_custom_request' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.category_choice' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_openai_extractor' ).hide( 'fast' );
+            }
+
+            if( jQuery(this).val() == 'custom_field' && blockNumber ) {
+              jQuery( '.image-block-' + blockNumber + '.section_title' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_custom_field' ).show( 'slow' );
+              jQuery( '.image-block-' + blockNumber + '.section_categories' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_tags' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_text_analyser' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_custom_request' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.category_choice' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_openai_extractor' ).hide( 'fast' );
+            }
+
+            if( jQuery(this).val() == 'custom_request' && blockNumber ) {
+              jQuery( '.image-block-' + blockNumber + '.section_title' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_custom_field' ).hide( 'slow' );
+              jQuery( '.image-block-' + blockNumber + '.section_categories' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_tags' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_text_analyser' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_custom_request' ).show( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.category_choice' ).show( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_openai_extractor' ).hide( 'fast' );
+            }
+
+            if( jQuery(this).val() == 'openai_extractor' && blockNumber ) {
+              jQuery( '.image-block-' + blockNumber + '.section_title' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_custom_field' ).hide( 'slow' );
+              jQuery( '.image-block-' + blockNumber + '.section_categories' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_tags' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_text_analyser' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_custom_request' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.category_choice' ).hide( 'fast' );
+              jQuery( '.image-block-' + blockNumber + '.section_openai_extractor' ).show( 'fast' );
+            }
+          } else {
+            var alertProVersion = translationsJsVars.translations.pro_version;
+            alert( alertProVersion );
+            jQuery(".section_basedon .based_on input[value='title']").attr( 'checked', true );
+          }
+      }
+
     });
 
-    jQuery("#general-options .based_on input[type='radio']").change(function(){
-            if( jQuery(this).val() == 'title' ) {
-                    jQuery( ".section_title" ).show( 'slow' );
-                    jQuery( ".section_text_analyser" ).hide( 'fast' );
-                    jQuery( ".section_tags" ).hide( 'fast' );
-                    jQuery( ".section_categories" ).hide( 'fast' );
-                    jQuery( ".section_custom_field" ).hide( 'fast' );
-                    jQuery( ".section_custom_request" ).hide( 'fast' );
-                    jQuery( ".category_choice" ).hide( 'fast' );
-                    jQuery( ".section_openai_extractor" ).hide( 'fast' );
-            }
 
-            if( jQuery(this).val() == 'text_analyser' ) {
-                    jQuery( ".section_text_analyser" ).show( 'slow' );
-                    jQuery( ".section_title" ).hide( 'fast' );
-                    jQuery( ".section_tags" ).hide( 'fast' );
-                    jQuery( ".section_categories" ).hide( 'fast' );
-                    jQuery( ".section_custom_field" ).hide( 'fast' );
-                    jQuery( ".section_custom_request" ).hide( 'fast' );
-                    jQuery( ".category_choice" ).hide( 'fast' );
-                    jQuery( ".section_openai_extractor" ).hide( 'fast' );
-            }
+    // CLONE NEW IMAGE AREA
+    jQuery(document).ready(function($){
 
-            var basedOnSelected = [ 'tags', 'categories', 'custom_field', 'custom_request', 'openai_extractor' ];
+      if (typeof automaticSettings !== 'undefined' && automaticSettings !== null) {
 
-            if( basedOnSelected.indexOf(jQuery(this).val()) !== -1 ) {
-                if( true === checkRights() ) {
+        var blockIndex = automaticSettings.blockIndex; // Initialize block index
 
-                  if( jQuery(this).val() == 'tags' ) {
-                      jQuery( ".section_title" ).hide( 'fast' );
-                      jQuery( ".section_tags" ).show( 'slow' );
-                      jQuery( ".section_categories" ).hide( 'fast' );
-                      jQuery( ".section_custom_field" ).hide( 'fast' );
-                      jQuery( ".section_text_analyser" ).hide( 'fast' );
-                      jQuery( ".section_custom_request" ).hide( 'fast' );
-                      jQuery( ".category_choice" ).hide( 'fast' );
-                      jQuery( ".section_openai_extractor" ).hide( 'fast' );
-                  }
+        // Function to add a new block
+        $('#add-image-btn').click(function(e) {
+            e.preventDefault();
 
-                  if( jQuery(this).val() == 'categories' ) {
-                    jQuery( ".section_title" ).hide( 'fast' );
-                    jQuery( ".section_categories" ).show( 'slow' );
-                    jQuery( ".section_tags" ).hide( 'fast' );
-                    jQuery( ".section_custom_field" ).hide( 'fast' );
-                    jQuery( ".section_text_analyser" ).hide( 'fast' );
-                    jQuery( ".section_custom_request" ).hide( 'fast' );
-                    jQuery( ".category_choice" ).hide( 'fast' );
-                    jQuery( ".section_openai_extractor" ).hide( 'fast' );
-                  }
-
-                  if( jQuery(this).val() == 'custom_field' ) {
-                    jQuery( ".section_title" ).hide( 'fast' );
-                    jQuery( ".section_custom_field" ).show( 'slow' );
-                    jQuery( ".section_categories" ).hide( 'fast' );
-                    jQuery( ".section_tags" ).hide( 'fast' );
-                    jQuery( ".section_text_analyser" ).hide( 'fast' );
-                    jQuery( ".section_custom_request" ).hide( 'fast' );
-                    jQuery( ".category_choice" ).hide( 'fast' );
-                    jQuery( ".section_openai_extractor" ).hide( 'fast' );
-                  }
-
-                  if( jQuery(this).val() == 'custom_request' ) {
-                    jQuery( ".section_title" ).hide( 'fast' );
-                    jQuery( ".section_custom_field" ).hide( 'slow' );
-                    jQuery( ".section_categories" ).hide( 'fast' );
-                    jQuery( ".section_tags" ).hide( 'fast' );
-                    jQuery( ".section_text_analyser" ).hide( 'fast' );
-                    jQuery( ".section_custom_request" ).show( 'fast' );
-                    jQuery( ".category_choice" ).show( 'fast' );
-                    jQuery( ".section_openai_extractor" ).hide( 'fast' );
-                  }
-
-                  if( jQuery(this).val() == 'openai_extractor' ) {
-                    jQuery( ".section_title" ).hide( 'fast' );
-                    jQuery( ".section_custom_field" ).hide( 'slow' );
-                    jQuery( ".section_categories" ).hide( 'fast' );
-                    jQuery( ".section_tags" ).hide( 'fast' );
-                    jQuery( ".section_text_analyser" ).hide( 'fast' );
-                    jQuery( ".section_custom_request" ).hide( 'fast' );
-                    jQuery( ".category_choice" ).hide( 'fast' );
-                    jQuery( ".section_openai_extractor" ).show( 'fast' );
-                  }
-            		} else {
-                  var alertProVersion = translationsJsVars.translations.pro_version;
-                  alert( alertProVersion );
-                  jQuery("#general-options .based_on input[value='title']").attr( 'checked', true );
+            // Clone each template row (with the class image-block-0 & image-location-template) individually
+            $('.image-location-template.image-block-0.hidden').each(function() {
+                var newBlock = $(this).clone(); // Clone the template block
+                
+                // Make them visible if they do not have specific classes
+                if(
+                  !newBlock.hasClass('image-inside-content') && 
+                  !newBlock.hasClass('image-field-content') && 
+                  !newBlock.hasClass('section_text_analyser') &&
+                  !newBlock.hasClass('section_tags') &&
+                  !newBlock.hasClass('section_categories') &&
+                  !newBlock.hasClass('section_custom_field') &&
+                  !newBlock.hasClass('section_custom_request') &&
+                  !newBlock.hasClass('category_choice') &&
+                  !newBlock.hasClass('section_openai_extractor')
+                ) {
+                  newBlock.removeClass('hidden');
                 }
-            }
+
+
+                // Update the field names for each element in the new block
+                newBlock.find('[name]').each(function() {
+                    var nameAttr = $(this).attr('name');
+                    nameAttr = nameAttr.replace(/\[0\]/g, '[' + blockIndex + ']');
+                    $(this).attr('name', nameAttr);
+                });
+
+                // Update the unique class of the block for identification
+                newBlock.removeClass('image-block-0').addClass('image-block-' + blockIndex);
+
+                // Insert the new block just before the row with the "Add Image Location" button
+                newBlock.insertBefore('.cloneBlock');
+            });
+
+            blockIndex++; // Increment the block index for the next block
+
+        });
+
+        // Avoid new block
+        $('#add-image-btn-disabled').click(function(e) {
+          e.preventDefault();
+          if ($('.available-pro-version').length === 0) { // Checks whether the element already exists
+            $('#add-image-btn-disabled').after('<span class="available-pro-version">' + translationsJsVars.translations.one_block + '</span>');
+          }
+        });
+
+        // Function to remove a block when the "Remove" button is clicked
+        $(document).on('click', '.remove-block-btn', function() {
+            var blockClass = $(this).closest('tr').attr('class').match(/image-block-\d+/)[0]; // Get the unique block class
+            $('.' + blockClass).remove(); // Remove all rows with this unique class
+        });
+
+        // Before form submission, remove the hidden template block
+        $('form#tabs').submit(function() {
+            $('.image-location-template.image-block-0').remove(); // Remove hidden template blocks
+        });
+
+      }
 
     });
 
@@ -387,6 +503,9 @@ jQuery(document).ready(function() {
 
     // ALT
     checkButton( '#enable_alt', '.show_alt', false );
+
+    // CAPTION
+    checkButton( '#enable_caption', '.show_caption', true );
 
     // SAVE HOOK
     checkButton( '#enable_save_post_hook', '.show_save_post_hook', false );
@@ -401,13 +520,21 @@ jQuery(document).ready(function() {
     checkButton( '#enable_logs', '.show_logs', true );
 
     /* TITLE SELECTION */
-    jQuery("#general-options .chosen_title input[type='radio']").change(function(){
-        if( jQuery(this).val() == 'cut_title' ) {
-                jQuery( "input[name='MPT_plugin_main_settings[title_length]']" ).removeAttr('disabled');
-        } else {
-                jQuery( "input[name='MPT_plugin_main_settings[title_length]']" ).attr('disabled', 'disabled');
-        }
-    });
+    jQuery(document).on('change', ".section_title .chosen_title input[type='radio']", function() {
+
+      // Find the closest parent tr with the class image-location-template
+      var closestTr = jQuery(this).closest('tr.image-location-template');
+  
+      // Extract the image-block-X class and get the number
+      var blockClass = closestTr.attr('class').match(/image-block-(\d+)/);
+      var blockNumber = blockClass ? blockClass[1] : null; // Get the number part of image-block-X
+
+      if( jQuery(this).val() == 'cut_title' ) {
+          jQuery('.image-block-' + blockNumber + '.section_title .length_cut_title').removeAttr('disabled');
+      } else {
+          jQuery('.image-block-' + blockNumber + '.section_title .length_cut_title').attr('disabled', 'disabled');
+      }
+  });  
 
     /* CRON SELECTION */
     jQuery("#general-options input.select-all-posts[type='radio']").change(function(){
@@ -419,7 +546,7 @@ jQuery(document).ready(function() {
     });
 
     // CRON : Interval
-    jQuery("select.select-word-cron").change(function(){
+    jQuery("select.select-word-cron").change(function() {
       if( jQuery(this).find('option:selected').val() == 'minutes' ) {
         jQuery( "select.form-control.select-interval-minutes-cron").show();
         jQuery( "select.form-control.select-interval-hours-cron").hide();
@@ -457,10 +584,13 @@ jQuery(document).ready(function() {
     }
 
   /* Image Banks buttons  */
-  if( true === checkRights() ) {
-    jQuery('.chosen_api li label.checkbox-disabled').click(function() {
+  if( false === checkRights() ) {
+    //jQuery('.chosen_api li label.checkbox-disabled').click(function() {
+    jQuery('label.checkbox-disabled').click(function(e) {
+      
             var alertProVersion = translationsJsVars.translations.pro_version;
             alert( alertProVersion );
+            e.preventDefault();
     });
   }
 
@@ -483,42 +613,52 @@ jQuery(document).ready(function() {
     });
 
     document.addEventListener('dragend', function (event) {
-      jQuery('#textarea-editable span').prop("contenteditable", false);
+      jQuery('.textarea-editable span').prop("contenteditable", false);
     });
 
     /* Click & copy */
     jQuery( "#custom-request-buttons > p" ).on( "click", function() {
-      var currentTextareaVal = jQuery("#textarea-editable").html();
+      var currentTextareaVal = jQuery(".textarea-editable").html();
       var contentTag = event.target;
-      jQuery("#textarea-editable").append(jQuery(this).children('span').clone());
-      jQuery('#textarea-editable span').prop("contenteditable", false);
+      jQuery(".textarea-editable").append(jQuery(this).children('span').clone());
+      jQuery('.textarea-editable span').prop("contenteditable", false);
     });
 
     /* Prevent line break */
-    jQuery(document).on('keypress', '#textarea-editable', function(e){
+    jQuery(document).on('keypress', '.textarea-editable', function(e){
         return e.which != 13;
     });
 
-    /* Change value on sumit */
-  	jQuery("form.form-images").on('submit', function(e){
-      jQuery(".custom_request").val(jQuery("#textarea-editable").html());
+    /* Change value on submit */
+    jQuery("form.form-images").on('submit', function(e) {
+      jQuery("tr.section_custom_request").each(function() {
+          // Retrieves the HTML content of the div.textarea-editable in each tr
+          var editableContent = jQuery(this).find(".textarea-editable").html();
 
-      var spanTag = jQuery("input.custom_request").val();
-      var regex   = /<span\s.*?>(.*?)<\/span>/gi;
-      var newTag  = spanTag.replace(regex, '%%$1%%');
+          // Supprime les balises <br>
+          editableContent = editableContent.replace(/<br\s*\/?>/gi, '').trim();
+          
+          // Apply the regex to replace the spans
+          var regex = /<span\s.*?>(.*?)<\/span>/gi;
+          var newContent = editableContent.replace(regex, '%%$1%%');
+          
+          // Updates the value of the associated hidden input
+          jQuery(this).find("input.custom_request").val(newContent);
+      });
+    });
 
-      jQuery("input.custom_request").val(newTag);
-  	});
 
 
-    /*Change value on init div */
-    if (jQuery('#textarea-editable').length){
-      var divTag = jQuery("#textarea-editable").html();
-      var regex  = /%%(.*?)%%/g;
-      var newTag = divTag.replace(regex, '<span contenteditable="false" class="button-custom" draggable="false">$1</span>');
 
-      jQuery('#textarea-editable').html(newTag);
-    }
+    /* Change value on init div */
+    jQuery('.textarea-editable').each(function() {
+
+        var divTag = jQuery(this).html();
+        var regex  = /%%(.*?)%%/g;
+        var newTag = divTag.replace(regex, '<span contenteditable="false" class="button-custom" draggable="false">$1</span>');
+    
+        jQuery(this).html(newTag);
+    });
 
 
     /* Eye to show/hide API key */
@@ -529,6 +669,7 @@ jQuery(document).ready(function() {
 
       if(togglePassword) {
         togglePassword.addEventListener("click", function () {
+
             // toggle the type attribute
             const type = password.getAttribute("type") === "password" ? "text" : "password";
             password.setAttribute("type", type);
@@ -539,14 +680,107 @@ jQuery(document).ready(function() {
       }
     }
 
+    
     hideAPIKey("#password-unsplash");
     hideAPIKey("#password-googleAPI");
     hideAPIKey("#password-pixabay");
     hideAPIKey("#password-dalle");
+    hideAPIKey("#password-stability");
     hideAPIKey("#password-youtube");
     hideAPIKey("#password-pexels");
     hideAPIKey("#password-envato");
     hideAPIKey("#password-openai");
+
+
+
+
+
+
+
+  // Function to update the state of the radio buttons
+  function updateRadioState() {
+      // Check if any of the "featured" radio buttons is selected, excluding those within .image-block-0
+      var featuredSelected = jQuery('input[type="radio"][value="featured"]:checked').not('.image-block-0 input[type="radio"]').length > 0;
+
+      // Disable/enable the "featured" radio buttons
+      jQuery('tr:has(input[type="radio"][value="featured"])').not('.image-block-0').each(function() {
+          var $currentBlock = jQuery(this); // Find the parent <tr> block
+          $currentBlock.find('input[type="radio"][value="featured"]').each(function() {
+              if (featuredSelected && !jQuery(this).is(':checked')) {
+                jQuery(this).attr('disabled', true).closest('label').addClass('disabled'); // Disable
+              } else {
+                  jQuery(this).removeAttr('disabled').closest('label').removeClass('disabled'); // Enable
+              }
+          });
+      });
+  }
+
+  // Use event delegation for dynamically added radio buttons
+  jQuery(document).on('change', 'input[type="radio"][name^="MPT_plugin_main_settings[image_block]"]:not(.image-block-0 input[type="radio"])', function() {
+      updateRadioState();
+  });
+
+  // Initialize the state on page load
+  updateRadioState();
+
+  
+  jQuery("td.image_location.radio-list").on('click', 'label', function(e) {
+    
+      // Check if the clicked label has the 'disabled' class
+      if (jQuery(this).hasClass('disabled')) {
+          // Prevent the default action if the label is disabled
+          e.preventDefault();
+          
+          // Retrieve the translation for the alert message
+          var alertOneFeatured = translationsJsVars.translations.only_one_featured;
+          
+          // Display the alert with the message
+          alert(alertOneFeatured);
+      }
+  });
+
+
+
+  // Listen for click events on .show-image-details links
+  jQuery('.show-image-details a').on('click', function(e) {
+      e.preventDefault(); // Prevent the default link behavior
+
+      // Find the closest <tr> parent of the clicked link
+      var row = jQuery(this).closest('tr');
+
+      // Find the .image-details element within this row
+      var imageDetails = row.find('.image-details');
+
+      // Toggle the visibility of .image-details
+      imageDetails.toggle(); // Show or hide the image details
+
+      // Hide the current .show-image-details link
+      jQuery(this).parent().hide();
+
+      // Show the corresponding .hide-image-details link
+      row.find('.hide-image-details').show();
+  });
+
+  // Listen for click events on .hide-image-details links
+  jQuery('.hide-image-details a').on('click', function(e) {
+      e.preventDefault(); // Prevent the default link behavior
+
+      // Find the closest <tr> parent of the clicked link
+      var row = jQuery(this).closest('tr');
+
+      // Find the .image-details element within this row
+      var imageDetails = row.find('.image-details');
+
+      // Hide the .image-details element
+      imageDetails.hide(); // Hide the image details
+
+      // Hide the current .hide-image-details link
+      jQuery(this).parent().hide();
+
+      // Show the corresponding .show-image-details link
+      row.find('.show-image-details').show();
+  });
+
 
 });
 
@@ -576,4 +810,5 @@ function checkRights() {
     
 
     return premium_version;
+    //return false;
 }

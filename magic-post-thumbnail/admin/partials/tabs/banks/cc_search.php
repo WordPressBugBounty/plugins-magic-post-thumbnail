@@ -6,6 +6,9 @@ if ( ! function_exists( 'add_filter' ) ) {
 }
 ?>
 
+<tr valign="top">
+	<td colspan="2" class="source-logo"><img alt="CC Search Logo" src="<?php echo plugin_dir_url( __FILE__ ); ?>/img/cc_search.png"></td>
+</tr>
 
 <tr valign="top">
 	<td colspan="2">

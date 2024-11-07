@@ -5,6 +5,11 @@ if ( ! function_exists( 'add_filter' ) ) {
 		exit();
 }
 ?>
+
+<tr valign="top">
+	<td colspan="2" class="source-logo"><img alt="Flickr Logo" src="<?php echo plugin_dir_url( __FILE__ ); ?>/img/flickr.png"></td>
+</tr>
+
 <tr valign="top">
 	<th scope="row">
 		<label for="hseparator"><?php _e( 'Rights', 'mpt' ); ?></label>

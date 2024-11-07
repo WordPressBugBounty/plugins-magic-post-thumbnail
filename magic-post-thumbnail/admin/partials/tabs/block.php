@@ -57,7 +57,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 									}
 							?>
 
-							<tr valign="top" class="show_alt" <?php echo(($options['enable_alt'] != 'enable') ? 'style="display:none;"': ''); ?>>
+							<tr valign="top" class="show_alt" <?php echo (isset($options['enable_alt']) && $options['enable_alt'] != 'enable') ? 'style="display:none;"' : ''; ?>>
 								<th scope="row">
 										<?php esc_html_e( 'Translation', 'mpt' ); ?>
 								</th>
@@ -183,6 +183,28 @@ if ( ! function_exists( 'add_filter' ) ) {
 								</td>
 							</tr>
 						<?php } ?>
+
+
+						<?php 
+							// Caption Tag
+
+							if ( true === $this->MPT_freemius()->is__premium_only() ) { 
+								if ( $this->mpt_freemius()->can_use_premium_code() ) {
+						?>
+
+							<tr valign="top" class="based_on_bottom">
+								<th scope="row">
+									<label for="hseparator"><?php esc_html_e( 'Add caption tag on image', 'mpt' ); ?></label>
+								</th>
+								<td>
+									<label class="checkbox">
+										<input data-switch="true" type="checkbox" name="MPT_plugin_block_settings[enable_caption]" id="enable_caption" value="enable" <?php echo( !empty( $options['enable_caption']) && $options['enable_caption'] == 'enable' )? 'checked': ''; ?> />
+									</label>
+								</td>
+							</tr>
+
+						<?php } } ?>
+
 
 	              </tbody>
 	          </table>

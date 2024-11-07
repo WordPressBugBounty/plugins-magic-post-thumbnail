@@ -7,6 +7,10 @@ if ( ! function_exists( 'add_filter' ) ) {
 ?>
 
 <tr valign="top">
+	<td colspan="2" class="source-logo"><img alt="Dall-e Logo" src="<?php echo plugin_dir_url( __FILE__ ); ?>/img/dalle.png"></td>
+</tr>
+
+<tr valign="top">
 	<td colspan="2">
 		<div class="update-nag">
 			<?php _e('<b>It\'s required</b> to provide your own <b>api key</b>. You can register in OpenAI API website <a target="_blank" href="https://openai.com/">here</a> and get api key.', 'mpt' ); ?>

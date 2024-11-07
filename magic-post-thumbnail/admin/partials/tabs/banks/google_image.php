@@ -5,6 +5,11 @@ if ( ! function_exists( 'add_filter' ) ) {
 		exit();
 }
 ?>
+
+<tr valign="top">
+	<td colspan="2" class="source-logo"><img alt="Google Images Logo" src="<?php echo plugin_dir_url( __FILE__ ); ?>/img/google_images.png"></td>
+</tr>
+
 <tr valign="top">
 	<td colspan="2">
 		<div class="update-nag">

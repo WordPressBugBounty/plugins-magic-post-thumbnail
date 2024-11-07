@@ -9,8 +9,8 @@
  * @wordpress-plugin
  * Plugin Name:       Magic Post Thumbnail
  * Plugin URI:        http://wordpress.org/plugins/magic-post-thumbnail/
- * Description:       Transform your posts with stunning images effortlessly! Magic Post Thumbnail includes many image banks to automatically get featured images for your posts.
- * Version:           5.2.11
+ * Description:       Add stunning images to your posts effortlessly, as featured images or within content. Magic Post Thumbnail sources them automatically from multiple image banks.
+ * Version:           6.0.0
  * Author:            Magic Post Thumbnail
  * Author URI:        https://magic-post-thumbnail.com/
  * License:           GPL-2.0+
@@ -72,7 +72,7 @@ if ( function_exists( 'mpt_freemius' ) ) {
      * Start at version 1.0.0 and use SemVer - https://semver.org
      * Rename this for your plugin and update it as you release new versions.
      */
-    define( 'MAGIC_POST_THUMBNAIL_VERSION', '5.2.11' );
+    define( 'MAGIC_POST_THUMBNAIL_VERSION', '6.0.0' );
     /**
      * The code that runs during plugin activation.
      * This action is documented in includes/class-magic-post-thumbnail-activator.php
@@ -130,7 +130,26 @@ if ( function_exists( 'mpt_freemius' ) ) {
     }
 
     /**
+     * Check hook wp_insert_post to fire functionalities
+     *
+     * @since    6.0.0
+     */
+    function MPT_check_hook() {
+        // Checks whether the capacity has already been checked for this session
+        if ( get_option( 'mpt_hook_checked' ) ) {
+            // Deletes the option immediately after execution
+            delete_option( 'mpt_hook_checked' );
+            return;
+            // Exits the function if it has already been executed
+        }
+        // Set capacity as verified to avoid additional calls
+        update_option( 'mpt_hook_checked', true );
+    }
+
+    /**
      * Check capabilities before launching the plugin main features
+     *
+     * @since    5.0.0
      */
     function MPT_check_capability() {
         $additional_check = false;
@@ -158,6 +177,8 @@ if ( function_exists( 'mpt_freemius' ) ) {
         // User role & capacity
         add_action( 'init', 'MPT_add_capability', 1 );
         add_action( 'init', 'MPT_check_capability', 2 );
+        // Features with hooks
+        add_action( 'init', 'MPT_check_hook', 5 );
     }
 
     run_magic_post_thumbnail();

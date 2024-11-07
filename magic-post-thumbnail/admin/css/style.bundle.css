@@ -5315,8 +5315,11 @@ a, button {
 }
 
 .checkbox.checkbox-disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+    opacity: 0.5;
+    cursor: not-allowed !important;
+}
+.checkbox.checkbox-disabled span {
+    cursor: not-allowed !important;
 }
 
 .checkbox > input:checked ~ span {
@@ -9780,6 +9783,38 @@ a.text-hover-muted:hover .svg-icon svg:hover g [fill], .text-hover-muted:hover .
 }
 .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
+}
+
+.btn.btn-warning {
+    color: #ffffff;
+    background-color: #FFA800;
+    border-color: #FFA800;
+}
+.btn.btn-light-danger {
+    color: #F64E60;
+    background-color: #FFE2E5;
+    border-color: transparent;
+}
+
+.btn.btn-light-danger i {
+    color: #F64E60;
+}
+
+.btn.btn-light-danger:hover {
+    color: #ffffff;
+    background-color: #F64E60;
+    border-color: transparent;
+}
+
+.btn.btn-light-primary {
+    color: #FFFFFF;
+    background-color: #3699FF;
+    border-color: transparent;
+}
+.btn.btn-light-primary:hover {
+    color: #FFFFFF;
+    background-color: #3699FF;
+    border-color: transparent;
 }
 
 .text-lowercase {

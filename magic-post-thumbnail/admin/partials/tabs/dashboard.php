@@ -268,19 +268,20 @@ if( $user ) {
 	                <?php esc_html_e( 'Documentation', 'mpt' ); ?>
 	            </a><br/>
               <?php
-								// Get language
-								$locale = get_bloginfo('language');
-								$lang		= explode( '-', $locale );
+				// Get language
+				/*
+				$locale = get_bloginfo('language');
+				$lang		= explode( '-', $locale );
 
-								// Asign a youtube video ID
-								if( 'es' == $lang[0] ) {
-									$youtube_ID = 'ki0PXQSYR1Q';
-								} /*elseif( 'fr' == $lang[0] ) {
-									$youtube_ID = 'NSi_QShLHZg';
-								}*/ else {
-									$youtube_ID = 'HPqUEQ2MrZc';
-								}
-                printf( __( '<a href="%s" target="_blank">Youtube Tutorial</a>', 'mpt' ), 'https://www.youtube.com/watch?v=' . $youtube_ID );
+				// Asign a youtube video ID
+				if( 'es' == $lang[0] ) {
+					$youtube_ID = 'ki0PXQSYR1Q';
+				} elseif( 'fr' == $lang[0] ) {
+					$youtube_ID = 'NSi_QShLHZg';
+				} else {
+					$youtube_ID = 'HPqUEQ2MrZc';
+				}*/
+                printf( __( '<a href="%s" target="_blank">Youtube Tutorial</a>', 'mpt' ), 'https://www.youtube.com/watch?v=crI3V-Kkb8k' );
               ?><br/>
 	            <a href="https://magic-post-thumbnail.com/docs/faq/" target="_blank">
 	                <?php esc_html_e( 'Frequently Asked Questions', 'mpt' ); ?>
