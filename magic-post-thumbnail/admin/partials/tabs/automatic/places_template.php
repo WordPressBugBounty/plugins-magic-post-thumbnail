@@ -535,7 +535,7 @@ esc_html_e( 'Random result', 'mpt' );
 
 <!-- Button to remove a block -->
 <tr valign="top" class="image-location-template hidden image-block-0 bottom-add-block-img">
-    <td colspan="2" class="text-right">
+    <td colspan="2">
         <button type="button" class="btn btn-sm font-weight-bolder btn-light-danger remove-block-btn" style="text-decoration: none;">[-] Delete</button>
     </td>
 </tr>

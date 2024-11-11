@@ -281,7 +281,7 @@ if( $user ) {
 				} else {
 					$youtube_ID = 'HPqUEQ2MrZc';
 				}*/
-                printf( __( '<a href="%s" target="_blank">Youtube Tutorial</a>', 'mpt' ), 'https://www.youtube.com/watch?v=crI3V-Kkb8k' );
+                printf( __( '<a href="%s" target="_blank">Youtube Tutorial</a>', 'mpt' ), 'https://www.youtube.com/watch?v=mC6qimwnT4E' );
               ?><br/>
 	            <a href="https://magic-post-thumbnail.com/docs/faq/" target="_blank">
 	                <?php esc_html_e( 'Frequently Asked Questions', 'mpt' ); ?>

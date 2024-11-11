@@ -1,6 +1,6 @@
 === Generate Images - Magic Post Thumbnail ===
 Plugin Name:       Generate Images - Magic Post Thumbnail
-Version:           6.0.0
+Version:           6.0.1
 Tags:              generate, image, dalle, stable diffusion, mpt
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
@@ -8,7 +8,7 @@ Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
 Tested up to:      6.6.2
-Stable tag:        6.0.0
+Stable tag:        6.0.1
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -127,6 +127,12 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 == Changelog ==
 
+
+= 6.0.1 - November 11, 2024 =
+* Update CSS for delete button block
+* Update Youtube Tutorial video link
+* Fix migration problem with 6.0.0: could not generate image when plugin updated
+
 = 6.0.0 - November 7, 2024 =
 * PRO: Change automatic settings: Ability to add multiple images during generation
 * PRO: Add Compatibility with CMB2, ACF & Meta Box (metabox.io)
@@ -141,6 +147,7 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 * "Inside content" option : add "div" and "a" as possible tags
 * Add submenus into the sidebar
 * Other minor code improvements
+* Update Freemius version
 
 = 5.2.11 - October 03, 2024 =
 * Update Freemius version

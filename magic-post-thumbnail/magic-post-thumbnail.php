@@ -10,7 +10,7 @@
  * Plugin Name:       Magic Post Thumbnail
  * Plugin URI:        http://wordpress.org/plugins/magic-post-thumbnail/
  * Description:       Add stunning images to your posts effortlessly, as featured images or within content. Magic Post Thumbnail sources them automatically from multiple image banks.
- * Version:           6.0.0
+ * Version:           6.0.1
  * Author:            Magic Post Thumbnail
  * Author URI:        https://magic-post-thumbnail.com/
  * License:           GPL-2.0+
@@ -72,7 +72,7 @@ if ( function_exists( 'mpt_freemius' ) ) {
      * Start at version 1.0.0 and use SemVer - https://semver.org
      * Rename this for your plugin and update it as you release new versions.
      */
-    define( 'MAGIC_POST_THUMBNAIL_VERSION', '6.0.0' );
+    define( 'MAGIC_POST_THUMBNAIL_VERSION', '6.0.1' );
     /**
      * The code that runs during plugin activation.
      * This action is documented in includes/class-magic-post-thumbnail-activator.php

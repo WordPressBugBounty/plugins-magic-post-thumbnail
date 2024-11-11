@@ -1519,8 +1519,16 @@ class Magic_Post_Thumbnail_Admin {
     public function MPT_migration() {
         // Retrieve existing options
         $optionstomove = get_option( 'MPT_plugin_main_settings' );
+        $options_banks = get_option( 'MPT_plugin_banks_settings' );
         // Check if old values exist (migration needed)
         if ( $optionstomove && !isset( $optionstomove['image_block'][1] ) ) {
+            // Fix 6.0.1 : Add image bank in options
+            if ( isset( $options_banks['api_chosen_auto'] ) ) {
+                $ar_bank_auto = array($options_banks['api_chosen_auto']);
+                $default_bank = reset( $ar_bank_auto[0] );
+            } else {
+                $default_bank = 'google_scraping';
+            }
             // Move old values to the new structure
             $optionstomove['image_block'][1] = array(
                 'image_location'                  => ( isset( $optionstomove['image_location'] ) ? $optionstomove['image_location'] : 'featured' ),
@@ -1528,6 +1536,7 @@ class Magic_Post_Thumbnail_Admin {
                 'image_custom_location_position'  => ( isset( $optionstomove['image_custom_location_position'] ) ? $optionstomove['image_custom_location_position'] : '' ),
                 'image_custom_location_tag'       => ( isset( $optionstomove['image_custom_location_tag'] ) ? $optionstomove['image_custom_location_tag'] : '' ),
                 'image_custom_image_size'         => ( isset( $optionstomove['image_custom_image_size'] ) ? $optionstomove['image_custom_image_size'] : '' ),
+                'api_chosen'                      => $default_bank,
                 'based_on'                        => ( isset( $optionstomove['based_on'] ) ? $optionstomove['based_on'] : 'title' ),
                 'title_selection'                 => ( isset( $optionstomove['title_selection'] ) ? $optionstomove['title_selection'] : 'full_title' ),
                 'title_length'                    => ( isset( $optionstomove['title_length'] ) ? $optionstomove['title_length'] : '' ),
@@ -1566,6 +1575,27 @@ class Magic_Post_Thumbnail_Admin {
             }
             // Save updated options
             update_option( 'MPT_plugin_main_settings', $optionstomove );
+        } elseif ( isset( $optionstomove['image_block'][1] ) && $optionstomove && !isset( $optionstomove['image_block'][1]['api_chosen'] ) ) {
+            // Fix 6.0.1 : Add image bank in options
+            if ( isset( $options_banks['api_chosen_auto'] ) ) {
+                $ar_bank_auto = array($options_banks['api_chosen_auto']);
+                $default_bank = reset( $ar_bank_auto[0] );
+            } else {
+                $default_bank = 'google_scraping';
+            }
+            // Retrieve current options
+            $current_options = get_option( 'MPT_plugin_main_settings', array() );
+            // Update only the necessary values
+            $current_options['image_block'][1] = array_merge( 
+                $current_options['image_block'][1] ?? array(),
+                // Initialize as an empty array if not set
+                array(
+                    'api_chosen' => $default_bank,
+                )
+             );
+            // Save the updated options
+            update_option( 'MPT_plugin_main_settings', $current_options );
+        } else {
         }
     }
 

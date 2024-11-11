@@ -251,7 +251,7 @@ if ( !empty( $image_blocks ) ) {
             <tr valign="top" class="image-location-template image-block-<?php 
         echo $blockIndex;
         ?> bottom-add-block-img">
-                <td colspan="2" class="text-right">
+                <td colspan="2">
                     <button type="button" class="btn btn-sm font-weight-bolder btn-light-danger remove-block-btn <?php 
         echo $class_remove_btn;
         ?>" style="text-decoration: none;">[-] <?php 

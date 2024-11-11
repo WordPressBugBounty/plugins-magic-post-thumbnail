@@ -8,7 +8,7 @@ if ( !function_exists( 'add_filter' ) ) {
 ?>
 <div class="wrap">
 
-		<?php 
+	<?php 
 settings_errors();
 ?>
 
@@ -93,6 +93,7 @@ _e( 'Enable compatibility with REST requests.<br><br> This can be useful, for ex
 					<td colspan="3">
 						<hr/>
 					</td>
+				</tr>
 				<tr>
 					<td>
 						<?php 
@@ -246,8 +247,7 @@ esc_html_e( 'Enable compatibility with the plugin "WP Automatic Plugin".', 'mpt'
 						<hr/>
 					</td>
 				</tr>
-				</tr>
-					<tr>
+				<tr>
 					<td>
 						<?php 
 esc_html_e( 'Compatibility with FIFU', 'mpt' );
