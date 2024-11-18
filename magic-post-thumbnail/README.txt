@@ -1,14 +1,14 @@
 === Generate Images - Magic Post Thumbnail ===
 Plugin Name:       Generate Images - Magic Post Thumbnail
-Version:           6.0.1
+Version:           6.0.2
 Tags:              generate, image, dalle, stable diffusion, mpt
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
 Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
-Tested up to:      6.6.2
-Stable tag:        6.0.1
+Tested up to:      6.7
+Stable tag:        6.0.2
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -29,6 +29,8 @@ The plugin allows you to configure some settings for your automatic images : **I
 **<a target="_blank" href="https://magic-post-thumbnail.com/">Official Website</a>**
 
 **<a target="_blank" href="https://magic-post-thumbnail.com/docs/">Documentation</a>**
+
+Get a **30% discount** for BLACK FRIDAY until **November 30** for the Pro version with the code: **MPTBLACKFRIDAY24**
 
 https://www.youtube.com/watch?v=eNb5MXg5e4I
 
@@ -65,7 +67,12 @@ Upgrade to our PRO version to unlock even more **advanced features** and take yo
 <li><strong>24h Support</strong></li>
 </ul>
 
+
 **<a target="_blank" href="https://www.youtube.com/watch?v=crI3V-Kkb8k">Youtube Tutorial</a>**
+
+== BLACK FRIDAY ==
+
+Get a **30% discount** for BLACK FRIDAY until **November 30** for the Pro version with the code: **MPTBLACKFRIDAY24**
 
 == Translations ==
 * French
@@ -127,6 +134,9 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 == Changelog ==
 
+= 6.0.2 - November 18, 2024 =
+* Add Black Friday discount
+* PRO: Fix problems with REST Requests
 
 = 6.0.1 - November 11, 2024 =
 * Update CSS for delete button block

@@ -40,7 +40,7 @@ if( $user ) {
 
 <div class="wrap">
 
-<?php if( !$this->mpt_freemius()->is__premium_only() && ( current_time('U') < 1717192799 ) ) { ?>
+<?php if( !$this->mpt_freemius()->is__premium_only() && ( current_time('U') < 1733030000 ) ) { ?>
 	<div class="alert alert-custom alert-default" role="alert">
 		<div class="alert-icon"><span class="svg-icon svg-icon-primary svg-icon-xl"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 			<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -51,7 +51,7 @@ if( $user ) {
 		</svg><!--end::Svg Icon--></span>
 		</div>
 		<div class="alert-text">
-			Get a <strong>20% discount until May 31</strong> when you upgrade to the <a href="admin.php?page=magic-post-thumbnail-admin-display-pricing">Pro version</a> with the code: <strong>MPT20</strong>
+			Get a <strong>30% discount for BLACK FRIDAY until November 30</strong> when you upgrade to the <a href="admin.php?page=magic-post-thumbnail-admin-display-pricing">Pro version</a> with the code: <strong>MPTBLACKFRIDAY24</strong>
 		</div>
 	</div>
 <?php } ?>
