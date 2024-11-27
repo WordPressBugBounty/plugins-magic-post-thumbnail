@@ -242,6 +242,51 @@ if ( !empty( $image_blocks ) ) {
                 </td>
             </tr>
 
+
+            <tr valign="top" class="section_custom_image_bank image-block-<?php 
+        echo $blockIndex;
+        ?> mid-add-block-img">
+                <th scope="row">
+                    <label for="hseparator"><?php 
+        esc_html_e( 'Second Image Source', 'mpt' );
+        ?></label>
+                </th>
+                <td class="custom_image_size" valign="top">
+                    <label>
+                        <select name="MPT_plugin_main_settings[image_block][<?php 
+        echo $blockIndex;
+        ?>][api_chosen_2]" class="select-custom-location form-control">
+                            <option value="none"><?php 
+        esc_html_e( 'None', 'mpt' );
+        ?></option>
+                            <?php 
+        foreach ( $list_api_auto as $api_auto_name => $api_auto_id ) {
+            if ( true === $api_auto_id[1] ) {
+                $disabled = '';
+            } else {
+                $disabled = 'disabled';
+            }
+            ?>
+                                        <option <?php 
+            echo $disabled;
+            ?> value="<?php 
+            echo $api_auto_id[0];
+            ?>" <?php 
+            echo ( isset( $block['api_chosen_2'] ) ? selected( $block['api_chosen_2'], $api_auto_id[0], false ) : '' );
+            ?>><?php 
+            echo $api_auto_name;
+            ?></option>
+                            <?php 
+        }
+        ?>
+                        </select> 
+                        <i><?php 
+        esc_html_e( 'Second Image Source, just in case the first one doesn\'t work', 'mpt' );
+        ?></i>
+                    </label>
+                </td>
+            </tr>
+
             <?php 
         include 'basedon.php';
         $class_remove_btn = 'remove-block-btn-hidden';

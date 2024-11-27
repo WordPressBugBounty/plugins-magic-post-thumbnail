@@ -442,34 +442,34 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
                 }
             }
         } else {
-            /* SET ALL PARAMETERS */
-            $array_parameters = $this->MPT_Get_Parameters( $img_block, $options, $search );
-            $api_url = $array_parameters['url'];
-            unset($array_parameters['url']);
-            if ( !isset( $api_url ) ) {
-                $log->error( 'API URL not provided', array(
+            // Process the main image block
+            $result = $this->MPT_Process_Image_Block(
+                $img_block,
+                $options,
+                $search,
+                $log,
+                $id
+            );
+            // If the first API call fails, try the second image bank
+            if ( $result === false && isset( $img_block['api_chosen_2'] ) && $img_block['api_chosen_2'] !== 'none' ) {
+                $log->info( 'Second image bank used', array(
                     'post' => $id,
                 ) );
+                $img_block['api_chosen'] = $img_block['api_chosen_2'];
+                $result = $this->MPT_Process_Image_Block(
+                    $img_block,
+                    $options,
+                    $search,
+                    $log,
+                    $id
+                );
+            }
+            // If both API calls fail, return false
+            if ( $result === false ) {
                 return false;
             }
-            /* GET THE IMAGE URL */
-            list( $url_results, $file_media, $alt_img, $caption_img ) = $this->MPT_Generate(
-                //$options['api_chosen'],
-                $img_block['api_chosen'],
-                $api_url,
-                $array_parameters,
-                $img_block['selected_image'],
-                false,
-                $search
-            );
-            if ( !isset( $url_results ) || !isset( $file_media ) ) {
-                if ( !isset( $url_results ) || !isset( $file_media ) ) {
-                    $log->error( 'No results', array(
-                        'post' => $id,
-                    ) );
-                    return false;
-                }
-            }
+            // Extract results and continue processing
+            extract( $result );
         }
         $compatibility = wp_parse_args( get_option( 'MPT_plugin_compatibility_settings' ), $this->MPT_default_options_compatibility_settings( TRUE ) );
         $path_parts = pathinfo( $url_results );
@@ -672,6 +672,59 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
                 }
             }
         }
+    }
+
+    /**
+     * Generate an image and handle related errors
+     * 
+     * @param array $img_block Image block settings
+     * @param array $options Plugin options
+     * @param string $search Search term
+     * @param object $log Logger instance
+     * @param int $id Post ID
+     * @return array|false Returns generated image data or false on failure
+     */
+    private function MPT_Process_Image_Block(
+        $img_block,
+        $options,
+        $search,
+        $log,
+        $id
+    ) {
+        // Set all parameters
+        $array_parameters = $this->MPT_Get_Parameters( $img_block, $options, $search );
+        $api_url = ( isset( $array_parameters['url'] ) ? $array_parameters['url'] : null );
+        unset($array_parameters['url']);
+        // Check if API URL is provided
+        if ( !$api_url ) {
+            $log->error( 'API URL not provided', array(
+                'post' => $id,
+            ) );
+            return false;
+        }
+        // Get the image URL
+        list( $url_results, $file_media, $alt_img, $caption_img ) = $this->MPT_Generate(
+            $img_block['api_chosen'],
+            $api_url,
+            $array_parameters,
+            $img_block['selected_image'],
+            false,
+            $search
+        );
+        // Check if results are valid
+        if ( !isset( $url_results ) || !isset( $file_media ) ) {
+            $log->error( 'No results', array(
+                'post' => $id,
+            ) );
+            return false;
+        }
+        // Return the generated image data
+        return compact(
+            'url_results',
+            'file_media',
+            'alt_img',
+            'caption_img'
+        );
     }
 
     /**
@@ -1458,6 +1511,14 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
             );
         } else {
             $result_body = json_decode( $result['body'], true );
+            // Dall-e: Catch the error
+            if ( $service == 'dallev1' && $result_body['error']['message'] ) {
+                //error_log( print_r( $result, true ) );
+                $log = $this->MPT_monolog_call();
+                $log->info( 'Problem with Dalle', array(
+                    'Error message' => $result_body['error']['message'],
+                ) );
+            }
             if ( $result['response']['code'] != '200' ) {
                 return false;
             }

@@ -158,6 +158,36 @@ foreach ( $list_api_auto as $api_auto_name => $api_auto_id ) {
     </td>
 </tr>
 
+<tr valign="top" class="section_custom_image_bank hidden image-location-template image-block-0 mid-add-block-img">
+    <th scope="row">
+        <label for="hseparator"><?php 
+esc_html_e( 'Second Image Source', 'mpt' );
+?></label>
+    </th>
+    <td class="custom_image_size" valign="top">
+        <label>
+            <select name="MPT_plugin_main_settings[image_block][0][api_chosen_2]" class="select-custom-location form-control">
+                <option value="none"><?php 
+esc_html_e( 'None', 'mpt' );
+?></option>
+                <?php 
+foreach ( $list_api_auto as $api_auto_name => $api_auto_id ) {
+    if ( true === $api_auto_id[1] ) {
+        ?>
+                        <option value="<?php 
+        echo $api_auto_id[0];
+        ?>"><?php 
+        echo $api_auto_name;
+        ?></option>
+                <?php 
+    }
+}
+?>
+            </select> 
+        </label>
+    </td>
+</tr>
+
 
 
 <tr valign="top" class="section_basedon image-location-template hidden image-block-0 mid-add-block-img">
