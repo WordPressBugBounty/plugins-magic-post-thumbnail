@@ -1,14 +1,14 @@
-=== Generate Images - Magic Post Thumbnail ===
-Plugin Name:       Generate Images - Magic Post Thumbnail
-Version:           6.0.3
-Tags:              generate, image, dalle, stable diffusion, mpt
+=== Generate Images (AI) - Magic Post Thumbnail ===
+Plugin Name:       Generate Images (AI) - Magic Post Thumbnail
+Version:           6.0.4
+Tags:              AI, generate, image, dalle, stable diffusion
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
 Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
 Tested up to:      6.7.1
-Stable tag:        6.0.3
+Stable tag:        6.0.4
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -28,8 +28,6 @@ The plugin allows you to configure some settings for your automatic images : **I
 
 **<a target="_blank" href="https://magic-post-thumbnail.com/">Official Website</a>**
 **<a target="_blank" href="https://magic-post-thumbnail.com/docs/">Documentation</a>**
-
-Get a **30% discount** for BLACK FRIDAY until **November 30** for the Pro version with the code: **MPTBLACKFRIDAY24**
 
 https://www.youtube.com/watch?v=eNb5MXg5e4I
 
@@ -68,10 +66,6 @@ Upgrade to our PRO version to unlock even more **advanced features** and take yo
 
 
 **<a target="_blank" href="https://www.youtube.com/watch?v=crI3V-Kkb8k">Youtube Tutorial</a>**
-
-== BLACK FRIDAY ==
-
-Get a **30% discount** for BLACK FRIDAY until **November 30** for the Pro version with the code: **MPTBLACKFRIDAY24**
 
 == Translations ==
 * French
@@ -132,6 +126,10 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 
 == Changelog ==
+
+= 6.0.4 - December 17, 2024 =
+* Update freemius 2.10.1
+* PRO: Better compatibility with image galleries for "Meta Box" (metabox.io)
 
 = 6.0.3 - November 27, 2024 =
 * Add second image source for "image location" blocks
