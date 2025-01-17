@@ -161,11 +161,11 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         $datas['fimg'] = $thumbnail_preview_html;
         $datas['speed'] = $speed;
         $datas['blockIndex'] = $current_image_index;
-        if ( isset( $MPT_return ) && $MPT_return != null ) {
-            $datas['keyword'] = $image_generation_result['keyword'];
-            $datas['img_resolution'] = $image_generation_result['img_resolution'];
-            $datas['img_size'] = $image_generation_result['img_size'];
-            $datas['api_chosen'] = $image_generation_result['api_chosen'];
+        if ( is_array( $image_generation_result ) ) {
+            $datas['keyword'] = ( isset( $image_generation_result['keyword'] ) ? $image_generation_result['keyword'] : '' );
+            $datas['img_resolution'] = ( isset( $image_generation_result['img_resolution'] ) ? $image_generation_result['img_resolution'] : '' );
+            $datas['img_size'] = ( isset( $image_generation_result['img_size'] ) ? $image_generation_result['img_size'] : '' );
+            $datas['api_chosen'] = ( isset( $image_generation_result['api_chosen'] ) ? $image_generation_result['api_chosen'] : '' );
         }
         // If more image blocks are remaining, continue processing.
         if ( $current_image_index < $counter_img ) {
@@ -245,6 +245,45 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         }
         // Delete the transient when processing is complete
         delete_transient( $transient_key );
+    }
+
+    /**
+     * Checks if an image already exists in the WordPress media library
+     * 
+     * This function searches for an existing image in the media library 
+     * based on the provided title and filename. It first cleans the filename
+     * by removing numbers and extension, then performs a search in the 
+     * WordPress database.
+     *
+     * @since    6.0.5
+     * @param string $title The title of the image to search for
+     * @param string $filename The filename of the image to search for
+     * 
+     * @return int|false Returns the attachment ID if found, false otherwise
+     *
+     * @access private
+     */
+    private function MPT_check_existing_image( $title, $filename ) {
+        // Clean the base filename (remove extension and numbers)
+        $base_filename = preg_replace( '/[0-9]+\\./', '.', $filename );
+        $base_filename = pathinfo( $base_filename, PATHINFO_FILENAME );
+        // Search in media library
+        $args = array(
+            'post_type'      => 'attachment',
+            'post_status'    => 'inherit',
+            'posts_per_page' => 1,
+            'meta_query'     => array(array(
+                'key'     => '_wp_attached_file',
+                'value'   => $base_filename,
+                'compare' => 'LIKE',
+            )),
+        );
+        $query = new WP_Query($args);
+        if ( $query->have_posts() ) {
+            // If image already exists, return its ID
+            return $query->posts[0]->ID;
+        }
+        return false;
     }
 
     /**
@@ -520,6 +559,22 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         /* Image filename : title extension */
         $search = str_replace( '%', '', sanitize_title( $search ) );
         // Remove % for non-latin characters
+        // Check if the 'resuse image' option is enabled.
+        if ( isset( $main_settings['image_reuse'] ) && $main_settings['image_reuse'] == true ) {
+            // Check if image file already exist if option is set
+            $proposed_filename = sanitize_title( $search );
+            $existing_image_id = $this->MPT_check_existing_image( get_the_title( $id ), $proposed_filename );
+            if ( $existing_image_id ) {
+                // Use the existing image instead of downloading a new one
+                $log->info( 'Featured image with existing image (option set)', array(
+                    'post'  => $id,
+                    'image' => $existing_image_id,
+                ) );
+                set_post_thumbnail( $id, $existing_image_id );
+                do_action( 'mpt_after_create_thumb', $id, $existing_image_id );
+                return $existing_image_id;
+            }
+        }
         if ( $options['image_filename'] == 'date' ) {
             $current_time = current_time( 'Y-m-d' );
             $filename = wp_unique_filename( $wp_upload_dir['path'], $current_time . '.' . $imgextension );

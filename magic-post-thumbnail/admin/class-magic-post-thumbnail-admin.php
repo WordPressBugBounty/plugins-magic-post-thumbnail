@@ -826,6 +826,7 @@ class Magic_Post_Thumbnail_Admin {
             ),
             'image_filename'           => 'title',
             'rewrite_featured'         => '',
+            'image_reuse'              => '',
             'image_flip'               => '',
             'image_crop'               => '',
             'bulk_generation_interval' => 0,
@@ -1281,13 +1282,18 @@ class Magic_Post_Thumbnail_Admin {
         ) );
         // Locate character strings
         wp_set_script_translations( 'mpt-images-script', 'mpt', plugin_dir_path( __DIR__ ) . 'languages' );
-        wp_enqueue_script(
-            'manual-search',
-            plugins_url( 'js/manual_search.js', __FILE__ ),
-            array('wp-blocks', 'wp-data'),
-            '1.0.0',
-            true
-        );
+        add_action( 'admin_enqueue_scripts', function ( $hook ) {
+            // Checks whether you are on an editing page
+            if ( 'post.php' === $hook || 'post-new.php' === $hook ) {
+                wp_enqueue_script(
+                    'manual-search',
+                    plugins_url( 'js/manual_search.js', __FILE__ ),
+                    array('wp-blocks', 'wp-data'),
+                    $this->version,
+                    true
+                );
+            }
+        } );
         /* Translations for Gutenberg block */
         load_plugin_textdomain( 'mpt', false, plugin_dir_path( __DIR__ ) . 'languages' );
     }

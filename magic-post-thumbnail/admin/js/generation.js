@@ -99,7 +99,7 @@ function sendposts( postIds, totalBlocks, currentPostIndex, count, imageCounter,
 						}
 
 						// Scroll to the current post being processed
-						var scrollY = (currentPostIndex === 1) ? 0 : (currentPostIndex - 2) * 90.25;
+						var scrollY = (currentPostIndex === 1) ? 0 : (currentPostIndex * 86)-86;
 						document.getElementById( "mpt-list" ).scrollTo( 0, scrollY );
 
 						// Move to the next post if available

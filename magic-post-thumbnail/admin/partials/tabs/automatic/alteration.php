@@ -28,6 +28,18 @@ if ( ! function_exists( 'add_filter' ) ) {
         </td>
 </tr>
 
+<tr valign="top">
+        <th scope="row">
+                <?php esc_html_e( 'Image reuse', 'mpt' ); ?>
+        </th>
+        <td class="checkbox-list">
+                <label class="checkbox"><input <?php echo( !empty( $options['image_reuse']) && $options['image_reuse'] == 'true' )? 'checked': ''; ?> name="MPT_plugin_main_settings[image_reuse]" type="checkbox" value="true"> <span></span> <?php esc_html_e( 'Enable', 'mpt' ); ?></label>
+                <p class="description">
+                        <?php esc_html_e( 'Check for existing images media before downloading new ones to prevent duplicates and save storage space. Reuse is based on filename.', 'mpt' ); ?>
+                </p>
+        </td>
+</tr>
+
 <tr valign="top" class="shuffle_image">
         <th scope="row">
                 <?php esc_html_e( 'Image Modifications', 'mpt' ); ?>
