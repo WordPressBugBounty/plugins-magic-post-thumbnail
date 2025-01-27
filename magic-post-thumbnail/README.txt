@@ -1,6 +1,6 @@
 === Generate Images (AI) - Magic Post Thumbnail ===
 Plugin Name:       Generate Images (AI) - Magic Post Thumbnail
-Version:           6.0.5
+Version:           6.0.6
 Tags:              AI, generate, image, dalle, stable diffusion
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
@@ -8,7 +8,7 @@ Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
 Tested up to:      6.7.1
-Stable tag:        6.0.5
+Stable tag:        6.0.6
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -126,6 +126,9 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 
 == Changelog ==
+
+= 6.0.6 - January 27, 2025 =
+* Update freemius 2.11
 
 = 6.0.5 - January 17, 2025 =
 * Update scroll during generation
