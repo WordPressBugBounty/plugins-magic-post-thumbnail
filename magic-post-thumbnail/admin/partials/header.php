@@ -6,7 +6,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 }
 
 ?>
-<div class="wrap">
+<div class="wrap main-mpt">
 	<!--begin::Main-->
 	<!--begin::Header Mobile-->
 	<div id="kt_header_mobile" class="header-mobile align-items-center  header-mobile-fixed ">

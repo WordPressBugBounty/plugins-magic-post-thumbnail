@@ -390,7 +390,9 @@ class Magic_Post_Thumbnail_Admin {
                 plugin_dir_url( __FILE__ ) . 'js/magic-post-thumbnail-admin.js',
                 array('jquery'),
                 $this->version,
-                false
+                array(
+                    'strategy' => 'defer',
+                )
             );
         }
         if ( $hook == 'toplevel_page_magic-post-thumbnail-admin-display' && 'automatic' == $module ) {

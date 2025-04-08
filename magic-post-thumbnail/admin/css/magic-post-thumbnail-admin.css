@@ -584,6 +584,11 @@ form i#togglePassword.close-eye {
 
 #tabs {
     margin-top: 20px;
+    display: block !important;
+}
+
+.main-mpt {
+    clear: both;
 }
 
 
