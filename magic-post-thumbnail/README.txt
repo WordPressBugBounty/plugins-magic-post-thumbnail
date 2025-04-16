@@ -1,14 +1,14 @@
 === Generate Images (AI) - Magic Post Thumbnail ===
 Plugin Name:       Generate Images (AI) - Magic Post Thumbnail
-Version:           6.0.7
+Version:           6.0.8
 Tags:              AI, generate, image, dalle, stable diffusion
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
 Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
-Tested up to:      6.7.2
-Stable tag:        6.0.7
+Tested up to:      6.8
+Stable tag:        6.0.8
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -126,6 +126,10 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 
 == Changelog ==
+
+= 6.0.8 - April 16, 2025 =
+- PRO: Fix "custom field" option
+- PRO: Add post status choice for crons
 
 = 6.0.7 - April 08, 2025 =
 * Update compatibility with theme "cocoon" (japanese made theme)
