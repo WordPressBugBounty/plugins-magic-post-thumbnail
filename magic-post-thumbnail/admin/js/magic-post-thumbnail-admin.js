@@ -686,6 +686,7 @@ jQuery(document).ready(function() {
     hideAPIKey("#password-pixabay");
     hideAPIKey("#password-dalle");
     hideAPIKey("#password-stability");
+    hideAPIKey("#password-replicate");
     hideAPIKey("#password-youtube");
     hideAPIKey("#password-pexels");
     hideAPIKey("#password-envato");

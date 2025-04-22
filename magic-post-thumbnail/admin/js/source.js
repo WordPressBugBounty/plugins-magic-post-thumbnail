@@ -131,6 +131,53 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+// Replicate
+document.addEventListener("DOMContentLoaded", function() {
+    const btnReplicate    = document.getElementById("btnReplicate");
+    const resultReplicate = document.getElementById("resultReplicate");
+    const apiKeyInput     = document.querySelector('input[name="MPT_plugin_banks_settings[replicate][apikey]"]');
+    const imageReplicate  = document.querySelector("#resultReplicate img");
+
+    btnReplicate.addEventListener("click", function() {
+        // show spinner while testing
+        imageReplicate.classList.remove("hidden");
+
+        // send AJAX request to test Replicate API key
+        fetch(apisTestingAjax.ajaxurl, {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({
+                action:  "test_apis",
+                apibank: "replicate",
+                nonce:   apisTestingAjax.nonce,
+                apikey:  apiKeyInput.value
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // parse the JSON string we got back
+            const parsed = JSON.parse(data.data);
+
+            // check for a non-empty 'results' array
+            if ( data.success && parsed.results && parsed.results.length > 0 ) {
+                resultReplicate.innerHTML = '<span class="text-success">' + apisTestingAjax.successful_testing + '</span>';
+            } else {
+                resultReplicate.innerHTML = '<span class="text-warning">' + apisTestingAjax.error_key + '</span>';
+            }
+        })
+        .catch(error => {
+            // network or unexpected error
+            resultReplicate.innerHTML = '<span class="text-warning">' 
+                + apisTestingAjax.error_key + ' or ' 
+                + apisTestingAjax.error_testing + '</span>';
+        });
+    });
+});
+
+
+
+
+
 
 // Youtube
 document.addEventListener("DOMContentLoaded", function() {

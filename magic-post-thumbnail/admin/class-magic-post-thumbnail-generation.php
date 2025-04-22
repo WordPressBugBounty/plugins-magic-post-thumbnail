@@ -1124,12 +1124,15 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
                     'Authorization' => 'Bearer ' . $api_key,
                 ),
                 'body'        => json_encode( array(
-                    "model"  => "dall-e-3",
-                    "prompt" => $search,
-                    "n"      => 1,
-                    "size"   => $img_size,
+                    "model"   => "dall-e-3",
+                    "style"   => "vivid",
+                    "quality" => 'hd',
+                    "prompt"  => 'Photorealistic image of ' . $search,
+                    "n"       => 1,
+                    "size"    => $img_size,
                 ) ),
             );
+        } elseif ( isset( $img_block['api_chosen'] ) && $img_block['api_chosen'] === 'replicate' ) {
         } elseif ( $img_block['api_chosen'] == 'stability' ) {
         } elseif ( $img_block['api_chosen'] == 'flickr' ) {
             $api_key = '63d9c292b9e2dfacd3a73908779d6d6f';
@@ -1280,6 +1283,45 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         $log->info( 'Source used', array(
             'Service' => $service,
         ) );
+        // ── INSERT REPLICATE POLLING HERE ────────────────────────────────────────
+        if ( $service === 'replicate' ) {
+            // extract prediction ID and status URL
+            $predictionId = $result_body['id'];
+            $getUrl = $result_body['urls']['get'];
+            // retrieve API token from settings
+            $options = wp_parse_args( get_option( 'MPT_plugin_banks_settings' ), $this->MPT_default_options_banks_settings( true ) );
+            $apiToken = ( !empty( $options['replicate']['apikey'] ) ? $options['replicate']['apikey'] : '' );
+            // poll until prediction is complete
+            do {
+                usleep( 500000 );
+                // wait 0.5s
+                $resp = wp_remote_get( $getUrl, array(
+                    'headers' => array(
+                        'Authorization' => 'Token ' . $apiToken,
+                        'Content-Type'  => 'application/json',
+                    ),
+                    'timeout' => 10,
+                ) );
+                // DEBUG
+                /*
+                			$log->info( 'Replicate polling status', [
+                				'http_code' => wp_remote_retrieve_response_code( $resp ),
+                				'body'      => substr( wp_remote_retrieve_body( $resp ), 0, 100 ) // Start of JSON
+                			] );*/
+                if ( is_wp_error( $resp ) ) {
+                    return false;
+                }
+                $body = json_decode( wp_remote_retrieve_body( $resp ), true );
+                $status = $body['status'] ?? '';
+            } while ( in_array( $status, array('starting', 'processing'), true ) );
+            // on success, replace output so subsequent logic sees the final URL
+            if ( $status === 'succeeded' && !empty( $body['output'][0] ) ) {
+                $result_body['output'] = $body['output'];
+            } else {
+                return false;
+            }
+        }
+        // ── END OF REPLICATE POLLING ────────────────────────────────────────────
         if ( $service == 'google_image' ) {
             $loop_results = $result_body['items'];
             // TODO : Check if urls are real images or just redirections
@@ -1315,6 +1357,9 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         } elseif ( $service == 'envato' ) {
             $loop_results = $result_body['results']['search_query_result']['search_payload']['items'];
             $url_path = 'humane_id';
+        } elseif ( $service == 'replicate' ) {
+            $loop_results = ( isset( $result_body['output'] ) ? (array) $result_body['output'] : array() );
+            $url_path = null;
         } else {
             return false;
         }
@@ -1368,7 +1413,9 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
                 if ( 'image' != $fetch_result_key && $service == 'stability' ) {
                     continue;
                 }
-                if ( $service != 'stability' ) {
+                if ( $service == 'replicate' ) {
+                    $url_result = $fetch_result;
+                } elseif ( $service !== 'stability' ) {
                     $url_result = $fetch_result[$url_path];
                 }
                 // Change default url image
@@ -1386,6 +1433,9 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
                         'revised_prompt' => $fetch_result['revised_prompt'],
                     ) );
                 } elseif ( $service == 'stability' ) {
+                    $url_result = $fetch_result;
+                } elseif ( $service == 'replicate' ) {
+                    // For replicate, $fetch_result is already the final URL
                     $url_result = $fetch_result;
                 } else {
                     $url_result = $fetch_result[$url_path];
@@ -1529,7 +1579,7 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
      * @since    4.0.0
      */
     private function MPT_get_results( $service, $url, $url_parameters ) {
-        if ( $service == 'dallev1' || $service == 'stability' || $service == 'pexels' ) {
+        if ( $service == 'dallev1' || $service == 'stability' || $service == 'pexels' || $service == 'replicate' ) {
             $defaults = $url_parameters;
         } else {
             /* Retrieve 3 images as result */
@@ -1566,15 +1616,17 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
             );
         } else {
             $result_body = json_decode( $result['body'], true );
+            $log = $this->MPT_monolog_call();
             // Dall-e: Catch the error
             if ( $service == 'dallev1' && $result_body['error']['message'] ) {
                 //error_log( print_r( $result, true ) );
-                $log = $this->MPT_monolog_call();
                 $log->info( 'Problem with Dalle', array(
                     'Error message' => $result_body['error']['message'],
                 ) );
             }
-            if ( $result['response']['code'] != '200' ) {
+            // accept 200 for most services, 201 for replicate
+            $code = intval( $result['response']['code'] );
+            if ( $service === 'replicate' && $code !== 201 || $service !== 'replicate' && $code !== 200 ) {
                 return false;
             }
         }

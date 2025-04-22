@@ -775,6 +775,7 @@ class Magic_Post_Thumbnail_Admin {
             esc_html__( 'Pexels', 'mpt' )                  => array('pexels', false),
             esc_html__( 'Envato Elements', 'mpt' )         => array('envato', false),
             esc_html__( 'Stable Diffusion', 'mpt' )        => array('stability', false),
+            esc_html__( 'Replicate', 'mpt' )               => array('replicate', false),
         );
         return $list_api_auto;
     }
@@ -884,6 +885,11 @@ class Magic_Post_Thumbnail_Admin {
                 'model'         => 'sd3.5-large-turbo',
                 'aspect_ratio'  => '16:9',
                 'output_format' => 'jpeg',
+            ),
+            'replicate'         => array(
+                'apikey'        => '',
+                'model'         => 'black-forest-labs/flux-schnell',
+                'output_format' => 'webp',
             ),
             'cc_search'         => array(
                 'source'       => 1,
@@ -1203,6 +1209,7 @@ class Magic_Post_Thumbnail_Admin {
         check_ajax_referer( 'api_testing_nonce', 'nonce' );
         $apiKey = sanitize_text_field( $_POST['apikey'] );
         $apiBank = sanitize_text_field( $_POST['apibank'] );
+        $response = '';
         if ( 'pixabay' === $apiBank ) {
             $apiUrl = "https://pixabay.com/api/?key=" . $apiKey . "&q=exemple";
             $response = wp_remote_get( $apiUrl );
@@ -1238,17 +1245,32 @@ class Magic_Post_Thumbnail_Admin {
                     'Authorization' => $apiKey,
                 ),
             ) );
-        } elseif ( 'envato' === $apiBank ) {
-            $url = 'https://api.extensions.envato.com/extensions/user_info';
-            $response = wp_remote_get( $url, array(
-                'headers' => array(
-                    "Extensions-Extension-Id" => md5( get_site_url() ),
-                    "Extensions-Token"        => $apiKey,
-                    "Content-Type"            => "application/json",
-                ),
-            ) );
+        } elseif ( 'replicate' === $apiBank ) {
+            // test Replicate API key by listing models
+            $apiUrl = 'https://api.replicate.com/v1/models';
+            $response = wp_remote_get( $apiUrl, [
+                'headers' => [
+                    'Authorization' => 'Token ' . $apiKey,
+                    'Content-Type'  => 'application/json',
+                ],
+                'timeout' => 10,
+            ] );
+            // Handle HTTP error
+            if ( is_wp_error( $response ) ) {
+                wp_send_json_error( 'Error connecting to Replicate API.' );
+            }
+            // Check status code for unauthorized vs ok
+            $code = wp_remote_retrieve_response_code( $response );
+            if ( 200 === $code ) {
+                wp_send_json_success( wp_remote_retrieve_body( $response ) );
+            } elseif ( 401 === $code ) {
+                wp_send_json_error( 'unauthorized', 401 );
+            } else {
+                wp_send_json_error( 'Unexpected status: ' . $code, $code );
+            }
         } else {
             $response = '';
+            wp_send_json_error( 'Unknown API bank: ' . $apiBank );
         }
         if ( is_wp_error( $response ) ) {
             wp_send_json_error( 'Error connecting to the API.' );

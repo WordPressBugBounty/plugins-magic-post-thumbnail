@@ -1,14 +1,14 @@
 === Generate Images (AI) - Magic Post Thumbnail ===
 Plugin Name:       Generate Images (AI) - Magic Post Thumbnail
-Version:           6.0.8
-Tags:              AI, generate, image, dalle, stable diffusion
+Version:           6.1.0
+Tags:              generate, image, dalle, stable diffusion, replicate
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
 Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
 Tested up to:      6.8
-Stable tag:        6.0.8
+Stable tag:        6.1.0
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,7 +19,7 @@ Get images for your posts with automatic generation & multiple banks. Generate a
 
 **Easily create eye-catching images for your posts automatically with Magic Post Thumbnail!**
 
-Retrieve images from Google Images, DALL·E, Stable Diffusion, Pexels, Unsplash, Envato Elements or Pixabay thanks to API, **based on your post title**, text analysis and much more. The plugin add picture as your **featured thumbnail** or **inside the post** when you publish the post.
+Retrieve images from Google Images, DALL·E, Stable Diffusion, Replicate, Pexels, Unsplash, Envato Elements or Pixabay thanks to API, **based on your post title**, text analysis and much more. The plugin add picture as your **featured thumbnail** or **inside the post** when you publish the post.
 
 The plugin allows you to configure some settings for your automatic images : **Image bank**, language search, selected post types, image type, free-to-use or not, image size and much more.
 
@@ -54,7 +54,7 @@ Upgrade to our PRO version to unlock even more **advanced features** and take yo
 
 <li>Customisable <strong>Crons</strong></li>
 <li>Set different image locations for each post generation.</li>
-<li>Images from Youtube, <strong>Stable Diffusion</strong>, Unsplash, Pexels or <strong>Envato Elements</strong></li>
+<li>Images from Youtube, <strong>Stable Diffusion</strong>, <strong>Replicate (42 models)</strong>, Unsplash, Pexels or <strong>Envato Elements</strong></li>
 <li>More images with the Gutenberg Block</li>
 <li>Image search based on Tags, Categories, Text Analyser per paragraph Custom Fields, Custom Request and <strong>OpenAI Keyword Extractor</strong></li>
 <li>Image Modifications: Flip horizontally and/or Crop Image by 10%</li>
@@ -126,6 +126,11 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 
 == Changelog ==
+
+= 6.1.0 - April 22, 2025 =
+- Improve images of Dalle generation
+- PRO: Add Replicate Api models with 42 images models.
+- PRO: Add "Stable Image Ultra" as model for better quality
 
 = 6.0.8 - April 16, 2025 =
 - PRO: Fix "custom field" option
