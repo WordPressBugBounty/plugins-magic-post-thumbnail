@@ -1,14 +1,14 @@
 === Generate Images (AI) - Magic Post Thumbnail ===
 Plugin Name:       Generate Images (AI) - Magic Post Thumbnail
-Version:           6.1.0
+Version:           6.1.1
 Tags:              generate, image, dalle, stable diffusion, replicate
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
 Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
-Tested up to:      6.8
-Stable tag:        6.1.0
+Tested up to:      6.8.1
+Stable tag:        6.1.1
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -28,6 +28,8 @@ The plugin allows you to configure some settings for your automatic images : **I
 
 **<a target="_blank" href="https://magic-post-thumbnail.com/">Official Website</a>**
 **<a target="_blank" href="https://magic-post-thumbnail.com/docs/">Documentation</a>**
+
+Get a **20% discount until May 25** when you upgrade to the Pro version with the code: **MPTMAYDISCOUNT**
 
 https://www.youtube.com/watch?v=eNb5MXg5e4I
 
@@ -127,14 +129,18 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 == Changelog ==
 
+= 6.1.1 - May 07, 2025 =
+* Add discount code for may
+* PRO: Add cron interval to every 3 minute
+
 = 6.1.0 - April 22, 2025 =
-- Improve images of Dalle generation
-- PRO: Add Replicate Api models with 42 images models.
-- PRO: Add "Stable Image Ultra" as model for better quality
+* Improve images of Dalle generation
+* PRO: Add Replicate Api models with 42 images models.
+* PRO: Add "Stable Image Ultra" as model for better quality
 
 = 6.0.8 - April 16, 2025 =
-- PRO: Fix "custom field" option
-- PRO: Add post status choice for crons
+* PRO: Fix "custom field" option
+* PRO: Add post status choice for crons
 
 = 6.0.7 - April 08, 2025 =
 * Update compatibility with theme "cocoon" (japanese made theme)
