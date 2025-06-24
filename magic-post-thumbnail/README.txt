@@ -1,6 +1,6 @@
 === Generate Images (AI) - Magic Post Thumbnail ===
 Plugin Name:       Generate Images (AI) - Magic Post Thumbnail
-Version:           6.1.1
+Version:           6.1.2
 Tags:              generate, image, dalle, stable diffusion, replicate
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
@@ -8,7 +8,7 @@ Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
 Tested up to:      6.8.1
-Stable tag:        6.1.1
+Stable tag:        6.1.2
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -29,9 +29,9 @@ The plugin allows you to configure some settings for your automatic images : **I
 **<a target="_blank" href="https://magic-post-thumbnail.com/">Official Website</a>**
 **<a target="_blank" href="https://magic-post-thumbnail.com/docs/">Documentation</a>**
 
-Get a **20% discount until May 25** when you upgrade to the Pro version with the code: **MPTMAYDISCOUNT**
-
 https://www.youtube.com/watch?v=eNb5MXg5e4I
+
+Get a **20% discount until May 25** when you upgrade to the <a href="admin.php?page=magic-post-thumbnail-admin-display-pricing">Pro version</a> with the code: **MPTMAYDISCOUNT**
 
 == What is included ? ==
 
@@ -128,6 +128,10 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 
 == Changelog ==
+
+= 6.1.2 - June 24, 2025 =
+* Fix bug with plugin Kadence Blocks
+* Update Freemius 2.12.0
 
 = 6.1.1 - May 07, 2025 =
 * Add discount code for may

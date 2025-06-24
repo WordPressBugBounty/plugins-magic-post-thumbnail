@@ -608,9 +608,15 @@ jQuery(document).ready(function() {
 
     /* Drag & drop */
     document.addEventListener('dragstart', function (event) {
-      var addTag      = event.target.innerHTML;
+      // Kadence Editor: do nothing
+      if (document.body.classList.contains('kt-editor-width-default')) {
+        return;
+      }
+
+      var addTag = event.target.innerHTML;
       event.dataTransfer.setData('text/html', addTag);
     });
+
 
     document.addEventListener('dragend', function (event) {
       jQuery('.textarea-editable span').prop("contenteditable", false);
