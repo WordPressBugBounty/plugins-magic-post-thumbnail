@@ -1,6 +1,6 @@
 === Generate Images (AI) - Magic Post Thumbnail ===
 Plugin Name:       Generate Images (AI) - Magic Post Thumbnail
-Version:           6.1.2
+Version:           6.1.3
 Tags:              generate, image, dalle, stable diffusion, replicate
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
@@ -8,7 +8,7 @@ Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
 Tested up to:      6.8.1
-Stable tag:        6.1.2
+Stable tag:        6.1.3
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,7 +31,7 @@ The plugin allows you to configure some settings for your automatic images : **I
 
 https://www.youtube.com/watch?v=eNb5MXg5e4I
 
-Get a **20% discount until May 25** when you upgrade to the <a href="admin.php?page=magic-post-thumbnail-admin-display-pricing">Pro version</a> with the code: **MPTMAYDISCOUNT**
+Get a **15% discount until August 31** when you upgrade to the <a href="admin.php?page=magic-post-thumbnail-admin-display-pricing">Pro version</a> with the code: **MPTSUMMER25**
 
 == What is included ? ==
 
@@ -41,6 +41,7 @@ Get a **20% discount until May 25** when you upgrade to the <a href="admin.php?p
 <li>Generate Thumbnail for one post</li>
 <li><strong>Generate Thumbnails</strong> for Posts, Pages & Custom Post Types</li>
 <li><strong>new: Insert Image anywhere in your post content!</strong></li>
+<li><strong>new: Choose image position up to the 10th occurrence (First to Tenth, plus Last) when inserting images in your post content!</strong></li>
 <li>Image <strong>based on Titles</strong> or Text Analysis</li>
 <li><strong>New</strong>: Gutenberg Block for searching and adding images to your posts</li>
 <li>Images from Google Image, Google API, Pixabay, Openverse, DALL·E or Flickr</li>
@@ -128,6 +129,10 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 
 == Changelog ==
+
+= 6.1.3 - August 07 2025 =
+* Allow image positioning up to the 10th occurrence (First to Tenth, plus Last) for inline content placement.
+* Update Freemius 2.12.1
 
 = 6.1.2 - June 24, 2025 =
 * Fix bug with plugin Kadence Blocks

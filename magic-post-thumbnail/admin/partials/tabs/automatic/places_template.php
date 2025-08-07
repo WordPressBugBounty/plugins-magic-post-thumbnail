@@ -82,6 +82,21 @@ esc_html_e( 'Fourth', 'mpt' );
                 <option value="5"><?php 
 esc_html_e( 'Fifth', 'mpt' );
 ?></option>
+                <option value="6"><?php 
+esc_html_e( 'Sixth', 'mpt' );
+?></option>
+                <option value="7"><?php 
+esc_html_e( 'Seventh', 'mpt' );
+?></option>
+                <option value="8"><?php 
+esc_html_e( 'Eighth', 'mpt' );
+?></option>
+                <option value="9"><?php 
+esc_html_e( 'Ninth', 'mpt' );
+?></option>
+                <option value="10"><?php 
+esc_html_e( 'Tenth', 'mpt' );
+?></option>
                 <option value="last"><?php 
 esc_html_e( 'Last', 'mpt' );
 ?></option>

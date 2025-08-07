@@ -126,6 +126,31 @@ if ( !empty( $image_blocks ) ) {
         ?>><?php 
         esc_html_e( 'Fifth', 'mpt' );
         ?></option>
+                            <option value="6" <?php 
+        selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '6' );
+        ?>><?php 
+        esc_html_e( 'Sixth', 'mpt' );
+        ?></option>
+                            <option value="7" <?php 
+        selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '7' );
+        ?>><?php 
+        esc_html_e( 'Seventh', 'mpt' );
+        ?></option>
+                            <option value="8" <?php 
+        selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '8' );
+        ?>><?php 
+        esc_html_e( 'Eighth', 'mpt' );
+        ?></option>
+                            <option value="9" <?php 
+        selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '9' );
+        ?>><?php 
+        esc_html_e( 'Ninth', 'mpt' );
+        ?></option>
+                            <option value="10" <?php 
+        selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '10' );
+        ?>><?php 
+        esc_html_e( 'Tenth', 'mpt' );
+        ?></option>
                             <option value="last" <?php 
         selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), 'last' );
         ?>><?php 
