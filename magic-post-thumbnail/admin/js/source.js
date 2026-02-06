@@ -290,7 +290,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// Envato Elements
+// Envato Elements - DISABLED (no longer working)
+/*
 document.addEventListener("DOMContentLoaded", function() {
     const btnEnvato         = document.getElementById("btnEnvato");
     const resultEnvato      = document.getElementById("resultEnvato");
@@ -323,3 +324,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+*/

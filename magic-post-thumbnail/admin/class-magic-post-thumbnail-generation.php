@@ -139,7 +139,7 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         $compatibility = wp_parse_args( get_option( 'MPT_plugin_compatibility_settings' ), $this->MPT_default_options_compatibility_settings( TRUE ) );
         $thumbnail_url = '';
         // Handle image preview when using the FIFU plugin.
-        if ( true == $compatibility['enable_FIFU'] && 'FIFU' == $img_block['image_location'] && is_plugin_active( 'featured-image-from-url/featured-image-from-url.php' ) && $MPT_return != null ) {
+        if ( true == $compatibility['enable_FIFU'] && 'FIFU' == $img_block['image_location'] && (is_plugin_active( 'featured-image-from-url/featured-image-from-url.php' ) || is_plugin_active( 'fifu-premium/fifu-premium.php' )) && $MPT_return != null ) {
         } elseif ( ($generation_status == 'already-done' || $generation_status == 'successful') && !empty( $MPT_return ) ) {
             // Display the newly generated image.
             $new_image = wp_get_attachment_image_src( $MPT_return, array(70, 70) );
@@ -1187,7 +1187,6 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
             );
         } elseif ( $img_block['api_chosen'] == 'youtube' ) {
         } elseif ( $img_block['api_chosen'] == 'pexels' ) {
-        } elseif ( $img_block['api_chosen'] == 'envato' ) {
         } elseif ( $img_block['api_chosen'] == 'unsplash' ) {
         } elseif ( $img_block['api_chosen'] == 'cc_search' || $img_block['api_chosen'] == 'openverse' ) {
             $imgtype = ( !empty( $options['cc_search']['imgtype'] ) ? $options['cc_search']['imgtype'] : '' );
@@ -1354,9 +1353,6 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         } elseif ( $service == 'cc_search' ) {
             $loop_results = $result_body['results'];
             $url_path = 'url';
-        } elseif ( $service == 'envato' ) {
-            $loop_results = $result_body['results']['search_query_result']['search_payload']['items'];
-            $url_path = 'humane_id';
         } elseif ( $service == 'replicate' ) {
             $loop_results = ( isset( $result_body['output'] ) ? (array) $result_body['output'] : array() );
             $url_path = null;
@@ -1364,13 +1360,12 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
             return false;
         }
         // Check if function is launch for Gutenberg block
-        if ( TRUE == $get_only_thumb && $service == 'envato' ) {
-            return $result_body['results']['search_query_result']['search_payload'];
+        /* if( ( TRUE == $get_only_thumb ) && ( $service == 'envato' ) ) { // DISABLED - Envato Elements no longer working
+        		return $result_body['results']['search_query_result']['search_payload'];
+        	} else */
+        if ( TRUE == $get_only_thumb && 'flickr' != $service ) {
+            return $result_body;
         } else {
-            if ( TRUE == $get_only_thumb && 'flickr' != $service ) {
-                return $result_body;
-            } else {
-            }
         }
         /* Random Image */
         if ( $selected_image == 'random_result' && $service != 'dallev1' && $service != 'stability' ) {
@@ -1452,8 +1447,6 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
                         $caption = $fetch_result['photographer'];
                     } elseif ( $service == 'cc_search' ) {
                         $caption = $fetch_result['creator'];
-                    } elseif ( $service == 'envato' ) {
-                        $caption = $fetch_result['contributor_username'];
                     } elseif ( $service == 'google_scraping' ) {
                         $caption = $fetch_result['caption'];
                     } elseif ( $service == 'flickr' ) {
@@ -1487,22 +1480,27 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
                     $url_result = $result['source'];
                     //$url_result_sizes       = $result_img_body_flickr['sizes'];
                 }
-                // ENVATO : Additional remote request to get image url
-                if ( $service == 'envato' ) {
-                    $url = 'https://api.extensions.envato.com/extensions/item/' . $url_result . '/download';
-                    $project_ags = array(
-                        'project_name' => get_bloginfo( 'name' ),
-                    );
-                    $result_img_envato = wp_remote_post( add_query_arg( $project_ags, $url ), array(
-                        'headers' => array(
-                            "Extensions-Extension-Id" => md5( get_site_url() ),
-                            "Extensions-Token"        => $url_parameters['envato_token'],
-                            "Content-Type"            => "application/json",
-                        ),
-                    ) );
-                    $result = json_decode( $result_img_envato['body'] );
-                    $url_result = $result->download_urls->max2000;
+                // ENVATO : Additional remote request to get image url - DISABLED (no longer working)
+                /*
+                if( $service == 'envato' ) {
+                
+                		$url 				= 'https://api.extensions.envato.com/extensions/item/' . $url_result . '/download';
+                		$project_ags 		= array( 'project_name' => get_bloginfo('name') );
+                		$result_img_envato 	= wp_remote_post(
+                			add_query_arg($project_ags, $url),
+                			array(
+                				'headers' => array(
+                					"Extensions-Extension-Id" 	=> md5( get_site_url() ),
+                					"Extensions-Token" 			=> $url_parameters['envato_token'],
+                					"Content-Type"				=> "application/json"
+                				),
+                			)
+                		);
+                		$result 			= json_decode( $result_img_envato['body'] );
+                		$url_result			 = $result->download_urls->max2000;
+                
                 }
+                */
                 // YOUTUBE : Additional remote request to get thumbnail
                 if ( $service == 'youtube' ) {
                     $api_key = $url_parameters['key'];
@@ -1516,7 +1514,7 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
                     continue;
                 }
                 // Avoid unknown image type
-                if ( $service != 'dallev1' && $service != 'stability' && $service != 'unsplash' && $service != 'pexels' && $service != 'envato' ) {
+                if ( $service != 'dallev1' && $service != 'stability' && $service != 'unsplash' && $service != 'pexels' ) {
                     $url_result = $url_result;
                     $wp_filetype = wp_check_filetype( $url_result );
                     if ( false == $wp_filetype['type'] ) {
@@ -1778,6 +1776,67 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         $extractor = new KeywordExtractor($selected_lang);
         $keywords = $extractor->extractKeywords( $text );
         return $keywords[0];
+    }
+
+    /**
+     * Calculate dimensions from aspect ratio for models that use width/height
+     *
+     * @since    6.0.0
+     * @param string $aspect_ratio The aspect ratio (e.g., '16:9', '4:3')
+     * @param int $max_resolution Maximum resolution for the model
+     * @return array Array with 'width' and 'height' keys
+     */
+    private function calculate_dimensions_from_aspect_ratio( $aspect_ratio, $max_resolution = 2048 ) {
+        // Seedream-4 specific dimensions as per official documentation
+        $seedream_dimensions = array(
+            '1:1'  => array(
+                'width'  => 2048,
+                'height' => 2048,
+            ),
+            '4:3'  => array(
+                'width'  => 2304,
+                'height' => 1728,
+            ),
+            '16:9' => array(
+                'width'  => 2560,
+                'height' => 1440,
+            ),
+            '3:2'  => array(
+                'width'  => 2304,
+                'height' => 1536,
+            ),
+            '9:16' => array(
+                'width'  => 1440,
+                'height' => 2560,
+            ),
+        );
+        // Check if we have specific dimensions for this aspect ratio
+        if ( isset( $seedream_dimensions[$aspect_ratio] ) ) {
+            return $seedream_dimensions[$aspect_ratio];
+        }
+        // Fallback to calculated dimensions for other ratios
+        $ratio_parts = explode( ':', $aspect_ratio );
+        if ( count( $ratio_parts ) !== 2 ) {
+            // Default to 16:9 if invalid format
+            $ratio_parts = array(16, 9);
+        }
+        $ratio_width = (int) $ratio_parts[0];
+        $ratio_height = (int) $ratio_parts[1];
+        // Calculate base dimensions
+        $base_width = $max_resolution;
+        $base_height = round( $max_resolution * $ratio_height / $ratio_width );
+        // Ensure we don't exceed max resolution
+        if ( $base_height > $max_resolution ) {
+            $base_height = $max_resolution;
+            $base_width = round( $max_resolution * $ratio_width / $ratio_height );
+        }
+        // Round to even numbers for better compatibility
+        $width = $base_width - $base_width % 2;
+        $height = $base_height - $base_height % 2;
+        return array(
+            'width'  => $width,
+            'height' => $height,
+        );
     }
 
 }

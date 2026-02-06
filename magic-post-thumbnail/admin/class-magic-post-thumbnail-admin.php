@@ -39,6 +39,15 @@ class Magic_Post_Thumbnail_Admin {
     private $version;
 
     /**
+     * URL being downloaded in block (for http_request_args filter).
+     *
+     * @since    5.0.0
+     * @access   private
+     * @var      string|null    $block_downloading_url    URL when downloading for block, null otherwise.
+     */
+    private $block_downloading_url = null;
+
+    /**
      * Initialize the class and set its properties.
      *
      * @since    4.0.0
@@ -630,7 +639,9 @@ class Magic_Post_Thumbnail_Admin {
         //register_setting('MPT-plugin-posts-settings', 'MPT_plugin_posts_settings');
         register_setting( 'MPT-plugin-block-settings', 'MPT_plugin_block_settings' );
         register_setting( 'MPT-plugin-main-settings', 'MPT_plugin_main_settings' );
-        register_setting( 'MPT-plugin-banks-settings', 'MPT_plugin_banks_settings' );
+        register_setting( 'MPT-plugin-banks-settings', 'MPT_plugin_banks_settings', array(
+            'sanitize_callback' => array($this, 'MPT_sanitize_banks_settings'),
+        ) );
         register_setting( 'MPT-plugin-interval-settings', 'MPT_plugin_interval_settings' );
         register_setting( 'MPT-plugin-cron-settings', 'MPT_plugin_cron_settings' );
         register_setting( 'MPT-plugin-rights-settings', 'MPT_plugin_rights_settings' );
@@ -773,7 +784,6 @@ class Magic_Post_Thumbnail_Admin {
             esc_html__( 'Youtube', 'mpt' )                 => array('youtube', false),
             esc_html__( 'Unsplash', 'mpt' )                => array('unsplash', false),
             esc_html__( 'Pexels', 'mpt' )                  => array('pexels', false),
-            esc_html__( 'Envato Elements', 'mpt' )         => array('envato', false),
             esc_html__( 'Stable Diffusion', 'mpt' )        => array('stability', false),
             esc_html__( 'Replicate', 'mpt' )               => array('replicate', false),
         );
@@ -890,6 +900,7 @@ class Magic_Post_Thumbnail_Admin {
                 'apikey'        => '',
                 'model'         => 'black-forest-labs/flux-schnell',
                 'output_format' => 'webp',
+                'aspect_ratio'  => '16:9',
             ),
             'cc_search'         => array(
                 'source'       => 1,
@@ -1380,30 +1391,74 @@ class Magic_Post_Thumbnail_Admin {
     public function MPT_block_downloading_image() {
         // Check the nonce
         check_ajax_referer( 'mpt_gutenberg_block', 'nonce' );
-        $url_image = ( isset( $_POST['url_image'] ) ? sanitize_text_field( $_POST['url_image'] ) : '' );
+        // Get raw URL - PHP auto-decodes POST data, but Wikimedia URLs need encoded chars preserved
+        // Use filter_var with FILTER_SANITIZE_URL which preserves % encoding better
+        $url_image_raw = ( isset( $_POST['url_image'] ) ? $_POST['url_image'] : '' );
+        $url_thumb_raw = ( isset( $_POST['url_thumbnail'] ) ? $_POST['url_thumbnail'] : '' );
+        // Validate URLs (must start with http/https)
+        $url_image = ( filter_var( $url_image_raw, FILTER_VALIDATE_URL ) ? $url_image_raw : '' );
+        $url_thumbnail = ( filter_var( $url_thumb_raw, FILTER_VALIDATE_URL ) ? $url_thumb_raw : '' );
         $search_term = ( isset( $_POST['search_term'] ) ? sanitize_text_field( $_POST['search_term'] ) : 'image' );
         $bank = ( isset( $_POST['bank'] ) ? sanitize_text_field( $_POST['bank'] ) : '' );
+        // Openverse thumbnail URLs have ?format=json which returns JSON, not an image - strip it
+        if ( !empty( $url_thumbnail ) && strpos( $url_thumbnail, 'api.openverse.org' ) !== false ) {
+            $url_thumbnail = preg_replace( '/\\?format=json$/', '', $url_thumbnail );
+        }
         $alt = '';
         $caption = '';
-        // ENVATO : Additional remote request to get image url
-        if ( $bank == 'envato' ) {
-            $options_banks = get_option( 'MPT_plugin_banks_settings' );
-            $envato_token = ( !empty( $options_banks['envato']['envato_token'] ) ? $options_banks['envato']['envato_token'] : '' );
-            $url = 'https://api.extensions.envato.com/extensions/item/' . $url_image . '/download';
-            $project_ags = array(
-                'project_name' => get_bloginfo( 'name' ),
-            );
-            $result_img_envato = wp_remote_post( add_query_arg( $project_ags, $url ), array(
-                'headers' => array(
-                    "Extensions-Extension-Id" => md5( get_site_url() ),
-                    "Extensions-Token"        => $envato_token,
-                    "Content-Type"            => "application/json",
-                ),
-            ) );
-            $result = json_decode( $result_img_envato['body'] );
-            $url_image = $result->download_urls->max2000;
+        // ENVATO : Additional remote request to get image url - DISABLED (no longer working)
+        /*
+        if( $bank == 'envato' ) {
+        
+        	$options_banks 		= get_option( 'MPT_plugin_banks_settings' );
+        	$envato_token		= ( ! empty( $options_banks['envato']['envato_token'] ) ) ? $options_banks['envato']['envato_token'] : '' ;
+        
+        	$url 				= 'https://api.extensions.envato.com/extensions/item/' . $url_image . '/download';
+        	$project_ags 		= array( 'project_name' => get_bloginfo('name') );
+        	$result_img_envato 	= wp_remote_post(
+        		add_query_arg($project_ags, $url),
+        		array(
+        			'headers' => array(
+        				"Extensions-Extension-Id" 	=> md5( get_site_url() ),
+        				"Extensions-Token" 			=> $envato_token,
+        				"Content-Type"				=> "application/json"
+        			),
+        		)
+        	);
+        	$result 			= json_decode( $result_img_envato['body'] );
+        	$url_image			= $result->download_urls->max2000;
         }
-        $tmp = download_url( $url_image );
+        */
+        // For Openverse: try main image first (thumbnail proxy often fails)
+        $url_to_try = $url_image;
+        // Extend HTTP timeout and add User-Agent for large/restricted images (Openverse, Flickr, etc.)
+        add_filter( 'http_request_timeout', array($this, 'MPT_custom_http_request_timeout') );
+        $this->block_downloading_url = $url_to_try;
+        add_filter(
+            'http_request_args',
+            array($this, 'MPT_filter_http_request_args_for_block_download'),
+            10,
+            2
+        );
+        $tmp = download_url( $url_to_try );
+        remove_filter( 'http_request_args', array($this, 'MPT_filter_http_request_args_for_block_download'), 10 );
+        $this->block_downloading_url = null;
+        remove_filter( 'http_request_timeout', array($this, 'MPT_custom_http_request_timeout') );
+        // If main URL failed, try thumbnail as fallback (for Openverse)
+        if ( is_wp_error( $tmp ) && !empty( $url_thumbnail ) && $url_thumbnail !== $url_image ) {
+            add_filter( 'http_request_timeout', array($this, 'MPT_custom_http_request_timeout') );
+            $this->block_downloading_url = $url_thumbnail;
+            add_filter(
+                'http_request_args',
+                array($this, 'MPT_filter_http_request_args_for_block_download'),
+                10,
+                2
+            );
+            $tmp = download_url( $url_thumbnail );
+            remove_filter( 'http_request_args', array($this, 'MPT_filter_http_request_args_for_block_download'), 10 );
+            $this->block_downloading_url = null;
+            remove_filter( 'http_request_timeout', array($this, 'MPT_custom_http_request_timeout') );
+        }
         $file_array = array();
         // Check for error
         if ( is_wp_error( $tmp ) ) {
@@ -1473,6 +1528,21 @@ class Magic_Post_Thumbnail_Admin {
     public function MPT_custom_http_request_timeout() {
         return 40;
         // 40 seconds
+    }
+
+    /**
+     * Add User-Agent for block image download (fixes 404 from Openverse/Flickr etc.)
+     *
+     * @since    5.0.0
+     * @param array  $args Request arguments.
+     * @param string $url  Request URL.
+     * @return array Modified arguments.
+     */
+    public function MPT_filter_http_request_args_for_block_download( $args, $url ) {
+        if ( $this->block_downloading_url !== null ) {
+            $args['user-agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 (compatible; WordPress/' . get_bloginfo( 'version' ) . '; MPT)';
+        }
+        return $args;
     }
 
     /**
@@ -1627,6 +1697,27 @@ class Magic_Post_Thumbnail_Admin {
             update_option( 'MPT_plugin_main_settings', $current_options );
         } else {
         }
+    }
+
+    /**
+     * Sanitize banks settings - Remove 'envato' if present (no longer working)
+     *
+     * @since    4.2.0
+     */
+    public function MPT_sanitize_banks_settings( $input ) {
+        // Remove 'envato' from api_chosen_auto if present
+        if ( isset( $input['api_chosen_auto'] ) && is_array( $input['api_chosen_auto'] ) ) {
+            unset($input['api_chosen_auto']['envato']);
+        }
+        // Remove 'envato' from api_chosen_manual if present
+        if ( isset( $input['api_chosen_manual'] ) && is_array( $input['api_chosen_manual'] ) ) {
+            unset($input['api_chosen_manual']['envato']);
+        }
+        // Clear api_chosen if it's 'envato'
+        if ( isset( $input['api_chosen'] ) && 'envato' === $input['api_chosen'] ) {
+            $input['api_chosen'] = '';
+        }
+        return $input;
     }
 
 }

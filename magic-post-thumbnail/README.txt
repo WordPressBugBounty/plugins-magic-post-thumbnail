@@ -1,14 +1,14 @@
 === Generate Images (AI) - Magic Post Thumbnail ===
 Plugin Name:       Generate Images (AI) - Magic Post Thumbnail
-Version:           6.1.3
+Version:           6.1.8
 Tags:              generate, image, dalle, stable diffusion, replicate
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
 Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
-Tested up to:      6.8.1
-Stable tag:        6.1.3
+Tested up to:      6.9
+Stable tag:        6.1.8
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,7 +19,7 @@ Get images for your posts with automatic generation & multiple banks. Generate a
 
 **Easily create eye-catching images for your posts automatically with Magic Post Thumbnail!**
 
-Retrieve images from Google Images, DALL·E, Stable Diffusion, Replicate, Pexels, Unsplash, Envato Elements or Pixabay thanks to API, **based on your post title**, text analysis and much more. The plugin add picture as your **featured thumbnail** or **inside the post** when you publish the post.
+Retrieve images from Google Images, DALL·E, Stable Diffusion, Replicate, Pexels, Unsplash or Pixabay thanks to API, **based on your post title**, text analysis and much more. The plugin add picture as your **featured thumbnail** or **inside the post** when you publish the post.
 
 The plugin allows you to configure some settings for your automatic images : **Image bank**, language search, selected post types, image type, free-to-use or not, image size and much more.
 
@@ -29,9 +29,9 @@ The plugin allows you to configure some settings for your automatic images : **I
 **<a target="_blank" href="https://magic-post-thumbnail.com/">Official Website</a>**
 **<a target="_blank" href="https://magic-post-thumbnail.com/docs/">Documentation</a>**
 
-https://www.youtube.com/watch?v=eNb5MXg5e4I
+Get a **30% discount for BLACK FRIDAY until November 30** when you upgrade to the **Pro version** with the code: **MPTBLACKFRIDAY25**
 
-Get a **15% discount until August 31** when you upgrade to the <a href="admin.php?page=magic-post-thumbnail-admin-display-pricing">Pro version</a> with the code: **MPTSUMMER25**
+https://www.youtube.com/watch?v=eNb5MXg5e4I
 
 == What is included ? ==
 
@@ -57,7 +57,7 @@ Upgrade to our PRO version to unlock even more **advanced features** and take yo
 
 <li>Customisable <strong>Crons</strong></li>
 <li>Set different image locations for each post generation.</li>
-<li>Images from Youtube, <strong>Stable Diffusion</strong>, <strong>Replicate (42 models)</strong>, Unsplash, Pexels or <strong>Envato Elements</strong></li>
+<li>Images from Youtube, <strong>Stable Diffusion</strong>, <strong>Replicate (42 models)</strong>, Unsplash or Pexels</li>
 <li>More images with the Gutenberg Block</li>
 <li>Image search based on Tags, Categories, Text Analyser per paragraph Custom Fields, Custom Request and <strong>OpenAI Keyword Extractor</strong></li>
 <li>Image Modifications: Flip horizontally and/or Crop Image by 10%</li>
@@ -129,6 +129,31 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 
 == Changelog ==
+
+= 6.1.8 - January 29, 2026 =
+* Fix Gutenberg Block: loader no longer stays infinite when image download fails
+* Fix Gutenberg Block: improve download reliability for Openverse and Flickr images
+* Fix Gutenberg Block: preserve URL-encoded characters in image URLs (fixes "Not Found" errors)
+* Add HTTP timeout extension for large image downloads
+* Add User-Agent header to prevent blocking by some image hosts
+* Add user notification (snackbar) when image download fails
+
+= 6.1.7 - November 21, 2025 =
+* Fix dashboard footer
+
+= 6.1.6 - November 13, 2025 =
+* PRO: Improve compatibility with "Featured Image from URL" (FIFU) plugin - supports both free and premium versions
+* PRO: Disable Envato Elements integration (API no longer working)
+* Remove Envato Elements from available image banks in settings
+* Update Freemius 2.13.0
+
+= 6.1.5 - November 11, 2025 = 
+* Add Black Friday discount
+
+= 6.1.4 - October 16, 2025 =
+* PRO: Add support for ByteDance Seedream-4 model (Replicate)
+* PRO: Add support for Google Imagen models (Replicate) (imagen-4, imagen-4-fast, imagen-4-ultra, nano-banana)
+* PRO: Improve dimension calculation for different aspect ratios (16:9, 4:3, 1:1, 3:2, 9:16) with imagen & seedream
 
 = 6.1.3 - August 07 2025 =
 * Allow image positioning up to the 10th occurrence (First to Tenth, plus Last) for inline content placement.

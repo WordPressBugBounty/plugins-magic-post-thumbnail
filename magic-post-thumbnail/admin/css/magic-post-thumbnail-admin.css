@@ -648,3 +648,7 @@ form i#togglePassword.close-eye {
 .chosen_title i {
     padding: 9px 0 0 7px;
 }
+
+#wpfooter {
+    position: absolute !important;
+}
