@@ -27,6 +27,27 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
     private $version;
 
     /**
+     * Cached working TLS cipher profile for raw socket Google requests.
+     *
+     * @var array|null
+     */
+    private $raw_socket_working_profile = null;
+
+    /**
+     * Cached working cURL HTTP/2 config for Google requests.
+     *
+     * @var array|null
+     */
+    private $curl_h2_working_config = null;
+
+    /**
+     * In-memory strategy cache loaded from transient.
+     *
+     * @var array|null
+     */
+    private $google_scraping_strategy_cache = null;
+
+    /**
      * Initialize the class and set its properties.
      *
      * @since    4.0.0
@@ -135,7 +156,7 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
             $generation_status = 'error';
             // An error occurred during generation.
         }
-        // Load compatibility settings for external plugins.
+        // Load compatibility settings for third-party plugins.
         $compatibility = wp_parse_args( get_option( 'MPT_plugin_compatibility_settings' ), $this->MPT_default_options_compatibility_settings( TRUE ) );
         $thumbnail_url = '';
         // Handle image preview when using the FIFU plugin.
@@ -1043,11 +1064,13 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
             // Remove very special characters
             $search = str_replace( '…', '', $search );
             $array_parameters = array(
-                'url'  => 'http://www.google.com/search',
+                'url'  => 'https://www.google.com/search',
                 'tbm'  => 'isch',
-                'q'    => urlencode( $search ),
+                'q'    => $search,
                 'hl'   => $country,
                 'safe' => $safe,
+                'pws'  => '0',
+                'ijn'  => '0',
                 'rsz'  => '3',
                 'tbs'  => '',
             );
@@ -1374,6 +1397,11 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         // Testing images
         if ( $service == 'google_scraping' ) {
             foreach ( $loop_results as $loop_result_result => $loop_result ) {
+                $img_host = wp_parse_url( $loop_result['url'], PHP_URL_HOST );
+                if ( !is_string( $img_host ) || $this->MPT_google_scraping_is_private_host( $img_host ) ) {
+                    unset($loop_results[$loop_result_result]);
+                    continue;
+                }
                 $remote_img = wp_remote_head( $loop_result['url'] );
                 $remote_response = wp_remote_retrieve_response_code( $remote_img );
                 $log = $this->MPT_monolog_call();
@@ -1582,36 +1610,61 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         } else {
             /* Retrieve 3 images as result */
             $url = add_query_arg( $url_parameters, $url );
-            // Simulate Default Browser
-            $defaults = array(
-                'redirection'        => 9,
-                'user-agent'         => 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96',
-                'reject_unsafe_urls' => false,
-                'sslverify'          => false,
-            );
+            if ( 'google_scraping' === $service ) {
+                $url = $this->MPT_google_scraping_sanitize_url( $url );
+            }
+            // Modern browser fingerprint (Google often blocks very old Chrome UAs).
+            $defaults = $this->MPT_google_scraping_http_defaults();
         }
         // Proxy settins
         $options_proxy = get_option( 'MPT_plugin_proxy_settings' );
-        $result = wp_remote_request( $url, $defaults );
+        if ( 'google_scraping' === $service ) {
+            $log = $this->MPT_monolog_call();
+            $result = $this->MPT_google_scraping_curl_h2_get( $url, $defaults );
+            if ( is_wp_error( $result ) || strlen( ( isset( $result['body'] ) ? $result['body'] : '' ) ) < 500 ) {
+                if ( is_wp_error( $result ) ) {
+                    $log->info( 'Google scraping: cURL HTTP/2 failed for initial request, trying raw socket', array(
+                        'error' => $result->get_error_message(),
+                    ) );
+                } else {
+                    $log->info( 'Google scraping: cURL HTTP/2 returned short body for initial request, trying raw socket', array(
+                        'body_len' => strlen( ( isset( $result['body'] ) ? $result['body'] : '' ) ),
+                    ) );
+                }
+                $result = $this->MPT_google_scraping_raw_socket_get( $url, $defaults );
+                if ( is_wp_error( $result ) ) {
+                    $log->info( 'Google scraping: raw socket also failed, trying wp_remote_request', array(
+                        'error' => $result->get_error_message(),
+                    ) );
+                    $result = wp_remote_request( $url, $defaults );
+                }
+            }
+        } else {
+            $result = wp_remote_request( $url, $defaults );
+        }
         // If error happen
-        if ( !empty( $result->errors['http_request_failed'] ) ) {
+        if ( is_wp_error( $result ) ) {
+            if ( 'google_scraping' === $service ) {
+                $log = $this->MPT_monolog_call();
+                $log->error( 'Google scraping: initial HTTP request failed', array(
+                    'error' => $result->get_error_message(),
+                    'url'   => $url,
+                ) );
+            }
             return false;
         }
-        // Google Scraping : Different method
-        if ( $service == 'google_scraping' ) {
-            // Get all alts from Google
-            preg_match_all( '/data-pt="([^"]*)"/', $result['body'], $output_img_alts );
-            // Get all captions from Google
-            preg_match_all( '/data-st="([^"]*)"/', $result['body'], $output_img_captions );
-            // Get all images from Google
-            //preg_match_all( '/,\["http[^"]((?!gstatic).)*",\d+?,\d+?\]/', $result['body'], $output_img_urls );
-            preg_match_all( '/data-ou="(http[^"]*)"/', $result['body'], $output_img_urls );
-            $result_body['results'] = array_map(
-                array(&$this, 'MPT_order_array_urls'),
-                $output_img_urls[1],
-                $output_img_alts[1],
-                $output_img_captions[1]
+        if ( 'google_scraping' === $service && $this->MPT_google_scraping_diagnostic_logging_enabled() ) {
+            $this->MPT_google_scraping_diagnostic_log_request(
+                'initial_request',
+                $url,
+                $defaults,
+                '',
+                ''
             );
+        }
+        // Google Scraping : Different method (Google HTML + optional consent + Bing fallback).
+        if ( $service == 'google_scraping' ) {
+            $result_body = $this->MPT_google_scraping_build_results( $url, $defaults, $result );
         } else {
             $result_body = json_decode( $result['body'], true );
             $log = $this->MPT_monolog_call();
@@ -1629,6 +1682,2354 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
             }
         }
         return array($result_body, $result);
+    }
+
+    /**
+     * Normalize site/domain restrictions before adding them to a Google query.
+     *
+     * @since 4.2.0
+     * @param string $domains Raw textarea value from plugin settings.
+     * @return array<int, string>
+     */
+    private function MPT_google_scraping_normalize_domain_rules( $domains ) {
+        $normalized_domains = array();
+        $domain_lines = preg_split( '/\\r\\n|\\r|\\n/', (string) $domains );
+        if ( empty( $domain_lines ) || !is_array( $domain_lines ) ) {
+            return $normalized_domains;
+        }
+        foreach ( $domain_lines as $domain ) {
+            $domain = trim( wp_strip_all_tags( $domain ) );
+            if ( '' === $domain ) {
+                continue;
+            }
+            $domain = preg_replace( '#^https?://#i', '', $domain );
+            $domain = preg_replace( '#^//#', '', $domain );
+            $domain = preg_replace( '#/.*$#', '', $domain );
+            $domain = trim( $domain, " \t\n\r\x00\v." );
+            if ( '' === $domain ) {
+                continue;
+            }
+            $normalized_domains[] = strtolower( $domain );
+        }
+        return array_values( array_unique( $normalized_domains ) );
+    }
+
+    /**
+     * Banks option: use Bing Images when Google scraping yields no results (default enabled).
+     *
+     * @since 4.2.0
+     * @return bool
+     */
+    private function MPT_google_scraping_bing_fallback_option_enabled() {
+        $banks = wp_parse_args( get_option( 'MPT_plugin_banks_settings' ), $this->MPT_default_options_banks_settings( true ) );
+        $fb = ( isset( $banks['google_scraping']['bing_fallback'] ) ? (string) $banks['google_scraping']['bing_fallback'] : '' );
+        // Default on: option array is not deep-merged, so older saves may omit this key.
+        return 'false' !== $fb;
+    }
+
+    /**
+     * HTTP defaults for Google/Bing scraping (browser-like mobile HTML request).
+     *
+     * @since 4.2.0
+     * @return array
+     */
+    private function MPT_google_scraping_http_defaults() {
+        $sslverify = (bool) apply_filters( 'mpt_google_scraping_sslverify', false );
+        return array(
+            'redirection'        => 4,
+            'timeout'            => 3,
+            'user-agent'         => $this->MPT_google_scraping_get_default_user_agent(),
+            'headers'            => array(
+                'Accept'                    => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                'Accept-Language'           => 'en-US,en;q=0.9',
+                'Upgrade-Insecure-Requests' => '1',
+            ),
+            'reject_unsafe_urls' => false,
+            'sslverify'          => $sslverify,
+        );
+    }
+
+    /**
+     * First User-Agent in the candidate list (used for the initial wp_remote_request).
+     *
+     * @since 4.2.0
+     * @return string
+     */
+    private function MPT_google_scraping_get_default_user_agent() {
+        $candidates = $this->MPT_google_scraping_get_user_agent_candidates();
+        return ( !empty( $candidates[0] ) ? $candidates[0] : 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96' );
+    }
+
+    /**
+     * User-Agent strings to try in order (legacy mobile + text-mode clients). Filter: `mpt_google_scraping_user_agents`.
+     * Set `mpt_google_scraping_try_alternate_user_agents` to false to only use the first entry (faster).
+     *
+     * @since 4.2.0
+     * @return array<int, string>
+     */
+    private function MPT_google_scraping_get_user_agent_candidates() {
+        $list = array(
+            'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96',
+            'Mozilla/5.0 (Linux; Android 5.1.1; SM-G925F Build/LMY47X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.94 Mobile Safari/537.36',
+            'Mozilla/5.0 (Linux; Android 4.4.2; Nexus 5 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36',
+            'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.0 Mobile/14G60 Safari/602.1',
+            'Mozilla/5.0 (Linux; Android 5.1; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.89 Mobile Safari/537.36',
+            'Mozilla/5.0 (Linux; U; Android 4.0.3; en-gb; Galaxy Nexus Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30',
+            // Legacy desktop browsers (sometimes get simpler HTML).
+            'Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko',
+            // IE11
+            'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)',
+            // IE10
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246',
+            // Edge Legacy
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.57.2 (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2',
+            // Safari 5
+            'Opera/9.80 (Android; Opera Mini/36.2.2254/191.288; U; en) Presto/2.12.423 Version/12.16',
+            'Mozilla/5.0 (Android 4.4; Mobile; rv:41.0) Gecko/41.0 Firefox/41.0',
+            'Lynx/2.8.9rel.1 libwww-FM/2.14 SSL-MM/1.4.1 OpenSSL/1.0.2',
+            'Links (2.25; Linux; gzip)',
+        );
+        $list = apply_filters( 'mpt_google_scraping_user_agents', $list );
+        if ( !apply_filters( 'mpt_google_scraping_try_alternate_user_agents', true ) ) {
+            $list = array_slice( $list, 0, 1 );
+        }
+        $list = array_values( array_unique( array_filter( array_map( 'strval', $list ) ) ) );
+        if ( empty( $list ) ) {
+            $list = array('Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96');
+        }
+        return $list;
+    }
+
+    /**
+     * Headers tuned to the current User-Agent family.
+     *
+     * Some very old UAs should not advertise WebP or modern Accept headers.
+     *
+     * @since 4.2.0
+     * @param string $ua User-Agent string.
+     * @return array<string, string>
+     */
+    private function MPT_google_scraping_header_profile_for_user_agent( $ua ) {
+        $ua = (string) $ua;
+        // Defaults (modern-ish HTML).
+        $headers = array(
+            'Accept'          => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language' => 'en-US,en;q=0.9',
+        );
+        // IE / Trident: no WebP, keep it simple.
+        if ( false !== stripos( $ua, 'Trident/' ) || false !== stripos( $ua, 'MSIE' ) ) {
+            $headers['Accept'] = 'text/html, application/xhtml+xml, */*';
+            $headers['Accept-Language'] = 'en-US,en;q=0.5';
+            return $headers;
+        }
+        // Opera Mini / old Android browsers: reduce modern signals.
+        if ( false !== stripos( $ua, 'Opera Mini' ) || false !== stripos( $ua, 'Presto' ) ) {
+            $headers['Accept'] = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';
+            $headers['Accept-Language'] = 'en-US,en;q=0.7';
+            return $headers;
+        }
+        // Text browsers.
+        if ( false !== stripos( $ua, 'Lynx' ) || false !== stripos( $ua, 'Links' ) ) {
+            $headers['Accept'] = 'text/html, */*;q=0.1';
+            $headers['Accept-Language'] = 'en-US,en;q=0.5';
+            return $headers;
+        }
+        return $headers;
+    }
+
+    /**
+     * Ensure Google URLs are safe for strict URL parsers (cURL rejects spaces).
+     *
+     * WordPress can sometimes produce URLs that still contain literal spaces
+     * when values include special operators. This helper makes them safe without
+     * changing the semantics of the query.
+     *
+     * @since 4.2.0
+     * @param string $url URL to sanitize.
+     * @return string
+     */
+    private function MPT_google_scraping_sanitize_url( $url ) {
+        $url = (string) $url;
+        if ( '' === $url ) {
+            return $url;
+        }
+        // Hard rule: spaces must never appear in a URL passed to cURL.
+        $url = str_replace( ' ', '%20', $url );
+        // Remove ASCII control chars that can break URL parsing.
+        $url = preg_replace( '/[\\x00-\\x1F\\x7F]+/', '', $url );
+        $host = wp_parse_url( $url, PHP_URL_HOST );
+        if ( is_string( $host ) ) {
+            $host = strtolower( $host );
+            $allowed = array(
+                'google.com',
+                'www.google.com',
+                'images.google.com',
+                'consent.google.com',
+                'www.bing.com',
+                'bing.com'
+            );
+            $match = false;
+            foreach ( $allowed as $domain ) {
+                if ( $host === $domain || substr( $host, -strlen( '.' . $domain ) ) === '.' . $domain ) {
+                    $match = true;
+                    break;
+                }
+            }
+            if ( !$match ) {
+                return '';
+            }
+        }
+        return $url;
+    }
+
+    /**
+     * Cache key for Google scraping winning strategy.
+     *
+     * @return string
+     */
+    private function MPT_google_scraping_strategy_cache_key() {
+        $blog_id = ( function_exists( 'get_current_blog_id' ) ? (int) get_current_blog_id() : 0 );
+        return 'mpt_google_scraping_strategy_v1_' . $blog_id;
+    }
+
+    /**
+     * Read cached winning strategy (UA + variant + cURL H2 config tag).
+     *
+     * @return array<string,mixed>
+     */
+    private function MPT_google_scraping_get_cached_strategy() {
+        if ( null !== $this->google_scraping_strategy_cache ) {
+            return ( is_array( $this->google_scraping_strategy_cache ) ? $this->google_scraping_strategy_cache : array() );
+        }
+        $cache = array();
+        if ( function_exists( 'get_transient' ) ) {
+            $stored = get_transient( $this->MPT_google_scraping_strategy_cache_key() );
+            if ( is_array( $stored ) ) {
+                $cache = $stored;
+            }
+        }
+        $this->google_scraping_strategy_cache = $cache;
+        return $cache;
+    }
+
+    /**
+     * Persist strategy updates for faster subsequent Google requests.
+     *
+     * @param array<string,mixed> $updates Cache updates.
+     * @return void
+     */
+    private function MPT_google_scraping_update_cached_strategy( $updates ) {
+        if ( !is_array( $updates ) || empty( $updates ) ) {
+            return;
+        }
+        $current = $this->MPT_google_scraping_get_cached_strategy();
+        $next = array_merge( $current, $updates );
+        $next['updated_at'] = time();
+        $this->google_scraping_strategy_cache = $next;
+        if ( function_exists( 'set_transient' ) ) {
+            set_transient( $this->MPT_google_scraping_strategy_cache_key(), $next, 12 * HOUR_IN_SECONDS );
+        }
+        $log = $this->MPT_monolog_call();
+        $log->info( 'Google scraping: cached strategy updated', array(
+            'ua_hint'       => ( isset( $next['ua'] ) ? substr( (string) $next['ua'], 0, 120 ) : '' ),
+            'variant_index' => ( isset( $next['variant_index'] ) ? (int) $next['variant_index'] : 0 ),
+            'h2_config'     => ( isset( $next['h2_config'] ) ? (string) $next['h2_config'] : '' ),
+        ) );
+    }
+
+    /**
+     * Whether to log detailed Google scraping diagnostics (request/response/env) for comparison with a real browser.
+     * Default: true when WP_DEBUG is on. Override with filter `mpt_google_scraping_diagnostic_logging`.
+     *
+     * @since 4.2.0
+     * @return bool
+     */
+    private function MPT_google_scraping_diagnostic_logging_enabled() {
+        $default = defined( 'WP_DEBUG' ) && WP_DEBUG;
+        return (bool) apply_filters( 'mpt_google_scraping_diagnostic_logging', $default );
+    }
+
+    /**
+     * Snapshot of PHP/HTTP stack (TLS fingerprint is not exposed by WordPress; noted in logs).
+     *
+     * @since 4.2.0
+     * @return array<string, mixed>
+     */
+    private function MPT_google_scraping_get_environment_snapshot() {
+        $snapshot = array(
+            'php_version'            => PHP_VERSION,
+            'sapi'                   => PHP_SAPI,
+            'openssl_version'        => ( defined( 'OPENSSL_VERSION_TEXT' ) ? OPENSSL_VERSION_TEXT : '' ),
+            'curl_extension'         => extension_loaded( 'curl' ),
+            'wordpress_http_version' => ( function_exists( 'wp_http_supports' ) ? ( wp_http_supports( array('https') ) ? 'https_supported' : 'https_unknown' ) : '' ),
+        );
+        if ( function_exists( 'curl_version' ) ) {
+            $cv = curl_version();
+            if ( is_array( $cv ) ) {
+                $snapshot['curl_version'] = ( isset( $cv['version'] ) ? $cv['version'] : '' );
+                $snapshot['curl_ssl_version'] = ( isset( $cv['ssl_version'] ) ? $cv['ssl_version'] : '' );
+            }
+        }
+        return $snapshot;
+    }
+
+    /**
+     * Build the same header set WordPress will send for a Google scraping GET (defaults + Cookie + Referer).
+     *
+     * @since 4.2.0
+     * @param array  $defaults   wp_remote_* args.
+     * @param string $cookies    Raw Cookie header value.
+     * @param string $referer    Referer URL.
+     * @param string $request_url Request URL (for Sec-Fetch-Site logic).
+     * @return array<string, string>
+     */
+    private function MPT_google_scraping_prepare_request_headers(
+        $defaults,
+        $cookies,
+        $referer,
+        $request_url
+    ) {
+        $headers = ( isset( $defaults['headers'] ) && is_array( $defaults['headers'] ) ? $defaults['headers'] : array() );
+        $ua = ( isset( $defaults['user-agent'] ) ? (string) $defaults['user-agent'] : '' );
+        // Merge an UA-specific header profile (caller headers take precedence).
+        $headers = array_merge( $this->MPT_google_scraping_header_profile_for_user_agent( $ua ), $headers );
+        if ( '' !== $cookies ) {
+            $headers['Cookie'] = $cookies;
+        }
+        if ( '' !== $referer ) {
+            $headers['Referer'] = $referer;
+        }
+        if ( isset( $headers['Sec-Fetch-Site'] ) && $referer === $request_url ) {
+            $headers['Sec-Fetch-Site'] = 'same-origin';
+        } elseif ( isset( $headers['Sec-Fetch-Site'] ) && '' !== $referer ) {
+            $headers['Sec-Fetch-Site'] = 'same-site';
+        }
+        return $headers;
+    }
+
+    /**
+     * Cookie names from a Cookie header (values not logged).
+     *
+     * @since 4.2.0
+     * @param string $cookie_header Cookie header value.
+     * @return array<int, string>
+     */
+    private function MPT_google_scraping_cookie_names_from_header( $cookie_header ) {
+        $names = array();
+        if ( !is_string( $cookie_header ) || '' === trim( $cookie_header ) ) {
+            return $names;
+        }
+        foreach ( explode( ';', $cookie_header ) as $part ) {
+            $part = trim( $part );
+            if ( '' === $part || false === strpos( $part, '=' ) ) {
+                continue;
+            }
+            list( $name ) = explode( '=', $part, 2 );
+            $name = trim( $name );
+            if ( '' !== $name ) {
+                $names[] = $name;
+            }
+        }
+        return array_values( array_unique( $names ) );
+    }
+
+    /**
+     * Selected response headers for logs (Set-Cookie: names only).
+     *
+     * @since 4.2.0
+     * @param array|\WP_HTTP_Requests_Response $response wp_remote_* response.
+     * @return array<string, mixed>
+     */
+    private function MPT_google_scraping_response_headers_for_log( $response ) {
+        $out = array();
+        if ( !is_array( $response ) || empty( $response['headers'] ) ) {
+            return $out;
+        }
+        $headers = $response['headers'];
+        $interesting = array(
+            'content-type',
+            'server',
+            'date',
+            'cache-control',
+            'alt-svc',
+            'x-frame-options',
+            'strict-transport-security',
+            'location'
+        );
+        foreach ( $interesting as $key ) {
+            if ( isset( $headers[$key] ) ) {
+                $out[$key] = $headers[$key];
+            }
+        }
+        if ( isset( $headers['set-cookie'] ) ) {
+            $lines = $headers['set-cookie'];
+            if ( !is_array( $lines ) ) {
+                $lines = array($lines);
+            }
+            $set_names = array();
+            foreach ( $lines as $line ) {
+                if ( !is_string( $line ) ) {
+                    continue;
+                }
+                $sem = strpos( $line, ';' );
+                $pair = ( false !== $sem ? substr( $line, 0, $sem ) : $line );
+                if ( false !== strpos( $pair, '=' ) ) {
+                    list( $n ) = explode( '=', $pair, 2 );
+                    $set_names[] = trim( $n );
+                }
+            }
+            $out['set_cookie_count'] = count( $lines );
+            $out['set_cookie_names'] = array_values( array_unique( $set_names ) );
+        }
+        return $out;
+    }
+
+    /**
+     * Quick HTML signals to compare with a browser-saved page (e.g. f.txt).
+     *
+     * @since 4.2.0
+     * @param string $body Response body.
+     * @return array<string, int|bool>
+     */
+    private function MPT_google_scraping_parse_body_signals( $body ) {
+        $body = ( is_string( $body ) ? $body : '' );
+        $data_ou = preg_match_all( '/data-ou="https?:[^"]*"/', $body );
+        return array(
+            'data_ou_count'      => ( false === $data_ou ? 0 : (int) $data_ou ),
+            'has_consent_google' => false !== stripos( $body, 'consent.google.com' ),
+            'has_bot_challenge'  => $this->MPT_google_scraping_is_bot_challenge_page( $body ),
+            'has_sg_ss'          => false !== stripos( $body, 'SG_SS=' ),
+        );
+    }
+
+    /**
+     * Log outgoing request fingerprint (headers as sent by WP; cookie values omitted).
+     *
+     * @since 4.2.0
+     * @param string $stage   e.g. initial, variant, session_prime.
+     * @param string $url     Request URL.
+     * @param array  $defaults wp_remote_* args.
+     * @param string $cookies  Cookie header string.
+     * @param string $referer  Referer.
+     */
+    private function MPT_google_scraping_diagnostic_log_request(
+        $stage,
+        $url,
+        $defaults,
+        $cookies,
+        $referer
+    ) {
+        if ( !$this->MPT_google_scraping_diagnostic_logging_enabled() ) {
+            return;
+        }
+        $headers = $this->MPT_google_scraping_prepare_request_headers(
+            $defaults,
+            $cookies,
+            $referer,
+            $url
+        );
+        $sanitized = $headers;
+        if ( !empty( $defaults['user-agent'] ) ) {
+            $sanitized['User-Agent'] = $defaults['user-agent'];
+        }
+        if ( isset( $sanitized['Cookie'] ) ) {
+            $sanitized['Cookie'] = '(cookie names: ' . implode( ', ', $this->MPT_google_scraping_cookie_names_from_header( $cookies ) ) . ')';
+        }
+        $log = $this->MPT_monolog_call();
+        $log->info( 'Google scraping diagnostic: outgoing request (server vs browser compare)', array(
+            'stage'           => $stage,
+            'url'             => $url,
+            'url_length'      => strlen( $url ),
+            'headers_sent'    => $sanitized,
+            'sslverify'       => ( isset( $defaults['sslverify'] ) ? $defaults['sslverify'] : null ),
+            'redirection_max' => ( isset( $defaults['redirection'] ) ? $defaults['redirection'] : null ),
+            'timeout'         => ( isset( $defaults['timeout'] ) ? $defaults['timeout'] : null ),
+            'note_tls_ja3'    => 'TLS cipher suite / JA3 fingerprint are not available from wp_remote_*; compare with browser DevTools or curl -v on same host.',
+        ) );
+    }
+
+    /**
+     * Log response metadata and body signals.
+     *
+     * @since 4.2.0
+     * @param string $stage    Same as outgoing.
+     * @param array  $response wp_remote_* response.
+     * @param string $body     Body (optional; avoids double retrieve).
+     */
+    private function MPT_google_scraping_diagnostic_log_response( $stage, $response, $body = null ) {
+        if ( !$this->MPT_google_scraping_diagnostic_logging_enabled() ) {
+            return;
+        }
+        if ( !is_array( $response ) ) {
+            return;
+        }
+        if ( null === $body ) {
+            $body = wp_remote_retrieve_body( $response );
+        }
+        $code = wp_remote_retrieve_response_code( $response );
+        $log = $this->MPT_monolog_call();
+        $log->info( 'Google scraping diagnostic: HTTP response', array(
+            'stage'             => $stage,
+            'http_code'         => (int) $code,
+            'body_length'       => strlen( (string) $body ),
+            'response_headers'  => $this->MPT_google_scraping_response_headers_for_log( $response ),
+            'body_signals'      => $this->MPT_google_scraping_parse_body_signals( (string) $body ),
+            'note_http_version' => 'WordPress/Requests does not expose HTTP/1.1 vs HTTP/2 in wp_remote_*; use server access logs or tcpdump if needed.',
+        ) );
+    }
+
+    /**
+     * Build image result list for google_scraping: Google HTML, optional EU consent POST, then Bing fallback.
+     *
+     * @since 4.2.0
+     * @param string $google_url Full Google search URL.
+     * @param array  $defaults   wp_remote_request args.
+     * @param array  $result     First HTTP response.
+     * @return array{results: array<int, array{url: string, alt: string, caption: string}>}
+     */
+    private function MPT_google_scraping_build_results( $google_url, $defaults, $result ) {
+        $log = $this->MPT_monolog_call();
+        $candidates = $this->MPT_google_scraping_get_user_agent_candidates();
+        $strategy = $this->MPT_google_scraping_get_cached_strategy();
+        $bing_defaults = $defaults;
+        // Try last successful UA first to reduce retries on subsequent posts.
+        if ( !empty( $strategy['ua'] ) && is_string( $strategy['ua'] ) ) {
+            $cached_ua = $strategy['ua'];
+            $ua_pos = array_search( $cached_ua, $candidates, true );
+            if ( false !== $ua_pos && 0 !== $ua_pos ) {
+                unset($candidates[$ua_pos]);
+                array_unshift( $candidates, $cached_ua );
+                $candidates = array_values( $candidates );
+            }
+        }
+        if ( !empty( $strategy ) ) {
+            $log->info( 'Google scraping: using cached strategy first', array(
+                'ua_hint'       => ( isset( $strategy['ua'] ) ? substr( (string) $strategy['ua'], 0, 120 ) : '' ),
+                'variant_index' => ( isset( $strategy['variant_index'] ) ? (int) $strategy['variant_index'] : 0 ),
+                'h2_config'     => ( isset( $strategy['h2_config'] ) ? (string) $strategy['h2_config'] : '' ),
+            ) );
+        }
+        if ( $this->MPT_google_scraping_diagnostic_logging_enabled() ) {
+            $log->info( 'Google scraping diagnostic: server environment (compare with your desktop browser)', array(
+                'environment' => $this->MPT_google_scraping_get_environment_snapshot(),
+            ) );
+        }
+        $log->info( 'Google scraping: User-Agent rounds', array(
+            'count' => count( $candidates ),
+            'hint'  => 'legacy mobile + text browsers; filter mpt_google_scraping_user_agents or set mpt_google_scraping_try_alternate_user_agents to false for first UA only',
+        ) );
+        foreach ( $candidates as $ua_index => $ua_string ) {
+            $defaults_ua = $defaults;
+            $defaults_ua['user-agent'] = $ua_string;
+            $round_result = $result;
+            if ( $ua_index > 0 ) {
+                $log->info( 'Google scraping: alternate User-Agent round', array(
+                    'round'   => $ua_index + 1,
+                    'of'      => count( $candidates ),
+                    'ua_hint' => substr( $ua_string, 0, 120 ),
+                ) );
+                $round_result = $this->MPT_google_scraping_curl_h2_get( $google_url, $defaults_ua );
+                $h2_body_len = ( !is_wp_error( $round_result ) && isset( $round_result['body'] ) ? strlen( $round_result['body'] ) : 0 );
+                if ( is_wp_error( $round_result ) || $h2_body_len < 500 ) {
+                    $log->info( 'Google scraping: cURL HTTP/2 did not yield body for alternate UA, trying raw socket', array(
+                        'round'       => $ua_index + 1,
+                        'h2_body_len' => $h2_body_len,
+                    ) );
+                    $round_result = $this->MPT_google_scraping_raw_socket_get( $google_url, $defaults_ua );
+                }
+                if ( is_wp_error( $round_result ) ) {
+                    $log->info( 'Google scraping: all transports failed for alternate UA, falling back to wp_remote_request', array(
+                        'error' => $round_result->get_error_message(),
+                        'round' => $ua_index + 1,
+                    ) );
+                    $round_result = wp_remote_request( $google_url, $defaults_ua );
+                }
+                if ( is_wp_error( $round_result ) ) {
+                    $log->warning( 'Google scraping: initial HTTP request failed for alternate User-Agent', array(
+                        'error' => $round_result->get_error_message(),
+                        'round' => $ua_index + 1,
+                    ) );
+                    continue;
+                }
+                if ( $this->MPT_google_scraping_diagnostic_logging_enabled() ) {
+                    $this->MPT_google_scraping_diagnostic_log_request(
+                        'initial_request_ua_' . ($ua_index + 1),
+                        $google_url,
+                        $defaults_ua,
+                        '',
+                        ''
+                    );
+                }
+            }
+            $cookies = $this->MPT_google_scraping_collect_cookies_from_response( $round_result );
+            $attempts = array(array(
+                'url'      => $google_url,
+                'label'    => 'initial',
+                'response' => $round_result,
+            ));
+            $primed_session = $this->MPT_google_scraping_prime_google_session( $defaults_ua, $google_url );
+            if ( !empty( $primed_session['cookies'] ) ) {
+                $cookies = $this->MPT_google_scraping_merge_cookie_headers( $cookies, $primed_session['cookies'] );
+                $log->info( 'Google scraping: Google session primed before variant retries', array(
+                    'ua_round' => $ua_index + 1,
+                ) );
+            }
+            $variant_urls = array_values( array_filter( $this->MPT_google_scraping_build_variant_urls( $google_url ), function ( $variant_url ) use($google_url) {
+                return $variant_url !== $google_url;
+            } ) );
+            if ( !empty( $strategy['variant_index'] ) && is_numeric( $strategy['variant_index'] ) && $defaults_ua['user-agent'] === (( isset( $strategy['ua'] ) ? $strategy['ua'] : '' )) ) {
+                $preferred_attempt = (int) $strategy['variant_index'];
+                $preferred_variant = $preferred_attempt - 1;
+                // attempts[0]=initial, variants start at index 1.
+                if ( $preferred_variant > 0 ) {
+                    $preferred_variant_offset = $preferred_variant - 1;
+                    // variant_urls is 0-indexed variants only.
+                    if ( isset( $variant_urls[$preferred_variant_offset] ) ) {
+                        $preferred_url = $variant_urls[$preferred_variant_offset];
+                        unset($variant_urls[$preferred_variant_offset]);
+                        array_unshift( $variant_urls, $preferred_url );
+                        $variant_urls = array_values( $variant_urls );
+                    }
+                }
+            }
+            foreach ( $variant_urls as $variant_url ) {
+                $attempts[] = array(
+                    'url'      => $variant_url,
+                    'label'    => 'variant',
+                    'response' => null,
+                );
+            }
+            if ( $this->MPT_google_scraping_diagnostic_logging_enabled() ) {
+                $plan = array();
+                foreach ( $attempts as $i => $a ) {
+                    $plan[] = array(
+                        'step'  => $i + 1,
+                        'label' => $a['label'],
+                        'url'   => $a['url'],
+                    );
+                }
+                $log->info( 'Google scraping diagnostic: attempt order (initial HTML, then variants after session prime)', array(
+                    'ua_round' => $ua_index + 1,
+                    'attempts' => $plan,
+                ) );
+            }
+            foreach ( $attempts as $attempt_index => $attempt ) {
+                $response = $attempt['response'];
+                if ( null === $response ) {
+                    $response = $this->MPT_google_scraping_request_url(
+                        $attempt['url'],
+                        $defaults_ua,
+                        $cookies,
+                        $google_url,
+                        'variant_attempt_' . ($ua_index + 1) . '_' . ($attempt_index + 1)
+                    );
+                    if ( is_wp_error( $response ) ) {
+                        $log->warning( 'Google scraping: retry request failed', array(
+                            'ua_round' => $ua_index + 1,
+                            'attempt'  => $attempt_index + 1,
+                            'label'    => $attempt['label'],
+                            'url'      => $attempt['url'],
+                            'error'    => $response->get_error_message(),
+                        ) );
+                        continue;
+                    }
+                }
+                $body = wp_remote_retrieve_body( $response );
+                $code = wp_remote_retrieve_response_code( $response );
+                $this->MPT_google_scraping_diagnostic_log_response( 'ua' . ($ua_index + 1) . '_step_' . ($attempt_index + 1) . '_' . $attempt['label'], $response, $body );
+                $log->info( 'Google scraping: response received', array(
+                    'ua_round'    => $ua_index + 1,
+                    'attempt'     => $attempt_index + 1,
+                    'label'       => $attempt['label'],
+                    'http_code'   => (int) $code,
+                    'body_length' => strlen( $body ),
+                    'url'         => $attempt['url'],
+                ) );
+                if ( 200 !== (int) $code || '' === $body ) {
+                    $log->warning( 'Google scraping: invalid response (no HTML to parse)', array(
+                        'ua_round'  => $ua_index + 1,
+                        'attempt'   => $attempt_index + 1,
+                        'http_code' => (int) $code,
+                        'url'       => $attempt['url'],
+                    ) );
+                    continue;
+                }
+                $cookies = $this->MPT_google_scraping_merge_cookie_headers( $cookies, $this->MPT_google_scraping_collect_cookies_from_response( $response ) );
+                if ( $this->MPT_google_scraping_is_consent_page( $body ) ) {
+                    $log->info( 'Google scraping: EU consent page detected, submitting Reject all', array(
+                        'ua_round' => $ua_index + 1,
+                        'attempt'  => $attempt_index + 1,
+                        'url'      => $attempt['url'],
+                    ) );
+                    $after_consent = $this->MPT_google_scraping_post_consent_reject(
+                        $body,
+                        $cookies,
+                        $defaults_ua,
+                        $attempt['url']
+                    );
+                    if ( is_array( $after_consent ) && !empty( $after_consent['body'] ) ) {
+                        $body = $after_consent['body'];
+                        if ( !empty( $after_consent['cookies'] ) ) {
+                            $cookies = $this->MPT_google_scraping_merge_cookie_headers( $cookies, $after_consent['cookies'] );
+                        }
+                        $log->info( 'Google scraping: consent flow completed', array(
+                            'ua_round'        => $ua_index + 1,
+                            'attempt'         => $attempt_index + 1,
+                            'new_body_length' => strlen( $body ),
+                        ) );
+                    } else {
+                        $log->warning( 'Google scraping: consent POST failed or empty body after redirect; continuing with original HTML' );
+                    }
+                }
+                if ( $this->MPT_google_scraping_is_bot_challenge_page( $body ) ) {
+                    $log->warning( 'Google scraping: Google returned a JS/browser challenge page (SG_SS)', array(
+                        'ua_round' => $ua_index + 1,
+                        'attempt'  => $attempt_index + 1,
+                        'url'      => $attempt['url'],
+                    ) );
+                }
+                $parsed = $this->MPT_google_scraping_parse_google_html( $body );
+                if ( !empty( $parsed['results'] ) ) {
+                    $this->MPT_google_scraping_update_cached_strategy( array(
+                        'ua'            => $ua_string,
+                        'variant_index' => (int) $attempt_index + 1,
+                    ) );
+                    $log->info( 'Google scraping: images extracted from Google', array(
+                        'ua_round' => $ua_index + 1,
+                        'attempt'  => $attempt_index + 1,
+                        'source'   => $parsed['source'],
+                        'count'    => count( $parsed['results'] ),
+                    ) );
+                    return array(
+                        'results' => $parsed['results'],
+                    );
+                }
+                $log->info( 'Google scraping: no usable image URLs in Google HTML', array(
+                    'ua_round'     => $ua_index + 1,
+                    'attempt'      => $attempt_index + 1,
+                    'parse_source' => $parsed['source'],
+                ) );
+            }
+        }
+        if ( apply_filters( 'mpt_google_scraping_use_headless_fallback', true, $google_url ) ) {
+            $log->info( 'Google scraping: trying local headless browser fallback', array(
+                'google_url' => $google_url,
+            ) );
+            $headless = $this->MPT_google_scraping_fetch_google_headless_html( $google_url );
+            if ( is_array( $headless ) && !empty( $headless['body'] ) ) {
+                $parsed = $this->MPT_google_scraping_parse_google_html( $headless['body'] );
+                if ( !empty( $parsed['results'] ) ) {
+                    $log->info( 'Google scraping: headless browser fallback succeeded', array(
+                        'browser' => $headless['browser'],
+                        'source'  => $parsed['source'],
+                        'count'   => count( $parsed['results'] ),
+                    ) );
+                    return array(
+                        'results' => $parsed['results'],
+                    );
+                }
+                $log->warning( 'Google scraping: headless browser returned HTML but no parseable image URLs', array(
+                    'browser'      => $headless['browser'],
+                    'parse_source' => $parsed['source'],
+                    'body_length'  => strlen( $headless['body'] ),
+                ) );
+            }
+        } else {
+            $log->info( 'Google scraping: headless browser fallback skipped (mpt_google_scraping_use_headless_fallback returned false)' );
+        }
+        if ( apply_filters( 'mpt_google_scraping_use_bing_fallback', $this->MPT_google_scraping_bing_fallback_option_enabled(), $google_url ) ) {
+            $log->info( 'Google scraping: trying Bing Images fallback', array(
+                'google_url' => $google_url,
+            ) );
+            $bing = $this->MPT_google_scraping_fetch_bing_images( $google_url, $bing_defaults );
+            if ( !empty( $bing ) ) {
+                $log->info( 'Google scraping: Bing fallback succeeded', array(
+                    'count' => count( $bing ),
+                ) );
+                return array(
+                    'results' => $bing,
+                );
+            }
+            $log->warning( 'Google scraping: Bing fallback returned no images' );
+        } else {
+            $log->info( 'Google scraping: Bing fallback skipped (mpt_google_scraping_use_bing_fallback returned false)' );
+        }
+        $log->warning( 'Google scraping: no image results from Google or Bing' );
+        return array(
+            'results' => array(),
+        );
+    }
+
+    /**
+     * Warm up a more browser-like Google session before variant retries.
+     *
+     * @param array  $defaults   Base HTTP args.
+     * @param string $google_url Original Google search URL.
+     * @return array{cookies: string}
+     */
+    private function MPT_google_scraping_prime_google_session( $defaults, $google_url ) {
+        $log = $this->MPT_monolog_call();
+        $parts = wp_parse_url( $google_url );
+        $query = ( isset( $parts['query'] ) ? $parts['query'] : '' );
+        $args = array();
+        parse_str( $query, $args );
+        $home_url = add_query_arg( array(
+            'hl'  => ( isset( $args['hl'] ) ? $args['hl'] : 'en' ),
+            'pws' => '0',
+        ), 'https://www.google.com/' );
+        $response = $this->MPT_google_scraping_request_url(
+            $home_url,
+            $defaults,
+            '',
+            'https://www.google.com/',
+            'session_prime'
+        );
+        if ( is_wp_error( $response ) ) {
+            $log->warning( 'Google scraping: session prime request failed', array(
+                'error' => $response->get_error_message(),
+            ) );
+            return array(
+                'cookies' => '',
+            );
+        }
+        $cookies = $this->MPT_google_scraping_collect_cookies_from_response( $response );
+        $body = wp_remote_retrieve_body( $response );
+        $this->MPT_google_scraping_diagnostic_log_response( 'session_prime', $response, $body );
+        if ( $this->MPT_google_scraping_is_consent_page( $body ) ) {
+            $log->info( 'Google scraping: consent page detected during session prime' );
+            $after_consent = $this->MPT_google_scraping_post_consent_reject(
+                $body,
+                $cookies,
+                $defaults,
+                $home_url
+            );
+            if ( is_array( $after_consent ) && !empty( $after_consent['cookies'] ) ) {
+                $cookies = $this->MPT_google_scraping_merge_cookie_headers( $cookies, $after_consent['cookies'] );
+            }
+        }
+        return array(
+            'cookies' => $cookies,
+        );
+    }
+
+    /**
+     * Build alternate Google URLs that sometimes return more parseable HTML.
+     * Kept to a small set to limit sequential HTTP retries per request.
+     *
+     * @param string $google_url Original Google search URL.
+     * @return array<int, string>
+     */
+    private function MPT_google_scraping_build_variant_urls( $google_url ) {
+        $google_url = $this->MPT_google_scraping_sanitize_url( $google_url );
+        $parts = wp_parse_url( $google_url );
+        $query = ( isset( $parts['query'] ) ? $parts['query'] : '' );
+        $args = array();
+        parse_str( $query, $args );
+        $base_args = array_merge( $args, array(
+            'tbm'   => 'isch',
+            'ijn'   => '0',
+            'pws'   => '0',
+            'start' => '0',
+        ) );
+        $variants = array(add_query_arg( $base_args, 'https://www.google.com/search' ), add_query_arg( array_merge( $base_args, array(
+            'udm'  => '2',
+            'gbv'  => '1',
+            'nfpr' => '1',
+        ) ), 'https://www.google.com/search' ));
+        $variants = array_map( array($this, 'MPT_google_scraping_sanitize_url'), $variants );
+        return array_values( array_unique( array_filter( $variants ) ) );
+    }
+
+    /**
+     * Perform a Google GET request with optional cookie and referer continuity.
+     * Tries the raw-socket transport first (bypasses cURL TLS fingerprint), then falls back to wp_remote_get.
+     *
+     * @param string $url     Target URL.
+     * @param array  $defaults Base HTTP args.
+     * @param string $cookies Cookie header value.
+     * @param string $referer Referer URL.
+     * @param string $diagnostic_stage Label for diagnostic logs.
+     * @return array|\WP_Error
+     */
+    private function MPT_google_scraping_request_url(
+        $url,
+        $defaults,
+        $cookies,
+        $referer,
+        $diagnostic_stage = 'retry_get'
+    ) {
+        $log = $this->MPT_monolog_call();
+        $url = $this->MPT_google_scraping_sanitize_url( $url );
+        $headers = $this->MPT_google_scraping_prepare_request_headers(
+            $defaults,
+            $cookies,
+            $referer,
+            $url
+        );
+        if ( $this->MPT_google_scraping_diagnostic_logging_enabled() ) {
+            $this->MPT_google_scraping_diagnostic_log_request(
+                $diagnostic_stage,
+                $url,
+                $defaults,
+                $cookies,
+                $referer
+            );
+        }
+        $h2_response = $this->MPT_google_scraping_curl_h2_get(
+            $url,
+            $defaults,
+            $cookies,
+            $referer
+        );
+        if ( !is_wp_error( $h2_response ) ) {
+            $h2_body = ( isset( $h2_response['body'] ) ? $h2_response['body'] : '' );
+            if ( strlen( $h2_body ) > 500 ) {
+                return $h2_response;
+            }
+            $log->info( 'Google scraping: cURL HTTP/2 returned short body, trying raw socket', array(
+                'stage'    => $diagnostic_stage,
+                'body_len' => strlen( $h2_body ),
+            ) );
+        } else {
+            $log->info( 'Google scraping: cURL HTTP/2 failed, trying raw socket', array(
+                'stage' => $diagnostic_stage,
+                'error' => $h2_response->get_error_message(),
+            ) );
+        }
+        $raw_response = $this->MPT_google_scraping_raw_socket_get(
+            $url,
+            $defaults,
+            $cookies,
+            $referer
+        );
+        if ( !is_wp_error( $raw_response ) ) {
+            $raw_body = ( isset( $raw_response['body'] ) ? $raw_response['body'] : '' );
+            if ( strlen( $raw_body ) > 500 ) {
+                return $raw_response;
+            }
+            $log->info( 'Google scraping: raw socket returned short body, trying wp_remote_get', array(
+                'stage'    => $diagnostic_stage,
+                'body_len' => strlen( $raw_body ),
+            ) );
+        } else {
+            $log->info( 'Google scraping: raw socket failed, trying wp_remote_get', array(
+                'stage' => $diagnostic_stage,
+                'error' => $raw_response->get_error_message(),
+            ) );
+        }
+        return wp_remote_get( $url, array_merge( $defaults, array(
+            'headers' => $headers,
+        ) ) );
+    }
+
+    /**
+     * HTTP GET via cURL with HTTP/2 + custom TLS settings.
+     *
+     * HTTP/2 via ALPN and TLS 1.3 produce a fundamentally different TLS fingerprint
+     * compared to HTTP/1.1 over TLS 1.2, which may bypass Google's anti-bot detection.
+     * Tries several config combos and returns the first that yields a non-empty body.
+     *
+     * @since 4.2.0
+     * @param string $url      Full HTTPS URL.
+     * @param array  $defaults wp_remote_* style args (user-agent, timeout, headers).
+     * @param string $cookies  Cookie header value.
+     * @param string $referer  Referer URL.
+     * @return array|\WP_Error Response array compatible with wp_remote_get format, or WP_Error.
+     */
+    private function MPT_google_scraping_curl_h2_get(
+        $url,
+        $defaults,
+        $cookies = '',
+        $referer = ''
+    ) {
+        $log = $this->MPT_monolog_call();
+        if ( !function_exists( 'curl_init' ) ) {
+            return new \WP_Error('mpt_curl_h2', 'cURL extension not available.');
+        }
+        $is_search = false !== strpos( $url, '/search' );
+        $configs = $this->MPT_google_scraping_get_curl_h2_configs();
+        if ( $is_search && empty( $this->curl_h2_working_config ) ) {
+            $strategy = $this->MPT_google_scraping_get_cached_strategy();
+            if ( !empty( $strategy['h2_config'] ) && isset( $configs[$strategy['h2_config']] ) ) {
+                $this->curl_h2_working_config = $configs[$strategy['h2_config']];
+                $log->info( 'Google scraping: applying cached cURL H2 config', array(
+                    'config' => (string) $strategy['h2_config'],
+                ) );
+            }
+        }
+        if ( $is_search && !empty( $this->curl_h2_working_config ) ) {
+            return $this->MPT_google_scraping_curl_h2_single(
+                $url,
+                $defaults,
+                $cookies,
+                $referer,
+                $this->curl_h2_working_config,
+                'cached'
+            );
+        }
+        foreach ( $configs as $config_name => $curl_extra ) {
+            $result = $this->MPT_google_scraping_curl_h2_single(
+                $url,
+                $defaults,
+                $cookies,
+                $referer,
+                $curl_extra,
+                $config_name
+            );
+            if ( is_wp_error( $result ) ) {
+                $log->info( 'Google scraping: cURL H2 config failed', array(
+                    'config' => $config_name,
+                    'error'  => $result->get_error_message(),
+                ) );
+                continue;
+            }
+            $body = ( isset( $result['body'] ) ? $result['body'] : '' );
+            $code = ( isset( $result['response']['code'] ) ? (int) $result['response']['code'] : 0 );
+            if ( $is_search && 200 === $code && strlen( $body ) > 1000 ) {
+                $log->info( 'Google scraping: cURL H2 config succeeded for search', array(
+                    'config'   => $config_name,
+                    'body_len' => strlen( $body ),
+                ) );
+                $this->curl_h2_working_config = $curl_extra;
+                $this->MPT_google_scraping_update_cached_strategy( array(
+                    'h2_config' => $config_name,
+                ) );
+                return $result;
+            }
+            if ( !$is_search ) {
+                return $result;
+            }
+            $log->info( 'Google scraping: cURL H2 config returned empty/short body', array(
+                'config'    => $config_name,
+                'body_len'  => strlen( $body ),
+                'http_code' => $code,
+            ) );
+        }
+        $log->info( 'Google scraping: all cURL H2 configs failed to get search body' );
+        return ( isset( $result ) ? $result : new \WP_Error('mpt_curl_h2', 'All cURL HTTP/2 configurations returned empty body.') );
+    }
+
+    /**
+     * cURL HTTP/2 configurations to try.
+     *
+     * @return array<string, array> Config name => extra cURL options.
+     */
+    private function MPT_google_scraping_get_curl_h2_configs() {
+        $configs = array();
+        $h2_available = defined( 'CURL_HTTP_VERSION_2_0' );
+        $tls13_constant = ( defined( 'CURL_SSLVERSION_TLSv1_3' ) ? CURL_SSLVERSION_TLSv1_3 : 0 );
+        $firefox_ciphers = implode( ':', array(
+            'ECDHE-ECDSA-AES128-GCM-SHA256',
+            'ECDHE-RSA-AES128-GCM-SHA256',
+            'ECDHE-ECDSA-CHACHA20-POLY1305',
+            'ECDHE-RSA-CHACHA20-POLY1305',
+            'ECDHE-ECDSA-AES256-GCM-SHA384',
+            'ECDHE-RSA-AES256-GCM-SHA384',
+            'ECDHE-RSA-AES128-SHA',
+            'ECDHE-RSA-AES256-SHA',
+            'AES128-GCM-SHA256',
+            'AES256-GCM-SHA384'
+        ) );
+        $chrome_ciphers = implode( ':', array(
+            'ECDHE-ECDSA-AES128-GCM-SHA256',
+            'ECDHE-RSA-AES128-GCM-SHA256',
+            'ECDHE-ECDSA-AES256-GCM-SHA384',
+            'ECDHE-RSA-AES256-GCM-SHA384',
+            'ECDHE-ECDSA-CHACHA20-POLY1305',
+            'ECDHE-RSA-CHACHA20-POLY1305'
+        ) );
+        if ( $h2_available && $tls13_constant ) {
+            $configs['h2_tls13_firefox'] = array(
+                CURLOPT_HTTP_VERSION    => CURL_HTTP_VERSION_2_0,
+                CURLOPT_SSLVERSION      => $tls13_constant,
+                CURLOPT_SSL_CIPHER_LIST => $firefox_ciphers,
+            );
+            $configs['h2_tls13'] = array(
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_2_0,
+                CURLOPT_SSLVERSION   => $tls13_constant,
+            );
+        }
+        if ( $h2_available ) {
+            $configs['h2_firefox'] = array(
+                CURLOPT_HTTP_VERSION    => CURL_HTTP_VERSION_2_0,
+                CURLOPT_SSL_CIPHER_LIST => $firefox_ciphers,
+            );
+            $configs['h2_chrome'] = array(
+                CURLOPT_HTTP_VERSION    => CURL_HTTP_VERSION_2_0,
+                CURLOPT_SSL_CIPHER_LIST => $chrome_ciphers,
+            );
+            $configs['h2_default'] = array(
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_2_0,
+            );
+        }
+        if ( $tls13_constant ) {
+            $configs['h1_tls13'] = array(
+                CURLOPT_SSLVERSION => $tls13_constant,
+            );
+        }
+        if ( empty( $configs ) ) {
+            $configs['h1_default'] = array();
+        }
+        return $configs;
+    }
+
+    /**
+     * Execute a single cURL HTTP/2 request.
+     *
+     * @param string $url       Full URL.
+     * @param array  $defaults  wp_remote_* style args.
+     * @param string $cookies   Cookie header value.
+     * @param string $referer   Referer URL.
+     * @param array  $curl_extra Additional cURL options to set.
+     * @param string $config_tag Label for logging.
+     * @return array|\WP_Error
+     */
+    private function MPT_google_scraping_curl_h2_single(
+        $url,
+        $defaults,
+        $cookies = '',
+        $referer = '',
+        $curl_extra = array(),
+        $config_tag = ''
+    ) {
+        $log = $this->MPT_monolog_call();
+        $timeout = ( isset( $defaults['timeout'] ) ? (int) $defaults['timeout'] : 3 );
+        $ua = ( isset( $defaults['user-agent'] ) ? $defaults['user-agent'] : '' );
+        $sslverify = !empty( $defaults['sslverify'] );
+        $req_headers = array();
+        $req_headers[] = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';
+        $req_headers[] = 'Accept-Language: en-US,en;q=0.5';
+        if ( '' !== $cookies ) {
+            $req_headers[] = "Cookie: {$cookies}";
+        }
+        if ( '' !== $referer ) {
+            $req_headers[] = "Referer: {$referer}";
+        }
+        $ch = curl_init();
+        curl_setopt_array( $ch, array(
+            CURLOPT_URL            => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HEADER         => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_MAXREDIRS      => 2,
+            CURLOPT_TIMEOUT        => $timeout,
+            CURLOPT_CONNECTTIMEOUT => min( 1, $timeout ),
+            CURLOPT_USERAGENT      => $ua,
+            CURLOPT_HTTPHEADER     => $req_headers,
+            CURLOPT_ENCODING       => '',
+            CURLOPT_SSL_VERIFYPEER => $sslverify,
+            CURLOPT_SSL_VERIFYHOST => ( $sslverify ? 2 : 0 ),
+        ) );
+        foreach ( $curl_extra as $opt => $val ) {
+            curl_setopt( $ch, $opt, $val );
+        }
+        $log->info( 'Google scraping: cURL H2 attempting request', array(
+            'url'         => $url,
+            'config'      => ( '' !== $config_tag ? $config_tag : 'cached' ),
+            'ua_hint'     => substr( $ua, 0, 80 ),
+            'has_cookies' => '' !== $cookies,
+        ) );
+        $raw = curl_exec( $ch );
+        if ( false === $raw ) {
+            $err = curl_error( $ch );
+            curl_close( $ch );
+            return new \WP_Error('mpt_curl_h2', "cURL error ({$config_tag}): {$err}");
+        }
+        $http_code = (int) curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+        $header_size = (int) curl_getinfo( $ch, CURLINFO_HEADER_SIZE );
+        $http_ver = '';
+        if ( defined( 'CURLINFO_HTTP_VERSION' ) ) {
+            $ver_code = curl_getinfo( $ch, CURLINFO_HTTP_VERSION );
+            $ver_map = array(
+                1 => '1.0',
+                2 => '1.1',
+                3 => '2',
+                4 => '3',
+            );
+            $http_ver = ( isset( $ver_map[$ver_code] ) ? $ver_map[$ver_code] : (string) $ver_code );
+        }
+        curl_close( $ch );
+        $resp_headers_str = substr( $raw, 0, $header_size );
+        $body = substr( $raw, $header_size );
+        $safe_preview = substr( preg_replace( '/\\s+/', ' ', wp_strip_all_tags( $body ) ), 0, 200 );
+        $log->info( 'Google scraping: cURL H2 response parsed', array(
+            'config'       => ( '' !== $config_tag ? $config_tag : 'cached' ),
+            'http_code'    => $http_code,
+            'http_version' => $http_ver,
+            'body_len'     => strlen( $body ),
+            'body_preview' => $safe_preview,
+        ) );
+        $response_headers = array();
+        foreach ( explode( "\r\n", $resp_headers_str ) as $line ) {
+            if ( false === strpos( $line, ':' ) ) {
+                continue;
+            }
+            list( $hname, $hvalue ) = explode( ':', $line, 2 );
+            $hname = strtolower( trim( $hname ) );
+            $hvalue = trim( $hvalue );
+            $response_headers[$hname] = $hvalue;
+        }
+        return array(
+            'headers'  => $response_headers,
+            'body'     => $body,
+            'response' => array(
+                'code'    => $http_code,
+                'message' => '',
+            ),
+            'cookies'  => array(),
+        );
+    }
+
+    /**
+     * HTTP GET via stream_socket_client("ssl://") with manual HTTP/1.1.
+     *
+     * PHP's native SSL stream produces a different TLS ClientHello fingerprint than
+     * cURL/libcurl. Falls back after cURL HTTP/2 transport.
+     *
+     * @since 4.2.0
+     * @param string $url      Full HTTPS URL.
+     * @param array  $defaults wp_remote_* style args (user-agent, timeout, headers).
+     * @param string $cookies  Cookie header value.
+     * @param string $referer  Referer URL.
+     * @return array|\WP_Error Response array compatible with wp_remote_get format, or WP_Error.
+     */
+    private function MPT_google_scraping_raw_socket_get(
+        $url,
+        $defaults,
+        $cookies = '',
+        $referer = ''
+    ) {
+        $log = $this->MPT_monolog_call();
+        $is_search = false !== strpos( $url, '/search' );
+        if ( $is_search && !empty( $this->raw_socket_working_profile ) ) {
+            return $this->MPT_google_scraping_raw_socket_single(
+                $url,
+                $defaults,
+                $cookies,
+                $referer,
+                $this->raw_socket_working_profile
+            );
+        }
+        $profiles = $this->MPT_google_scraping_get_tls_profiles();
+        foreach ( $profiles as $profile_name => $ssl_opts ) {
+            $result = $this->MPT_google_scraping_raw_socket_single(
+                $url,
+                $defaults,
+                $cookies,
+                $referer,
+                $ssl_opts,
+                $profile_name
+            );
+            if ( is_wp_error( $result ) ) {
+                $log->info( 'Google scraping: TLS profile connection failed', array(
+                    'profile' => $profile_name,
+                    'error'   => $result->get_error_message(),
+                ) );
+                continue;
+            }
+            $body = ( isset( $result['body'] ) ? $result['body'] : '' );
+            $code = ( isset( $result['response']['code'] ) ? (int) $result['response']['code'] : 0 );
+            if ( $is_search && 200 === $code && strlen( $body ) > 1000 ) {
+                $log->info( 'Google scraping: TLS profile succeeded for search', array(
+                    'profile'  => $profile_name,
+                    'body_len' => strlen( $body ),
+                ) );
+                $this->raw_socket_working_profile = $ssl_opts;
+                return $result;
+            }
+            if ( !$is_search ) {
+                return $result;
+            }
+            $log->info( 'Google scraping: TLS profile returned empty/short body for search, trying next', array(
+                'profile'   => $profile_name,
+                'body_len'  => strlen( $body ),
+                'http_code' => $code,
+            ) );
+        }
+        $log->warning( 'Google scraping: all TLS profiles failed to get search body' );
+        return ( isset( $result ) ? $result : new \WP_Error('mpt_raw_socket', 'All TLS cipher profiles failed.') );
+    }
+
+    /**
+     * TLS cipher profiles to try, in order. Each profile changes the JA3 fingerprint
+     * presented to Google, which may bypass their anti-bot detection.
+     *
+     * @return array<string, array> Profile name => SSL context options.
+     */
+    private function MPT_google_scraping_get_tls_profiles() {
+        return array(
+            'default' => array(),
+        );
+    }
+
+    /**
+     * Perform a single raw socket HTTP GET with a specific TLS profile.
+     *
+     * @param string $url         Full HTTPS URL.
+     * @param array  $defaults    wp_remote_* style args.
+     * @param string $cookies     Cookie header value.
+     * @param string $referer     Referer URL.
+     * @param array  $ssl_opts    Extra SSL context options (e.g. ciphers).
+     * @param string $profile_tag Label for logging.
+     * @return array|\WP_Error
+     */
+    private function MPT_google_scraping_raw_socket_single(
+        $url,
+        $defaults,
+        $cookies = '',
+        $referer = '',
+        $ssl_opts = array(),
+        $profile_tag = ''
+    ) {
+        $log = $this->MPT_monolog_call();
+        $parsed = wp_parse_url( $url );
+        if ( empty( $parsed['host'] ) || empty( $parsed['scheme'] ) || 'https' !== $parsed['scheme'] ) {
+            return new \WP_Error('mpt_raw_socket', 'Only HTTPS URLs are supported by the raw socket transport.');
+        }
+        $host = $parsed['host'];
+        $port = ( isset( $parsed['port'] ) ? (int) $parsed['port'] : 443 );
+        $raw_path = ( isset( $parsed['path'] ) ? $parsed['path'] : '/' );
+        $raw_query = ( isset( $parsed['query'] ) ? $parsed['query'] : '' );
+        $raw_path = preg_replace_callback( '/[^A-Za-z0-9\\-._~:\\/!$&\'()*+,;=@%]/', function ( $m ) {
+            return rawurlencode( $m[0] );
+        }, $raw_path );
+        $raw_query = preg_replace_callback( '/[^A-Za-z0-9\\-._~:\\/!$\'()*+,;=@%&?]/', function ( $m ) {
+            return rawurlencode( $m[0] );
+        }, $raw_query );
+        $path = $raw_path . (( '' !== $raw_query ? '?' . $raw_query : '' ));
+        $timeout = ( isset( $defaults['timeout'] ) ? (int) $defaults['timeout'] : 3 );
+        $ua = ( isset( $defaults['user-agent'] ) ? $defaults['user-agent'] : '' );
+        $sslverify = !empty( $defaults['sslverify'] );
+        $header_lines = array();
+        $header_lines[] = "Host: {$host}";
+        if ( '' !== $ua ) {
+            $header_lines[] = "User-Agent: {$ua}";
+        }
+        $header_lines[] = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';
+        $header_lines[] = 'Accept-Language: en-US,en;q=0.5';
+        if ( '' !== $cookies ) {
+            $header_lines[] = "Cookie: {$cookies}";
+        }
+        if ( '' !== $referer ) {
+            $header_lines[] = "Referer: {$referer}";
+        }
+        $header_lines[] = 'Connection: close';
+        $log->info( 'Google scraping: raw socket attempting request', array(
+            'url'          => $url,
+            'tls_profile'  => ( '' !== $profile_tag ? $profile_tag : 'cached' ),
+            'ua_hint'      => substr( $ua, 0, 80 ),
+            'has_cookies'  => '' !== $cookies,
+            'header_count' => count( $header_lines ),
+        ) );
+        $base_ssl = array(
+            'verify_peer'       => $sslverify,
+            'verify_peer_name'  => $sslverify,
+            'allow_self_signed' => !$sslverify,
+            'SNI_enabled'       => true,
+            'peer_name'         => $host,
+        );
+        if ( !empty( $ssl_opts ) ) {
+            $base_ssl = array_merge( $base_ssl, $ssl_opts );
+        }
+        $ctx = stream_context_create( array(
+            'ssl' => $base_ssl,
+        ) );
+        $errno = 0;
+        $errstr = '';
+        $sock = @stream_socket_client(
+            "ssl://{$host}:{$port}",
+            $errno,
+            $errstr,
+            $timeout,
+            STREAM_CLIENT_CONNECT,
+            $ctx
+        );
+        if ( !$sock ) {
+            $log->warning( 'Google scraping: raw socket connection failed', array(
+                'tls_profile' => $profile_tag,
+                'errno'       => $errno,
+                'errstr'      => $errstr,
+            ) );
+            return new \WP_Error('mpt_raw_socket', "stream_socket_client failed ({$profile_tag}): {$errstr} ({$errno})");
+        }
+        $request = "GET {$path} HTTP/1.1\r\n" . implode( "\r\n", $header_lines ) . "\r\n" . "\r\n";
+        fwrite( $sock, $request );
+        $response_raw = '';
+        stream_set_timeout( $sock, $timeout );
+        while ( !feof( $sock ) ) {
+            $chunk = fread( $sock, 16384 );
+            if ( false === $chunk ) {
+                break;
+            }
+            $response_raw .= $chunk;
+            $meta = stream_get_meta_data( $sock );
+            if ( !empty( $meta['timed_out'] ) ) {
+                $log->warning( 'Google scraping: raw socket read timed out', array(
+                    'tls_profile'  => $profile_tag,
+                    'bytes_so_far' => strlen( $response_raw ),
+                ) );
+                break;
+            }
+        }
+        fclose( $sock );
+        if ( '' === $response_raw ) {
+            return new \WP_Error('mpt_raw_socket', "Empty response from Google (raw socket, profile={$profile_tag}).");
+        }
+        $header_end = strpos( $response_raw, "\r\n\r\n" );
+        if ( false === $header_end ) {
+            return new \WP_Error('mpt_raw_socket', "Malformed HTTP response, profile={$profile_tag}.");
+        }
+        $raw_headers = substr( $response_raw, 0, $header_end );
+        $raw_body = substr( $response_raw, $header_end + 4 );
+        $http_code = 0;
+        if ( preg_match( '/^HTTP\\/[\\d.]+ (\\d+)/', $raw_headers, $m ) ) {
+            $http_code = (int) $m[1];
+        }
+        $body_before_decode = strlen( $raw_body );
+        $decode_steps = array();
+        if ( false !== stripos( $raw_headers, 'Transfer-Encoding: chunked' ) ) {
+            $raw_body = $this->MPT_google_scraping_decode_chunked( $raw_body );
+            $decode_steps[] = 'chunked(' . $body_before_decode . '->' . strlen( $raw_body ) . ')';
+        }
+        if ( false !== stripos( $raw_headers, 'Content-Encoding: gzip' ) && function_exists( 'gzdecode' ) ) {
+            $pre = strlen( $raw_body );
+            $decoded = @gzdecode( $raw_body );
+            if ( false !== $decoded ) {
+                $raw_body = $decoded;
+                $decode_steps[] = 'gzip(' . $pre . '->' . strlen( $raw_body ) . ')';
+            } else {
+                $decode_steps[] = 'gzip_failed(input_len=' . $pre . ')';
+            }
+        } elseif ( false !== stripos( $raw_headers, 'Content-Encoding: br' ) ) {
+            if ( function_exists( 'brotli_uncompress' ) ) {
+                $pre = strlen( $raw_body );
+                $decoded = @brotli_uncompress( $raw_body );
+                if ( false !== $decoded ) {
+                    $raw_body = $decoded;
+                    $decode_steps[] = 'brotli(' . $pre . '->' . strlen( $raw_body ) . ')';
+                } else {
+                    $decode_steps[] = 'brotli_failed(input_len=' . $pre . ')';
+                }
+            } else {
+                $decode_steps[] = 'brotli_unsupported(input_len=' . strlen( $raw_body ) . ')';
+            }
+        } elseif ( false !== stripos( $raw_headers, 'Content-Encoding: deflate' ) ) {
+            $pre = strlen( $raw_body );
+            $decoded = @gzinflate( $raw_body );
+            if ( false !== $decoded ) {
+                $raw_body = $decoded;
+                $decode_steps[] = 'deflate(' . $pre . '->' . strlen( $raw_body ) . ')';
+            } else {
+                $decoded = @gzuncompress( $raw_body );
+                if ( false !== $decoded ) {
+                    $raw_body = $decoded;
+                    $decode_steps[] = 'deflate_zlib(' . $pre . '->' . strlen( $raw_body ) . ')';
+                } else {
+                    $decode_steps[] = 'deflate_failed(input_len=' . $pre . ')';
+                }
+            }
+        }
+        $safe_preview = substr( preg_replace( '/\\s+/', ' ', wp_strip_all_tags( $raw_body ) ), 0, 200 );
+        $log->info( 'Google scraping: raw socket response parsed', array(
+            'tls_profile'       => ( '' !== $profile_tag ? $profile_tag : 'cached' ),
+            'http_code'         => $http_code,
+            'raw_body_bytes'    => $body_before_decode,
+            'decoded_body_len'  => strlen( $raw_body ),
+            'decode_steps'      => ( empty( $decode_steps ) ? 'none' : implode( ' > ', $decode_steps ) ),
+            'content_type'      => $this->MPT_google_scraping_extract_raw_header( $raw_headers, 'Content-Type' ),
+            'content_encoding'  => $this->MPT_google_scraping_extract_raw_header( $raw_headers, 'Content-Encoding' ),
+            'transfer_encoding' => $this->MPT_google_scraping_extract_raw_header( $raw_headers, 'Transfer-Encoding' ),
+            'body_preview'      => $safe_preview,
+        ) );
+        $response_headers = array();
+        $header_lines_arr = explode( "\r\n", $raw_headers );
+        array_shift( $header_lines_arr );
+        foreach ( $header_lines_arr as $line ) {
+            if ( false === strpos( $line, ':' ) ) {
+                continue;
+            }
+            list( $hname, $hvalue ) = explode( ':', $line, 2 );
+            $hname = strtolower( trim( $hname ) );
+            $hvalue = trim( $hvalue );
+            if ( isset( $response_headers[$hname] ) ) {
+                if ( !is_array( $response_headers[$hname] ) ) {
+                    $response_headers[$hname] = array($response_headers[$hname]);
+                }
+                $response_headers[$hname][] = $hvalue;
+            } else {
+                $response_headers[$hname] = $hvalue;
+            }
+        }
+        if ( $http_code >= 300 && $http_code < 400 && isset( $response_headers['location'] ) ) {
+            $redirect_url = ( is_array( $response_headers['location'] ) ? $response_headers['location'][0] : $response_headers['location'] );
+            if ( 0 === strpos( $redirect_url, '/' ) ) {
+                $redirect_url = "https://{$host}" . $redirect_url;
+            }
+            $new_cookies = $this->MPT_google_scraping_collect_cookies_from_raw_headers( $raw_headers );
+            if ( '' !== $new_cookies ) {
+                $cookies = $this->MPT_google_scraping_merge_cookie_headers( $cookies, $new_cookies );
+            }
+            $log->info( 'Google scraping: raw socket following redirect', array(
+                'to'   => $redirect_url,
+                'code' => $http_code,
+            ) );
+            return $this->MPT_google_scraping_raw_socket_single(
+                $redirect_url,
+                $defaults,
+                $cookies,
+                $referer,
+                $ssl_opts,
+                $profile_tag
+            );
+        }
+        return array(
+            'headers'  => $response_headers,
+            'body'     => $raw_body,
+            'response' => array(
+                'code'    => $http_code,
+                'message' => '',
+            ),
+            'cookies'  => array(),
+        );
+    }
+
+    /**
+     * Extract a single header value from raw HTTP headers string.
+     *
+     * @param string $raw_headers Full raw headers string.
+     * @param string $name        Header name (case-insensitive).
+     * @return string Header value or empty string.
+     */
+    private function MPT_google_scraping_extract_raw_header( $raw_headers, $name ) {
+        if ( preg_match( '/^' . preg_quote( $name, '/' ) . ':\\s*(.+)$/mi', $raw_headers, $m ) ) {
+            return trim( $m[1] );
+        }
+        return '';
+    }
+
+    /**
+     * Decode HTTP chunked transfer encoding.
+     *
+     * @since 4.2.0
+     * @param string $body Raw chunked body.
+     * @return string Decoded body.
+     */
+    private function MPT_google_scraping_decode_chunked( $body ) {
+        $decoded = '';
+        $offset = 0;
+        $len = strlen( $body );
+        while ( $offset < $len ) {
+            $nl = strpos( $body, "\r\n", $offset );
+            if ( false === $nl ) {
+                break;
+            }
+            $chunk_size = hexdec( trim( substr( $body, $offset, $nl - $offset ) ) );
+            if ( 0 === $chunk_size ) {
+                break;
+            }
+            $decoded .= substr( $body, $nl + 2, $chunk_size );
+            $offset = $nl + 2 + $chunk_size + 2;
+        }
+        return $decoded;
+    }
+
+    /**
+     * Extract Set-Cookie pairs from raw HTTP headers.
+     *
+     * @since 4.2.0
+     * @param string $raw_headers Raw header block.
+     * @return string Cookie header value for next request.
+     */
+    private function MPT_google_scraping_collect_cookies_from_raw_headers( $raw_headers ) {
+        $parts = array();
+        if ( preg_match_all( '/^Set-Cookie:\\s*([^;\\r\\n]+)/mi', $raw_headers, $m ) ) {
+            foreach ( $m[1] as $pair ) {
+                $pair = trim( $pair );
+                if ( false !== strpos( $pair, '=' ) ) {
+                    $parts[] = $pair;
+                }
+            }
+        }
+        return implode( '; ', array_unique( $parts ) );
+    }
+
+    /**
+     * Merge multiple Cookie header strings without duplicating names.
+     *
+     * @param string ...$cookie_headers Cookie header values.
+     * @return string
+     */
+    private function MPT_google_scraping_merge_cookie_headers( ... $cookie_headers ) {
+        $cookies = array();
+        foreach ( $cookie_headers as $cookie_header ) {
+            if ( !is_string( $cookie_header ) || '' === trim( $cookie_header ) ) {
+                continue;
+            }
+            foreach ( explode( ';', $cookie_header ) as $cookie_part ) {
+                $cookie_part = trim( $cookie_part );
+                if ( '' === $cookie_part || false === strpos( $cookie_part, '=' ) ) {
+                    continue;
+                }
+                list( $name, $value ) = explode( '=', $cookie_part, 2 );
+                $cookies[trim( $name )] = trim( $value );
+            }
+        }
+        $out = array();
+        foreach ( $cookies as $name => $value ) {
+            $out[] = $name . '=' . $value;
+        }
+        return implode( '; ', $out );
+    }
+
+    /**
+     * @param array $response wp_remote_* response.
+     * @return string Cookie header value for next request.
+     */
+    private function MPT_google_scraping_collect_cookies_from_response( $response ) {
+        $parts = array();
+        $h = wp_remote_retrieve_header( $response, 'set-cookie' );
+        $lines = array();
+        if ( is_array( $h ) ) {
+            $lines = $h;
+        } elseif ( is_string( $h ) && '' !== $h ) {
+            $lines = array($h);
+        }
+        foreach ( $lines as $line ) {
+            $sem = strpos( $line, ';' );
+            $pair = ( false !== $sem ? substr( $line, 0, $sem ) : $line );
+            if ( false !== strpos( $pair, '=' ) ) {
+                $parts[] = trim( $pair );
+            }
+        }
+        return implode( '; ', array_unique( $parts ) );
+    }
+
+    /**
+     * @param string $body HTML body.
+     * @return bool
+     */
+    private function MPT_google_scraping_is_consent_page( $body ) {
+        return false !== stripos( $body, 'Before you continue' ) || false !== stripos( $body, 'consent.google.com' );
+    }
+
+    /**
+     * @param string $body HTML body.
+     * @return bool
+     */
+    private function MPT_google_scraping_is_bot_challenge_page( $body ) {
+        return false !== stripos( $body, 'If you\'re having trouble accessing Google Search' ) || false !== stripos( $body, 'SG_SS=' ) || false !== stripos( $body, 'window.sgs' );
+    }
+
+    /**
+     * Try a real local browser in headless mode before Bing fallback.
+     *
+     * @param string $google_url Original Google URL.
+     * @return array{body: string, browser: string}|false
+     */
+    private function MPT_google_scraping_fetch_google_headless_html( $google_url ) {
+        $log = $this->MPT_monolog_call();
+        if ( !$this->MPT_google_scraping_proc_open_available() ) {
+            $log->warning( 'Google scraping headless: proc_open is unavailable on this server' );
+            return false;
+        }
+        $timeout_ms = (int) apply_filters( 'mpt_google_scraping_headless_timeout_ms', 5000, $google_url );
+        if ( $timeout_ms < 2000 ) {
+            $timeout_ms = 2000;
+        }
+        $browsers = $this->MPT_google_scraping_get_headless_browser_candidates();
+        if ( empty( $browsers ) ) {
+            $log->warning( 'Google scraping headless: no browser candidate configured or detected' );
+            return false;
+        }
+        foreach ( $browsers as $browser ) {
+            $browser_label = $browser;
+            $temp_dir = $this->MPT_google_scraping_make_temp_dir( 'mpt-google-headless-' );
+            if ( false === $temp_dir ) {
+                $log->warning( 'Google scraping headless: could not create temporary browser profile directory' );
+                return false;
+            }
+            $command = $this->MPT_google_scraping_build_headless_command(
+                $browser,
+                $google_url,
+                $timeout_ms,
+                $temp_dir
+            );
+            $log->info( 'Google scraping headless: launching browser', array(
+                'browser'    => $browser_label,
+                'timeout_ms' => $timeout_ms,
+            ) );
+            $result = $this->MPT_google_scraping_run_headless_command( $command, $timeout_ms + 2000 );
+            $this->MPT_google_scraping_remove_temp_dir( $temp_dir );
+            if ( false === $result ) {
+                $log->warning( 'Google scraping headless: browser process failed', array(
+                    'browser' => $browser_label,
+                ) );
+                continue;
+            }
+            if ( !empty( $result['timed_out'] ) ) {
+                $log->warning( 'Google scraping headless: browser timed out', array(
+                    'browser'    => $browser_label,
+                    'timeout_ms' => $timeout_ms,
+                ) );
+                continue;
+            }
+            $stdout = ( isset( $result['stdout'] ) ? trim( (string) $result['stdout'] ) : '' );
+            $stderr = ( isset( $result['stderr'] ) ? trim( (string) $result['stderr'] ) : '' );
+            if ( '' === $stdout || false === stripos( $stdout, '<html' ) ) {
+                $log->warning( 'Google scraping headless: browser returned no usable HTML', array(
+                    'browser'    => $browser_label,
+                    'exit_code'  => ( isset( $result['exit_code'] ) ? (int) $result['exit_code'] : -1 ),
+                    'stderr'     => substr( $stderr, 0, 500 ),
+                    'stdout_len' => strlen( $stdout ),
+                ) );
+                continue;
+            }
+            if ( $this->MPT_google_scraping_is_bot_challenge_page( $stdout ) ) {
+                $log->warning( 'Google scraping headless: browser still received Google challenge page', array(
+                    'browser' => $browser_label,
+                ) );
+            }
+            return array(
+                'body'    => $stdout,
+                'browser' => $browser_label,
+            );
+        }
+        return false;
+    }
+
+    /**
+     * @return bool
+     */
+    private function MPT_google_scraping_proc_open_available() {
+        if ( !function_exists( 'proc_open' ) || !function_exists( 'proc_get_status' ) ) {
+            return false;
+        }
+        $disabled = (string) ini_get( 'disable_functions' );
+        if ( '' === $disabled ) {
+            return true;
+        }
+        $list = array_map( 'trim', explode( ',', $disabled ) );
+        return !in_array( 'proc_open', $list, true );
+    }
+
+    /**
+     * @return array<int, string>
+     */
+    private function MPT_google_scraping_get_headless_browser_candidates() {
+        $candidates = array();
+        $filter_path = apply_filters( 'mpt_google_scraping_headless_browser_path', '' );
+        if ( is_string( $filter_path ) && '' !== trim( $filter_path ) ) {
+            $candidates[] = trim( $filter_path );
+        }
+        $env_browser = getenv( 'MPT_GOOGLE_HEADLESS_BROWSER' );
+        if ( is_string( $env_browser ) && '' !== trim( $env_browser ) ) {
+            $candidates[] = trim( $env_browser );
+        }
+        if ( defined( 'MPT_GOOGLE_HEADLESS_BROWSER' ) && is_string( MPT_GOOGLE_HEADLESS_BROWSER ) && '' !== trim( MPT_GOOGLE_HEADLESS_BROWSER ) ) {
+            $candidates[] = trim( MPT_GOOGLE_HEADLESS_BROWSER );
+        }
+        if ( '\\' === DIRECTORY_SEPARATOR ) {
+            $candidates = array_merge( $candidates, array(
+                'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+                'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+                'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe',
+                'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+                'chrome',
+                'msedge'
+            ) );
+        } elseif ( stripos( PHP_OS, 'Darwin' ) === 0 ) {
+            $candidates = array_merge( $candidates, array(
+                '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+                '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',
+                'google-chrome',
+                'chromium',
+                'microsoft-edge'
+            ) );
+        } else {
+            $candidates = array_merge( $candidates, array(
+                'google-chrome',
+                'chromium',
+                'chromium-browser',
+                'microsoft-edge',
+                'microsoft-edge-stable'
+            ) );
+        }
+        $candidates = array_values( array_unique( array_filter( array_map( 'trim', $candidates ) ) ) );
+        $existing = array();
+        $fallback = array();
+        foreach ( $candidates as $candidate ) {
+            if ( false !== strpos( $candidate, DIRECTORY_SEPARATOR ) || false !== strpos( $candidate, ':' ) ) {
+                if ( !$this->MPT_google_scraping_is_safe_browser_path( $candidate ) ) {
+                    continue;
+                }
+                if ( file_exists( $candidate ) ) {
+                    $existing[] = $candidate;
+                }
+            } else {
+                if ( preg_match( '/[\\/\\\\]/', $candidate ) || preg_match( '/[;&|`$]/', $candidate ) ) {
+                    continue;
+                }
+                $fallback[] = $candidate;
+            }
+        }
+        return array_merge( $existing, $fallback );
+    }
+
+    /**
+     * Validate that a browser binary path is in a safe location and not suspicious.
+     *
+     * @since 6.2.0
+     * @param string $path Absolute path to a browser binary.
+     * @return bool
+     */
+    private function MPT_google_scraping_is_safe_browser_path( $path ) {
+        $path = (string) $path;
+        if ( '' === $path ) {
+            return false;
+        }
+        if ( preg_match( '/[;&|`$]/', $path ) ) {
+            return false;
+        }
+        $real = realpath( $path );
+        if ( false === $real ) {
+            return false;
+        }
+        $safe_prefixes = ( '\\' === DIRECTORY_SEPARATOR ? array('C:\\Program Files\\', 'C:\\Program Files (x86)\\') : array(
+            '/usr/',
+            '/opt/',
+            '/snap/',
+            '/Applications/'
+        ) );
+        $safe_prefixes = apply_filters( 'mpt_google_scraping_headless_safe_prefixes', $safe_prefixes );
+        foreach ( $safe_prefixes as $prefix ) {
+            if ( 0 === strncasecmp( $real, $prefix, strlen( $prefix ) ) ) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * @param string $browser_path Browser binary or command name.
+     * @param string $google_url   Google Images URL.
+     * @param int    $timeout_ms   Virtual time budget.
+     * @param string $temp_dir     Temporary browser profile dir.
+     * @return string
+     */
+    private function MPT_google_scraping_build_headless_command(
+        $browser_path,
+        $google_url,
+        $timeout_ms,
+        $temp_dir
+    ) {
+        $parts = array(
+            $this->MPT_google_scraping_escape_shell_arg( $browser_path ),
+            '--headless=new',
+            '--disable-gpu',
+            '--disable-extensions',
+            '--disable-background-networking',
+            '--disable-background-timer-throttling',
+            '--disable-renderer-backgrounding',
+            '--disable-sync',
+            '--disable-features=AutomationControlled,Translate,OptimizationHints',
+            '--disable-blink-features=AutomationControlled',
+            '--hide-scrollbars',
+            '--mute-audio',
+            '--no-first-run',
+            '--no-default-browser-check',
+            '--window-size=1365,900',
+            '--blink-settings=imagesEnabled=false',
+            '--user-agent=' . $this->MPT_google_scraping_escape_shell_arg( 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' ),
+            '--user-data-dir=' . $this->MPT_google_scraping_escape_shell_arg( $temp_dir ),
+            '--virtual-time-budget=' . (int) $timeout_ms,
+            '--dump-dom',
+            $this->MPT_google_scraping_escape_shell_arg( $google_url )
+        );
+        return implode( ' ', $parts );
+    }
+
+    /**
+     * @param string $command    Shell command.
+     * @param int    $timeout_ms Kill process after this timeout.
+     * @return array{stdout: string, stderr: string, exit_code: int, timed_out: bool}|false
+     */
+    private function MPT_google_scraping_run_headless_command( $command, $timeout_ms ) {
+        $descriptors = array(
+            0 => array('pipe', 'r'),
+            1 => array('pipe', 'w'),
+            2 => array('pipe', 'w'),
+        );
+        $process = proc_open( $command, $descriptors, $pipes );
+        if ( !is_resource( $process ) ) {
+            return false;
+        }
+        fclose( $pipes[0] );
+        stream_set_blocking( $pipes[1], false );
+        stream_set_blocking( $pipes[2], false );
+        $stdout = '';
+        $stderr = '';
+        $timed_out = false;
+        $start = microtime( true );
+        do {
+            $stdout .= stream_get_contents( $pipes[1] );
+            $stderr .= stream_get_contents( $pipes[2] );
+            $status = proc_get_status( $process );
+            if ( empty( $status['running'] ) ) {
+                break;
+            }
+            if ( (microtime( true ) - $start) * 1000 > $timeout_ms ) {
+                $timed_out = true;
+                proc_terminate( $process );
+                break;
+            }
+            usleep( 100000 );
+        } while ( true );
+        $stdout .= stream_get_contents( $pipes[1] );
+        $stderr .= stream_get_contents( $pipes[2] );
+        fclose( $pipes[1] );
+        fclose( $pipes[2] );
+        $exit_code = proc_close( $process );
+        return array(
+            'stdout'    => $stdout,
+            'stderr'    => $stderr,
+            'exit_code' => (int) $exit_code,
+            'timed_out' => $timed_out,
+        );
+    }
+
+    /**
+     * @param string $prefix Directory prefix.
+     * @return string|false
+     */
+    private function MPT_google_scraping_make_temp_dir( $prefix ) {
+        $base = trailingslashit( sys_get_temp_dir() ) . $prefix . wp_generate_password( 12, false, false );
+        return ( wp_mkdir_p( $base ) ? $base : false );
+    }
+
+    /**
+     * @param string $dir Directory path.
+     * @return void
+     */
+    private function MPT_google_scraping_remove_temp_dir( $dir ) {
+        if ( !is_string( $dir ) || '' === $dir || !is_dir( $dir ) ) {
+            return;
+        }
+        $entries = @scandir( $dir );
+        if ( false !== $entries ) {
+            foreach ( $entries as $entry ) {
+                if ( '.' === $entry || '..' === $entry ) {
+                    continue;
+                }
+                $path = $dir . DIRECTORY_SEPARATOR . $entry;
+                if ( is_dir( $path ) ) {
+                    $this->MPT_google_scraping_remove_temp_dir( $path );
+                } elseif ( file_exists( $path ) ) {
+                    @unlink( $path );
+                }
+            }
+        }
+        @rmdir( $dir );
+    }
+
+    /**
+     * @param string $arg Shell argument.
+     * @return string
+     */
+    private function MPT_google_scraping_escape_shell_arg( $arg ) {
+        if ( '\\' === DIRECTORY_SEPARATOR ) {
+            return '"' . str_replace( array('"', '%', '!'), array('""', '%%', '^!'), $arg ) . '"';
+        }
+        return escapeshellarg( $arg );
+    }
+
+    /**
+     * POST "Reject all" on consent.google.com/save and follow redirect to search results.
+     *
+     * @param string $body       Consent HTML.
+     * @param string $cookies    Existing Cookie header.
+     * @param array  $defaults   Base request args.
+     * @param string $google_url Original Google URL (for Referer).
+     * @return array{body: string, cookies: string}|false
+     */
+    private function MPT_google_scraping_post_consent_reject(
+        $body,
+        $cookies,
+        $defaults,
+        $google_url
+    ) {
+        $log = $this->MPT_monolog_call();
+        preg_match_all(
+            '/<form[^>]+action=["\'](https:\\/\\/consent\\.google\\.com\\/save)["\'][^>]*>(.*?)<\\/form>/is',
+            $body,
+            $forms,
+            PREG_SET_ORDER
+        );
+        $form_html = '';
+        foreach ( $forms as $f ) {
+            if ( isset( $f[2] ) && false !== strpos( $f[2], 'Reject all' ) ) {
+                $form_html = $f[2];
+                break;
+            }
+        }
+        if ( '' === $form_html ) {
+            $log->warning( 'Google scraping consent: no "Reject all" form found in HTML' );
+            return false;
+        }
+        $fields = $this->MPT_google_scraping_parse_hidden_inputs( $form_html );
+        if ( empty( $fields ) ) {
+            $log->warning( 'Google scraping consent: could not parse hidden fields' );
+            return false;
+        }
+        $req = array_merge( $defaults, array(
+            'method'      => 'POST',
+            'body'        => $fields,
+            'redirection' => 0,
+            'headers'     => array_merge( ( isset( $defaults['headers'] ) && is_array( $defaults['headers'] ) ? $defaults['headers'] : array() ), array(
+                'Content-Type' => 'application/x-www-form-urlencoded',
+                'Cookie'       => $cookies,
+                'Referer'      => $google_url,
+                'Origin'       => 'https://consent.google.com',
+            ) ),
+        ) );
+        $post = wp_remote_post( 'https://consent.google.com/save', $req );
+        if ( is_wp_error( $post ) || empty( $post['response'] ) ) {
+            $log->error( 'Google scraping consent: POST to consent.google.com failed', array(
+                'error' => ( is_wp_error( $post ) ? $post->get_error_message() : 'empty response' ),
+            ) );
+            return false;
+        }
+        $code = wp_remote_retrieve_response_code( $post );
+        $merged_cookies = $this->MPT_google_scraping_merge_cookie_headers( $cookies, $this->MPT_google_scraping_collect_cookies_from_response( $post ) );
+        $location = wp_remote_retrieve_header( $post, 'location' );
+        $log->info( 'Google scraping consent: POST response', array(
+            'http_code' => (int) $code,
+            'location'  => ( $location ? $location : '' ),
+        ) );
+        if ( (302 === (int) $code || 303 === (int) $code || 301 === (int) $code) && $location ) {
+            $follow = $this->MPT_google_scraping_request_url(
+                $location,
+                $defaults,
+                $merged_cookies,
+                $google_url,
+                'consent_redirect_follow'
+            );
+            if ( !is_wp_error( $follow ) && 200 === (int) wp_remote_retrieve_response_code( $follow ) ) {
+                $merged_cookies = $this->MPT_google_scraping_merge_cookie_headers( $merged_cookies, $this->MPT_google_scraping_collect_cookies_from_response( $follow ) );
+                $follow_body = wp_remote_retrieve_body( $follow );
+                $this->MPT_google_scraping_diagnostic_log_response( 'consent_redirect_follow', $follow, $follow_body );
+                $log->info( 'Google scraping consent: followed redirect to search page OK' );
+                return array(
+                    'body'    => $follow_body,
+                    'cookies' => $merged_cookies,
+                );
+            }
+            $fl_code = ( is_wp_error( $follow ) ? 0 : (int) wp_remote_retrieve_response_code( $follow ) );
+            $log->warning( 'Google scraping consent: redirect follow failed', array(
+                'http_code' => $fl_code,
+                'error'     => ( is_wp_error( $follow ) ? $follow->get_error_message() : '' ),
+            ) );
+        }
+        if ( 200 === (int) $code ) {
+            $log->info( 'Google scraping consent: got 200 without redirect, using POST body' );
+            return array(
+                'body'    => wp_remote_retrieve_body( $post ),
+                'cookies' => $merged_cookies,
+            );
+        }
+        $log->warning( 'Google scraping consent: unexpected response, giving up', array(
+            'http_code' => (int) $code,
+        ) );
+        return false;
+    }
+
+    /**
+     * @param string $html Form inner HTML.
+     * @return array<string, string>
+     */
+    private function MPT_google_scraping_parse_hidden_inputs( $html ) {
+        $fields = array();
+        preg_match_all( '/<input[^>]+>/i', $html, $tags );
+        foreach ( $tags[0] as $tag ) {
+            if ( false === stripos( $tag, 'hidden' ) && false === stripos( $tag, 'submit' ) ) {
+                continue;
+            }
+            $name = '';
+            $value = '';
+            if ( preg_match( '/name=["\']([^"\']*)["\']/', $tag, $m ) ) {
+                $name = $m[1];
+            }
+            if ( preg_match( '/value=["\']([^"\']*)["\']/', $tag, $m ) ) {
+                $value = $m[1];
+            }
+            if ( '' !== $name ) {
+                $fields[$name] = $value;
+            }
+        }
+        return $fields;
+    }
+
+    /**
+     * Parse Google Images HTML (legacy data-* and embedded JSON fragments).
+     *
+     * @param string $body HTML.
+     * @return array{results: array<int, array{url: string, alt: string, caption: string}>, source: string}
+     */
+    private function MPT_google_scraping_parse_google_html( $body ) {
+        $empty = array(
+            'results' => array(),
+            'source'  => 'none',
+        );
+        preg_match_all( '/data-pt="([^"]*)"/', $body, $output_img_alts );
+        preg_match_all( '/data-st="([^"]*)"/', $body, $output_img_captions );
+        preg_match_all( '/data-ou="(https?:[^"]*)"/', $body, $output_img_urls );
+        if ( !empty( $output_img_urls[1] ) ) {
+            $n = count( $output_img_urls[1] );
+            $alts = ( isset( $output_img_alts[1] ) ? array_pad( array_values( $output_img_alts[1] ), $n, '' ) : array_fill( 0, $n, '' ) );
+            $captions = ( isset( $output_img_captions[1] ) ? array_pad( array_values( $output_img_captions[1] ), $n, '' ) : array_fill( 0, $n, '' ) );
+            return array(
+                'results' => array_map(
+                    array($this, 'MPT_order_array_urls'),
+                    $output_img_urls[1],
+                    $alts,
+                    $captions
+                ),
+                'source'  => 'google_data_ou',
+            );
+        }
+        // Some responses embed image URLs in JSON-like fragments.
+        preg_match_all( '/"ou":"(https?:[^"\\\\]+)"/', $body, $ou_json );
+        if ( !empty( $ou_json[1] ) ) {
+            $out = array();
+            foreach ( $ou_json[1] as $u ) {
+                if ( false !== strpos( $u, 'gstatic.com' ) ) {
+                    continue;
+                }
+                $out[] = array(
+                    'url'     => $u,
+                    'alt'     => '',
+                    'caption' => '',
+                );
+            }
+            if ( !empty( $out ) ) {
+                return array(
+                    'results' => $out,
+                    'source'  => 'google_ou_json',
+                );
+            }
+        }
+        preg_match_all( '/\\/imgres\\?[^"\']*?[?&]imgurl=([^&"\']+)/', $body, $imgres_urls );
+        if ( !empty( $imgres_urls[1] ) ) {
+            $from_imgres = $this->MPT_google_scraping_build_result_rows_from_urls( $imgres_urls[1] );
+            if ( !empty( $from_imgres ) ) {
+                return array(
+                    'results' => $from_imgres,
+                    'source'  => 'google_imgres_imgurl',
+                );
+            }
+        }
+        preg_match_all( '/https?:\\\\\\/\\\\\\/[^"\']+?(?:jpe?g|png|webp|gif|bmp)(?:\\?[^"\']*)?/i', $body, $escaped_image_urls );
+        if ( !empty( $escaped_image_urls[0] ) ) {
+            $from_escaped = $this->MPT_google_scraping_build_result_rows_from_urls( $escaped_image_urls[0] );
+            if ( !empty( $from_escaped ) ) {
+                return array(
+                    'results' => $from_escaped,
+                    'source'  => 'google_escaped_image_urls',
+                );
+            }
+        }
+        return $empty;
+    }
+
+    /**
+     * Normalize candidate URLs and convert them to standard result rows.
+     *
+     * @param array<int, string> $urls Candidate URLs.
+     * @return array<int, array{url: string, alt: string, caption: string}>
+     */
+    private function MPT_google_scraping_build_result_rows_from_urls( $urls ) {
+        $out = array();
+        $seen = array();
+        foreach ( $urls as $candidate_url ) {
+            $url = $this->MPT_google_scraping_normalize_candidate_url( $candidate_url );
+            if ( '' === $url ) {
+                continue;
+            }
+            $key = strtolower( $url );
+            if ( isset( $seen[$key] ) ) {
+                continue;
+            }
+            $seen[$key] = true;
+            $out[] = array(
+                'url'     => $url,
+                'alt'     => '',
+                'caption' => '',
+            );
+            if ( count( $out ) >= 20 ) {
+                break;
+            }
+        }
+        return $out;
+    }
+
+    /**
+     * Decode and validate a candidate image URL extracted from HTML/JSON fragments.
+     *
+     * @param string $url Candidate URL.
+     * @return string
+     */
+    private function MPT_google_scraping_normalize_candidate_url( $url ) {
+        if ( !is_string( $url ) || '' === $url ) {
+            return '';
+        }
+        $url = wp_specialchars_decode( $url, ENT_QUOTES );
+        $url = html_entity_decode( $url, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+        $url = str_replace( '\\/', '/', $url );
+        $url = str_ireplace( array(
+            '\\u003d',
+            '\\u0026',
+            '\\x3d',
+            '\\x26',
+            '&amp;'
+        ), array(
+            '=',
+            '&',
+            '=',
+            '&',
+            '&'
+        ), $url );
+        for ($i = 0; $i < 2; $i++) {
+            $decoded = rawurldecode( $url );
+            if ( $decoded === $url ) {
+                break;
+            }
+            $url = $decoded;
+        }
+        $url = trim( $url );
+        if ( !preg_match( '#^https?://#i', $url ) ) {
+            return '';
+        }
+        $host = wp_parse_url( $url, PHP_URL_HOST );
+        if ( !is_string( $host ) || '' === $host ) {
+            return '';
+        }
+        $host = strtolower( $host );
+        if ( false !== strpos( $host, 'gstatic.com' ) || false !== strpos( $host, 'googleusercontent.com' ) || preg_match( '/(^|\\.)google\\./', $host ) ) {
+            return '';
+        }
+        if ( $this->MPT_google_scraping_is_private_host( $host ) ) {
+            return '';
+        }
+        return esc_url_raw( $url );
+    }
+
+    /**
+     * Check whether a hostname resolves to a private / reserved IP range (SSRF protection).
+     *
+     * @since 6.2.0
+     * @param string $host Hostname or IP.
+     * @return bool True if the host points to a private/reserved address.
+     */
+    private function MPT_google_scraping_is_private_host( $host ) {
+        if ( filter_var( $host, FILTER_VALIDATE_IP ) ) {
+            $ip = $host;
+        } else {
+            $ip = gethostbyname( $host );
+            if ( $ip === $host ) {
+                return true;
+            }
+        }
+        return !filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE );
+    }
+
+    /**
+     * Fetch Bing Images HTML and parse murl/t from iusc anchors (works without JS).
+     *
+     * @param string $google_url Original Google URL (extract q, safe).
+     * @param array  $defaults   Base HTTP args.
+     * @return array<int, array{url: string, alt: string, caption: string}>
+     */
+    private function MPT_google_scraping_fetch_bing_images( $google_url, $defaults ) {
+        $log = $this->MPT_monolog_call();
+        $parts = wp_parse_url( $google_url );
+        $query = ( isset( $parts['query'] ) ? $parts['query'] : '' );
+        parse_str( $query, $args );
+        $q = ( isset( $args['q'] ) ? rawurldecode( (string) $args['q'] ) : '' );
+        if ( '' === $q ) {
+            $log->warning( 'Google scraping Bing fallback: empty search query in Google URL' );
+            return array();
+        }
+        $safe = ( isset( $args['safe'] ) ? (string) $args['safe'] : 'medium' );
+        $safe_map = array(
+            'off'    => 'off',
+            'medium' => 'moderate',
+            'high'   => 'strict',
+        );
+        $bing_safe = ( isset( $safe_map[$safe] ) ? $safe_map[$safe] : 'moderate' );
+        $bing_url = add_query_arg( array(
+            'q'          => $q,
+            'first'      => '1',
+            'safeSearch' => $bing_safe,
+        ), 'https://www.bing.com/images/search' );
+        $log->info( 'Google scraping Bing fallback: requesting Bing Images', array(
+            'bing_url' => $bing_url,
+        ) );
+        $res = wp_remote_get( $bing_url, array_merge( $defaults, array(
+            'redirection' => 5,
+            'headers'     => array_merge( ( isset( $defaults['headers'] ) && is_array( $defaults['headers'] ) ? $defaults['headers'] : array() ), array(
+                'Referer' => 'https://www.bing.com/',
+            ) ),
+        ) ) );
+        if ( is_wp_error( $res ) ) {
+            $log->error( 'Google scraping Bing fallback: HTTP error', array(
+                'error' => $res->get_error_message(),
+            ) );
+            return array();
+        }
+        $bing_code = (int) wp_remote_retrieve_response_code( $res );
+        if ( 200 !== $bing_code ) {
+            $log->warning( 'Google scraping Bing fallback: non-200 response', array(
+                'http_code' => $bing_code,
+            ) );
+            return array();
+        }
+        $html = wp_remote_retrieve_body( $res );
+        $parsed = $this->MPT_google_scraping_parse_bing_html( $html );
+        $log->info( 'Google scraping Bing fallback: parsed HTML', array(
+            'html_length'  => strlen( $html ),
+            'images_found' => count( $parsed ),
+        ) );
+        return $parsed;
+    }
+
+    /**
+     * @param string $html Bing Images HTML.
+     * @return array<int, array{url: string, alt: string, caption: string}>
+     */
+    private function MPT_google_scraping_parse_bing_html( $html ) {
+        $out = array();
+        preg_match_all( '/&quot;murl&quot;:&quot;(https?:[^&]+)&quot;/', $html, $murls );
+        preg_match_all( '/&quot;t&quot;:&quot;((?:[^&]|&amp;)+?)&quot;,&quot;mid&quot;/', $html, $titles );
+        $titles_list = ( isset( $titles[1] ) ? $titles[1] : array() );
+        $i = 0;
+        foreach ( ( isset( $murls[1] ) ? $murls[1] : array() ) as $url ) {
+            $url = str_replace( '\\/', '/', $url );
+            if ( '' === $url || 0 === strpos( $url, 'https://tse' ) || 0 === strpos( $url, 'http://tse' ) ) {
+                continue;
+            }
+            $t = ( isset( $titles_list[$i] ) ? $titles_list[$i] : '' );
+            $t = wp_specialchars_decode( $t, ENT_QUOTES );
+            $t = html_entity_decode( $t, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+            $out[] = array(
+                'url'     => $url,
+                'alt'     => $t,
+                'caption' => $t,
+            );
+            $i++;
+            if ( count( $out ) >= 20 ) {
+                break;
+            }
+        }
+        return $out;
     }
 
     /**

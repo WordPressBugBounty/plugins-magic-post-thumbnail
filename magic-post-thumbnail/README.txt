@@ -1,6 +1,6 @@
 === Generate Images (AI) - Magic Post Thumbnail ===
 Plugin Name:       Generate Images (AI) - Magic Post Thumbnail
-Version:           6.1.8
+Version:           6.2.0
 Tags:              generate, image, dalle, stable diffusion, replicate
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
@@ -8,7 +8,7 @@ Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
 Tested up to:      6.9
-Stable tag:        6.1.8
+Stable tag:        6.2.0
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -118,6 +118,8 @@ Yes you can generate image as much as you want.
 
 If you use Google Image too much for generation in a short time, your server may be temporarily banned. In this case, you should enable Interval for the generation.
 
+Google’s HTML for image search often requires JavaScript or a consent screen; the plugin uses HTTPS, a current browser User-Agent, may submit “Reject all” on the EU consent page when needed, and falls back to Bing Images (same search query) when Google returns no usable image URLs. You can turn off that Bing fallback under Banks → Google Image (Scraping), or with the filter `mpt_google_scraping_use_bing_fallback`.
+
 = I have other pre-sale questions, can you help? =
 
 Yes! You can ask us any question through our <a href="https://magic-post-thumbnail.com/contact-us/">support page</a>.
@@ -129,6 +131,10 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 
 == Changelog ==
+
+= 6.2.0 - March 29, 2026 =
+* Google Image (scraping): new way to fetch results; still unstable on many hosts.
+* Bing fallback when Google fails: on by default; off in Banks or filter.
 
 = 6.1.8 - January 29, 2026 =
 * Fix Gutenberg Block: loader no longer stays infinite when image download fails

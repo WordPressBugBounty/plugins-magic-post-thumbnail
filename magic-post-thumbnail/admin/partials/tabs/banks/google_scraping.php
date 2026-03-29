@@ -375,3 +375,28 @@ echo esc_attr( $blacklisted_domains );
 ?></textarea>
 		</td>
 	</tr>
+
+<?php 
+// wp_parse_args does not deep-merge google_scraping: missing bing_fallback => treat as enabled (default).
+$mpt_bing_fallback_val = ( isset( $options['google_scraping']['bing_fallback'] ) ? (string) $options['google_scraping']['bing_fallback'] : '' );
+$mpt_bing_fallback_on = 'false' !== $mpt_bing_fallback_val;
+?>
+<tr valign="top">
+	<th scope="row">
+		<label for="hseparator"><?php 
+esc_html_e( 'Bing Images fallback', 'mpt' );
+?></label>
+	</th>
+	<td class="checkbox-list">
+		<label class="checkbox">
+			<input name="MPT_plugin_banks_settings[google_scraping][bing_fallback]" type="checkbox" value="true" <?php 
+echo ( $mpt_bing_fallback_on ? 'checked="checked"' : '' );
+?>> <span></span> <?php 
+esc_html_e( 'If Google returns no usable images, search the same query on Bing Images (HTML scraping).', 'mpt' );
+?>
+		</label>
+		<p class="description"><?php 
+esc_html_e( 'Disable this if you want to rely on Google only (no Bing request).', 'mpt' );
+?></p>
+	</td>
+</tr>

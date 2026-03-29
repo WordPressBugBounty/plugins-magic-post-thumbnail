@@ -875,6 +875,7 @@ class Magic_Post_Thumbnail_Admin {
                 'safe'                => 'medium',
                 'restricted_domains'  => '',
                 'blacklisted_domains' => '',
+                'bing_fallback'       => 'true',
             ),
             'googleimage'       => array(
                 'cxid'           => '',
@@ -1716,6 +1717,9 @@ class Magic_Post_Thumbnail_Admin {
         // Clear api_chosen if it's 'envato'
         if ( isset( $input['api_chosen'] ) && 'envato' === $input['api_chosen'] ) {
             $input['api_chosen'] = '';
+        }
+        if ( isset( $input['google_scraping'] ) && is_array( $input['google_scraping'] ) ) {
+            $input['google_scraping']['bing_fallback'] = ( !empty( $input['google_scraping']['bing_fallback'] ) && 'true' === $input['google_scraping']['bing_fallback'] ? 'true' : 'false' );
         }
         return $input;
     }
