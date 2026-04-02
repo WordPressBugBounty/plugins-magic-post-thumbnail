@@ -1620,23 +1620,37 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         $options_proxy = get_option( 'MPT_plugin_proxy_settings' );
         if ( 'google_scraping' === $service ) {
             $log = $this->MPT_monolog_call();
-            $result = $this->MPT_google_scraping_curl_h2_get( $url, $defaults );
-            if ( is_wp_error( $result ) || strlen( ( isset( $result['body'] ) ? $result['body'] : '' ) ) < 500 ) {
-                if ( is_wp_error( $result ) ) {
-                    $log->info( 'Google scraping: cURL HTTP/2 failed for initial request, trying raw socket', array(
-                        'error' => $result->get_error_message(),
-                    ) );
-                } else {
-                    $log->info( 'Google scraping: cURL HTTP/2 returned short body for initial request, trying raw socket', array(
-                        'body_len' => strlen( ( isset( $result['body'] ) ? $result['body'] : '' ) ),
-                    ) );
-                }
-                $result = $this->MPT_google_scraping_raw_socket_get( $url, $defaults );
-                if ( is_wp_error( $result ) ) {
-                    $log->info( 'Google scraping: raw socket also failed, trying wp_remote_request', array(
-                        'error' => $result->get_error_message(),
-                    ) );
-                    $result = wp_remote_request( $url, $defaults );
+            if ( $this->MPT_google_scraping_use_bing_primary() ) {
+                // Skip slow / unreliable Google HTML fetch (cURL H2, raw socket, wp_remote). Bing is primary in build_results.
+                $result = array(
+                    'body'     => '',
+                    'response' => array(
+                        'code' => 200,
+                    ),
+                    'headers'  => array(),
+                );
+            } else {
+                /*
+                 * Legacy: full Google Images HTML fetch (often slow / blocked on shared hosting).
+                 */
+                $result = $this->MPT_google_scraping_curl_h2_get( $url, $defaults );
+                if ( is_wp_error( $result ) || strlen( ( isset( $result['body'] ) ? $result['body'] : '' ) ) < 500 ) {
+                    if ( is_wp_error( $result ) ) {
+                        $log->info( 'Google scraping: cURL HTTP/2 failed for initial request, trying raw socket', array(
+                            'error' => $result->get_error_message(),
+                        ) );
+                    } else {
+                        $log->info( 'Google scraping: cURL HTTP/2 returned short body for initial request, trying raw socket', array(
+                            'body_len' => strlen( ( isset( $result['body'] ) ? $result['body'] : '' ) ),
+                        ) );
+                    }
+                    $result = $this->MPT_google_scraping_raw_socket_get( $url, $defaults );
+                    if ( is_wp_error( $result ) ) {
+                        $log->info( 'Google scraping: raw socket also failed, trying wp_remote_request', array(
+                            'error' => $result->get_error_message(),
+                        ) );
+                        $result = wp_remote_request( $url, $defaults );
+                    }
                 }
             }
         } else {
@@ -1653,7 +1667,7 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
             }
             return false;
         }
-        if ( 'google_scraping' === $service && $this->MPT_google_scraping_diagnostic_logging_enabled() ) {
+        if ( 'google_scraping' === $service && $this->MPT_google_scraping_diagnostic_logging_enabled() && !$this->MPT_google_scraping_use_bing_primary() ) {
             $this->MPT_google_scraping_diagnostic_log_request(
                 'initial_request',
                 $url,
@@ -1725,6 +1739,17 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         $fb = ( isset( $banks['google_scraping']['bing_fallback'] ) ? (string) $banks['google_scraping']['bing_fallback'] : '' );
         // Default on: option array is not deep-merged, so older saves may omit this key.
         return 'false' !== $fb;
+    }
+
+    /**
+     * When true, skip Google HTML / headless pipeline and use Bing Images as the primary source.
+     * Filter: `mpt_google_scraping_use_bing_primary` (default true until Google HTML path is viable again).
+     *
+     * @since 6.2.1
+     * @return bool
+     */
+    private function MPT_google_scraping_use_bing_primary() {
+        return (bool) apply_filters( 'mpt_google_scraping_use_bing_primary', true );
     }
 
     /**
@@ -2179,7 +2204,7 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
     }
 
     /**
-     * Build image result list for google_scraping: Google HTML, optional EU consent POST, then Bing fallback.
+     * Build image result list for google_scraping: by default Bing Images primary; legacy Google HTML path when filter disables Bing primary.
      *
      * @since 4.2.0
      * @param string $google_url Full Google search URL.
@@ -2189,9 +2214,26 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
      */
     private function MPT_google_scraping_build_results( $google_url, $defaults, $result ) {
         $log = $this->MPT_monolog_call();
+        $bing_defaults = $defaults;
+        if ( $this->MPT_google_scraping_use_bing_primary() ) {
+            $log->info( 'Google scraping: HTML/headless pipeline skipped; Bing Images is primary (re-enable Google HTML with filter mpt_google_scraping_use_bing_primary).' );
+            if ( $this->MPT_google_scraping_bing_fallback_option_enabled() ) {
+                $bing = $this->MPT_google_scraping_fetch_bing_images( $google_url, $bing_defaults );
+                if ( !empty( $bing ) ) {
+                    return array(
+                        'results' => $bing,
+                    );
+                }
+                $log->warning( 'Google scraping: Bing primary returned no images' );
+            } else {
+                $log->warning( 'Google scraping: Bing primary mode but Bing is disabled in Banks settings' );
+            }
+            return array(
+                'results' => array(),
+            );
+        }
         $candidates = $this->MPT_google_scraping_get_user_agent_candidates();
         $strategy = $this->MPT_google_scraping_get_cached_strategy();
-        $bing_defaults = $defaults;
         // Try last successful UA first to reduce retries on subsequent posts.
         if ( !empty( $strategy['ua'] ) && is_string( $strategy['ua'] ) ) {
             $cached_ua = $strategy['ua'];
@@ -3942,6 +3984,127 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
     }
 
     /**
+     * Parse Google Images `tbs` query string from the same URL as the plugin builds.
+     *
+     * @param string $tbs Raw tbs value.
+     * @return array{sur:string,itp:string,isz:string,iar:string,isc:string}
+     */
+    private function MPT_google_scraping_parse_google_image_tbs( $tbs ) {
+        $out = array(
+            'sur' => '',
+            'itp' => '',
+            'isz' => '',
+            'iar' => '',
+            'isc' => '',
+        );
+        if ( !is_string( $tbs ) || '' === trim( $tbs ) ) {
+            return $out;
+        }
+        if ( preg_match( '/sur:([^,]+)/', $tbs, $m ) ) {
+            $out['sur'] = $m[1];
+        }
+        if ( preg_match( '/itp:([^,]+)/', $tbs, $m ) ) {
+            $out['itp'] = $m[1];
+        }
+        if ( preg_match( '/isz:([^,]+(?:,islt:[^,]+)?)/', $tbs, $m ) ) {
+            $out['isz'] = $m[1];
+        }
+        if ( preg_match( '/iar:([^,]+)/', $tbs, $m ) ) {
+            $out['iar'] = $m[1];
+        }
+        if ( preg_match( '/ic:specific,isc:([^,]+)/', $tbs, $m ) ) {
+            $out['isc'] = $m[1];
+        }
+        return $out;
+    }
+
+    /**
+     * Map Google Images `tbs` fragments to Bing Images `qft` (+filterui:…) tokens.
+     *
+     * @param array{sur:string,itp:string,isz:string,iar:string,isc:string} $parsed Parsed tbs.
+     * @return string Encoded qft value for Bing (leading +filterui:… chain) or empty string.
+     */
+    private function MPT_google_scraping_build_bing_qft_from_google_tbs( $parsed ) {
+        if ( !is_array( $parsed ) ) {
+            return '';
+        }
+        $tokens = array();
+        $isz_map = array(
+            'i'             => 'imagesize-small',
+            'm'             => 'imagesize-medium',
+            'l'             => 'imagesize-large',
+            'lt,islt:qsvga' => 'imagesize-large',
+            'lt,islt:vga'   => 'imagesize-xlarge',
+            'lt,islt:svga'  => 'imagesize-xxlarge',
+            'lt,islt:xga'   => 'imagesize-xxlarge',
+            'lt,islt:2mp'   => 'imagesize-wallpaper',
+            'lt,islt:4mp'   => 'imagesize-wallpaper',
+            'lt,islt:6mp'   => 'imagesize-wallpaper',
+            'lt,islt:8mp'   => 'imagesize-wallpaper',
+            'lt,islt:10mp'  => 'imagesize-wallpaper',
+        );
+        if ( !empty( $parsed['isz'] ) && isset( $isz_map[$parsed['isz']] ) ) {
+            $tokens[] = $isz_map[$parsed['isz']];
+        }
+        $iar_map = array(
+            't'  => 'aspect-tall',
+            's'  => 'aspect-square',
+            'w'  => 'aspect-wide',
+            'xw' => 'aspect-wide',
+        );
+        if ( !empty( $parsed['iar'] ) && isset( $iar_map[$parsed['iar']] ) ) {
+            $tokens[] = $iar_map[$parsed['iar']];
+        }
+        $itp_map = array(
+            'face'     => 'face-face',
+            'photo'    => 'photo-photo',
+            'clipart'  => 'photo-clipart',
+            'lineart'  => 'photo-lineart',
+            'animated' => 'photo-animatedgif',
+        );
+        if ( !empty( $parsed['itp'] ) && isset( $itp_map[$parsed['itp']] ) ) {
+            $tokens[] = $itp_map[$parsed['itp']];
+        }
+        $isc_map = array(
+            'black'  => 'color2-FGcls_BLACK',
+            'blue'   => 'color2-FGcls_BLUE',
+            'brown'  => 'color2-FGcls_BROWN',
+            'gray'   => 'color2-FGcls_GRAY',
+            'green'  => 'color2-FGcls_GREEN',
+            'pink'   => 'color2-FGcls_PINK',
+            'purple' => 'color2-FGcls_PURPLE',
+            'teal'   => 'color2-FGcls_TEAL',
+            'white'  => 'color2-FGcls_WHITE',
+            'yellow' => 'color2-FGcls_YELLOW',
+        );
+        if ( !empty( $parsed['isc'] ) ) {
+            $c = strtolower( (string) $parsed['isc'] );
+            if ( isset( $isc_map[$c] ) ) {
+                $tokens[] = 'color2-color';
+                $tokens[] = $isc_map[$c];
+            }
+        }
+        $sur_map = array(
+            'fc'  => 'license-L2_L3',
+            'fmc' => 'license-L5_L6',
+            'fm'  => 'license-L4_L5',
+            'f'   => 'license-L2',
+        );
+        if ( !empty( $parsed['sur'] ) && isset( $sur_map[$parsed['sur']] ) ) {
+            $tokens[] = $sur_map[$parsed['sur']];
+        }
+        $tokens = array_values( array_filter( array_unique( $tokens ) ) );
+        $tokens = apply_filters( 'mpt_google_scraping_bing_qft_tokens', $tokens, $parsed );
+        if ( empty( $tokens ) ) {
+            return '';
+        }
+        // Bing web UI uses space-separated "filterui:…" tokens (leading space), e.g. %20filterui%3Aimagesize-large%20filterui%3Aphoto-photo
+        return ' ' . implode( ' ', array_map( static function ( $t ) {
+            return 'filterui:' . $t;
+        }, $tokens ) );
+    }
+
+    /**
      * Fetch Bing Images HTML and parse murl/t from iusc anchors (works without JS).
      *
      * @param string $google_url Original Google URL (extract q, safe).
@@ -3960,18 +4123,27 @@ class Magic_Post_Thumbnail_Generation extends Magic_Post_Thumbnail_Admin {
         }
         $safe = ( isset( $args['safe'] ) ? (string) $args['safe'] : 'medium' );
         $safe_map = array(
-            'off'    => 'off',
-            'medium' => 'moderate',
-            'high'   => 'strict',
+            'off'      => 'off',
+            'medium'   => 'moderate',
+            'moderate' => 'moderate',
+            'high'     => 'strict',
+            'activate' => 'strict',
         );
         $bing_safe = ( isset( $safe_map[$safe] ) ? $safe_map[$safe] : 'moderate' );
-        $bing_url = add_query_arg( array(
+        $tbs_parsed = $this->MPT_google_scraping_parse_google_image_tbs( ( isset( $args['tbs'] ) ? (string) $args['tbs'] : '' ) );
+        $qft = $this->MPT_google_scraping_build_bing_qft_from_google_tbs( $tbs_parsed );
+        $bing_args = array(
             'q'          => $q,
             'first'      => '1',
             'safeSearch' => $bing_safe,
-        ), 'https://www.bing.com/images/search' );
+        );
+        if ( '' !== $qft ) {
+            $bing_args['qft'] = $qft;
+        }
+        $bing_url = add_query_arg( $bing_args, 'https://www.bing.com/images/search' );
         $log->info( 'Google scraping Bing fallback: requesting Bing Images', array(
-            'bing_url' => $bing_url,
+            'bing_url'    => $bing_url,
+            'qft_applied' => '' !== $qft,
         ) );
         $res = wp_remote_get( $bing_url, array_merge( $defaults, array(
             'redirection' => 5,

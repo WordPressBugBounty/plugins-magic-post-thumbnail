@@ -1,0 +1,20 @@
+/* style.css */
+
+.mon-tab-panel .components-tab-panel__tabs {
+    border-bottom: 1px solid #ccc;
+}
+
+.mon-tab-panel .components-tab-panel__tabs-item {
+    border: 1px solid #ccc;
+    border-bottom: none;
+    margin-right: -1px;
+}
+
+.mon-tab-panel .components-tab-panel__tabs-item.is-active {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.mon-tab-panel .components-tab-panel__tabs-item:not(.is-active) {
+    background-color: #f0f0f0;
+}
