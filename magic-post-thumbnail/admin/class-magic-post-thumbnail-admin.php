@@ -902,6 +902,8 @@ class Magic_Post_Thumbnail_Admin {
                 'model'         => 'black-forest-labs/flux-schnell',
                 'output_format' => 'webp',
                 'aspect_ratio'  => '16:9',
+                'quality'       => 'auto',
+                'moderation'    => 'auto',
             ),
             'cc_search'         => array(
                 'source'       => 1,

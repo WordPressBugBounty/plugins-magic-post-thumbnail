@@ -1,6 +1,6 @@
 === Generate Images (AI) - Magic Post Thumbnail ===
 Plugin Name:       Generate Images (AI) - Magic Post Thumbnail
-Version:           6.2.1
+Version:           6.2.2
 Tags:              generate, image, dalle, stable diffusion, replicate
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
@@ -8,7 +8,7 @@ Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
 Tested up to:      6.9
-Stable tag:        6.2.1
+Stable tag:        6.2.2
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -131,6 +131,11 @@ Upgrade your plugin to **<a target="_blank" href="https://magic-post-thumbnail.c
 
 
 == Changelog ==
+
+= 6.2.2 - August 1, 2026 =
+* PRO: Add support for OpenAI GPT Image 2 model (Replicate)
+* PRO: Add Quality (auto/high/medium/low) and Moderation (auto/low) options for GPT Image 2
+* PRO: Aspect ratio and output format now applied correctly for GPT Image 2
 
 = 6.2.1 - April 2, 2026 =
 * Bing Images is the default source for the Google Image (scraping) bank. The old Google HTML pipeline is off.
