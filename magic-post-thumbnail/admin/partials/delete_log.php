@@ -1,77 +1,28 @@
 <?php
-if ( ! function_exists( 'add_filter' ) ) {
-	header( 'Status: 403 Forbidden' );
-	header( 'HTTP/1.1 403 Forbidden' );
+/**
+ * Uninstall helper. Admin UI deletions go through Magic_Post_Thumbnail_Admin::MPT_handle_delete_log().
+ */
+if ( ! defined( 'MPT_FREEMIUS_UNINSTALL' ) ) {
+	if ( ! function_exists( 'add_filter' ) ) {
+		header( 'Status: 403 Forbidden' );
+		header( 'HTTP/1.1 403 Forbidden' );
 		exit();
+	}
+	return;
 }
 
-// Verify nonce
-if( ! empty( $_GET['action'] ) && ( 'deletelog' == $_GET['action'] ) ) {
-    if ( empty( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( wp_unslash( $_REQUEST['_wpnonce'] ), 'delete_log' ) ) {
-        return false;
-    } else {
-    }
-} elseif( defined( 'MPT_FREEMIUS_UNINSTALL' ) ) {
-} else {
-    return false;
+if ( ! class_exists( 'Magic_Post_Thumbnail_Helpers' ) ) {
+	$helpers_file = dirname( __FILE__ ) . '/../class-magic-post-thumbnail-helpers.php';
+	if ( is_readable( $helpers_file ) ) {
+		require_once $helpers_file;
+	}
 }
 
-// Disable max execution time
-set_time_limit(0);
-
-// Start the session
-session_start();
-
-
-
-// Check the file
-$dir    = ABSPATH . 'wp-content/uploads/magic-post-thumbnail/logs/';
-$files  = @scandir( $dir );
-$result = '';
-
-if ( ! empty( $files ) ) {
-    foreach ( $files as $key => $value ) {
-        if ( ! in_array( $value, array( '.', '..' ), true ) ) {
-            if ( ! is_dir( $value ) && strstr( $value, '.log' ) ) {
-                $result = $value;
-                $filename = $dir . $result;
-            }
-        }
-    }
+if ( class_exists( 'Magic_Post_Thumbnail_Helpers' ) ) {
+	$version = defined( 'MAGIC_POST_THUMBNAIL_VERSION' ) ? MAGIC_POST_THUMBNAIL_VERSION : '7.0.0';
+	$helpers = new Magic_Post_Thumbnail_Helpers( 'magic-post-thumbnail', $version );
+	$path    = $helpers->MPT_log_file_path( true );
+	if ( $path && is_writable( $path ) ) {
+		@unlink( $path );
+	}
 }
-
-
-// Exit if no log file
-if( empty( $result ) ) {
-    return false;
-}
-
-
-
-if ( !is_file($filename) || !is_readable( $filename ) ) {
-    header("HTTP/1.1 404 Not Found");
-    exit;
-}
-$size = filesize($filename);
-
-
-
-// No GZip compression
-if (ini_get("zlib.output_compression")) {
-    ini_set("zlib.output_compression", "Off");
-}
-
-// Close the session
-session_write_close();
-
-// Disable cache
-unlink( $filename );
-
-
-// Redirect without delete arguments
-if( ! defined( 'MPT_FREEMIUS_UNINSTALL' ) ) {
-	wp_redirect( remove_query_arg( array( 'action', '_wpnonce' ) ) );
-	exit;
-}
-
-?>

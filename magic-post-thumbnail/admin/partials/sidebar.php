@@ -18,35 +18,35 @@
 			<!--begin::Menu Nav-->
 			<ul class="menu-nav ">
 
-      			<?php $this->MPT_submenu( esc_html__( 'Dashboard', 'mpt' ), 'dashboard', 'home.png' ); ?>
+      			<?php $this->MPT_submenu( esc_html__( 'Dashboard', 'magic-post-thumbnail' ), 'dashboard', 'home.png' ); ?>
 
 				<li class="menu-section ">
-					<h4 class="menu-text"><?php esc_html_e( 'Settings', 'mpt' ); ?></h4> <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
+					<h4 class="menu-text"><?php esc_html_e( 'Settings', 'magic-post-thumbnail' ); ?></h4> <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 				</li>
 
-				<?php $this->MPT_submenu( esc_html__( 'Source', 'mpt' ), 'source', 'source.png' ); ?>
-				<?php $this->MPT_submenu( esc_html__( 'Automatic', 'mpt' ), 'automatic', 'automatic.png' ); ?>
-				<?php $this->MPT_submenu( esc_html__( 'Gutenberg Block', 'mpt' ), 'block', 'block.png' ); ?>
+				<?php $this->MPT_submenu( esc_html__( 'Source', 'magic-post-thumbnail' ), 'source', 'source.png' ); ?>
+				<?php $this->MPT_submenu( esc_html__( 'Automatic', 'magic-post-thumbnail' ), 'automatic', 'automatic.png' ); ?>
+				<?php $this->MPT_submenu( esc_html__( 'Gutenberg Block', 'magic-post-thumbnail' ), 'block', 'block.png' ); ?>
 
 				<li class="menu-section ">
-					<h4 class="menu-text"><?php esc_html_e( 'Pro', 'mpt' ); ?></h4>
+					<h4 class="menu-text"><?php esc_html_e( 'Pro', 'magic-post-thumbnail' ); ?></h4>
 				</li>
 
-				<?php $this->MPT_submenu( esc_html__( 'Compatibility', 'mpt' ), 'compatibility', 'compatibility.png' ); ?>
-				<?php $this->MPT_submenu( esc_html__( 'Cron', 'mpt' ), 'cron', 'cron.png' ); ?>
-				<?php $this->MPT_submenu( esc_html__( 'Proxy', 'mpt' ), 'proxy', 'proxy.png' ); ?>
+				<?php $this->MPT_submenu( esc_html__( 'Compatibility', 'magic-post-thumbnail' ), 'compatibility', 'compatibility.png' ); ?>
+				<?php $this->MPT_submenu( esc_html__( 'Cron', 'magic-post-thumbnail' ), 'cron', 'cron.png' ); ?>
+				<?php $this->MPT_submenu( esc_html__( 'Proxy', 'magic-post-thumbnail' ), 'proxy', 'proxy.png' ); ?>
 
 				<li class="menu-section ">
-					<h4 class="menu-text"><?php esc_html_e( 'Miscellaneous', 'mpt' ); ?></h4>
+					<h4 class="menu-text"><?php esc_html_e( 'Miscellaneous', 'magic-post-thumbnail' ); ?></h4>
 				</li>
 
-				<?php $this->MPT_submenu( esc_html__( 'Rights', 'mpt' ), 'rights', 'rights.png' ); ?>
-				<?php $this->MPT_submenu( esc_html__( 'Affiliation', 'mpt' ), 'affiliation', 'affiliation.png' ); ?>
-				<?php $this->MPT_submenu( esc_html__( 'Upgrade', 'mpt' ), 'upgrade', 'upgrade.png' ); ?>
-				<?php $this->MPT_submenu( esc_html__( 'Logs', 'mpt' ), 'logs', 'logs.png' ); ?>
+				<?php $this->MPT_submenu( esc_html__( 'Rights', 'magic-post-thumbnail' ), 'rights', 'rights.png' ); ?>
+				<?php $this->MPT_submenu( esc_html__( 'Affiliation', 'magic-post-thumbnail' ), 'affiliation', 'affiliation.png' ); ?>
+				<?php $this->MPT_submenu( esc_html__( 'Upgrade', 'magic-post-thumbnail' ), 'upgrade', 'upgrade.png' ); ?>
+				<?php $this->MPT_submenu( esc_html__( 'Logs', 'magic-post-thumbnail' ), 'logs', 'logs.png' ); ?>
 
 				<li class="menu-section ">
-					<h4 class="menu-text"><?php esc_html_e( 'Generation', 'mpt' ); ?></h4>
+					<h4 class="menu-text"><?php esc_html_e( 'Generation', 'magic-post-thumbnail' ); ?></h4>
 				</li>
 
 				<?php
@@ -60,7 +60,7 @@
 					}
 				?>
 
-        		<?php $this->MPT_submenu(esc_html__( 'Bulk Generation', 'mpt' ), $bulk_url, 'generate.png' ); ?>
+        		<?php $this->MPT_submenu(esc_html__( 'Bulk Generation', 'magic-post-thumbnail' ), $bulk_url, 'generate.png' ); ?>
 
 			</ul>
 			<!--end::Menu Nav-->

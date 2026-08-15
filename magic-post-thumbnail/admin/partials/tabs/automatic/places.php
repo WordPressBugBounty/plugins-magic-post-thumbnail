@@ -29,7 +29,7 @@ if ( !empty( $image_blocks ) ) {
         ?> top-add-block-img">
                 <th scope="row">
                     <?php 
-        esc_html_e( 'Featured Image / Inline Content', 'mpt' );
+        esc_html_e( 'Featured Image / Inline Content', 'magic-post-thumbnail' );
         ?>
                 </th>
                 <td class="image_location radio-list">
@@ -40,7 +40,7 @@ if ( !empty( $image_blocks ) ) {
         checked( $block['image_location'], 'featured' );
         ?>>
                         <span></span> <?php 
-        esc_html_e( 'Featured Image', 'mpt' );
+        esc_html_e( 'Featured Image', 'magic-post-thumbnail' );
         ?>
                     </label>
                     <label class="radio radio-outline radio-outline-2x radio-primary">
@@ -50,7 +50,7 @@ if ( !empty( $image_blocks ) ) {
         checked( $block['image_location'], 'custom' );
         ?>>
                         <span></span> <?php 
-        esc_html_e( 'Inline content', 'mpt' );
+        esc_html_e( 'Inline content', 'magic-post-thumbnail' );
         ?>
                     </label>
 
@@ -59,7 +59,7 @@ if ( !empty( $image_blocks ) ) {
         ?>
 
                     <p class="description"><i><?php 
-        esc_html_e( '"Inline content" allows you to generate the image anywhere in the content', 'mpt' );
+        esc_html_e( '"Inline content" allows you to generate the image anywhere in the content', 'magic-post-thumbnail' );
         ?></i></p>
                 </td>
             </tr>
@@ -74,12 +74,12 @@ if ( !empty( $image_blocks ) ) {
         ?> mid-add-block-img">
                 <th scope="row">
                     <label for="hseparator"><?php 
-        esc_html_e( 'Image position', 'mpt' );
+        esc_html_e( 'Image position', 'magic-post-thumbnail' );
         ?></label>
                 </th>
                 <td class="custom_image_location" valign="top">
                     <label><?php 
-        esc_html_e( 'Insert', 'mpt' );
+        esc_html_e( 'Insert', 'magic-post-thumbnail' );
         ?>
                         <select name="MPT_plugin_main_settings[image_block][<?php 
         echo $blockIndex;
@@ -87,16 +87,16 @@ if ( !empty( $image_blocks ) ) {
                             <option value="before" <?php 
         selected( ( isset( $block['image_custom_location_placement'] ) ? $block['image_custom_location_placement'] : '' ), 'before' );
         ?>><?php 
-        esc_html_e( 'Before', 'mpt' );
+        esc_html_e( 'Before', 'magic-post-thumbnail' );
         ?></option>
                             <option value="after" <?php 
         selected( ( isset( $block['image_custom_location_placement'] ) ? $block['image_custom_location_placement'] : '' ), 'after' );
         ?>><?php 
-        esc_html_e( 'After', 'mpt' );
+        esc_html_e( 'After', 'magic-post-thumbnail' );
         ?></option>
                         </select> 
                         <?php 
-        esc_html_e( 'the', 'mpt' );
+        esc_html_e( 'the', 'magic-post-thumbnail' );
         ?>
                         <select name="MPT_plugin_main_settings[image_block][<?php 
         echo $blockIndex;
@@ -104,57 +104,57 @@ if ( !empty( $image_blocks ) ) {
                             <option value="1" <?php 
         selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '1' );
         ?>><?php 
-        esc_html_e( 'First', 'mpt' );
+        esc_html_e( 'First', 'magic-post-thumbnail' );
         ?></option>
                             <option value="2" <?php 
         selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '2' );
         ?>><?php 
-        esc_html_e( 'Second', 'mpt' );
+        esc_html_e( 'Second', 'magic-post-thumbnail' );
         ?></option>
                             <option value="3" <?php 
         selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '3' );
         ?>><?php 
-        esc_html_e( 'Third', 'mpt' );
+        esc_html_e( 'Third', 'magic-post-thumbnail' );
         ?></option>
                             <option value="4" <?php 
         selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '4' );
         ?>><?php 
-        esc_html_e( 'Fourth', 'mpt' );
+        esc_html_e( 'Fourth', 'magic-post-thumbnail' );
         ?></option>
                             <option value="5" <?php 
         selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '5' );
         ?>><?php 
-        esc_html_e( 'Fifth', 'mpt' );
+        esc_html_e( 'Fifth', 'magic-post-thumbnail' );
         ?></option>
                             <option value="6" <?php 
         selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '6' );
         ?>><?php 
-        esc_html_e( 'Sixth', 'mpt' );
+        esc_html_e( 'Sixth', 'magic-post-thumbnail' );
         ?></option>
                             <option value="7" <?php 
         selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '7' );
         ?>><?php 
-        esc_html_e( 'Seventh', 'mpt' );
+        esc_html_e( 'Seventh', 'magic-post-thumbnail' );
         ?></option>
                             <option value="8" <?php 
         selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '8' );
         ?>><?php 
-        esc_html_e( 'Eighth', 'mpt' );
+        esc_html_e( 'Eighth', 'magic-post-thumbnail' );
         ?></option>
                             <option value="9" <?php 
         selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '9' );
         ?>><?php 
-        esc_html_e( 'Ninth', 'mpt' );
+        esc_html_e( 'Ninth', 'magic-post-thumbnail' );
         ?></option>
                             <option value="10" <?php 
         selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), '10' );
         ?>><?php 
-        esc_html_e( 'Tenth', 'mpt' );
+        esc_html_e( 'Tenth', 'magic-post-thumbnail' );
         ?></option>
                             <option value="last" <?php 
         selected( ( isset( $block['image_custom_location_position'] ) ? $block['image_custom_location_position'] : '' ), 'last' );
         ?>><?php 
-        esc_html_e( 'Last', 'mpt' );
+        esc_html_e( 'Last', 'magic-post-thumbnail' );
         ?></option>
                         </select>
                         <select name="MPT_plugin_main_settings[image_block][<?php 
@@ -163,7 +163,7 @@ if ( !empty( $image_blocks ) ) {
                             <option value="p" <?php 
         selected( ( isset( $block['image_custom_location_tag'] ) ? $block['image_custom_location_tag'] : '' ), 'p' );
         ?>><?php 
-        esc_html_e( 'paragraph (p)', 'mpt' );
+        esc_html_e( 'paragraph (p)', 'magic-post-thumbnail' );
         ?></option>
                             <option value="h2" <?php 
         selected( ( isset( $block['image_custom_location_tag'] ) ? $block['image_custom_location_tag'] : '' ), 'h2' );
@@ -186,7 +186,7 @@ if ( !empty( $image_blocks ) ) {
                             <option value="a" <?php 
         selected( ( isset( $block['image_custom_location_tag'] ) ? $block['image_custom_location_tag'] : '' ), 'a' );
         ?>><?php 
-        esc_html_e( 'link (a)', 'mpt' );
+        esc_html_e( 'link (a)', 'magic-post-thumbnail' );
         ?></option>
                         </select>
                     </label>
@@ -201,7 +201,7 @@ if ( !empty( $image_blocks ) ) {
         ?> mid-add-block-img">
                 <th scope="row">
                     <label for="hseparator"><?php 
-        esc_html_e( 'Image size', 'mpt' );
+        esc_html_e( 'Image size', 'magic-post-thumbnail' );
         ?></label>
                 </th>
                 <td class="custom_image_size" valign="top">
@@ -234,81 +234,56 @@ if ( !empty( $image_blocks ) ) {
         ?> mid-add-block-img">
                 <th scope="row">
                     <label for="hseparator"><?php 
-        esc_html_e( 'Image Source', 'mpt' );
+        esc_html_e( 'Image Source', 'magic-post-thumbnail' );
         ?></label>
                 </th>
                 <td class="custom_image_size" valign="top">
                     <label>
+                        <?php 
+        $current_bank = ( isset( $block['api_chosen'] ) ? $this->MPT_normalize_bank_slug( $block['api_chosen'] ) : 'default' );
+        if ( '' === $current_bank ) {
+            $current_bank = 'default';
+        }
+        ?>
                         <select name="MPT_plugin_main_settings[image_block][<?php 
         echo $blockIndex;
         ?>][api_chosen]" class="select-custom-location form-control">
-                            <?php 
-        foreach ( $list_api_auto as $api_auto_name => $api_auto_id ) {
-            if ( true === $api_auto_id[1] ) {
-                $disabled = '';
-            } else {
-                $disabled = 'disabled';
-            }
-            ?>
-                                        <option <?php 
-            echo $disabled;
-            ?> value="<?php 
-            echo $api_auto_id[0];
-            ?>" <?php 
-            echo ( isset( $block['api_chosen'] ) ? selected( $block['api_chosen'], $api_auto_id[0], false ) : '' );
-            ?>><?php 
-            echo $api_auto_name;
-            ?></option>
-                            <?php 
-        }
-        ?>
-                        </select> 
-                    </label>
-                </td>
-            </tr>
-
-
-            <tr valign="top" class="section_custom_image_bank image-block-<?php 
-        echo $blockIndex;
-        ?> mid-add-block-img">
-                <th scope="row">
-                    <label for="hseparator"><?php 
-        esc_html_e( 'Second Image Source', 'mpt' );
-        ?></label>
-                </th>
-                <td class="custom_image_size" valign="top">
-                    <label>
-                        <select name="MPT_plugin_main_settings[image_block][<?php 
-        echo $blockIndex;
-        ?>][api_chosen_2]" class="select-custom-location form-control">
-                            <option value="none"><?php 
-        esc_html_e( 'None', 'mpt' );
+                            <option value="default" <?php 
+        selected( $current_bank, 'default' );
+        ?>><?php 
+        esc_html_e( 'Use the chain defined in Source', 'magic-post-thumbnail' );
         ?></option>
                             <?php 
         foreach ( $list_api_auto as $api_auto_name => $api_auto_id ) {
             if ( true === $api_auto_id[1] ) {
-                $disabled = '';
+                $opt_disabled = '';
             } else {
-                $disabled = 'disabled';
+                $opt_disabled = 'disabled';
             }
             ?>
                                         <option <?php 
-            echo $disabled;
+            echo $opt_disabled;
             ?> value="<?php 
-            echo $api_auto_id[0];
+            echo esc_attr( $api_auto_id[0] );
             ?>" <?php 
-            echo ( isset( $block['api_chosen_2'] ) ? selected( $block['api_chosen_2'], $api_auto_id[0], false ) : '' );
+            selected( $current_bank, $api_auto_id[0] );
             ?>><?php 
-            echo $api_auto_name;
+            echo esc_html( $api_auto_name );
             ?></option>
                             <?php 
         }
         ?>
-                        </select> 
-                        <i><?php 
-        esc_html_e( 'Second Image Source, just in case the first one doesn\'t work', 'mpt' );
-        ?></i>
+                        </select>
                     </label>
+                    <p class="description mpt-chain-reminder">
+                        <?php 
+        echo esc_html( sprintf( 
+            /* translators: %s: ordered bank names */
+            __( 'Source chain: %s', 'magic-post-thumbnail' ),
+            $this->MPT_format_bank_chain_labels()
+         ) );
+        ?>
+                    </p>
                 </td>
             </tr>
 
@@ -325,7 +300,7 @@ if ( !empty( $image_blocks ) ) {
                     <button type="button" class="btn btn-sm font-weight-bolder btn-light-danger remove-block-btn <?php 
         echo $class_remove_btn;
         ?>" style="text-decoration: none;">[-] <?php 
-        esc_html_e( 'Delete', 'mpt' );
+        esc_html_e( 'Delete', 'magic-post-thumbnail' );
         ?></button>
                 </td>
             </tr>
@@ -354,7 +329,7 @@ $cloneID = 'add-image-btn-disabled';
 echo $cloneID;
 ?>">
                 [+] <?php 
-esc_html_e( 'Add an image location', 'mpt' );
+esc_html_e( 'Add an image location', 'magic-post-thumbnail' );
 ?>
             </a>
         </td>

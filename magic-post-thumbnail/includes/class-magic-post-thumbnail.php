@@ -112,6 +112,11 @@ class Magic_Post_Thumbnail {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-magic-post-thumbnail-i18n.php';
 
 		/**
+		 * Shared helpers used by admin UI and generation.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-magic-post-thumbnail-helpers.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-magic-post-thumbnail-admin.php';
@@ -157,17 +162,27 @@ class Magic_Post_Thumbnail {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Magic_Post_Thumbnail_Admin( $this->get_plugin_name(), $this->get_version() );
-
+		$plugin_admin = Magic_Post_Thumbnail_Admin::MPT_instance( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-    	$this->loader->add_action( 'admin_menu', $plugin_admin, 'MPT_main_settings' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'MPT_main_settings' );
 		$this->loader->add_filter( 'submenu_file', $plugin_admin, 'MPT_submenu_class' );
 
-    	$this->loader->add_action( 'init', $plugin_admin, 'MPT_main_actions' );
+		$this->loader->add_action( 'init', $plugin_admin, 'MPT_main_actions' );
 
+	}
+
+	/**
+	 * Register automation hooks that must run without mpt_manage (cron, REST, AJAX, save_post).
+	 *
+	 * @since 7.0.0
+	 */
+	public function run_automation() {
+		Magic_Post_Thumbnail_Helpers::MPT_maybe_define_proxy_constants();
+		Magic_Post_Thumbnail_Admin::MPT_register_automation( $this->get_plugin_name(), $this->get_version() );
+		Magic_Post_Thumbnail_Generation::MPT_register_automation( $this->get_plugin_name(), $this->get_version() );
 	}
 
 	/**
@@ -192,6 +207,8 @@ class Magic_Post_Thumbnail {
 	 * @since    4.0.0
 	 */
 	public function run() {
+		$plugin_admin = Magic_Post_Thumbnail_Admin::MPT_instance( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin->MPT_register_ui_hooks();
 		$this->loader->run();
 	}
 

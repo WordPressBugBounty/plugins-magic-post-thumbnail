@@ -451,7 +451,8 @@ jQuery(document).ready(function() {
                   !newBlock.hasClass('section_custom_field') &&
                   !newBlock.hasClass('section_custom_request') &&
                   !newBlock.hasClass('category_choice') &&
-                  !newBlock.hasClass('section_openai_extractor')
+                  !newBlock.hasClass('section_openai_extractor') &&
+                  !newBlock.hasClass('section_ai_style_custom')
                 ) {
                   newBlock.removeClass('hidden');
                 }
@@ -490,7 +491,7 @@ jQuery(document).ready(function() {
         });
 
         // Before form submission, remove the hidden template block
-        $('form#tabs').submit(function() {
+        $('form.form-images').submit(function() {
             $('.image-location-template.image-block-0').remove(); // Remove hidden template blocks
         });
 
@@ -645,7 +646,7 @@ jQuery(document).ready(function() {
           editableContent = editableContent.replace(/<br\s*\/?>/gi, '').trim();
           
           // Apply the regex to replace the spans
-          var regex = /<span\s.*?>(.*?)<\/span>/gi;
+          var regex = /<span[^>]*data-token="([^"]+)"[^>]*>.*?<\/span>/gi;
           var newContent = editableContent.replace(regex, '%%$1%%');
           
           // Updates the value of the associated hidden input
@@ -661,7 +662,7 @@ jQuery(document).ready(function() {
 
         var divTag = jQuery(this).html();
         var regex  = /%%(.*?)%%/g;
-        var newTag = divTag.replace(regex, '<span contenteditable="false" class="button-custom" draggable="false">$1</span>');
+        var newTag = divTag.replace(regex, '<span contenteditable="false" class="button-custom" draggable="false" data-token="$1">$1</span>');
     
         jQuery(this).html(newTag);
     });
@@ -691,12 +692,16 @@ jQuery(document).ready(function() {
     hideAPIKey("#password-googleAPI");
     hideAPIKey("#password-pixabay");
     hideAPIKey("#password-dalle");
+    hideAPIKey("#password-gptimage");
     hideAPIKey("#password-stability");
     hideAPIKey("#password-replicate");
     hideAPIKey("#password-youtube");
     hideAPIKey("#password-pexels");
-    // hideAPIKey("#password-envato"); // DISABLED - Envato Elements no longer working
     hideAPIKey("#password-openai");
+    hideAPIKey("#password-ideogram");
+    hideAPIKey("#password-flux2");
+    hideAPIKey("#password-gemini");
+    hideAPIKey("#password-grok");
 
 
 
@@ -819,3 +824,55 @@ function checkRights() {
     return premium_version;
     //return false;
 }
+
+jQuery(function($) {
+    $(document).on('change', '.mpt-ai-style', function() {
+        var $row = $(this).closest('tr');
+        var slug = $(this).closest('tr').attr('class').match(/image-block-(\d+)/);
+        var idx  = slug ? slug[1] : '0';
+        var $custom = $('.section_ai_style_custom.image-block-' + idx);
+        if ('custom' === $(this).val()) {
+            $custom.show('fast');
+        } else {
+            $custom.hide('fast');
+        }
+    });
+
+    function mptToggleOverlay() {
+        var mode = $('#mpt-overlay-mode').val();
+        $('.mpt-overlay-options').toggle(mode === 'title' || mode === 'title_logo');
+        $('.mpt-overlay-logo').toggle(mode === 'title_logo');
+    }
+    $(document).on('change', '#mpt-overlay-mode', mptToggleOverlay);
+
+    var overlayFrame;
+    $('#mpt-overlay-logo-select').on('click', function(e) {
+        e.preventDefault();
+        if (typeof wp === 'undefined' || !wp.media) {
+            return;
+        }
+        if (overlayFrame) {
+            overlayFrame.open();
+            return;
+        }
+        overlayFrame = wp.media({
+            title: $(this).text(),
+            button: { text: $(this).text() },
+            library: { type: 'image' },
+            multiple: false
+        });
+        overlayFrame.on('select', function() {
+            var att = overlayFrame.state().get('selection').first().toJSON();
+            $('#mpt-overlay-logo-id').val(att.id);
+            $('#mpt-overlay-logo-preview').attr('src', att.url).show();
+            $('#mpt-overlay-logo-clear').show();
+        });
+        overlayFrame.open();
+    });
+    $('#mpt-overlay-logo-clear').on('click', function(e) {
+        e.preventDefault();
+        $('#mpt-overlay-logo-id').val('0');
+        $('#mpt-overlay-logo-preview').attr('src', '').hide();
+        $(this).hide();
+    });
+});

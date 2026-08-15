@@ -13,14 +13,14 @@ if ( ! function_exists( 'add_filter' ) ) {
 <tr valign="top">
 	<td colspan="2">
 		<div class="update-nag">
-			<?php _e('<a target="_blank" href="https://oldsearch.creativecommons.org/">CC Search</a> provides Creative Commons images. You can search these images manually from <a target="_blank" href="https://wordpress.org/openverse/">Openverse (WordPress)</a>.', 'mpt' ); ?>
+			<?php _e('<a target="_blank" href="https://oldsearch.creativecommons.org/">CC Search</a> provides Creative Commons images. You can search these images manually from <a target="_blank" href="https://wordpress.org/openverse/">Openverse (WordPress)</a>.', 'magic-post-thumbnail' ); ?>
 		</div>
 	</td>
 </tr>
 
 <tr valign="top">
 	<th scope="row">
-		<label for="hseparator"><?php esc_html_e( 'Source', 'mpt' ); ?></label>
+		<label for="hseparator"><?php esc_html_e( 'Source', 'magic-post-thumbnail' ); ?></label>
 	</th>
 	<td>
 
@@ -28,9 +28,9 @@ if ( ! function_exists( 'add_filter' ) ) {
 			<?php
 				$selected = $options['cc_search']['source'];
 				$source_choose = array(
-					esc_html__( 'All sources', 'mpt' )          => 1,
-					esc_html__( 'All except flickr', 'mpt' )    => 2,
-					esc_html__( 'Other', 'mpt' )                => 3
+					esc_html__( 'All sources', 'magic-post-thumbnail' )          => 1,
+					esc_html__( 'All except flickr', 'magic-post-thumbnail' )    => 2,
+					esc_html__( 'Other', 'magic-post-thumbnail' )                => 3
 				);
 				//ksort( $country_choose );
 
@@ -45,22 +45,22 @@ if ( ! function_exists( 'add_filter' ) ) {
 
 <tr valign="top">
 	<th scope="row">
-		<label for="hseparator"><?php esc_html_e( 'Rights', 'mpt' ); ?></label>
+		<label for="hseparator"><?php esc_html_e( 'Rights', 'magic-post-thumbnail' ); ?></label>
 	</th>
 	<td class="checkbox-list">
 		<p class="description">
-			<?php esc_html_e( 'Choose these options can reduce relevance of results, but permit to use free-to-use images.', 'mpt' ); ?>
+			<?php esc_html_e( 'Choose these options can reduce relevance of results, but permit to use free-to-use images.', 'magic-post-thumbnail' ); ?>
 		</p>
 		<?php
 			$rights_array = array(
         		esc_html__( 'Zéro' )                                            => 'CC0',
-				esc_html__( 'Attribution-NoDerivs', 'mpt' )                     => 'BY-ND',
-				esc_html__( 'Attribution-NonCommercial', 'mpt' )                => 'BY-NC',
-				esc_html__( 'Attribution-NonCommercial-ShareAlike', 'mpt' )     => 'BY-NC-SA',
-				esc_html__( 'Attribution-NonCommercial-NoDerivs', 'mpt' )       => 'BY-NC-ND',
-				esc_html__( 'Attribution-ShareAlike', 'mpt' )                   => 'BY-SA',
-				esc_html__( 'Attribution', 'mpt' )                              => 'BY',
-				esc_html__( 'Public Domain Mark', 'mpt' )                       => 'PDM',
+				esc_html__( 'Attribution-NoDerivs', 'magic-post-thumbnail' )                     => 'BY-ND',
+				esc_html__( 'Attribution-NonCommercial', 'magic-post-thumbnail' )                => 'BY-NC',
+				esc_html__( 'Attribution-NonCommercial-ShareAlike', 'magic-post-thumbnail' )     => 'BY-NC-SA',
+				esc_html__( 'Attribution-NonCommercial-NoDerivs', 'magic-post-thumbnail' )       => 'BY-NC-ND',
+				esc_html__( 'Attribution-ShareAlike', 'magic-post-thumbnail' )                   => 'BY-SA',
+				esc_html__( 'Attribution', 'magic-post-thumbnail' )                              => 'BY',
+				esc_html__( 'Public Domain Mark', 'magic-post-thumbnail' )                       => 'PDM',
 			);
 
 
@@ -77,7 +77,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 
 <tr valign="top">
 	<th scope="row">
-		<label for="hseparator"><?php esc_html_e( 'Image Type', 'mpt' ); ?></label>
+		<label for="hseparator"><?php esc_html_e( 'Image Type', 'magic-post-thumbnail' ); ?></label>
 	</th>
 	<td>
 		<select name="MPT_plugin_banks_settings[cc_search][imgtype]" class="form-control form-control-lg" >
@@ -85,10 +85,10 @@ if ( ! function_exists( 'add_filter' ) ) {
 			$selected = $options['cc_search']['imgtype'];
 
 			$formats = array(
-				esc_html__( '-- Default --', 'mpt' )            => '',
-				esc_html__( 'Illustration', 'mpt' )             => 'illustration',
-				esc_html__( 'Photography', 'mpt' )             => 'photograph',
-				esc_html__( 'Digitized Artwork', 'mpt' )        => 'digitized_artwork'
+				esc_html__( '-- Default --', 'magic-post-thumbnail' )            => '',
+				esc_html__( 'Illustration', 'magic-post-thumbnail' )             => 'illustration',
+				esc_html__( 'Photography', 'magic-post-thumbnail' )             => 'photograph',
+				esc_html__( 'Digitized Artwork', 'magic-post-thumbnail' )        => 'digitized_artwork'
 			);
 
 			// format
@@ -103,7 +103,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 
 <tr valign="top">
 	<th scope="row">
-		<label for="hseparator"><?php esc_html_e( 'Aspect Ratio', 'mpt' ); ?></label>
+		<label for="hseparator"><?php esc_html_e( 'Aspect Ratio', 'magic-post-thumbnail' ); ?></label>
 	</th>
 	<td>
 		<select name="MPT_plugin_banks_settings[cc_search][aspect_ratio]" class="form-control form-control-lg" >
@@ -111,9 +111,9 @@ if ( ! function_exists( 'add_filter' ) ) {
 			$selected = $options['cc_search']['aspect_ratio'];
 
 			$aspect_ratio = array(
-				esc_html__( 'Tall', 'mpt' )     => 'tall',
-				esc_html__( 'Wide', 'mpt' )     => 'wide',
-				esc_html__( 'Square', 'mpt' )   => 'square'
+				esc_html__( 'Tall', 'magic-post-thumbnail' )     => 'tall',
+				esc_html__( 'Wide', 'magic-post-thumbnail' )     => 'wide',
+				esc_html__( 'Square', 'magic-post-thumbnail' )   => 'square'
 			);
 
 			foreach( $aspect_ratio as $name_aspect_ratio => $code_aspect_ratio ) {

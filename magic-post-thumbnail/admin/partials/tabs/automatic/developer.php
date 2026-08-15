@@ -18,7 +18,7 @@ if ( ! function_exists( 'add_filter' ) ) {
                 </svg><!--end::Svg Icon--></span>
                 </div>
                 <div class="alert-text">
-                    <?php _e( 'Enable the "save_post" & "wp_insert_post" hook. <br/><br/>What does it means ? Everytime you create or update a post, an image will be generated.<br/><br/>Warning: Use it precautionary. If you don\'t understand what it is, disable it.', 'mpt' ); ?>
+                    <?php _e( 'Enable the "save_post" & "wp_insert_post" hook. <br/><br/>What does it means ? Everytime you create or update a post, an image will be generated.<br/><br/>Warning: Use it precautionary. If you don\'t understand what it is, disable it.', 'magic-post-thumbnail' ); ?>
                 </div>
             </div>
         </p>
@@ -28,7 +28,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 
 <tr valign="top" >
     <th scope="row">
-        <label for="hseparator"><?php esc_html_e( '"Save Post" Hook', 'mpt' ); ?></label>
+        <label for="hseparator"><?php esc_html_e( '"Save Post" Hook', 'magic-post-thumbnail' ); ?></label>
     </th>
     <td>
         <label class="checkbox">
@@ -50,7 +50,7 @@ if ( ! function_exists( 'add_filter' ) ) {
             </svg><!--end::Svg Icon--></span>
             </div>
             <div class="alert-text">
-                <?php esc_html_e( 'Select the post type on which you want to fire the hook.', 'mpt' ); ?>
+                <?php esc_html_e( 'Select the post type on which you want to fire the hook.', 'magic-post-thumbnail' ); ?>
             </div>
         </div>
     </td>
@@ -58,10 +58,10 @@ if ( ! function_exists( 'add_filter' ) ) {
 
 <tr valign="top" class="show_save_post_hook" <?php echo( !isset($options['enable_save_post_hook']) || ($options['enable_save_post_hook'] != 'enable') ? 'style="display:none;"': ''); ?>>
         <th scope="row">
-            <?php esc_html_e( '"Save Post" Hook post type', 'mpt' ); ?>
+            <?php esc_html_e( '"Save Post" Hook post type', 'magic-post-thumbnail' ); ?>
         </th>
         <td class="post-type checkbox-list">
-                <label class="checkbox"><input type="checkbox" name="select-all-pt" id="select-all-pt"/><span></span> <?php esc_html_e( 'Select all', 'mpt' ); ?></label>
+                <label class="checkbox"><input type="checkbox" name="select-all-pt" id="select-all-pt"/><span></span> <?php esc_html_e( 'Select all', 'magic-post-thumbnail' ); ?></label>
                 <?php
 
                         $post_types_default = get_post_types( '', 'objects' );
@@ -92,7 +92,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 ?>
     <tr valign="top" class="wp_insert_post">
         <th scope="row">
-            <label for="hseparator"><?php esc_html_e( '"WP Insert Post" Hook', 'mpt' ); ?></label>
+            <label for="hseparator"><?php esc_html_e( '"WP Insert Post" Hook', 'magic-post-thumbnail' ); ?></label>
         </th>
         <td>
             <label class="checkbox checkbox-admin">
@@ -114,7 +114,7 @@ if ( ! function_exists( 'add_filter' ) ) {
                 </svg><!--end::Svg Icon--></span>
                 </div>
                 <div class="alert-text">
-                    <?php esc_html_e( 'Select the post type on which you want to fire the hook.', 'mpt' ); ?>
+                    <?php esc_html_e( 'Select the post type on which you want to fire the hook.', 'magic-post-thumbnail' ); ?>
                 </div>
             </div>
         </td>
@@ -122,10 +122,10 @@ if ( ! function_exists( 'add_filter' ) ) {
 
     <tr valign="top" class="show_wp_insert_post_hook" <?php echo( !isset($options['enable_wp_insert_post_hook']) || ($options['enable_wp_insert_post_hook'] != 'enable') ? 'style="display:none;"': ''); ?>>
             <th scope="row">
-                <?php esc_html_e( '"WP Insert Post" Hook post type', 'mpt' ); ?>
+                <?php esc_html_e( '"WP Insert Post" Hook post type', 'magic-post-thumbnail' ); ?>
             </th>
             <td class="post-type-2 checkbox-list">
-                    <label class="checkbox"><input type="checkbox" name="select-all-pt-2" id="select-all-pt-2"/><span></span> <?php esc_html_e( 'Select all', 'mpt' ); ?></label>
+                    <label class="checkbox"><input type="checkbox" name="select-all-pt-2" id="select-all-pt-2"/><span></span> <?php esc_html_e( 'Select all', 'magic-post-thumbnail' ); ?></label>
                     <?php
 
                             $post_types_default = get_post_types( '', 'objects' );
@@ -155,8 +155,8 @@ if ( ! function_exists( 'add_filter' ) ) {
     <tr valign="top" class="wp_insert_post">
         <th scope="row">
             <label for="hseparator">
-                <?php esc_html_e( '"WP Insert Post" Hook', 'mpt' ); ?><br/>
-                <small><?php esc_html_e( 'Only available with the pro version', 'mpt' ); ?></small>
+                <?php esc_html_e( '"WP Insert Post" Hook', 'magic-post-thumbnail' ); ?><br/>
+                <small><?php esc_html_e( 'Only available with the pro version', 'magic-post-thumbnail' ); ?></small>
             </label>
         </th>
         <td>
@@ -180,7 +180,7 @@ if ( ! function_exists( 'add_filter' ) ) {
                 </svg><!--end::Svg Icon--></span>
                 </div>
                 <div class="alert-text">
-                    <?php _e( 'In strict search mode, quotation marks are added to the search term.<br/><br/>Warning:This may drastically reduce the number of results.', 'mpt' ); ?>
+                    <?php _e( 'In strict search mode, quotation marks are added to the search term.<br/><br/>Warning:This may drastically reduce the number of results.', 'magic-post-thumbnail' ); ?>
                 </div>
             </div>
         </p>
@@ -193,7 +193,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 ?>
     <tr valign="top">
         <th scope="row">
-            <label for="hseparator"><?php esc_html_e( 'Strict Search Mode', 'mpt' ); ?></label>
+            <label for="hseparator"><?php esc_html_e( 'Strict Search Mode', 'magic-post-thumbnail' ); ?></label>
         </th>
         <td>
             <label class="checkbox">
@@ -205,8 +205,8 @@ if ( ! function_exists( 'add_filter' ) ) {
 ?>
         <tr valign="top">
             <th scope="row">
-                <label for="hseparator"><?php esc_html_e( 'Strict Search Mode', 'mpt' ); ?></label><br/>
-                <small><?php esc_html_e( 'Only available with the pro version', 'mpt' ); ?></small>
+                <label for="hseparator"><?php esc_html_e( 'Strict Search Mode', 'magic-post-thumbnail' ); ?></label><br/>
+                <small><?php esc_html_e( 'Only available with the pro version', 'magic-post-thumbnail' ); ?></small>
             </th>
             <td>
                 <label class="checkbox">
@@ -218,7 +218,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 
 <tr valign="top" class="based_on_bottom">
     <th scope="row">
-        <label for="hseparator"><?php esc_html_e( 'Interval', 'mpt' ); ?></label>
+        <label for="hseparator"><?php esc_html_e( 'Interval', 'magic-post-thumbnail' ); ?></label>
     </th>
     <td class="chosen_api">
         <div class="form-group">

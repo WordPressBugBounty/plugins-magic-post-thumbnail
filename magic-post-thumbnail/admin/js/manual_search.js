@@ -1,27 +1,36 @@
 const { dispatch, select } = wp.data;
 const { createBlock } = wp.blocks;
 
-function addMPTBlockAndOpenModal() {
-
-    /*
-    const selectedBlockClientId = select('core/block-editor').getSelectedBlockClientId();
-
-    const indexBlock = wp.data.select('core/block-editor').getBlocks().map(function(block) { 
-        return block.clientId == selectedBlockClientId; 
-    }).indexOf(true) + 1;*/
-
-
-    // Create an instance of the mpt/mpt-images block
-    const block = createBlock('mpt/mpt-images');
-
-    //dispatch('core/block-editor').insertBlock(block, indexBlock);
-    dispatch('core/block-editor').insertBlock(block);
-
-    setTimeout(() => modalToExecute(block), 1);
+function mptOpenDocumentSidebar() {
+	var run = function() {
+		try {
+			if ( dispatch( 'core/block-editor' ) && dispatch( 'core/block-editor' ).clearSelectedBlock ) {
+				dispatch( 'core/block-editor' ).clearSelectedBlock();
+			}
+			if ( dispatch( 'core/edit-post' ) && dispatch( 'core/edit-post' ).openGeneralSidebar ) {
+				dispatch( 'core/edit-post' ).openGeneralSidebar( 'edit-post/document' );
+			}
+			if ( dispatch( 'core/interface' ) && dispatch( 'core/interface' ).enableComplementaryArea ) {
+				dispatch( 'core/interface' ).enableComplementaryArea( 'core/edit-post', 'edit-post/document' );
+				dispatch( 'core/interface' ).enableComplementaryArea( 'core', 'edit-post/document' );
+			}
+		} catch ( err ) {}
+	};
+	run();
+	window.setTimeout( run, 50 );
+	window.setTimeout( run, 200 );
 }
 
-function modalToExecute(block) {
-    // Trigger a custom event to open the modal
-    const event = new CustomEvent('openMPTModal', { detail: block });
-    document.dispatchEvent(event);
+function addMPTBlockAndOpenModal() {
+	const block = createBlock( 'mpt/mpt-images' );
+	dispatch( 'core/block-editor' ).insertBlock( block, undefined, undefined, false );
+	setTimeout( function() {
+		modalToExecute( block );
+		mptOpenDocumentSidebar();
+	}, 1 );
+}
+
+function modalToExecute( block ) {
+	const event = new CustomEvent( 'openMPTModal', { detail: block } );
+	document.dispatchEvent( event );
 }

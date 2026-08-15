@@ -19,11 +19,13 @@
       <?php
           $contact_url    = remove_query_arg( 'ids_mpt_generation', add_query_arg( 'module', 'contact', $this->MPT_current_url() ) );
       ?>
-      <a href="https://magic-post-thumbnail.com/" target="_blank" class="nav-link pl-0 pr-5"><?php esc_html_e( 'Website', 'mpt' ); ?></a>
-      <a href="https://magic-post-thumbnail.com/docs/" target="_blank" class="nav-link pl-0 pr-5"><?php esc_html_e( 'Documentation', 'mpt' ); ?></a>
-			<a href="https://wordpress.org/support/plugin/magic-post-thumbnail/" target="_blank" class="nav-link pl-0 pr-5"><?php esc_html_e( 'Support Forum', 'mpt' ); ?></a>
-      <a href="<?php echo $contact_url; ?>" class="nav-link pl-0 pr-5"><?php esc_html_e( 'Contact Us', 'mpt' ); ?></a>
-      <a href="https://wordpress.org/support/plugin/magic-post-thumbnail/reviews/" target="_blank" class="nav-link pl-0 pr-5"><?php esc_html_e( 'Leave a review', 'mpt' ); ?></a>
+      <a href="https://magic-post-thumbnail.com/" target="_blank" class="nav-link pl-0 pr-5"><?php esc_html_e( 'Website', 'magic-post-thumbnail' ); ?></a>
+      <a href="https://magic-post-thumbnail.com/docs/" target="_blank" class="nav-link pl-0 pr-5"><?php esc_html_e( 'Documentation', 'magic-post-thumbnail' ); ?></a>
+			<a href="https://wordpress.org/support/plugin/magic-post-thumbnail/" target="_blank" class="nav-link pl-0 pr-5"><?php esc_html_e( 'Support Forum', 'magic-post-thumbnail' ); ?></a>
+      <a href="<?php echo $contact_url; ?>" class="nav-link pl-0 pr-5"><?php esc_html_e( 'Contact Us', 'magic-post-thumbnail' ); ?></a>
+      <a href="https://wordpress.org/support/plugin/magic-post-thumbnail/reviews/" target="_blank" class="nav-link pl-0 pr-5"><?php esc_html_e( 'Leave a review', 'magic-post-thumbnail' ); ?></a>
+      <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url" target="_blank" class="nav-link pl-0 pr-5"><?php esc_html_e( 'Donate', 'magic-post-thumbnail' ); ?></a>
+      <a href="<?php echo esc_url( admin_url( 'admin.php?page=magic-post-thumbnail-admin-display&module=affiliation' ) ); ?>" class="nav-link pl-0 pr-5"><?php esc_html_e( 'Affiliation', 'magic-post-thumbnail' ); ?></a>
     </div>
 		<!--end::Copyright-->
 

@@ -23,72 +23,72 @@ $module = ( isset( $_GET['module'] ) ) ? sanitize_text_field( $_GET['module'] ) 
 
 switch ( $module ) {
     case 'posts':
-        $title = esc_html__( 'Settings [Posts]', 'mpt' );
+        $title = esc_html__( 'Settings [Posts]', 'magic-post-thumbnail' );
         $tab   = 'posts.php';
         break;
     case 'block':
-        $title = esc_html__( 'Settings [Block]', 'mpt' );
+        $title = esc_html__( 'Settings [Block]', 'magic-post-thumbnail' );
         $tab   = 'block.php';
         break;
     case 'images':
-        $title = esc_html__( 'Settings [Images]', 'mpt' );
+        $title = esc_html__( 'Settings [Images]', 'magic-post-thumbnail' );
         $tab   = 'images.php';
         break;
     case 'automatic':
-        $title = esc_html__( 'Settings [Automatic]', 'mpt' );
+        $title = esc_html__( 'Settings [Automatic]', 'magic-post-thumbnail' );
         $tab   = 'automatic.php';
         break;
     case 'source':
-        $title = esc_html__( 'Settings [Source]', 'mpt' );
+        $title = esc_html__( 'Settings [Source]', 'magic-post-thumbnail' );
         $tab   = 'source.php';
         break;
     case 'interval':
-        $title = esc_html__( 'Settings [Interval]', 'mpt' );
+        $title = esc_html__( 'Settings [Interval]', 'magic-post-thumbnail' );
         $tab   = 'interval.php';
         break;
     case 'cron':
-        $title = esc_html__( 'Pro [Cron]', 'mpt' );
+        $title = esc_html__( 'Pro [Cron]', 'magic-post-thumbnail' );
         $tab   = 'cron.php';
         break;
     case 'proxy':
-        $title = esc_html__( 'Settings [Proxy]', 'mpt' );
+        $title = esc_html__( 'Settings [Proxy]', 'magic-post-thumbnail' );
         $tab   = 'proxy.php';
         break;
     case 'affiliation':
-        $title = esc_html__( 'Miscellaneous [Affiliation]', 'mpt' );
+        $title = esc_html__( 'Miscellaneous [Affiliation]', 'magic-post-thumbnail' );
         $tab   = 'affiliation.php';
         break;
     case 'compatibility':
-        $title = esc_html__( 'Miscellaneous [Compatibility]', 'mpt' );
+        $title = esc_html__( 'Miscellaneous [Compatibility]', 'magic-post-thumbnail' );
         $tab   = 'compatibility.php';
         break;
     case 'rights':
-        $title = esc_html__( 'Miscellaneous [Rights]', 'mpt' );
+        $title = esc_html__( 'Miscellaneous [Rights]', 'magic-post-thumbnail' );
         $tab   = 'rights.php';
         break;
     case 'logs':
-        $title = esc_html__( 'Miscellaneous [Logs]', 'mpt' );
+        $title = esc_html__( 'Miscellaneous [Logs]', 'magic-post-thumbnail' );
         $tab   = 'logs.php';
         break;
     case 'bulk-generation':
-        $title = esc_html__( 'Bulk Generation', 'mpt' );
+        $title = esc_html__( 'Bulk Generation', 'magic-post-thumbnail' );
         $tab   = 'generation_choice.php';
         break;
     case 'bulk-generation-interval':
-        $title = esc_html__( 'Bulk Generation with interval', 'mpt' );
+        $title = esc_html__( 'Bulk Generation with interval', 'magic-post-thumbnail' );
         $tab   = 'generation_choice.php';
         break;
     case 'account':
-        $title = esc_html__( 'Account', 'mpt' );
+        $title = esc_html__( 'Account', 'magic-post-thumbnail' );
         $tab   = 'account.php';
         //$include_template = false;
         break;
     case 'contact':
-        $title = esc_html__( 'Contact', 'mpt' );
+        $title = esc_html__( 'Contact', 'magic-post-thumbnail' );
         $tab   = 'contact.php';
         break;
     default:
-        $title = esc_html__( 'Dashboard', 'mpt' );
+        $title = esc_html__( 'Dashboard', 'magic-post-thumbnail' );
         $tab   = 'dashboard.php';
 }
 

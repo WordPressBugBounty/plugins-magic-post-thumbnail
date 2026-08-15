@@ -7,19 +7,19 @@ jQuery(document).ready(function($){
   
     $(document).on('click', '#mpt-hide-notice', function(e){
       e.preventDefault();
-      $.post(ajaxurl, {action: 'mpt_hide_notice'});
+      $.post(ajaxurl, {action: 'mpt_hide_notice', nonce: translationsJsVars.nonce});
       $('#mpt-rating-notice').hide();
     });
   
     $(document).on('click', '#mpt-remind-later', function(e){
       e.preventDefault();
-      $.post(ajaxurl, {action: 'mpt_remind_later', delay: 30});
+      $.post(ajaxurl, {action: 'mpt_remind_later', delay: 30, nonce: translationsJsVars.nonce});
       $('#mpt-rating-notice').hide();
     });
   
     $(document).on('click', '#mpt-already-done', function(e){
       e.preventDefault();
-      $.post(ajaxurl, {action: 'mpt_remind_later', delay: 180});
+      $.post(ajaxurl, {action: 'mpt_remind_later', delay: 180, nonce: translationsJsVars.nonce});
       $('#mpt-rating-notice').hide();
     });
   });

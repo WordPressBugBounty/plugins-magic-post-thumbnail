@@ -39,7 +39,7 @@ if ( $executeElseBlock ) {
 												</div>
 												<div class="alert-text">
 													<?php 
-    esc_html_e( 'Only available with the pro version', 'mpt' );
+    esc_html_e( 'Only available with the pro version', 'magic-post-thumbnail' );
     ?>
 												</div>
 										</div>
@@ -55,7 +55,7 @@ if ( $executeElseBlock ) {
 				<tr>
 					<td>
 							<?php 
-esc_html_e( 'Compatibility with REST Requests', 'mpt' );
+esc_html_e( 'Compatibility with REST Requests', 'magic-post-thumbnail' );
 ?>
 					</td>
 					<td>
@@ -82,7 +82,7 @@ echo ( !empty( $options['enable_REST'] ) && $options['enable_REST'] == 'true' ? 
 										</div>
 										<div class="alert-text">
 												<?php 
-_e( 'Enable compatibility with REST requests.<br><br> This can be useful, for example, if external services (such as AI posts) allow you to create posts directly in your WordPress.', 'mpt' );
+_e( 'Enable compatibility with REST requests.<br><br> This can be useful, for example, if external services (such as AI posts) allow you to create posts directly in your WordPress.', 'magic-post-thumbnail' );
 ?>
 										</div>
 								</div>
@@ -97,7 +97,7 @@ _e( 'Enable compatibility with REST requests.<br><br> This can be useful, for ex
 				<tr>
 					<td>
 						<?php 
-esc_html_e( 'Compatibility with WP All Import', 'mpt' );
+esc_html_e( 'Compatibility with WP All Import', 'magic-post-thumbnail' );
 ?>
 					</td>
 					<td>
@@ -124,7 +124,7 @@ echo ( !empty( $options['enable_wpai'] ) && $options['enable_wpai'] == 'true' ? 
 								</div>
 								<div class="alert-text">
 									<?php 
-esc_html_e( 'Enable compatibility with the plugin "WP All Import".', 'mpt' );
+esc_html_e( 'Enable compatibility with the plugin "WP All Import".', 'magic-post-thumbnail' );
 ?>
 								</div>
 							</div>
@@ -134,7 +134,7 @@ esc_html_e( 'Enable compatibility with the plugin "WP All Import".', 'mpt' );
 									<tr>
 					<td>
 						<?php 
-esc_html_e( 'Compatibility with WPeMatico', 'mpt' );
+esc_html_e( 'Compatibility with WPeMatico', 'magic-post-thumbnail' );
 ?>
 					</td>
 					<td>
@@ -161,7 +161,7 @@ echo ( !empty( $options['enable_wpematico'] ) && $options['enable_wpematico'] ==
 								</div>
 								<div class="alert-text">
 									<?php 
-esc_html_e( 'Enable compatibility with the plugin "WPeMatico".', 'mpt' );
+esc_html_e( 'Enable compatibility with the plugin "WPeMatico".', 'magic-post-thumbnail' );
 ?>
 								</div>
 							</div>
@@ -171,7 +171,7 @@ esc_html_e( 'Enable compatibility with the plugin "WPeMatico".', 'mpt' );
 				<tr>
 					<td>
 						<?php 
-esc_html_e( 'Compatibility with FeedWordPress', 'mpt' );
+esc_html_e( 'Compatibility with FeedWordPress', 'magic-post-thumbnail' );
 ?>
 					</td>
 					<td>
@@ -198,7 +198,7 @@ echo ( !empty( $options['enable_feedwordpress'] ) && $options['enable_feedwordpr
 								</div>
 								<div class="alert-text">
 									<?php 
-esc_html_e( 'Enable compatibility with the plugin "FeedWordPress".', 'mpt' );
+esc_html_e( 'Enable compatibility with the plugin "FeedWordPress".', 'magic-post-thumbnail' );
 ?>
 								</div>
 							</div>
@@ -208,7 +208,7 @@ esc_html_e( 'Enable compatibility with the plugin "FeedWordPress".', 'mpt' );
 				<tr>
 					<td>
 						<?php 
-esc_html_e( 'Compatibility with WP Automatic Plugin', 'mpt' );
+esc_html_e( 'Compatibility with WP Automatic Plugin', 'magic-post-thumbnail' );
 ?>
 					</td>
 					<td>
@@ -235,7 +235,7 @@ echo ( !empty( $options['enable_wpautomatic'] ) && $options['enable_wpautomatic'
 								</div>
 								<div class="alert-text">
 									<?php 
-esc_html_e( 'Enable compatibility with the plugin "WP Automatic Plugin".', 'mpt' );
+esc_html_e( 'Enable compatibility with the plugin "WP Automatic Plugin".', 'magic-post-thumbnail' );
 ?>
 								</div>
 							</div>
@@ -250,7 +250,7 @@ esc_html_e( 'Enable compatibility with the plugin "WP Automatic Plugin".', 'mpt'
 				<tr>
 					<td>
 						<?php 
-esc_html_e( 'Compatibility with FIFU', 'mpt' );
+esc_html_e( 'Compatibility with FIFU', 'magic-post-thumbnail' );
 ?>
 					</td>
 					<td>
@@ -277,7 +277,7 @@ echo ( !empty( $options['enable_FIFU'] ) && $options['enable_FIFU'] == 'true' ? 
 									</div>
 									<div class="alert-text">
 										<?php 
-_e( 'Enable compatibility with the plugin "Featured Image from URL".<br><br> Warning: This option will not upload your images into your media anymore.<br><br> Warning 2: Does not work with DALL-E & Stable Diffusion.', 'mpt' );
+_e( 'Enable compatibility with the plugin "Featured Image from URL".<br><br> Warning: This option will not upload your images into your media anymore.<br><br> Warning 2: Does not work with GPT Image, Gemini, Flux 2, Ideogram, Grok, Replicate or Stable Diffusion (no lasting public URL).', 'magic-post-thumbnail' );
 ?>
 									</div>
 								</div>
@@ -287,7 +287,7 @@ _e( 'Enable compatibility with the plugin "Featured Image from URL".<br><br> War
 				<tr>
 					<td>
 						<?php 
-esc_html_e( 'Compatibility with CMB2', 'mpt' );
+esc_html_e( 'Compatibility with CMB2', 'magic-post-thumbnail' );
 ?>
 					</td>
 					<td>
@@ -314,7 +314,7 @@ echo ( !empty( $options['enable_cmb2'] ) && $options['enable_cmb2'] == 'true' ? 
 								</div>
 								<div class="alert-text">
 									<?php 
-esc_html_e( 'Enable compatibility with CMB2 plugin to set image to CMB2 field', 'mpt' );
+esc_html_e( 'Enable compatibility with CMB2 plugin to set image to CMB2 field', 'magic-post-thumbnail' );
 ?>
 								</div>
 							</div>
@@ -324,7 +324,7 @@ esc_html_e( 'Enable compatibility with CMB2 plugin to set image to CMB2 field', 
 				<tr>
 					<td>
 						<?php 
-esc_html_e( 'Compatibility with ACF', 'mpt' );
+esc_html_e( 'Compatibility with ACF', 'magic-post-thumbnail' );
 ?>
 					</td>
 					<td>
@@ -351,7 +351,7 @@ echo ( !empty( $options['enable_acf'] ) && $options['enable_acf'] == 'true' ? 'c
 								</div>
 								<div class="alert-text">
 									<?php 
-esc_html_e( 'Enable compatibility with ACF plugin (Advanced Custom Fields) to set image to ACF field', 'mpt' );
+esc_html_e( 'Enable compatibility with ACF plugin (Advanced Custom Fields) to set image to ACF field', 'magic-post-thumbnail' );
 ?>
 								</div>
 							</div>
@@ -361,7 +361,7 @@ esc_html_e( 'Enable compatibility with ACF plugin (Advanced Custom Fields) to se
 				<tr>
 					<td>
 						<?php 
-esc_html_e( 'Compatibility with Meta Box', 'mpt' );
+esc_html_e( 'Compatibility with Meta Box', 'magic-post-thumbnail' );
 ?>
 					</td>
 					<td>
@@ -388,7 +388,7 @@ echo ( !empty( $options['enable_metaboxio'] ) && $options['enable_metaboxio'] ==
 								</div>
 								<div class="alert-text">
 									<?php 
-esc_html_e( 'Enable compatibility with Meta Box plugin (metabox.io) to set image to Meta Box field', 'mpt' );
+esc_html_e( 'Enable compatibility with Meta Box plugin (metabox.io) to set image to Meta Box field', 'magic-post-thumbnail' );
 ?>
 								</div>
 							</div>

@@ -35,7 +35,7 @@ if ( $executeElseBlock ) {
 												</div>
 												<div class="alert-text">
 														<?php 
-    esc_html_e( 'Only available with the pro version', 'mpt' );
+    esc_html_e( 'Only available with the pro version', 'magic-post-thumbnail' );
     ?>
 												</div>
 										</div>

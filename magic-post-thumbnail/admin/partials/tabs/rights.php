@@ -22,7 +22,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 
                 <tr valign="top" class="rights">
                     <th scope="row">
-                            <?php esc_html_e( 'Plugin Rights', 'mpt' ); ?>
+                            <?php esc_html_e( 'Plugin Rights', 'magic-post-thumbnail' ); ?>
                     </th>
                     <td class="checkbox-list">
                         <label class="checkbox checkbox-disabled"><input checked type="checkbox" disabled> <span></span> administrator</label>
@@ -44,7 +44,7 @@ if ( ! function_exists( 'add_filter' ) ) {
                             </svg></span>
                             </div>
                             <div class="alert-text">
-                                <?php esc_html_e( 'Select which role has access to the Magic Post Thumbnail Dashboard', 'mpt' ); ?>
+                                <?php esc_html_e( 'Select which role has access to the Magic Post Thumbnail Dashboard', 'magic-post-thumbnail' ); ?>
                             </div>
                         </div>
                     </td>

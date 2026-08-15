@@ -9,8 +9,8 @@
  * @wordpress-plugin
  * Plugin Name:       Magic Post Thumbnail
  * Plugin URI:        http://wordpress.org/plugins/magic-post-thumbnail/
- * Description:       Add stunning images to your posts effortlessly, as featured images or within content. Magic Post Thumbnail sources them automatically from multiple image banks.
- * Version:           6.2.2
+ * Description:       Generate featured and in-content images from Bing, GPT Image, Unsplash and more — automatically, in bulk, or from Gutenberg.
+ * Version:           7.0.0
  * Author:            Magic Post Thumbnail
  * Author URI:        https://magic-post-thumbnail.com/
  * License:           GPL-2.0+
@@ -72,7 +72,7 @@ if ( function_exists( 'mpt_freemius' ) ) {
      * Start at version 1.0.0 and use SemVer - https://semver.org
      * Rename this for your plugin and update it as you release new versions.
      */
-    define( 'MAGIC_POST_THUMBNAIL_VERSION', '6.2.2' );
+    define( 'MAGIC_POST_THUMBNAIL_VERSION', '7.0.0' );
     /**
      * The code that runs during plugin activation.
      * This action is documented in includes/class-magic-post-thumbnail-activator.php
@@ -130,27 +130,14 @@ if ( function_exists( 'mpt_freemius' ) ) {
     }
 
     /**
-     * Check hook wp_insert_post to fire functionalities
+     * Boot automation always; admin UI only for users with mpt_manage.
      *
-     * @since    6.0.0
+     * @since 7.0.0
      */
-    function MPT_check_hook() {
-    }
-
-    /**
-     * Check capabilities before launching the plugin main features
-     *
-     * @since    5.0.0
-     */
-    function MPT_check_capability() {
-        $additional_check = false;
-        // add capability for the cron
-        if ( wp_doing_cron() || true == $additional_check ) {
-            global $current_user;
-            $current_user->add_cap( 'mpt_manage' );
-        }
-        if ( current_user_can( 'mpt_manage' ) ) {
-            $plugin = new Magic_Post_Thumbnail();
+    function MPT_boot_plugin() {
+        $plugin = new Magic_Post_Thumbnail();
+        $plugin->run_automation();
+        if ( is_admin() && current_user_can( 'mpt_manage' ) ) {
             $plugin->run();
         }
     }
@@ -158,28 +145,19 @@ if ( function_exists( 'mpt_freemius' ) ) {
     /**
      * Begins execution of the plugin.
      *
-     * Since everything within the plugin is registered via hooks,
-     * then kicking off the plugin from this point in the file does
-     * not affect the page life cycle.
-     *
      * @since    4.0.0
      */
     function run_magic_post_thumbnail() {
-        // User role & capacity
         add_action( 'init', 'MPT_add_capability', 1 );
-        add_action( 'init', 'MPT_check_capability', 2 );
-        // Features with hooks
-        add_action( 'init', 'MPT_check_hook', 5 );
+        add_action( 'init', 'MPT_boot_plugin', 2 );
     }
 
     run_magic_post_thumbnail();
     // Fired when the plugin is uninstalled.
     mpt_freemius()->add_action( 'after_uninstall', 'mpt_freemius_uninstall_cleanup' );
     function mpt_freemius_uninstall_cleanup() {
-        // Remove logs
-        define( "MPT_FREEMIUS_UNINSTALL", true );
+        define( 'MPT_FREEMIUS_UNINSTALL', true );
         require_once dirname( __FILE__ ) . '/admin/partials/delete_log.php';
-        // Delete all plugin options
         delete_option( 'MPT_plugin_posts_settings' );
         delete_option( 'MPT_plugin_main_settings' );
         delete_option( 'MPT_plugin_banks_settings' );
@@ -189,38 +167,8 @@ if ( function_exists( 'mpt_freemius' ) ) {
         delete_option( 'MPT_plugin_proxy_settings' );
         delete_option( 'MPT_plugin_compatibility_settings' );
         delete_option( 'MPT_plugin_logs_settings' );
+        delete_option( 'mpt_logs_dirname' );
+        delete_option( 'mpt_hook_checked' );
     }
 
 }
-add_action( 'init', function () {
-    if ( !current_user_can( 'manage_options' ) ) {
-        return;
-    }
-    if ( isset( $_GET['mpt_test_google'] ) ) {
-        $search = 'test image';
-        $params = array(
-            'tbm'  => 'isch',
-            'q'    => urlencode( $search ),
-            'hl'   => 'en',
-            'safe' => 'medium',
-            'rsz'  => '3',
-        );
-        $url = add_query_arg( $params, 'https://www.google.com/search' );
-        $defaults = array(
-            'redirection'        => 9,
-            'user-agent'         => 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) Chrome/41.0.2272.96',
-            'reject_unsafe_urls' => false,
-            'sslverify'          => false,
-        );
-        $result = wp_remote_request( $url, $defaults );
-        header( 'Content-Type: text/plain; charset=utf-8' );
-        if ( is_wp_error( $result ) ) {
-            var_dump( $result->get_error_message() );
-            exit;
-        }
-        echo "HTTP CODE: " . $result['response']['code'] . "\n\n";
-        echo substr( $result['body'], 0, 50000 );
-        // début du HTML
-        exit;
-    }
-} );

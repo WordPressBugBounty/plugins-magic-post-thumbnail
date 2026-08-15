@@ -1,0 +1,3208 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MPT\n"
+"POT-Creation-Date: 2026-08-14 12:00+0200\n"
+"PO-Revision-Date: 2026-08-14 12:00+0200\n"
+"Last-Translator: \n"
+"Language-Team: contact@magic-post-thumbnail.com\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin/blocks/mpt-images/index.js:39
+msgid "Search for Images"
+msgstr "Cerca immagini"
+
+#: admin/blocks/mpt-images/index.js:40
+msgid "Close the window"
+msgstr "Chiudi la finestra"
+
+#: admin/blocks/mpt-images/index.js:41
+msgid "Image is downloading to media, please wait a few seconds."
+msgstr "L'immagine è in download nella libreria media, attendi qualche secondo."
+
+#: admin/blocks/mpt-images/index.js:42
+msgid "Search"
+msgstr "Cerca"
+
+#: admin/blocks/mpt-images/index.js:267
+msgid "Available in the Pro version only."
+msgstr "Disponibile solo nella versione Pro."
+
+#: admin/blocks/mpt-images/index.js:320
+msgid ""
+"No results were found for your search. There may be an API issue with your credentials. Please check your credentials on the "
+msgstr ""
+"Nessun risultato trovato per la ricerca. Potrebbe esserci un problema API con le credenziali. Controlla le credenziali nella "
+
+#: admin/blocks/mpt-images/index.js:324
+msgid "settings page"
+msgstr "pagina delle impostazioni"
+
+#: admin/blocks/mpt-images/index.js:358
+msgid "No results found for your search."
+msgstr "Nessun risultato trovato per la ricerca."
+
+#: admin/blocks/mpt-images/index.js:386
+msgid "Set as featured image"
+msgstr "Imposta come immagine in evidenza"
+
+#: admin/blocks/mpt-images/index.js:390
+msgid "Use this image"
+msgstr "Usa questa immagine"
+
+#: admin/blocks/mpt-images/index.js:410
+msgid "PRO VERSION OF MAGIC POST THUMBNAIL"
+msgstr "VERSIONE PRO DI MAGIC POST THUMBNAIL"
+
+#: admin/blocks/mpt-images/index.js:411
+msgid "UNLOCK MORE IMAGES WITH THE PRO VERSION"
+msgstr "SBLOCCA PIÙ IMMAGINI CON LA VERSIONE PRO"
+
+#: admin/class-magic-post-thumbnail-admin.php:355
+msgid "Your API key works!"
+msgstr "La tua chiave API funziona!"
+
+#: admin/class-magic-post-thumbnail-admin.php:356
+msgid "Your API key doesn't work."
+msgstr "La tua chiave API non funziona."
+
+#: admin/class-magic-post-thumbnail-admin.php:357
+msgid "An error has occurred with the remote API."
+msgstr "Si è verificato un errore con l'API remota."
+
+#: admin/class-magic-post-thumbnail-admin.php:365
+msgid "Successful generation !!"
+msgstr "Generazione riuscita !!"
+
+#: admin/class-magic-post-thumbnail-admin.php:366
+msgid "Error with images generation"
+msgstr "Errore nella generazione delle immagini"
+
+#: admin/class-magic-post-thumbnail-admin.php:367
+msgid "Error with the plugin"
+msgstr "Errore del plugin"
+
+#: admin/class-magic-post-thumbnail-admin.php:368
+msgid "Search Terms"
+msgstr "Termini di ricerca"
+
+#: admin/class-magic-post-thumbnail-admin.php:369
+msgid "Image Resolution"
+msgstr "Risoluzione dell'immagine"
+
+#: admin/class-magic-post-thumbnail-admin.php:370
+msgid "Image Size"
+msgstr "Dimensione dell'immagine"
+
+#: admin/class-magic-post-thumbnail-admin.php:371
+msgid "Image Bank"
+msgstr "Banca immagini"
+
+#: admin/class-magic-post-thumbnail-admin.php:484 admin/partials/sidebar.php:49
+msgid "Generation"
+msgstr "Generazione"
+
+#: admin/class-magic-post-thumbnail-admin.php:485
+msgid "Generate Automatically"
+msgstr "Genera automaticamente"
+
+#: admin/class-magic-post-thumbnail-admin.php:486
+#: admin/partials/tabs/bulk_generation.php:93
+msgid "AI image generation may take 10 to 60 seconds. Please be patient"
+msgstr "La generazione di immagini IA può richiedere da 10 a 60 secondi. Attendere prego"
+
+#: admin/class-magic-post-thumbnail-admin.php:487
+msgid "Generate Manually"
+msgstr "Genera manualmente"
+
+#: admin/class-magic-post-thumbnail-admin.php:488
+msgid "Edit your overwrite settings if you want a new image"
+msgstr "Modifica le impostazioni di sovrascrittura se vuoi una nuova immagine"
+
+#: admin/class-magic-post-thumbnail-admin.php:505
+msgid "Only available with the pro version."
+msgstr "Disponibile solo nella versione Pro."
+
+#: admin/class-magic-post-thumbnail-admin.php:506
+msgid ""
+"The free version allows one block generation. Multiple blocks are available with the Pro version."
+msgstr ""
+"La versione gratuita consente la generazione di un solo blocco. Più blocchi sono disponibili nella versione Pro."
+
+#: admin/class-magic-post-thumbnail-admin.php:507
+msgid "Only one featured image per post is possible"
+msgstr "È possibile una sola immagine in evidenza per articolo"
+
+#: admin/class-magic-post-thumbnail-admin.php:508
+msgid "Are you sure to delete all logs ?"
+msgstr "Sei sicuro di voler eliminare tutti i log?"
+
+#: admin/class-magic-post-thumbnail-admin.php:509
+msgid "No interval"
+msgstr "Nessun intervallo"
+
+#: admin/class-magic-post-thumbnail-admin.php:510
+msgid "per minute"
+msgstr "al minuto"
+
+#: admin/class-magic-post-thumbnail-admin.php:511
+msgid "per hour"
+msgstr "all'ora"
+
+#: admin/class-magic-post-thumbnail-admin.php:514
+msgid ""
+"Thank you! We'd be thrilled if you could rate us 5 stars on WordPress.org. Your positive feedback will help others find and benefit from Magic Post Thumbnail!"
+msgstr ""
+"Grazie! Saremmo felici se ci dessi 5 stelle su WordPress.org. Il tuo feedback positivo aiuterà gli altri a scoprire Magic Post Thumbnail!"
+
+#: admin/class-magic-post-thumbnail-admin.php:516
+msgid "Yes, I'll rate it with 5-stars"
+msgstr "Sì, lo valuterò con 5 stelle"
+
+#: admin/class-magic-post-thumbnail-admin.php:517
+msgid "No, maybe later"
+msgstr "No, forse più tardi"
+
+#: admin/class-magic-post-thumbnail-admin.php:518
+msgid "I've already done it"
+msgstr "L'ho già fatto"
+
+#: admin/class-magic-post-thumbnail-admin.php:578
+msgid "Magic Post Thumbnail Options"
+msgstr "Opzioni di Magic Post Thumbnail"
+
+#: admin/class-magic-post-thumbnail-admin.php:589
+#: admin/class-magic-post-thumbnail-admin.php:590
+#: admin/partials/magic-post-thumbnail-admin-display.php:91
+#: admin/partials/sidebar.php:21
+msgid "Dashboard"
+msgstr "Bacheca"
+
+#: admin/class-magic-post-thumbnail-admin.php:598
+#: admin/class-magic-post-thumbnail-admin.php:599 admin/partials/sidebar.php:27
+#: admin/partials/tabs/automatic/alteration.php:67
+#: admin/partials/tabs/banks/cc_search.php:23
+msgid "Source"
+msgstr "Sorgente"
+
+#: admin/class-magic-post-thumbnail-admin.php:607
+msgid "Automatic Settings"
+msgstr "Impostazioni automatiche"
+
+#: admin/class-magic-post-thumbnail-admin.php:608
+#: admin/class-magic-post-thumbnail-admin.php:1846
+#: admin/partials/sidebar.php:24
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: admin/class-magic-post-thumbnail-admin.php:701
+msgid "You do not have sufficient permissions."
+msgstr "Non hai autorizzazioni sufficienti."
+
+#: admin/class-magic-post-thumbnail-admin.php:758
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Non hai autorizzazioni sufficienti per accedere a questa pagina."
+
+#: admin/class-magic-post-thumbnail-admin.php:842
+msgid "Google Image (Scraping)"
+msgstr "Google Image (scraping)"
+
+#: admin/class-magic-post-thumbnail-admin.php:843
+msgid "Google Image (API)"
+msgstr "Google Image (API)"
+
+#: admin/class-magic-post-thumbnail-admin.php:844
+msgid "DALL·E (v3)"
+msgstr "DALL·E (v3)"
+
+#: admin/class-magic-post-thumbnail-admin.php:845
+#: admin/partials/tabs/source.php:25
+msgid "Openverse"
+msgstr "Openverse"
+
+#: admin/class-magic-post-thumbnail-admin.php:846
+#: admin/partials/tabs/source.php:26
+msgid "Flickr"
+msgstr "Flickr"
+
+#: admin/class-magic-post-thumbnail-admin.php:847
+#: admin/partials/tabs/source.php:27
+msgid "Pixabay"
+msgstr "Pixabay"
+
+#: admin/class-magic-post-thumbnail-admin.php:848
+#: admin/class-magic-post-thumbnail-admin.php:858
+#: admin/partials/tabs/source.php:28 admin/partials/tabs/source.php:38
+msgid "Youtube"
+msgstr "Youtube"
+
+#: admin/class-magic-post-thumbnail-admin.php:849
+#: admin/class-magic-post-thumbnail-admin.php:859
+#: admin/partials/tabs/source.php:29 admin/partials/tabs/source.php:39
+msgid "Unsplash"
+msgstr "Unsplash"
+
+#: admin/class-magic-post-thumbnail-admin.php:850
+#: admin/class-magic-post-thumbnail-admin.php:860
+#: admin/partials/tabs/source.php:30 admin/partials/tabs/source.php:40
+msgid "Pexels"
+msgstr "Pexels"
+
+#: admin/class-magic-post-thumbnail-admin.php:851
+#: admin/class-magic-post-thumbnail-admin.php:861
+#: admin/partials/tabs/source.php:31 admin/partials/tabs/source.php:41
+msgid "Envato Elements"
+msgstr "Envato Elements"
+
+#: admin/class-magic-post-thumbnail-admin.php:852
+#: admin/class-magic-post-thumbnail-admin.php:862
+msgid "Stable Diffusion"
+msgstr "Stable Diffusion"
+
+#: admin/class-magic-post-thumbnail-admin.php:1426
+msgid "Generate featured images"
+msgstr "Genera immagini in evidenza"
+
+#: admin/class-magic-post-thumbnail-admin.php:1455
+msgid "Generate Images (MPT)"
+msgstr "Genera immagini (MPT)"
+
+#: admin/class-magic-post-thumbnail-admin.php:1871
+msgid ""
+"Do you enjoy using Magic Post Thumbnail? If so, please consider giving it a 5-star rating on WordPress.org. Your support helps others discover our plugin and means a lot to us!"
+msgstr ""
+"Ti piace Magic Post Thumbnail? Se sì, considera di lasciarci 5 stelle su WordPress.org. Il tuo supporto aiuta gli altri a scoprire il plugin e significa molto per noi!"
+
+#: admin/class-magic-post-thumbnail-admin.php:1873
+msgid "Sure!"
+msgstr "Certo!"
+
+#: admin/class-magic-post-thumbnail-admin.php:1874
+msgid "No, thanks"
+msgstr "No, grazie"
+
+#: admin/class-magic-post-thumbnail-generation.php:1935
+msgid " from "
+msgstr " da "
+
+#: admin/inc/crons.php:65
+msgid "Magic Post Thumbnail Pro - Cron"
+msgstr "Magic Post Thumbnail Pro - Cron"
+
+#: admin/partials/footer.php:22
+msgid "Website"
+msgstr "Sito web"
+
+#: admin/partials/footer.php:23 admin/partials/tabs/dashboard.php:268
+msgid "Documentation"
+msgstr "Documentazione"
+
+#: admin/partials/footer.php:24 admin/partials/tabs/dashboard.php:201
+msgid "Support Forum"
+msgstr "Forum di supporto"
+
+#: admin/partials/footer.php:25 admin/partials/tabs/dashboard.php:237
+msgid "Contact Us"
+msgstr "Contattaci"
+
+#: admin/partials/footer.php:26
+msgid "Leave a review"
+msgstr "Lascia una recensione"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:26
+msgid "Settings [Posts]"
+msgstr "Impostazioni [Articoli]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:30
+msgid "Settings [Block]"
+msgstr "Impostazioni [Blocco]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:34
+msgid "Settings [Images]"
+msgstr "Impostazioni [Immagini]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:38
+msgid "Settings [Automatic]"
+msgstr "Impostazioni [Automatico]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:42
+msgid "Settings [Source]"
+msgstr "Impostazioni [Sorgente]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:46
+msgid "Settings [Interval]"
+msgstr "Impostazioni [Intervallo]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:50
+msgid "Pro [Cron]"
+msgstr "Pro [Cron]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:54
+msgid "Settings [Proxy]"
+msgstr "Impostazioni [Proxy]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:58
+msgid "Miscellaneous [Affiliation]"
+msgstr "Varie [Affiliazione]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:62
+msgid "Miscellaneous [Compatibility]"
+msgstr "Varie [Compatibilità]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:66
+msgid "Miscellaneous [Rights]"
+msgstr "Varie [Diritti]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:70
+msgid "Miscellaneous [Logs]"
+msgstr "Varie [Log]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:74
+#: admin/partials/sidebar.php:63
+msgid "Bulk Generation"
+msgstr "Generazione in blocco"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:78
+msgid "Bulk Generation with interval"
+msgstr "Generazione in blocco con intervallo"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:82
+msgid "Account"
+msgstr "Account"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:87
+msgid "Contact"
+msgstr "Contatto"
+
+#: admin/partials/sidebar.php:28 admin/partials/tabs/source.php:68
+msgid "Automatic"
+msgstr "Automatico"
+
+#: admin/partials/sidebar.php:29 admin/partials/tabs/source.php:118
+msgid "Gutenberg Block"
+msgstr "Blocco Gutenberg"
+
+#: admin/partials/sidebar.php:32 admin/partials/tabs/dashboard.php:12
+msgid "Pro"
+msgstr "Pro"
+
+#: admin/partials/sidebar.php:35
+msgid "Compatibility"
+msgstr "Compatibilità"
+
+#: admin/partials/sidebar.php:36
+msgid "Cron"
+msgstr "Cron"
+
+#: admin/partials/sidebar.php:37
+msgid "Proxy"
+msgstr "Proxy"
+
+#: admin/partials/sidebar.php:40
+msgid "Miscellaneous"
+msgstr "Varie"
+
+#: admin/partials/sidebar.php:43 admin/partials/tabs/banks/cc_search.php:48
+#: admin/partials/tabs/banks/flickr.php:15
+#: admin/partials/tabs/banks/google_image.php:223
+#: admin/partials/tabs/banks/google_scraping.php:160
+msgid "Rights"
+msgstr "Diritti"
+
+#: admin/partials/sidebar.php:44
+msgid "Affiliation"
+msgstr "Affiliazione"
+
+#: admin/partials/sidebar.php:45
+msgid "Upgrade"
+msgstr "Aggiorna"
+
+#: admin/partials/sidebar.php:46
+msgid "Logs"
+msgstr "Log"
+
+#: admin/partials/tabs/automatic.php:85
+msgid "Image Placement"
+msgstr "Posizionamento dell'immagine"
+
+#: admin/partials/tabs/automatic.php:90
+msgid "Post-Processing Image"
+msgstr "Post-elaborazione dell'immagine"
+
+#: admin/partials/tabs/automatic.php:95
+msgid "Pre-Processing & Developer"
+msgstr "Pre-elaborazione e sviluppatore"
+
+#: admin/partials/tabs/automatic/alteration.php:10
+msgid "Image Naming Convention"
+msgstr "Convenzione di denominazione delle immagini"
+
+#: admin/partials/tabs/automatic/alteration.php:13
+#: admin/partials/tabs/automatic/basedon.php:17
+#: admin/partials/tabs/automatic/basedon.php:156
+#: admin/partials/tabs/automatic/places_template.php:169
+#: admin/partials/tabs/automatic/places_template.php:305
+#: admin/partials/tabs/bulk_generation.php:101
+msgid "Title"
+msgstr "Titolo"
+
+#: admin/partials/tabs/automatic/alteration.php:14
+msgid "Date"
+msgstr "Data"
+
+#: admin/partials/tabs/automatic/alteration.php:15
+msgid "Random number"
+msgstr "Numero casuale"
+
+#: admin/partials/tabs/automatic/alteration.php:21
+msgid "Overwrite featured images"
+msgstr "Sovrascrivi le immagini in evidenza"
+
+#: admin/partials/tabs/automatic/alteration.php:24
+msgid "Overwrite"
+msgstr "Sovrascrivi"
+
+#: admin/partials/tabs/automatic/alteration.php:26
+msgid "Warning: This option will overwrite existing featured images"
+msgstr "Attenzione: questa opzione sovrascriverà le immagini in evidenza esistenti"
+
+#: admin/partials/tabs/automatic/alteration.php:33
+msgid "Image Modifications"
+msgstr "Modifiche dell'immagine"
+
+#: admin/partials/tabs/automatic/alteration.php:36
+msgid "Flip horizontally"
+msgstr "Capovolgi orizzontalmente"
+
+#: admin/partials/tabs/automatic/alteration.php:37
+msgid "Crop Image by 10%\t"
+msgstr "Ritaglia l'immagine del 10%\t"
+
+#: admin/partials/tabs/automatic/alteration.php:51
+#: admin/partials/tabs/automatic/alteration.php:200
+msgid "Add ALT Attribute to Image"
+msgstr "Aggiungi attributo ALT all'immagine"
+
+#: admin/partials/tabs/automatic/alteration.php:62
+msgid "Alt Text from"
+msgstr "Testo ALT da"
+
+#: admin/partials/tabs/automatic/alteration.php:71
+msgid "Text \"based_on\""
+msgstr "Testo \"based_on\""
+
+#: admin/partials/tabs/automatic/alteration.php:87
+msgid "ALT Text Translation"
+msgstr "Traduzione del testo ALT"
+
+#: admin/partials/tabs/automatic/alteration.php:92
+#: admin/partials/tabs/block.php:67
+msgid "Translate alt text from english to"
+msgstr "Traduci il testo ALT dall'inglese a"
+
+#: admin/partials/tabs/automatic/alteration.php:99
+#: admin/partials/tabs/automatic/alteration.php:100
+#: admin/partials/tabs/banks/google_image.php:55
+#: admin/partials/tabs/banks/google_image.php:56
+#: admin/partials/tabs/banks/google_scraping.php:24
+#: admin/partials/tabs/banks/google_scraping.php:25
+#: admin/partials/tabs/block.php:74 admin/partials/tabs/block.php:75
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+#: admin/partials/tabs/automatic/alteration.php:101
+#: admin/partials/tabs/banks/google_image.php:57
+#: admin/partials/tabs/banks/google_scraping.php:26
+#: admin/partials/tabs/block.php:76
+msgid "Albanian"
+msgstr "Albanese"
+
+#: admin/partials/tabs/automatic/alteration.php:102
+#: admin/partials/tabs/banks/google_image.php:58
+#: admin/partials/tabs/banks/google_scraping.php:27
+#: admin/partials/tabs/block.php:77
+msgid "Amharic"
+msgstr "Amarico"
+
+#: admin/partials/tabs/automatic/alteration.php:103
+#: admin/partials/tabs/automatic/basedon.php:182
+#: admin/partials/tabs/automatic/places_template.php:326
+#: admin/partials/tabs/banks/google_image.php:59
+#: admin/partials/tabs/banks/google_scraping.php:28
+#: admin/partials/tabs/block.php:78
+msgid "Arabic"
+msgstr "Arabo"
+
+#: admin/partials/tabs/automatic/alteration.php:104
+#: admin/partials/tabs/banks/google_image.php:60
+#: admin/partials/tabs/banks/google_scraping.php:29
+#: admin/partials/tabs/block.php:79
+msgid "Azerbaijani"
+msgstr "Azero"
+
+#: admin/partials/tabs/automatic/alteration.php:105
+#: admin/partials/tabs/banks/google_image.php:61
+#: admin/partials/tabs/banks/google_scraping.php:30
+#: admin/partials/tabs/block.php:80
+msgid "Basque"
+msgstr "Basco"
+
+#: admin/partials/tabs/automatic/alteration.php:106
+#: admin/partials/tabs/banks/google_image.php:62
+#: admin/partials/tabs/banks/google_scraping.php:31
+#: admin/partials/tabs/block.php:81
+msgid "Belarusian"
+msgstr "Bielorusso"
+
+#: admin/partials/tabs/automatic/alteration.php:107
+#: admin/partials/tabs/banks/google_image.php:63
+#: admin/partials/tabs/banks/google_scraping.php:32
+#: admin/partials/tabs/block.php:82
+msgid "Bengali"
+msgstr "Bengalese"
+
+#: admin/partials/tabs/automatic/alteration.php:108
+#: admin/partials/tabs/banks/google_image.php:64
+#: admin/partials/tabs/banks/google_scraping.php:33
+#: admin/partials/tabs/block.php:83
+msgid "Bihari"
+msgstr "Bihari"
+
+#: admin/partials/tabs/automatic/alteration.php:109
+#: admin/partials/tabs/banks/google_image.php:65
+#: admin/partials/tabs/banks/google_scraping.php:34
+#: admin/partials/tabs/block.php:84
+msgid "Bosnian"
+msgstr "Bosniaco"
+
+#: admin/partials/tabs/automatic/alteration.php:110
+#: admin/partials/tabs/automatic/basedon.php:183
+#: admin/partials/tabs/automatic/places_template.php:327
+#: admin/partials/tabs/banks/google_image.php:66
+#: admin/partials/tabs/banks/google_scraping.php:35
+#: admin/partials/tabs/banks/pixabay.php:110
+#: admin/partials/tabs/banks/unsplash.php:73 admin/partials/tabs/block.php:85
+msgid "Bulgarian"
+msgstr "Bulgaro"
+
+#: admin/partials/tabs/automatic/alteration.php:111
+#: admin/partials/tabs/banks/google_image.php:67
+#: admin/partials/tabs/banks/google_scraping.php:36
+#: admin/partials/tabs/banks/pexels.php:57 admin/partials/tabs/block.php:86
+msgid "Catalan"
+msgstr "Catalano"
+
+#: admin/partials/tabs/automatic/alteration.php:112
+#: admin/partials/tabs/banks/google_image.php:68
+#: admin/partials/tabs/banks/google_scraping.php:37
+#: admin/partials/tabs/block.php:87
+msgid "Chinese (Simplified)"
+msgstr "Cinese (semplificato)"
+
+#: admin/partials/tabs/automatic/alteration.php:113
+#: admin/partials/tabs/banks/google_image.php:69
+#: admin/partials/tabs/banks/google_scraping.php:38
+#: admin/partials/tabs/block.php:88
+msgid "Chinese (Traditional)"
+msgstr "Cinese (tradizionale)"
+
+#: admin/partials/tabs/automatic/alteration.php:114
+#: admin/partials/tabs/automatic/basedon.php:196
+#: admin/partials/tabs/automatic/places_template.php:340
+#: admin/partials/tabs/banks/google_image.php:70
+#: admin/partials/tabs/banks/google_scraping.php:39
+#: admin/partials/tabs/block.php:89
+msgid "Croatian"
+msgstr "Croato"
+
+#: admin/partials/tabs/automatic/alteration.php:115
+#: admin/partials/tabs/automatic/basedon.php:184
+#: admin/partials/tabs/automatic/places_template.php:328
+#: admin/partials/tabs/banks/google_image.php:71
+#: admin/partials/tabs/banks/google_scraping.php:40
+#: admin/partials/tabs/banks/pexels.php:52
+#: admin/partials/tabs/banks/pixabay.php:90
+#: admin/partials/tabs/banks/unsplash.php:53 admin/partials/tabs/block.php:90
+msgid "Czech"
+msgstr "Ceco"
+
+#: admin/partials/tabs/automatic/alteration.php:116
+#: admin/partials/tabs/automatic/basedon.php:185
+#: admin/partials/tabs/automatic/places_template.php:329
+#: admin/partials/tabs/banks/google_image.php:72
+#: admin/partials/tabs/banks/google_scraping.php:41
+#: admin/partials/tabs/banks/pexels.php:53
+#: admin/partials/tabs/banks/pixabay.php:91
+#: admin/partials/tabs/banks/unsplash.php:54 admin/partials/tabs/block.php:91
+msgid "Danish"
+msgstr "Danese"
+
+#: admin/partials/tabs/automatic/alteration.php:117
+#: admin/partials/tabs/automatic/basedon.php:205
+#: admin/partials/tabs/automatic/places_template.php:349
+#: admin/partials/tabs/banks/google_image.php:73
+#: admin/partials/tabs/banks/google_scraping.php:42
+#: admin/partials/tabs/banks/pexels.php:62
+#: admin/partials/tabs/banks/pixabay.php:99
+#: admin/partials/tabs/banks/unsplash.php:62 admin/partials/tabs/block.php:92
+msgid "Dutch"
+msgstr "Olandese"
+
+#: admin/partials/tabs/automatic/alteration.php:118
+#: admin/partials/tabs/banks/google_image.php:75
+#: admin/partials/tabs/banks/google_scraping.php:44
+#: admin/partials/tabs/block.php:93
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: admin/partials/tabs/automatic/alteration.php:119
+#: admin/partials/tabs/automatic/basedon.php:190
+#: admin/partials/tabs/automatic/places_template.php:334
+#: admin/partials/tabs/banks/google_image.php:76
+#: admin/partials/tabs/banks/google_scraping.php:45
+#: admin/partials/tabs/block.php:94
+msgid "Estonian"
+msgstr "Estone"
+
+#: admin/partials/tabs/automatic/alteration.php:120
+#: admin/partials/tabs/banks/google_image.php:77
+#: admin/partials/tabs/banks/google_scraping.php:46
+#: admin/partials/tabs/block.php:95
+msgid "Faroese"
+msgstr "Faroese"
+
+#: admin/partials/tabs/automatic/alteration.php:121
+#: admin/partials/tabs/automatic/basedon.php:192
+#: admin/partials/tabs/automatic/places_template.php:336
+#: admin/partials/tabs/banks/google_image.php:78
+#: admin/partials/tabs/banks/google_scraping.php:47
+#: admin/partials/tabs/banks/pexels.php:68
+#: admin/partials/tabs/banks/pixabay.php:105
+#: admin/partials/tabs/banks/unsplash.php:68 admin/partials/tabs/block.php:96
+msgid "Finnish"
+msgstr "Finlandese"
+
+#: admin/partials/tabs/automatic/alteration.php:122
+#: admin/partials/tabs/automatic/basedon.php:193
+#: admin/partials/tabs/automatic/places_template.php:337
+#: admin/partials/tabs/banks/google_image.php:79
+#: admin/partials/tabs/banks/google_scraping.php:48
+#: admin/partials/tabs/banks/pexels.php:58
+#: admin/partials/tabs/banks/pixabay.php:95
+#: admin/partials/tabs/banks/unsplash.php:58 admin/partials/tabs/block.php:97
+msgid "French"
+msgstr "Francese"
+
+#: admin/partials/tabs/automatic/alteration.php:123
+#: admin/partials/tabs/banks/google_image.php:80
+#: admin/partials/tabs/banks/google_scraping.php:49
+#: admin/partials/tabs/block.php:98
+msgid "Frisian"
+msgstr "Frisone"
+
+#: admin/partials/tabs/automatic/alteration.php:124
+#: admin/partials/tabs/banks/google_image.php:81
+#: admin/partials/tabs/banks/google_scraping.php:50
+#: admin/partials/tabs/block.php:99
+msgid "Galician"
+msgstr "Galiziano"
+
+#: admin/partials/tabs/automatic/alteration.php:125
+#: admin/partials/tabs/banks/google_image.php:82
+#: admin/partials/tabs/banks/google_scraping.php:51
+#: admin/partials/tabs/block.php:100
+msgid "Georgian"
+msgstr "Georgiano"
+
+#: admin/partials/tabs/automatic/alteration.php:126
+#: admin/partials/tabs/automatic/basedon.php:186
+#: admin/partials/tabs/automatic/places_template.php:330
+#: admin/partials/tabs/banks/google_image.php:83
+#: admin/partials/tabs/banks/google_scraping.php:52
+#: admin/partials/tabs/banks/pexels.php:54
+#: admin/partials/tabs/banks/pixabay.php:92
+#: admin/partials/tabs/banks/unsplash.php:55 admin/partials/tabs/block.php:101
+msgid "German"
+msgstr "Tedesco"
+
+#: admin/partials/tabs/automatic/alteration.php:127
+#: admin/partials/tabs/automatic/basedon.php:187
+#: admin/partials/tabs/automatic/places_template.php:331
+#: admin/partials/tabs/banks/google_image.php:84
+#: admin/partials/tabs/banks/google_scraping.php:53
+#: admin/partials/tabs/banks/pexels.php:75
+#: admin/partials/tabs/banks/pixabay.php:112
+#: admin/partials/tabs/banks/unsplash.php:75 admin/partials/tabs/block.php:102
+msgid "Greek"
+msgstr "Greco"
+
+#: admin/partials/tabs/automatic/alteration.php:128
+#: admin/partials/tabs/banks/google_image.php:85
+#: admin/partials/tabs/banks/google_scraping.php:54
+#: admin/partials/tabs/block.php:103
+msgid "Gujarati"
+msgstr "Gujarati"
+
+#: admin/partials/tabs/automatic/alteration.php:129
+#: admin/partials/tabs/automatic/basedon.php:194
+#: admin/partials/tabs/automatic/places_template.php:338
+#: admin/partials/tabs/banks/google_image.php:86
+#: admin/partials/tabs/banks/google_scraping.php:55
+#: admin/partials/tabs/block.php:104
+msgid "Hebrew"
+msgstr "Ebraico"
+
+#: admin/partials/tabs/automatic/alteration.php:130
+#: admin/partials/tabs/automatic/basedon.php:195
+#: admin/partials/tabs/automatic/places_template.php:339
+#: admin/partials/tabs/banks/google_image.php:87
+#: admin/partials/tabs/banks/google_scraping.php:56
+#: admin/partials/tabs/block.php:105
+msgid "Hindi"
+msgstr "Hindi"
+
+#: admin/partials/tabs/automatic/alteration.php:131
+#: admin/partials/tabs/automatic/basedon.php:197
+#: admin/partials/tabs/automatic/places_template.php:341
+#: admin/partials/tabs/banks/google_image.php:88
+#: admin/partials/tabs/banks/google_scraping.php:57
+#: admin/partials/tabs/banks/pexels.php:61
+#: admin/partials/tabs/banks/pixabay.php:98
+#: admin/partials/tabs/banks/unsplash.php:61 admin/partials/tabs/block.php:106
+msgid "Hungarian"
+msgstr "Ungherese"
+
+#: admin/partials/tabs/automatic/alteration.php:132
+#: admin/partials/tabs/banks/google_image.php:89
+#: admin/partials/tabs/banks/google_scraping.php:58
+#: admin/partials/tabs/block.php:107
+msgid "Icelandic"
+msgstr "Islandese"
+
+#: admin/partials/tabs/automatic/alteration.php:133
+#: admin/partials/tabs/automatic/basedon.php:199
+#: admin/partials/tabs/automatic/places_template.php:343
+#: admin/partials/tabs/banks/google_image.php:90
+#: admin/partials/tabs/banks/google_scraping.php:59
+#: admin/partials/tabs/banks/pexels.php:59
+#: admin/partials/tabs/banks/pixabay.php:96
+#: admin/partials/tabs/banks/unsplash.php:59 admin/partials/tabs/block.php:108
+msgid "Indonesian"
+msgstr "Indonesiano"
+
+#: admin/partials/tabs/automatic/alteration.php:134
+#: admin/partials/tabs/banks/google_image.php:91
+#: admin/partials/tabs/banks/google_scraping.php:60
+#: admin/partials/tabs/block.php:109
+msgid "Interlingua"
+msgstr "Interlingua"
+
+#: admin/partials/tabs/automatic/alteration.php:135
+#: admin/partials/tabs/banks/google_image.php:92
+#: admin/partials/tabs/banks/google_scraping.php:61
+#: admin/partials/tabs/block.php:110
+msgid "Irish"
+msgstr "Irlandese"
+
+#: admin/partials/tabs/automatic/alteration.php:136
+#: admin/partials/tabs/automatic/basedon.php:200
+#: admin/partials/tabs/automatic/places_template.php:344
+#: admin/partials/tabs/banks/google_image.php:93
+#: admin/partials/tabs/banks/google_scraping.php:62
+#: admin/partials/tabs/banks/pexels.php:60
+#: admin/partials/tabs/banks/pixabay.php:97
+#: admin/partials/tabs/banks/unsplash.php:60 admin/partials/tabs/block.php:111
+msgid "Italian"
+msgstr "Italiano"
+
+#: admin/partials/tabs/automatic/alteration.php:137
+#: admin/partials/tabs/automatic/basedon.php:201
+#: admin/partials/tabs/automatic/places_template.php:345
+#: admin/partials/tabs/banks/google_image.php:94
+#: admin/partials/tabs/banks/google_scraping.php:63
+#: admin/partials/tabs/banks/pexels.php:76
+#: admin/partials/tabs/banks/pixabay.php:113
+#: admin/partials/tabs/banks/unsplash.php:76 admin/partials/tabs/block.php:112
+msgid "Japanese"
+msgstr "Giapponese"
+
+#: admin/partials/tabs/automatic/alteration.php:138
+#: admin/partials/tabs/banks/google_image.php:95
+#: admin/partials/tabs/banks/google_scraping.php:64
+#: admin/partials/tabs/block.php:113
+msgid "Javanese"
+msgstr "Giavanese"
+
+#: admin/partials/tabs/automatic/alteration.php:139
+#: admin/partials/tabs/banks/google_image.php:96
+#: admin/partials/tabs/banks/google_scraping.php:65
+#: admin/partials/tabs/block.php:114
+msgid "Kannada"
+msgstr "Kannada"
+
+#: admin/partials/tabs/automatic/alteration.php:140
+#: admin/partials/tabs/automatic/basedon.php:202
+#: admin/partials/tabs/automatic/places_template.php:346
+#: admin/partials/tabs/banks/google_image.php:97
+#: admin/partials/tabs/banks/google_scraping.php:66
+#: admin/partials/tabs/banks/pexels.php:77
+#: admin/partials/tabs/banks/pixabay.php:114
+#: admin/partials/tabs/banks/unsplash.php:77 admin/partials/tabs/block.php:115
+msgid "Korean"
+msgstr "Coreano"
+
+#: admin/partials/tabs/automatic/alteration.php:141
+#: admin/partials/tabs/banks/google_image.php:98
+#: admin/partials/tabs/banks/google_scraping.php:67
+#: admin/partials/tabs/block.php:116
+msgid "Latin"
+msgstr "Latino"
+
+#: admin/partials/tabs/automatic/alteration.php:142
+#: admin/partials/tabs/automatic/basedon.php:204
+#: admin/partials/tabs/automatic/places_template.php:348
+#: admin/partials/tabs/banks/google_image.php:99
+#: admin/partials/tabs/banks/google_scraping.php:68
+#: admin/partials/tabs/block.php:117
+msgid "Latvian"
+msgstr "Lettone"
+
+#: admin/partials/tabs/automatic/alteration.php:143
+#: admin/partials/tabs/automatic/basedon.php:203
+#: admin/partials/tabs/automatic/places_template.php:347
+#: admin/partials/tabs/banks/google_image.php:100
+#: admin/partials/tabs/banks/google_scraping.php:69
+#: admin/partials/tabs/block.php:118
+msgid "Lithuanian"
+msgstr "Lituano"
+
+#: admin/partials/tabs/automatic/alteration.php:144
+#: admin/partials/tabs/banks/google_image.php:101
+#: admin/partials/tabs/banks/google_scraping.php:70
+#: admin/partials/tabs/block.php:119
+msgid "Macedonian"
+msgstr "Macedone"
+
+#: admin/partials/tabs/automatic/alteration.php:145
+#: admin/partials/tabs/banks/google_image.php:102
+#: admin/partials/tabs/banks/google_scraping.php:71
+#: admin/partials/tabs/block.php:120
+msgid "Malay"
+msgstr "Malese"
+
+#: admin/partials/tabs/automatic/alteration.php:146
+#: admin/partials/tabs/banks/google_image.php:103
+#: admin/partials/tabs/banks/google_scraping.php:72
+#: admin/partials/tabs/block.php:121
+msgid "Malayam"
+msgstr "Malayalam"
+
+#: admin/partials/tabs/automatic/alteration.php:147
+#: admin/partials/tabs/banks/google_image.php:104
+#: admin/partials/tabs/banks/google_scraping.php:73
+#: admin/partials/tabs/block.php:122
+msgid "Maltese"
+msgstr "Maltese"
+
+#: admin/partials/tabs/automatic/alteration.php:148
+#: admin/partials/tabs/banks/google_image.php:105
+#: admin/partials/tabs/banks/google_scraping.php:74
+#: admin/partials/tabs/block.php:123
+msgid "Marathi"
+msgstr "Marathi"
+
+#: admin/partials/tabs/automatic/alteration.php:149
+#: admin/partials/tabs/banks/google_image.php:106
+#: admin/partials/tabs/banks/google_scraping.php:75
+#: admin/partials/tabs/block.php:124
+msgid "Nepali"
+msgstr "Nepalese"
+
+#: admin/partials/tabs/automatic/alteration.php:150
+#: admin/partials/tabs/automatic/basedon.php:206
+#: admin/partials/tabs/automatic/places_template.php:350
+#: admin/partials/tabs/banks/google_image.php:107
+#: admin/partials/tabs/banks/google_scraping.php:76
+#: admin/partials/tabs/banks/pexels.php:63
+#: admin/partials/tabs/banks/pixabay.php:100
+#: admin/partials/tabs/banks/unsplash.php:63 admin/partials/tabs/block.php:125
+msgid "Norwegian"
+msgstr "Norvegese"
+
+#: admin/partials/tabs/automatic/alteration.php:151
+#: admin/partials/tabs/banks/google_image.php:108
+#: admin/partials/tabs/banks/google_scraping.php:77
+#: admin/partials/tabs/block.php:126
+msgid "Norwegian (Nynorsk)"
+msgstr "Norvegese (nynorsk)"
+
+#: admin/partials/tabs/automatic/alteration.php:152
+#: admin/partials/tabs/banks/google_image.php:109
+#: admin/partials/tabs/banks/google_scraping.php:78
+#: admin/partials/tabs/block.php:127
+msgid "Occitan"
+msgstr "Occitano"
+
+#: admin/partials/tabs/automatic/alteration.php:153
+#: admin/partials/tabs/automatic/basedon.php:191
+#: admin/partials/tabs/automatic/places_template.php:335
+#: admin/partials/tabs/banks/google_image.php:110
+#: admin/partials/tabs/banks/google_scraping.php:79
+#: admin/partials/tabs/block.php:128
+msgid "Persian"
+msgstr "Persiano"
+
+#: admin/partials/tabs/automatic/alteration.php:154
+#: admin/partials/tabs/automatic/basedon.php:207
+#: admin/partials/tabs/automatic/places_template.php:351
+#: admin/partials/tabs/banks/google_image.php:111
+#: admin/partials/tabs/banks/google_scraping.php:80
+#: admin/partials/tabs/banks/pexels.php:64
+#: admin/partials/tabs/banks/pixabay.php:101
+#: admin/partials/tabs/banks/unsplash.php:64 admin/partials/tabs/block.php:129
+msgid "Polish"
+msgstr "Polacco"
+
+#: admin/partials/tabs/automatic/alteration.php:155
+#: admin/partials/tabs/banks/google_image.php:112
+#: admin/partials/tabs/banks/google_scraping.php:81
+#: admin/partials/tabs/block.php:130
+msgid "Portuguese (Brazil)"
+msgstr "Portoghese (Brasile)"
+
+#: admin/partials/tabs/automatic/alteration.php:156
+#: admin/partials/tabs/banks/google_image.php:113
+#: admin/partials/tabs/banks/google_scraping.php:82
+#: admin/partials/tabs/block.php:131
+msgid "Portuguese (Portugal)"
+msgstr "Portoghese (Portogallo)"
+
+#: admin/partials/tabs/automatic/alteration.php:157
+#: admin/partials/tabs/banks/google_image.php:114
+#: admin/partials/tabs/banks/google_scraping.php:83
+#: admin/partials/tabs/block.php:132
+msgid "Punjabi"
+msgstr "Punjabi"
+
+#: admin/partials/tabs/automatic/alteration.php:158
+#: admin/partials/tabs/automatic/basedon.php:209
+#: admin/partials/tabs/automatic/places_template.php:353
+#: admin/partials/tabs/banks/google_image.php:115
+#: admin/partials/tabs/banks/google_scraping.php:84
+#: admin/partials/tabs/banks/pexels.php:66
+#: admin/partials/tabs/banks/pixabay.php:103
+#: admin/partials/tabs/banks/unsplash.php:66 admin/partials/tabs/block.php:133
+msgid "Romanian"
+msgstr "Rumeno"
+
+#: admin/partials/tabs/automatic/alteration.php:159
+#: admin/partials/tabs/automatic/basedon.php:210
+#: admin/partials/tabs/automatic/places_template.php:354
+#: admin/partials/tabs/banks/google_image.php:116
+#: admin/partials/tabs/banks/google_scraping.php:85
+#: admin/partials/tabs/banks/pexels.php:73
+#: admin/partials/tabs/banks/pixabay.php:111
+#: admin/partials/tabs/banks/unsplash.php:74 admin/partials/tabs/block.php:134
+msgid "Russian"
+msgstr "Russo"
+
+#: admin/partials/tabs/automatic/alteration.php:160
+#: admin/partials/tabs/banks/google_image.php:117
+#: admin/partials/tabs/banks/google_scraping.php:86
+#: admin/partials/tabs/block.php:135
+msgid "Scots Gaelic"
+msgstr "Gaelico scozzese"
+
+#: admin/partials/tabs/automatic/alteration.php:161
+#: admin/partials/tabs/banks/google_image.php:118
+#: admin/partials/tabs/banks/google_scraping.php:87
+#: admin/partials/tabs/block.php:136
+msgid "Serbian"
+msgstr "Serbo"
+
+#: admin/partials/tabs/automatic/alteration.php:162
+#: admin/partials/tabs/banks/google_image.php:119
+#: admin/partials/tabs/banks/google_scraping.php:88
+#: admin/partials/tabs/block.php:137
+msgid "Sinhalese"
+msgstr "Singalese"
+
+#: admin/partials/tabs/automatic/alteration.php:163
+#: admin/partials/tabs/automatic/basedon.php:211
+#: admin/partials/tabs/automatic/places_template.php:355
+#: admin/partials/tabs/banks/google_image.php:120
+#: admin/partials/tabs/banks/google_scraping.php:89
+#: admin/partials/tabs/banks/pexels.php:67
+#: admin/partials/tabs/banks/pixabay.php:104
+#: admin/partials/tabs/banks/unsplash.php:67 admin/partials/tabs/block.php:138
+msgid "Slovak"
+msgstr "Slovacco"
+
+#: admin/partials/tabs/automatic/alteration.php:164
+#: admin/partials/tabs/automatic/basedon.php:212
+#: admin/partials/tabs/automatic/places_template.php:356
+#: admin/partials/tabs/banks/google_image.php:121
+#: admin/partials/tabs/banks/google_scraping.php:90
+#: admin/partials/tabs/block.php:139
+msgid "Slovenian"
+msgstr "Sloveno"
+
+#: admin/partials/tabs/automatic/alteration.php:165
+#: admin/partials/tabs/automatic/basedon.php:189
+#: admin/partials/tabs/automatic/places_template.php:333
+#: admin/partials/tabs/banks/google_image.php:122
+#: admin/partials/tabs/banks/google_scraping.php:91
+#: admin/partials/tabs/banks/pexels.php:56
+#: admin/partials/tabs/banks/pixabay.php:94
+#: admin/partials/tabs/banks/unsplash.php:57 admin/partials/tabs/block.php:140
+msgid "Spanish"
+msgstr "Spagnolo"
+
+#: admin/partials/tabs/automatic/alteration.php:166
+#: admin/partials/tabs/banks/google_image.php:123
+#: admin/partials/tabs/banks/google_scraping.php:92
+#: admin/partials/tabs/block.php:141
+msgid "Sudanese"
+msgstr "Sudanese"
+
+#: admin/partials/tabs/automatic/alteration.php:167
+#: admin/partials/tabs/banks/google_image.php:124
+#: admin/partials/tabs/banks/google_scraping.php:93
+#: admin/partials/tabs/block.php:142
+msgid "Swahili"
+msgstr "Swahili"
+
+#: admin/partials/tabs/automatic/alteration.php:168
+#: admin/partials/tabs/automatic/basedon.php:213
+#: admin/partials/tabs/automatic/places_template.php:357
+#: admin/partials/tabs/banks/google_image.php:125
+#: admin/partials/tabs/banks/google_scraping.php:94
+#: admin/partials/tabs/banks/pexels.php:69
+#: admin/partials/tabs/banks/pixabay.php:106
+#: admin/partials/tabs/banks/unsplash.php:69 admin/partials/tabs/block.php:143
+msgid "Swedish"
+msgstr "Svedese"
+
+#: admin/partials/tabs/automatic/alteration.php:169
+#: admin/partials/tabs/banks/google_image.php:126
+#: admin/partials/tabs/banks/google_scraping.php:95
+#: admin/partials/tabs/block.php:144
+msgid "Tagalog"
+msgstr "Tagalog"
+
+#: admin/partials/tabs/automatic/alteration.php:170
+#: admin/partials/tabs/banks/google_image.php:127
+#: admin/partials/tabs/banks/google_scraping.php:96
+#: admin/partials/tabs/block.php:145
+msgid "Tamil"
+msgstr "Tamil"
+
+#: admin/partials/tabs/automatic/alteration.php:171
+#: admin/partials/tabs/banks/google_image.php:128
+#: admin/partials/tabs/banks/google_scraping.php:97
+#: admin/partials/tabs/block.php:146
+msgid "Telugu"
+msgstr "Telugu"
+
+#: admin/partials/tabs/automatic/alteration.php:172
+#: admin/partials/tabs/automatic/basedon.php:214
+#: admin/partials/tabs/automatic/places_template.php:358
+#: admin/partials/tabs/banks/google_image.php:129
+#: admin/partials/tabs/banks/google_scraping.php:98
+#: admin/partials/tabs/banks/pexels.php:72
+#: admin/partials/tabs/banks/pixabay.php:109
+#: admin/partials/tabs/banks/unsplash.php:72 admin/partials/tabs/block.php:147
+msgid "Thai"
+msgstr "Thai"
+
+#: admin/partials/tabs/automatic/alteration.php:173
+#: admin/partials/tabs/banks/google_image.php:130
+#: admin/partials/tabs/banks/google_scraping.php:99
+#: admin/partials/tabs/block.php:148
+msgid "Tigrinya"
+msgstr "Tigrino"
+
+#: admin/partials/tabs/automatic/alteration.php:174
+#: admin/partials/tabs/automatic/basedon.php:215
+#: admin/partials/tabs/automatic/places_template.php:359
+#: admin/partials/tabs/banks/google_image.php:131
+#: admin/partials/tabs/banks/google_scraping.php:100
+#: admin/partials/tabs/banks/pexels.php:70
+#: admin/partials/tabs/banks/pixabay.php:107
+#: admin/partials/tabs/banks/unsplash.php:70 admin/partials/tabs/block.php:149
+msgid "Turkish"
+msgstr "Turco"
+
+#: admin/partials/tabs/automatic/alteration.php:175
+#: admin/partials/tabs/banks/google_image.php:132
+#: admin/partials/tabs/banks/google_scraping.php:101
+#: admin/partials/tabs/banks/pexels.php:74 admin/partials/tabs/block.php:150
+msgid "Ukrainian"
+msgstr "Ucraino"
+
+#: admin/partials/tabs/automatic/alteration.php:176
+#: admin/partials/tabs/banks/google_image.php:133
+#: admin/partials/tabs/banks/google_scraping.php:102
+#: admin/partials/tabs/block.php:151
+msgid "Urdu"
+msgstr "Urdu"
+
+#: admin/partials/tabs/automatic/alteration.php:177
+#: admin/partials/tabs/banks/google_image.php:134
+#: admin/partials/tabs/banks/google_scraping.php:103
+#: admin/partials/tabs/block.php:152
+msgid "Uzbek"
+msgstr "Uzbeco"
+
+#: admin/partials/tabs/automatic/alteration.php:178
+#: admin/partials/tabs/automatic/basedon.php:216
+#: admin/partials/tabs/automatic/places_template.php:360
+#: admin/partials/tabs/banks/google_image.php:135
+#: admin/partials/tabs/banks/google_scraping.php:104
+#: admin/partials/tabs/banks/pexels.php:71
+#: admin/partials/tabs/banks/pixabay.php:108
+#: admin/partials/tabs/banks/unsplash.php:71 admin/partials/tabs/block.php:153
+msgid "Vietnamese"
+msgstr "Vietnamita"
+
+#: admin/partials/tabs/automatic/alteration.php:179
+#: admin/partials/tabs/banks/google_image.php:136
+#: admin/partials/tabs/banks/google_scraping.php:105
+#: admin/partials/tabs/block.php:154
+msgid "Welsh"
+msgstr "Gallese"
+
+#: admin/partials/tabs/automatic/alteration.php:180
+#: admin/partials/tabs/banks/google_image.php:137
+#: admin/partials/tabs/banks/google_scraping.php:106
+#: admin/partials/tabs/block.php:155
+msgid "Xhosa"
+msgstr "Xhosa"
+
+#: admin/partials/tabs/automatic/alteration.php:181
+#: admin/partials/tabs/banks/google_image.php:138
+#: admin/partials/tabs/banks/google_scraping.php:107
+#: admin/partials/tabs/block.php:156
+msgid "Zulu"
+msgstr "Zulu"
+
+#: admin/partials/tabs/automatic/alteration.php:201
+#: admin/partials/tabs/automatic/developer.php:159
+#: admin/partials/tabs/automatic/developer.php:209
+#: admin/partials/tabs/block.php:176 admin/partials/tabs/compatibility.php:47
+#: admin/partials/tabs/cron.php:284 admin/partials/tabs/proxy.php:132
+msgid "Only available with the pro version"
+msgstr "Disponibile solo nella versione Pro"
+
+#: admin/partials/tabs/automatic/alteration.php:215
+#: admin/partials/tabs/block.php:197
+msgid "Add caption tag on image"
+msgstr "Aggiungi didascalia all'immagine"
+
+#: admin/partials/tabs/automatic/alteration.php:226
+msgid "Caption Format"
+msgstr "Formato della didascalia"
+
+#: admin/partials/tabs/automatic/alteration.php:231
+msgid "Image Author"
+msgstr "Autore dell'immagine"
+
+#: admin/partials/tabs/automatic/alteration.php:235
+msgid "Image Author + Name of Image Bank (Example: <em>Author Name from Pixabay</em>)"
+msgstr ""
+"Autore dell'immagine + nome della banca immagini (esempio: <em>Author Name from Pixabay</em>)"
+
+#: admin/partials/tabs/automatic/basedon.php:12
+#: admin/partials/tabs/automatic/places_template.php:165
+msgid "Search Based on"
+msgstr "Ricerca basata su"
+
+#: admin/partials/tabs/automatic/basedon.php:18
+#: admin/partials/tabs/automatic/places_template.php:170
+msgid "Text Analyzer: Full text"
+msgstr "Analizzatore di testo: testo completo"
+
+#: admin/partials/tabs/automatic/basedon.php:19
+#: admin/partials/tabs/automatic/places_template.php:171
+msgid "Text Analyzer: Previous paragraph"
+msgstr "Analizzatore di testo: paragrafo precedente"
+
+#: admin/partials/tabs/automatic/basedon.php:20
+#: admin/partials/tabs/automatic/places_template.php:172
+msgid "Text Analyzer: Next paragraph"
+msgstr "Analizzatore di testo: paragrafo successivo"
+
+#: admin/partials/tabs/automatic/basedon.php:21
+#: admin/partials/tabs/automatic/basedon.php:37
+#: admin/partials/tabs/automatic/places_template.php:173
+#: admin/partials/tabs/automatic/places_template.php:189
+msgid "Tags"
+msgstr "Tag"
+
+#: admin/partials/tabs/automatic/basedon.php:22
+#: admin/partials/tabs/automatic/basedon.php:48
+#: admin/partials/tabs/automatic/places_template.php:174
+#: admin/partials/tabs/automatic/places_template.php:200
+msgid "Categories"
+msgstr "Categorie"
+
+#: admin/partials/tabs/automatic/basedon.php:23
+#: admin/partials/tabs/automatic/places_template.php:175
+msgid "Custom Field"
+msgstr "Campo personalizzato"
+
+#: admin/partials/tabs/automatic/basedon.php:24
+#: admin/partials/tabs/automatic/basedon.php:69
+#: admin/partials/tabs/automatic/places_template.php:176
+#: admin/partials/tabs/automatic/places_template.php:221
+msgid "Custom Request"
+msgstr "Richiesta personalizzata"
+
+#: admin/partials/tabs/automatic/basedon.php:25
+#: admin/partials/tabs/automatic/places_template.php:177
+msgid "OpenAI Keyword Extractor"
+msgstr "Estrattore di parole chiave OpenAI"
+
+#: admin/partials/tabs/automatic/basedon.php:40
+#: admin/partials/tabs/automatic/places_template.php:192
+msgid "First tag"
+msgstr "Primo tag"
+
+#: admin/partials/tabs/automatic/basedon.php:41
+#: admin/partials/tabs/automatic/places_template.php:193
+msgid "Last tag"
+msgstr "Ultimo tag"
+
+#: admin/partials/tabs/automatic/basedon.php:42
+#: admin/partials/tabs/automatic/places_template.php:194
+msgid "Random tag"
+msgstr "Tag casuale"
+
+#: admin/partials/tabs/automatic/basedon.php:51
+#: admin/partials/tabs/automatic/places_template.php:203
+msgid "First category"
+msgstr "Prima categoria"
+
+#: admin/partials/tabs/automatic/basedon.php:52
+#: admin/partials/tabs/automatic/places_template.php:204
+msgid "Last category"
+msgstr "Ultima categoria"
+
+#: admin/partials/tabs/automatic/basedon.php:53
+#: admin/partials/tabs/automatic/places_template.php:205
+msgid "Random category"
+msgstr "Categoria casuale"
+
+#: admin/partials/tabs/automatic/basedon.php:59
+#: admin/partials/tabs/automatic/places_template.php:211
+msgid "Custom field Name"
+msgstr "Nome del campo personalizzato"
+
+#: admin/partials/tabs/automatic/basedon.php:80
+#: admin/partials/tabs/automatic/places_template.php:232
+#, php-format
+msgid "This is a simple request including the %%Title%%"
+msgstr "Questa è una richiesta semplice che include %%Title%%"
+
+#: admin/partials/tabs/automatic/basedon.php:90
+#: admin/partials/tabs/automatic/places_template.php:242
+msgid "Category Level"
+msgstr "Livello della categoria"
+
+#: admin/partials/tabs/automatic/basedon.php:92
+#: admin/partials/tabs/automatic/places_template.php:244
+msgid "Choose the category level to use."
+msgstr "Scegli il livello di categoria da usare."
+
+#: admin/partials/tabs/automatic/basedon.php:96
+#: admin/partials/tabs/automatic/places_template.php:248
+msgid "Child category"
+msgstr "Categoria figlia"
+
+#: admin/partials/tabs/automatic/basedon.php:97
+#: admin/partials/tabs/automatic/places_template.php:249
+msgid "Parent category"
+msgstr "Categoria genitore"
+
+#: admin/partials/tabs/automatic/basedon.php:98
+#: admin/partials/tabs/automatic/places_template.php:250
+msgid "Grandparent category"
+msgstr "Categoria nonna"
+
+#: admin/partials/tabs/automatic/basedon.php:105
+#: admin/partials/tabs/automatic/places_template.php:256
+msgid "Taxonomy Slug"
+msgstr "Slug della tassonomia"
+
+#: admin/partials/tabs/automatic/basedon.php:116
+#: admin/partials/tabs/automatic/places_template.php:265
+msgid "Taxonomy Level"
+msgstr "Livello della tassonomia"
+
+#: admin/partials/tabs/automatic/basedon.php:118
+#: admin/partials/tabs/automatic/places_template.php:267
+msgid "Choose the taxonomy level to use."
+msgstr "Scegli il livello di tassonomia da usare."
+
+#: admin/partials/tabs/automatic/basedon.php:122
+#: admin/partials/tabs/automatic/places_template.php:271
+msgid "Child taxonomy"
+msgstr "Tassonomia figlia"
+
+#: admin/partials/tabs/automatic/basedon.php:123
+#: admin/partials/tabs/automatic/places_template.php:272
+msgid "Parent taxonomy"
+msgstr "Tassonomia genitore"
+
+#: admin/partials/tabs/automatic/basedon.php:124
+#: admin/partials/tabs/automatic/places_template.php:273
+msgid "Grandparent taxonomy"
+msgstr "Tassonomia nonna"
+
+#: admin/partials/tabs/automatic/basedon.php:130
+#: admin/partials/tabs/automatic/places_template.php:279
+msgid "OpenAI API Key"
+msgstr "Chiave API OpenAI"
+
+#: admin/partials/tabs/automatic/basedon.php:140
+#: admin/partials/tabs/automatic/places_template.php:289
+msgid "Number of keywords to extract from title"
+msgstr "Numero di parole chiave da estrarre dal titolo"
+
+#: admin/partials/tabs/automatic/basedon.php:143
+#: admin/partials/tabs/automatic/places_template.php:292
+msgid "From 1 to 2 words"
+msgstr "Da 1 a 2 parole"
+
+#: admin/partials/tabs/automatic/basedon.php:144
+#: admin/partials/tabs/automatic/places_template.php:293
+msgid "2 words"
+msgstr "2 parole"
+
+#: admin/partials/tabs/automatic/basedon.php:145
+#: admin/partials/tabs/automatic/places_template.php:294
+msgid "3 words"
+msgstr "3 parole"
+
+#: admin/partials/tabs/automatic/basedon.php:159
+#: admin/partials/tabs/automatic/places_template.php:308
+msgid "Full title"
+msgstr "Titolo completo"
+
+#: admin/partials/tabs/automatic/basedon.php:160
+#: admin/partials/tabs/automatic/places_template.php:309
+msgid "Specific Part"
+msgstr "Parte specifica"
+
+#: admin/partials/tabs/automatic/basedon.php:161
+#: admin/partials/tabs/automatic/places_template.php:310
+msgid "first words of the title"
+msgstr "prime parole del titolo"
+
+#: admin/partials/tabs/automatic/basedon.php:168
+#: admin/partials/tabs/automatic/places_template.php:316
+msgid "Post Content Language"
+msgstr "Lingua del contenuto dell'articolo"
+
+#: admin/partials/tabs/automatic/basedon.php:181
+#: admin/partials/tabs/automatic/places_template.php:325
+#: admin/partials/tabs/banks/cc_search.php:88
+#: admin/partials/tabs/banks/google_image.php:161
+#: admin/partials/tabs/banks/google_image.php:199
+#: admin/partials/tabs/banks/google_image.php:260
+#: admin/partials/tabs/banks/google_image.php:290
+#: admin/partials/tabs/banks/google_scraping.php:130
+#: admin/partials/tabs/banks/google_scraping.php:197
+#: admin/partials/tabs/banks/google_scraping.php:231
+#: admin/partials/tabs/banks/google_scraping.php:259
+msgid "-- Default --"
+msgstr "-- Predefinito --"
+
+#: admin/partials/tabs/automatic/basedon.php:188
+#: admin/partials/tabs/automatic/places_template.php:332
+#: admin/partials/tabs/banks/google_image.php:74
+#: admin/partials/tabs/banks/google_scraping.php:43
+#: admin/partials/tabs/banks/pexels.php:55
+#: admin/partials/tabs/banks/pixabay.php:93
+#: admin/partials/tabs/banks/unsplash.php:56
+msgid "English"
+msgstr "Inglese"
+
+#: admin/partials/tabs/automatic/basedon.php:198
+#: admin/partials/tabs/automatic/places_template.php:342
+msgid "Armenian"
+msgstr "Armeno"
+
+#: admin/partials/tabs/automatic/basedon.php:208
+#: admin/partials/tabs/automatic/places_template.php:352
+#: admin/partials/tabs/banks/pexels.php:65
+#: admin/partials/tabs/banks/pixabay.php:102
+#: admin/partials/tabs/banks/unsplash.php:65
+msgid "Portuguese"
+msgstr "Portoghese"
+
+#: admin/partials/tabs/automatic/basedon.php:217
+#: admin/partials/tabs/automatic/places_template.php:361
+#: admin/partials/tabs/banks/pexels.php:78
+#: admin/partials/tabs/banks/pixabay.php:115
+#: admin/partials/tabs/banks/unsplash.php:78
+msgid "Chinese"
+msgstr "Cinese"
+
+#: admin/partials/tabs/automatic/basedon.php:232
+#: admin/partials/tabs/automatic/places_template.php:376
+msgid "Translate to English"
+msgstr "Traduci in inglese"
+
+#: admin/partials/tabs/automatic/basedon.php:235
+#: admin/partials/tabs/automatic/places_template.php:379
+msgid "Translate"
+msgstr "Traduci"
+
+#: admin/partials/tabs/automatic/basedon.php:237
+#: admin/partials/tabs/automatic/places_template.php:381
+msgid ""
+"The \"based on\" phrase /keywords will be translated into English. This helps to get better results with most image databases."
+msgstr ""
+"La frase / le parole chiave \"based on\" verranno tradotte in inglese. Questo aiuta a ottenere risultati migliori con la maggior parte dei database di immagini."
+
+#: admin/partials/tabs/automatic/basedon.php:244
+#: admin/partials/tabs/automatic/places_template.php:388
+msgid "Image Selection"
+msgstr "Selezione dell'immagine"
+
+#: admin/partials/tabs/automatic/basedon.php:247
+#: admin/partials/tabs/automatic/places_template.php:391
+msgid "First result"
+msgstr "Primo risultato"
+
+#: admin/partials/tabs/automatic/basedon.php:248
+#: admin/partials/tabs/automatic/places_template.php:392
+msgid "Random result"
+msgstr "Risultato casuale"
+
+#: admin/partials/tabs/automatic/developer.php:21
+msgid ""
+"Enable the \"save_post\" & \"wp_insert_post\" hook. <br/><br/>What does it means ? Everytime you create or update a post, an image will be generated.<br/><br/>Warning: Use it precautionary. If you don't understand what it is, disable it."
+msgstr ""
+"Attiva gli hook \"save_post\" e \"wp_insert_post\". <br/><br/>Cosa significa? Ogni volta che crei o aggiorni un articolo, verrà generata un'immagine.<br/><br/>Attenzione: usalo con cautela. Se non capisci di cosa si tratta, disattivalo."
+
+#: admin/partials/tabs/automatic/developer.php:31
+msgid "\"Save Post\" Hook"
+msgstr "Hook \"Save Post\""
+
+#: admin/partials/tabs/automatic/developer.php:53
+#: admin/partials/tabs/automatic/developer.php:117
+msgid "Select the post type on which you want to fire the hook."
+msgstr "Seleziona il tipo di contenuto su cui attivare l'hook."
+
+#: admin/partials/tabs/automatic/developer.php:61
+msgid "\"Save Post\" Hook post type"
+msgstr "Tipo di contenuto dell'hook \"Save Post\""
+
+#: admin/partials/tabs/automatic/developer.php:64
+#: admin/partials/tabs/automatic/developer.php:128
+msgid "Select all"
+msgstr "Seleziona tutto"
+
+#: admin/partials/tabs/automatic/developer.php:95
+#: admin/partials/tabs/automatic/developer.php:158
+msgid "\"WP Insert Post\" Hook"
+msgstr "Hook \"WP Insert Post\""
+
+#: admin/partials/tabs/automatic/developer.php:125
+msgid "\"WP Insert Post\" Hook post type"
+msgstr "Tipo di contenuto dell'hook \"WP Insert Post\""
+
+#: admin/partials/tabs/automatic/developer.php:183
+msgid ""
+"In strict search mode, quotation marks are added to the search term.<br/><br/>Warning:This may drastically reduce the number of results."
+msgstr ""
+"In modalità di ricerca rigorosa, al termine di ricerca vengono aggiunte le virgolette.<br/><br/>Attenzione: questo può ridurre drasticamente il numero di risultati."
+
+#: admin/partials/tabs/automatic/developer.php:196
+#: admin/partials/tabs/automatic/developer.php:208
+msgid "Strict Search Mode"
+msgstr "Modalità di ricerca rigorosa"
+
+#: admin/partials/tabs/automatic/developer.php:221
+#: admin/partials/tabs/cron.php:64
+msgid "Interval"
+msgstr "Intervallo"
+
+#: admin/partials/tabs/automatic/places.php:35
+#: admin/partials/tabs/automatic/places_template.php:17
+msgid "Featured Image / Inline Content"
+msgstr "Immagine in evidenza / contenuto inline"
+
+#: admin/partials/tabs/automatic/places.php:40
+#: admin/partials/tabs/automatic/places_template.php:22
+msgid "Featured Image"
+msgstr "Immagine in evidenza"
+
+#: admin/partials/tabs/automatic/places.php:44
+#: admin/partials/tabs/automatic/places_template.php:26
+msgid "Inline content"
+msgstr "Contenuto inline"
+
+#: admin/partials/tabs/automatic/places.php:56
+#: admin/partials/tabs/automatic/places_template.php:37
+msgid "FIFU plugin (Featured Image from URL)"
+msgstr "Plugin FIFU (Featured Image from URL)"
+
+#: admin/partials/tabs/automatic/places.php:66
+#: admin/partials/tabs/automatic/places_template.php:47
+msgid "CMB2 Field"
+msgstr "Campo CMB2"
+
+#: admin/partials/tabs/automatic/places.php:75
+#: admin/partials/tabs/automatic/places_template.php:56
+msgid "ACF Field"
+msgstr "Campo ACF"
+
+#: admin/partials/tabs/automatic/places.php:83
+#: admin/partials/tabs/automatic/places_template.php:64
+msgid "Meta Box Field"
+msgstr "Campo Meta Box"
+
+#: admin/partials/tabs/automatic/places.php:91
+#: admin/partials/tabs/automatic/places_template.php:72
+msgid "\"Inline content\" allows you to generate the image anywhere in the content"
+msgstr ""
+"\"Contenuto inline\" consente di generare l'immagine in qualsiasi punto del contenuto"
+
+#: admin/partials/tabs/automatic/places.php:101
+#: admin/partials/tabs/automatic/places_template.php:83
+msgid "Field Name"
+msgstr "Nome del campo"
+
+#: admin/partials/tabs/automatic/places.php:114
+#: admin/partials/tabs/automatic/places_template.php:96
+msgid "Image position"
+msgstr "Posizione dell'immagine"
+
+#: admin/partials/tabs/automatic/places.php:117
+#: admin/partials/tabs/automatic/places_template.php:99
+msgid "Insert"
+msgstr "Inserisci"
+
+#: admin/partials/tabs/automatic/places.php:119
+#: admin/partials/tabs/automatic/places_template.php:101
+msgid "Before"
+msgstr "Prima"
+
+#: admin/partials/tabs/automatic/places.php:120
+#: admin/partials/tabs/automatic/places_template.php:102
+msgid "After"
+msgstr "Dopo"
+
+#: admin/partials/tabs/automatic/places.php:122
+#: admin/partials/tabs/automatic/places_template.php:103
+msgid "the"
+msgstr "il"
+
+#: admin/partials/tabs/automatic/places.php:124
+#: admin/partials/tabs/automatic/places_template.php:105
+msgid "First"
+msgstr "primo"
+
+#: admin/partials/tabs/automatic/places.php:125
+#: admin/partials/tabs/automatic/places_template.php:106
+msgid "Second"
+msgstr "secondo"
+
+#: admin/partials/tabs/automatic/places.php:126
+#: admin/partials/tabs/automatic/places_template.php:107
+msgid "Third"
+msgstr "terzo"
+
+#: admin/partials/tabs/automatic/places.php:127
+#: admin/partials/tabs/automatic/places_template.php:108
+msgid "Fourth"
+msgstr "quarto"
+
+#: admin/partials/tabs/automatic/places.php:128
+#: admin/partials/tabs/automatic/places_template.php:109
+msgid "Fifth"
+msgstr "quinto"
+
+#: admin/partials/tabs/automatic/places.php:129
+#: admin/partials/tabs/automatic/places_template.php:110
+msgid "Last"
+msgstr "ultimo"
+
+#: admin/partials/tabs/automatic/places.php:132
+#: admin/partials/tabs/automatic/places_template.php:113
+msgid "paragraph (p)"
+msgstr "paragrafo (p)"
+
+#: admin/partials/tabs/automatic/places.php:139
+#: admin/partials/tabs/automatic/places_template.php:120
+msgid "link (a)"
+msgstr "link (a)"
+
+#: admin/partials/tabs/automatic/places.php:148
+#: admin/partials/tabs/automatic/places_template.php:128
+#: admin/partials/tabs/banks/dallev1.php:49
+#: admin/partials/tabs/banks/google_image.php:252
+#: admin/partials/tabs/banks/google_scraping.php:189
+msgid "Image size"
+msgstr "Dimensione dell'immagine"
+
+#: admin/partials/tabs/automatic/places.php:165
+#: admin/partials/tabs/automatic/places_template.php:145
+msgid "Image Source"
+msgstr "Sorgente dell'immagine"
+
+#: admin/partials/tabs/automatic/places.php:199
+msgid "Delete"
+msgstr "Elimina"
+
+#: admin/partials/tabs/automatic/places.php:227
+msgid "Add an image location"
+msgstr "Aggiungi una posizione dell'immagine"
+
+#: admin/partials/tabs/banks/cc_search.php:16
+msgid ""
+"<a target=\"_blank\" href=\"https://oldsearch.creativecommons.org/\">CC Search</a> provides Creative Commons images. You can search these images manually from <a target=\"_blank\" href=\"https://wordpress.org/openverse/\">Openverse (WordPress)</a>."
+msgstr ""
+"<a target=\"_blank\" href=\"https://oldsearch.creativecommons.org/\">CC Search</a> fornisce immagini Creative Commons. Puoi cercarle manualmente su <a target=\"_blank\" href=\"https://wordpress.org/openverse/\">Openverse (WordPress)</a>."
+
+#: admin/partials/tabs/banks/cc_search.php:31
+msgid "All sources"
+msgstr "Tutte le fonti"
+
+#: admin/partials/tabs/banks/cc_search.php:32
+msgid "All except flickr"
+msgstr "Tutte tranne flickr"
+
+#: admin/partials/tabs/banks/cc_search.php:33
+#: admin/partials/tabs/banks/flickr.php:63
+msgid "Other"
+msgstr "Altro"
+
+#: admin/partials/tabs/banks/cc_search.php:52
+#: admin/partials/tabs/banks/google_image.php:227
+#: admin/partials/tabs/banks/google_scraping.php:164
+msgid ""
+"Choose these options can reduce relevance of results, but permit to use free-to-use images."
+msgstr ""
+"Scegliere queste opzioni può ridurre la rilevanza dei risultati, ma consente di usare immagini di libero utilizzo."
+
+#: admin/partials/tabs/banks/cc_search.php:56
+msgid "Zéro"
+msgstr "Zero"
+
+#: admin/partials/tabs/banks/cc_search.php:57
+msgid "Attribution-NoDerivs"
+msgstr "Attribution-NoDerivs"
+
+#: admin/partials/tabs/banks/cc_search.php:58
+msgid "Attribution-NonCommercial"
+msgstr "Attribution-NonCommercial"
+
+#: admin/partials/tabs/banks/cc_search.php:59
+msgid "Attribution-NonCommercial-ShareAlike"
+msgstr "Attribution-NonCommercial-ShareAlike"
+
+#: admin/partials/tabs/banks/cc_search.php:60
+msgid "Attribution-NonCommercial-NoDerivs"
+msgstr "Attribution-NonCommercial-NoDerivs"
+
+#: admin/partials/tabs/banks/cc_search.php:61
+msgid "Attribution-ShareAlike"
+msgstr "Attribution-ShareAlike"
+
+#: admin/partials/tabs/banks/cc_search.php:62
+msgid "Attribution"
+msgstr "Attribution"
+
+#: admin/partials/tabs/banks/cc_search.php:63
+msgid "Public Domain Mark"
+msgstr "Marchio di pubblico dominio"
+
+#: admin/partials/tabs/banks/cc_search.php:80
+#: admin/partials/tabs/banks/flickr.php:52
+#: admin/partials/tabs/banks/google_image.php:282
+#: admin/partials/tabs/banks/google_scraping.php:251
+#: admin/partials/tabs/banks/pixabay.php:57
+msgid "Image Type"
+msgstr "Tipo di immagine"
+
+#: admin/partials/tabs/banks/cc_search.php:89
+#: admin/partials/tabs/banks/pixabay.php:67
+msgid "Illustration"
+msgstr "Illustrazione"
+
+#: admin/partials/tabs/banks/cc_search.php:90
+msgid "Photography"
+msgstr "Fotografia"
+
+#: admin/partials/tabs/banks/cc_search.php:91
+msgid "Digitized Artwork"
+msgstr "Opera d'arte digitalizzata"
+
+#: admin/partials/tabs/banks/cc_search.php:106
+#: admin/partials/tabs/banks/stability.php:72
+msgid "Aspect Ratio"
+msgstr "Proporzioni"
+
+#: admin/partials/tabs/banks/cc_search.php:114
+msgid "Tall"
+msgstr "Alto"
+
+#: admin/partials/tabs/banks/cc_search.php:115
+msgid "Wide"
+msgstr "Largo"
+
+#: admin/partials/tabs/banks/cc_search.php:116
+#: admin/partials/tabs/banks/envato.php:64
+#: admin/partials/tabs/banks/google_scraping.php:233
+#: admin/partials/tabs/banks/pexels.php:105
+msgid "Square"
+msgstr "Quadrato"
+
+#: admin/partials/tabs/banks/dallev1.php:16
+msgid ""
+"<b>It's required</b> to provide your own <b>api key</b>. You can register in OpenAI API website <a target=\"_blank\" href=\"https://openai.com/\">here</a> and get api key."
+msgstr ""
+"<b>È necessario</b> fornire la propria <b>api key</b>. Puoi registrarti sul sito OpenAI API <a target=\"_blank\" href=\"https://openai.com/\">qui</a> e ottenere la chiave."
+
+#: admin/partials/tabs/banks/dallev1.php:19
+msgid ""
+"<b>Caution: DALL-E API can take a long time</b> to generate. About 20 seconds to get a 1024x1024 image."
+msgstr ""
+"<b>Attenzione: l'API DALL-E può richiedere molto tempo</b> per generare. Circa 20 secondi per un'immagine 1024x1024."
+
+#: admin/partials/tabs/banks/dallev1.php:22
+msgid ""
+"DALL-E API has some <b>restricted words</b> that will not generate any images. Please refer to the <a href=\"https://labs.openai.com/policies/content-policy\">content policy</a> if you want more details."
+msgstr ""
+"L'API DALL-E ha alcune <b>parole riservate</b> che non genereranno immagini. Consulta la <a href=\"https://labs.openai.com/policies/content-policy\">content policy</a> per maggiori dettagli."
+
+#: admin/partials/tabs/banks/dallev1.php:29
+#: admin/partials/tabs/banks/pexels.php:23
+#: admin/partials/tabs/banks/stability.php:26
+msgid "API Key"
+msgstr "Chiave API"
+
+#: admin/partials/tabs/banks/dallev1.php:39
+#: admin/partials/tabs/banks/envato.php:45
+#: admin/partials/tabs/banks/pexels.php:33
+#: admin/partials/tabs/banks/pixabay.php:41
+#: admin/partials/tabs/banks/stability.php:36
+#: admin/partials/tabs/banks/unsplash.php:33
+#: admin/partials/tabs/banks/youtube.php:33
+msgid "API testing"
+msgstr "Test API"
+
+#: admin/partials/tabs/banks/dallev1.php:57
+msgid "1024x1024"
+msgstr "1024x1024"
+
+#: admin/partials/tabs/banks/dallev1.php:58
+msgid "1792x1024"
+msgstr "1792x1024"
+
+#: admin/partials/tabs/banks/dallev1.php:59
+msgid "1024x1792"
+msgstr "1024x1792"
+
+#: admin/partials/tabs/banks/dallev1.php:74
+msgid "PNG to JPEG"
+msgstr "PNG in JPEG"
+
+#: admin/partials/tabs/banks/dallev1.php:79
+msgid "Convert to Jpeg image extension"
+msgstr "Converti nell'estensione immagine Jpeg"
+
+#: admin/partials/tabs/banks/dallev1.php:81
+msgid ""
+"DALL-E will create a PNG file, click this option if you want to convert the file to a Jpeg image."
+msgstr ""
+"DALL-E creerà un file PNG; seleziona questa opzione se vuoi convertire il file in un'immagine Jpeg."
+
+#: admin/partials/tabs/banks/envato.php:23
+#, php-format
+msgid ""
+"You can use your Envato Elements subscription. You can sign up for <a target=\"_blank\" href=\"%1$s\">Envato Elements here</a> and <a target=\"_blank\" href=\"%2$s\">follow this link</a> to generate the token (one token per website)."
+msgstr ""
+"Puoi usare il tuo abbonamento Envato Elements. Registrati a <a target=\"_blank\" href=\"%1$s\">Envato Elements qui</a> e <a target=\"_blank\" href=\"%2$s\">segui questo link</a> per generare il token (un token per sito)."
+
+#: admin/partials/tabs/banks/envato.php:34
+msgid "Envato Token"
+msgstr "Token Envato"
+
+#: admin/partials/tabs/banks/envato.php:53
+#: admin/partials/tabs/banks/pexels.php:94
+#: admin/partials/tabs/banks/pixabay.php:130
+msgid "Orientation"
+msgstr "Orientamento"
+
+#: admin/partials/tabs/banks/envato.php:61
+#: admin/partials/tabs/banks/envato.php:86
+#: admin/partials/tabs/banks/pexels.php:102
+msgid "All"
+msgstr "Tutti"
+
+#: admin/partials/tabs/banks/envato.php:62
+#: admin/partials/tabs/banks/google_scraping.php:234
+#: admin/partials/tabs/banks/pexels.php:103
+msgid "Landscape"
+msgstr "Orizzontale"
+
+#: admin/partials/tabs/banks/envato.php:63
+#: admin/partials/tabs/banks/google_scraping.php:232
+#: admin/partials/tabs/banks/pexels.php:104
+msgid "Portrait"
+msgstr "Verticale"
+
+#: admin/partials/tabs/banks/envato.php:78
+msgid "Number of people"
+msgstr "Numero di persone"
+
+#: admin/partials/tabs/banks/envato.php:87
+msgid "No people"
+msgstr "Nessuna persona"
+
+#: admin/partials/tabs/banks/envato.php:88
+msgid "1 person"
+msgstr "1 persona"
+
+#: admin/partials/tabs/banks/envato.php:89
+msgid "2 people"
+msgstr "2 persone"
+
+#: admin/partials/tabs/banks/envato.php:90
+msgid "3+ people"
+msgstr "3+ persone"
+
+#: admin/partials/tabs/banks/flickr.php:19
+msgid "Choose which licence works for pictures. Licences chosen are cumulative."
+msgstr "Scegli quali licenze valgono per le immagini. Le licenze scelte sono cumulative."
+
+#: admin/partials/tabs/banks/flickr.php:20
+msgid "If none of these options are chosen, every licences will be used."
+msgstr "Se nessuna di queste opzioni è selezionata, verranno usate tutte le licenze."
+
+#: admin/partials/tabs/banks/flickr.php:24
+msgid "All Rights Reserved"
+msgstr "Tutti i diritti riservati"
+
+#: admin/partials/tabs/banks/flickr.php:25
+msgid ""
+"Attribution-NonCommercial-ShareAlike License - <i><a href=\"http://creativecommons.org/licenses/by-nc-sa/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Licenza Attribution-NonCommercial-ShareAlike - <i><a href=\"http://creativecommons.org/licenses/by-nc-sa/2.0/\" target=\"_blank\">Maggiori dettagli</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:26
+msgid ""
+"Attribution-NonCommercial License - <i><a href=\"http://creativecommons.org/licenses/by-nc/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Licenza Attribution-NonCommercial - <i><a href=\"http://creativecommons.org/licenses/by-nc/2.0/\" target=\"_blank\">Maggiori dettagli</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:27
+msgid ""
+"Attribution-NonCommercial-NoDerivs License - <i><a href=\"http://creativecommons.org/licenses/by-nc-nd/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Licenza Attribution-NonCommercial-NoDerivs - <i><a href=\"http://creativecommons.org/licenses/by-nc-nd/2.0/\" target=\"_blank\">Maggiori dettagli</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:28
+msgid ""
+"Attribution License - <i><a href=\"http://creativecommons.org/licenses/by/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Licenza Attribution - <i><a href=\"http://creativecommons.org/licenses/by/2.0/\" target=\"_blank\">Maggiori dettagli</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:29
+msgid ""
+"Attribution License - <i><a href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Licenza Attribution - <i><a href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">Maggiori dettagli</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:30
+msgid ""
+"Attribution-NoDerivs License - <i><a href=\"http://creativecommons.org/licenses/by-nd/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Licenza Attribution-NoDerivs - <i><a href=\"http://creativecommons.org/licenses/by-nd/2.0/\" target=\"_blank\">Maggiori dettagli</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:31
+msgid ""
+"No known copyright restrictions - <i><a href=\"http://flickr.com/commons/usage/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Nessuna restrizione di copyright nota - <i><a href=\"http://flickr.com/commons/usage/\" target=\"_blank\">Maggiori dettagli</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:32
+msgid ""
+"United States Government Work - <i><a href=\"http://www.usa.gov/copyright.shtml\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Opera del governo degli Stati Uniti - <i><a href=\"http://www.usa.gov/copyright.shtml\" target=\"_blank\">Maggiori dettagli</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:60
+#: admin/partials/tabs/banks/pixabay.php:65
+#: admin/partials/tabs/banks/pixabay.php:138
+msgid "-- All --"
+msgstr "-- Tutti --"
+
+#: admin/partials/tabs/banks/flickr.php:61
+#: admin/partials/tabs/banks/google_image.php:292
+#: admin/partials/tabs/banks/google_scraping.php:261
+#: admin/partials/tabs/banks/pixabay.php:66
+msgid "Photo"
+msgstr "Foto"
+
+#: admin/partials/tabs/banks/flickr.php:62
+msgid "Screenshot"
+msgstr "Screenshot"
+
+#: admin/partials/tabs/banks/flickr.php:64
+msgid "Photo and screenshot"
+msgstr "Foto e screenshot"
+
+#: admin/partials/tabs/banks/flickr.php:65
+msgid "Screenshot and \"other\""
+msgstr "Screenshot e \"altro\""
+
+#: admin/partials/tabs/banks/flickr.php:66
+msgid "Photo and \"other\""
+msgstr "Foto e \"altro\""
+
+#: admin/partials/tabs/banks/google_image.php:16
+msgid ""
+"From now on, <b>it's required</b> to provide your own Google <i>Search engine ID</i> and <b>API Key</b>. You must follow the process <a target=\"_blank\" href=\"https://developers.google.com/custom-search/json-api/v1/overview#prerequisites\">here</a>. You must get both valid <strong>Search engine ID</strong> and <strong>API Key</strong>"
+msgstr ""
+"D'ora in poi <b>è necessario</b> fornire il proprio <i>Search engine ID</i> Google e la <b>API Key</b>. Segui la procedura <a target=\"_blank\" href=\"https://developers.google.com/custom-search/json-api/v1/overview#prerequisites\">qui</a>. Servono sia un <strong>Search engine ID</strong> sia una <strong>API Key</strong> validi"
+
+#: admin/partials/tabs/banks/google_image.php:23
+msgid "Custom Search Engine ID"
+msgstr "ID del motore di ricerca personalizzato"
+
+#: admin/partials/tabs/banks/google_image.php:31
+msgid "Google API Key"
+msgstr "Chiave API Google"
+
+#: admin/partials/tabs/banks/google_image.php:47
+#: admin/partials/tabs/banks/google_scraping.php:16
+#: admin/partials/tabs/banks/pexels.php:41
+#: admin/partials/tabs/banks/pixabay.php:82
+#: admin/partials/tabs/banks/unsplash.php:42
+msgid "Choose the language"
+msgstr "Scegli la lingua"
+
+#: admin/partials/tabs/banks/google_image.php:54
+#: admin/partials/tabs/banks/google_scraping.php:23
+msgid "English (default)"
+msgstr "Inglese (predefinito)"
+
+#: admin/partials/tabs/banks/google_image.php:153
+#: admin/partials/tabs/banks/google_scraping.php:122
+msgid "Specified color predominantly"
+msgstr "Colore specificato in prevalenza"
+
+#: admin/partials/tabs/banks/google_image.php:162
+#: admin/partials/tabs/banks/google_scraping.php:131
+msgid "Black"
+msgstr "Nero"
+
+#: admin/partials/tabs/banks/google_image.php:163
+#: admin/partials/tabs/banks/google_scraping.php:132
+msgid "Blue"
+msgstr "Blu"
+
+#: admin/partials/tabs/banks/google_image.php:164
+#: admin/partials/tabs/banks/google_scraping.php:133
+msgid "Brown"
+msgstr "Marrone"
+
+#: admin/partials/tabs/banks/google_image.php:165
+#: admin/partials/tabs/banks/google_scraping.php:134
+msgid "Gray"
+msgstr "Grigio"
+
+#: admin/partials/tabs/banks/google_image.php:166
+#: admin/partials/tabs/banks/google_scraping.php:135
+msgid "Green"
+msgstr "Verde"
+
+#: admin/partials/tabs/banks/google_image.php:167
+#: admin/partials/tabs/banks/google_scraping.php:136
+msgid "Pink"
+msgstr "Rosa"
+
+#: admin/partials/tabs/banks/google_image.php:168
+#: admin/partials/tabs/banks/google_scraping.php:137
+msgid "Purple"
+msgstr "Viola"
+
+#: admin/partials/tabs/banks/google_image.php:169
+#: admin/partials/tabs/banks/google_scraping.php:138
+msgid "Teal"
+msgstr "Foglia di tè"
+
+#: admin/partials/tabs/banks/google_image.php:170
+#: admin/partials/tabs/banks/google_scraping.php:139
+msgid "White"
+msgstr "Bianco"
+
+#: admin/partials/tabs/banks/google_image.php:171
+#: admin/partials/tabs/banks/google_scraping.php:140
+msgid "Yellow"
+msgstr "Giallo"
+
+#: admin/partials/tabs/banks/google_image.php:183
+#: admin/partials/tabs/banks/google_scraping.php:152
+msgid "Experimental"
+msgstr "Sperimentale"
+
+#: admin/partials/tabs/banks/google_image.php:184
+#: admin/partials/tabs/banks/google_scraping.php:153
+msgid "Restricts results to images that contain a specified color predominantly"
+msgstr ""
+"Limita i risultati alle immagini che contengono prevalentemente un colore specificato"
+
+#: admin/partials/tabs/banks/google_image.php:191
+msgid "Filetype"
+msgstr "Tipo di file"
+
+#: admin/partials/tabs/banks/google_image.php:200
+msgid "jpg"
+msgstr "jpg"
+
+#: admin/partials/tabs/banks/google_image.php:201
+msgid "png"
+msgstr "png"
+
+#: admin/partials/tabs/banks/google_image.php:202
+msgid "gif"
+msgstr "gif"
+
+#: admin/partials/tabs/banks/google_image.php:203
+msgid "bmp"
+msgstr "bmp"
+
+#: admin/partials/tabs/banks/google_image.php:204
+msgid "webp"
+msgstr "webp"
+
+#: admin/partials/tabs/banks/google_image.php:216
+msgid "Restricts image search to one of the following specific file types"
+msgstr "Limita la ricerca di immagini a uno dei seguenti tipi di file"
+
+#: admin/partials/tabs/banks/google_image.php:231
+msgid ""
+"Publicdomain - <i>restricts search results to images with the publicdomain label.</i>"
+msgstr ""
+"Publicdomain - <i>limita i risultati della ricerca alle immagini con l'etichetta publicdomain.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:232
+msgid "Attribute - <i>restricts search results to images with the attribute label.</i>"
+msgstr ""
+"Attribute - <i>limita i risultati della ricerca alle immagini con l'etichetta attribute.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:233
+msgid ""
+"Sharealike - <i>restricts search results to images with the sharealike label.</i>"
+msgstr ""
+"Sharealike - <i>limita i risultati della ricerca alle immagini con l'etichetta sharealike.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:234
+msgid ""
+"Noncommercial - <i>restricts search results to images with the noncomercial label.</i>"
+msgstr ""
+"Noncommercial - <i>limita i risultati della ricerca alle immagini con l'etichetta noncomercial.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:235
+msgid ""
+"Nonderived - <i>restricts search results to images with the nonderived label.</i>"
+msgstr ""
+"Nonderived - <i>limita i risultati della ricerca alle immagini con l'etichetta nonderived.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:261
+#: admin/partials/tabs/banks/google_scraping.php:198
+msgid "icon"
+msgstr "icona"
+
+#: admin/partials/tabs/banks/google_image.php:262
+msgid "small"
+msgstr "piccolo"
+
+#: admin/partials/tabs/banks/google_image.php:263
+#: admin/partials/tabs/banks/google_scraping.php:199
+msgid "medium"
+msgstr "medio"
+
+#: admin/partials/tabs/banks/google_image.php:264
+#: admin/partials/tabs/banks/google_scraping.php:200
+msgid "large"
+msgstr "grande"
+
+#: admin/partials/tabs/banks/google_image.php:265
+msgid "xlarge"
+msgstr "molto grande"
+
+#: admin/partials/tabs/banks/google_image.php:266
+msgid "xxlarge"
+msgstr "grandissimo"
+
+#: admin/partials/tabs/banks/google_image.php:267
+msgid "huge"
+msgstr "enorme"
+
+#: admin/partials/tabs/banks/google_image.php:291
+#: admin/partials/tabs/banks/google_scraping.php:260
+msgid "Face"
+msgstr "Volto"
+
+#: admin/partials/tabs/banks/google_image.php:293
+#: admin/partials/tabs/banks/google_scraping.php:262
+msgid "Clipart"
+msgstr "Clipart"
+
+#: admin/partials/tabs/banks/google_image.php:294
+#: admin/partials/tabs/banks/google_scraping.php:263
+msgid "Lineart"
+msgstr "Lineart"
+
+#: admin/partials/tabs/banks/google_image.php:308
+#: admin/partials/tabs/banks/google_scraping.php:278
+msgid "Safety level"
+msgstr "Livello di sicurezza"
+
+#: admin/partials/tabs/banks/google_image.php:316
+#: admin/partials/tabs/banks/google_scraping.php:286
+msgid "Moderate (default)"
+msgstr "Moderato (predefinito)"
+
+#: admin/partials/tabs/banks/google_image.php:317
+#: admin/partials/tabs/banks/google_scraping.php:287
+#: admin/partials/tabs/banks/pixabay.php:188
+msgid "Active"
+msgstr "Attivo"
+
+#: admin/partials/tabs/banks/google_image.php:318
+#: admin/partials/tabs/banks/google_scraping.php:288
+#: admin/partials/tabs/banks/pixabay.php:187
+msgid "Off"
+msgstr "Disattivato"
+
+#: admin/partials/tabs/banks/google_scraping.php:171
+msgid "Not filtered by license (default)"
+msgstr "Non filtrato per licenza (predefinito)"
+
+#: admin/partials/tabs/banks/google_scraping.php:172
+msgid "Labeled for reuse with modification"
+msgstr "Etichettato per il riutilizzo con modifiche"
+
+#: admin/partials/tabs/banks/google_scraping.php:173
+msgid "Labeled for reuse"
+msgstr "Etichettato per il riutilizzo"
+
+#: admin/partials/tabs/banks/google_scraping.php:174
+msgid "Labeled for noncommercial reuse with modification"
+msgstr "Etichettato per il riutilizzo non commerciale con modifiche"
+
+#: admin/partials/tabs/banks/google_scraping.php:175
+msgid "Labeled for noncommercial reuse"
+msgstr "Etichettato per il riutilizzo non commerciale"
+
+#: admin/partials/tabs/banks/google_scraping.php:201
+msgid "More than 400x300"
+msgstr "Più di 400x300"
+
+#: admin/partials/tabs/banks/google_scraping.php:202
+msgid "More than 640x480"
+msgstr "Più di 640x480"
+
+#: admin/partials/tabs/banks/google_scraping.php:203
+msgid "More than 800x600"
+msgstr "Più di 800x600"
+
+#: admin/partials/tabs/banks/google_scraping.php:204
+msgid "More than 1024x768"
+msgstr "Più di 1024x768"
+
+#: admin/partials/tabs/banks/google_scraping.php:205
+msgid "More than 2Mpx"
+msgstr "Più di 2Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:206
+msgid "More than 4Mpx"
+msgstr "Più di 4Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:207
+msgid "More than 6Mpx"
+msgstr "Più di 6Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:208
+msgid "More than 8Mpx"
+msgstr "Più di 8Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:209
+msgid "More than 10Mpx"
+msgstr "Più di 10Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:223
+msgid "Image format"
+msgstr "Formato dell'immagine"
+
+#: admin/partials/tabs/banks/google_scraping.php:235
+msgid "Panoramic"
+msgstr "Panoramico"
+
+#: admin/partials/tabs/banks/google_scraping.php:264
+msgid "Animated"
+msgstr "Animato"
+
+#: admin/partials/tabs/banks/google_scraping.php:326
+msgid "Restricted domains"
+msgstr "Domini consentiti"
+
+#: admin/partials/tabs/banks/google_scraping.php:328
+#: admin/partials/tabs/banks/google_scraping.php:364
+msgid "One domain per line"
+msgstr "Un dominio per riga"
+
+#: admin/partials/tabs/banks/google_scraping.php:329
+#: admin/partials/tabs/banks/google_scraping.php:365
+msgid "Leave empty to disable it"
+msgstr "Lascia vuoto per disattivarlo"
+
+#: admin/partials/tabs/banks/google_scraping.php:334
+msgid "Add domains here if you want image <strong>only</strong> from these domains."
+msgstr "Aggiungi qui i domini se vuoi immagini <strong>solo</strong> da questi domini."
+
+#: admin/partials/tabs/banks/google_scraping.php:362
+msgid "Blacklisted domains"
+msgstr "Domini in blacklist"
+
+#: admin/partials/tabs/banks/google_scraping.php:370
+msgid "Add domains here if you want to blacklist them from results."
+msgstr "Aggiungi qui i domini se vuoi escluderli dai risultati."
+
+#: admin/partials/tabs/banks/pexels.php:16
+msgid ""
+"<b>It's required</b> to provide your own Pexels <b>API Key</b>. You must follow the process. Registration is <a target=\"_blank\" href=\"https://www.pexels.com/join-consumer/\">here</a>. Application creation and <a target=\"_blank\" href=\"https://www.pexels.com/api/new/\">API Id are on this page</a>."
+msgstr ""
+"<b>È necessario</b> fornire la propria <b>API Key</b> Pexels. Segui la procedura. La registrazione è <a target=\"_blank\" href=\"https://www.pexels.com/join-consumer/\">qui</a>. Creazione dell'applicazione e <a target=\"_blank\" href=\"https://www.pexels.com/api/new/\">API Id in questa pagina</a>."
+
+#: admin/partials/tabs/banks/pexels.php:79
+msgid "Chinese (Taiwan)"
+msgstr "Cinese (Taiwan)"
+
+#: admin/partials/tabs/banks/pexels.php:119
+msgid "Resolution"
+msgstr "Risoluzione"
+
+#: admin/partials/tabs/banks/pexels.php:127
+msgid "Small (4MP)"
+msgstr "Piccolo (4MP)"
+
+#: admin/partials/tabs/banks/pexels.php:128
+msgid "Medium (12MP)"
+msgstr "Medio (12MP)"
+
+#: admin/partials/tabs/banks/pexels.php:129
+msgid "Large (24MP)"
+msgstr "Grande (24MP)"
+
+#: admin/partials/tabs/banks/pexels.php:138
+msgid "Minimum photo size"
+msgstr "Dimensione minima della foto"
+
+#: admin/partials/tabs/banks/pixabay.php:16
+msgid ""
+"From now on, <b>it's required</b> to provide your own <b>username</b> and <b>api key</b>. You can register in Pixabay website <a target=\"_blank\" href=\"https://pixabay.com/en/accounts/register/\">here</a> and get api username/key <a target=\"_blank\" href=\"https://pixabay.com/api/docs/\">here</a>"
+msgstr ""
+"D'ora in poi <b>è necessario</b> fornire il proprio <b>username</b> e la <b>api key</b>. Puoi registrarti sul sito Pixabay <a target=\"_blank\" href=\"https://pixabay.com/en/accounts/register/\">qui</a> e ottenere username/chiave API <a target=\"_blank\" href=\"https://pixabay.com/api/docs/\">qui</a>"
+
+#: admin/partials/tabs/banks/pixabay.php:23
+msgid "Pixabay username"
+msgstr "Nome utente Pixabay"
+
+#: admin/partials/tabs/banks/pixabay.php:31
+#: admin/partials/tabs/banks/youtube.php:23
+msgid "Api key"
+msgstr "Api key"
+
+#: admin/partials/tabs/banks/pixabay.php:68
+msgid "Vector image"
+msgstr "Immagine vettoriale"
+
+#: admin/partials/tabs/banks/pixabay.php:139
+msgid "Horizontal"
+msgstr "Orizzontale"
+
+#: admin/partials/tabs/banks/pixabay.php:140
+msgid "Vertical"
+msgstr "Verticale"
+
+#: admin/partials/tabs/banks/pixabay.php:155
+msgid "Minimum width"
+msgstr "Larghezza minima"
+
+#: admin/partials/tabs/banks/pixabay.php:159
+msgid "px minimum for width"
+msgstr "px minimi di larghezza"
+
+#: admin/partials/tabs/banks/pixabay.php:167
+msgid "Minimum height"
+msgstr "Altezza minima"
+
+#: admin/partials/tabs/banks/pixabay.php:171
+msgid "px minimum for height"
+msgstr "px minimi di altezza"
+
+#: admin/partials/tabs/banks/pixabay.php:179
+msgid "Safesearch"
+msgstr "Safesearch"
+
+#: admin/partials/tabs/banks/stability.php:16
+msgid ""
+"<b>It's required</b> to provide your own <b>api key</b>. You can register in Stability AI website <a target=\"_blank\" href=\"https://platform.stability.ai/account/keys\">here</a> and get api key."
+msgstr ""
+"<b>È necessario</b> fornire la propria <b>api key</b>. Puoi registrarti sul sito Stability AI <a target=\"_blank\" href=\"https://platform.stability.ai/account/keys\">qui</a> e ottenere la chiave."
+
+#: admin/partials/tabs/banks/stability.php:19
+msgid ""
+"<b>Caution: Stable Diffusion API can take a long time</b> to generate. From 4 to 9 seconds to get an image. Generation is <b>faster with SD3.5 Large Turbo</b>."
+msgstr ""
+"<b>Attenzione: l'API Stable Diffusion può richiedere molto tempo</b> per generare. Da 4 a 9 secondi per ottenere un'immagine. La generazione è <b>più veloce con SD3.5 Large Turbo</b>."
+
+#: admin/partials/tabs/banks/stability.php:46
+msgid "Model"
+msgstr "Modello"
+
+#: admin/partials/tabs/banks/stability.php:54
+msgid "Stable Diffusion 3.5 Large"
+msgstr "Stable Diffusion 3.5 Large"
+
+#: admin/partials/tabs/banks/stability.php:55
+msgid "Stable Diffusion 3.5 Large Turbo"
+msgstr "Stable Diffusion 3.5 Large Turbo"
+
+#: admin/partials/tabs/banks/stability.php:56
+msgid "Stable Diffusion 3.5 Medium"
+msgstr "Stable Diffusion 3.5 Medium"
+
+#: admin/partials/tabs/banks/stability.php:80
+msgid "16:9"
+msgstr "16:9"
+
+#: admin/partials/tabs/banks/stability.php:81
+msgid "1:1"
+msgstr "1:1"
+
+#: admin/partials/tabs/banks/stability.php:82
+msgid "21:9"
+msgstr "21:9"
+
+#: admin/partials/tabs/banks/stability.php:83
+msgid "2:3"
+msgstr "2:3"
+
+#: admin/partials/tabs/banks/stability.php:84
+msgid "4:5"
+msgstr "4:5"
+
+#: admin/partials/tabs/banks/stability.php:85
+msgid "5:4"
+msgstr "5:4"
+
+#: admin/partials/tabs/banks/stability.php:86
+msgid "9:16"
+msgstr "9:16"
+
+#: admin/partials/tabs/banks/stability.php:87
+msgid "9:21"
+msgstr "9:21"
+
+#: admin/partials/tabs/banks/stability.php:102
+msgid "Output Format"
+msgstr "Formato di output"
+
+#: admin/partials/tabs/banks/stability.php:110
+msgid "Jpeg"
+msgstr "Jpeg"
+
+#: admin/partials/tabs/banks/stability.php:111
+msgid "Png"
+msgstr "Png"
+
+#: admin/partials/tabs/banks/unsplash.php:16
+msgid ""
+"<b>It's required</b> to provide your own Unsplash <b>Access Key</b>. You must follow the process. Registration is <a target=\"_blank\" href=\"https://unsplash.com/join\">here</a>. Application creation and <a target=\"_blank\" href=\"https://unsplash.com/oauth/applications\">API Id are on this page</a>."
+msgstr ""
+"<b>È necessario</b> fornire la propria <b>Access Key</b> Unsplash. Segui la procedura. La registrazione è <a target=\"_blank\" href=\"https://unsplash.com/join\">qui</a>. Creazione dell'applicazione e <a target=\"_blank\" href=\"https://unsplash.com/oauth/applications\">API Id in questa pagina</a>."
+
+#: admin/partials/tabs/banks/unsplash.php:23
+msgid "Access Key"
+msgstr "Access Key"
+
+#: admin/partials/tabs/banks/youtube.php:16
+msgid ""
+"<b>It's required</b> to provide your own Google/Youtube <b>API Key</b>. You must follow the process <a target=\"_blank\" href=\"https://developers.google.com/custom-search/json-api/v1/overview#prerequisites\">here</a>."
+msgstr ""
+"<b>È necessario</b> fornire la propria <b>API Key</b> Google/Youtube. Segui la procedura <a target=\"_blank\" href=\"https://developers.google.com/custom-search/json-api/v1/overview#prerequisites\">qui</a>."
+
+#: admin/partials/tabs/block.php:24
+msgid "Display manual search for featured image "
+msgstr "Mostra la ricerca manuale per l'immagine in evidenza "
+
+#: admin/partials/tabs/block.php:42 admin/partials/tabs/block.php:175
+msgid "Add alt tag on image"
+msgstr "Aggiungi tag alt all'immagine"
+
+#: admin/partials/tabs/block.php:62
+msgid "Translation"
+msgstr "Traduzione"
+
+#: admin/partials/tabs/bulk_generation.php:67
+msgid "Progress"
+msgstr "Avanzamento"
+
+#: admin/partials/tabs/bulk_generation.php:75
+msgid "Time Before Next Generation"
+msgstr "Tempo prima della prossima generazione"
+
+#: admin/partials/tabs/bulk_generation.php:78
+msgid "seconds"
+msgstr "secondi"
+
+#: admin/partials/tabs/bulk_generation.php:102
+msgid "Status"
+msgstr "Stato"
+
+#: admin/partials/tabs/bulk_generation.php:103
+msgid "Post Links"
+msgstr "Link degli articoli"
+
+#: admin/partials/tabs/bulk_generation.php:104
+msgid "Images"
+msgstr "Immagini"
+
+#: admin/partials/tabs/bulk_generation.php:123
+msgid "Successful"
+msgstr "Riuscito"
+
+#: admin/partials/tabs/bulk_generation.php:124
+msgid "Failed"
+msgstr "Non riuscito"
+
+#: admin/partials/tabs/bulk_generation.php:125
+msgid "Error"
+msgstr "Errore"
+
+#: admin/partials/tabs/bulk_generation.php:126
+msgid "Image Already Exists"
+msgstr "L'immagine esiste già"
+
+#: admin/partials/tabs/bulk_generation.php:127
+msgid "No image rewriting into post content"
+msgstr "Nessuna riscrittura dell'immagine nel contenuto dell'articolo"
+
+#: admin/partials/tabs/bulk_generation.php:129
+msgid "Waiting for generation"
+msgstr "In attesa della generazione"
+
+#: admin/partials/tabs/bulk_generation.php:130
+msgid "Show Image Details"
+msgstr "Mostra dettagli dell'immagine"
+
+#: admin/partials/tabs/bulk_generation.php:131
+msgid "Hide Image Details"
+msgstr "Nascondi dettagli dell'immagine"
+
+#: admin/partials/tabs/bulk_generation.php:137
+msgid "Edit"
+msgstr "Modifica"
+
+#: admin/partials/tabs/bulk_generation.php:138
+msgid "View"
+msgstr "Visualizza"
+
+#: admin/partials/tabs/bulk_generation.php:152
+msgid "Successful Generation"
+msgstr "Generazione riuscita"
+
+#: admin/partials/tabs/bulk_generation.php:160
+msgid "Currently no generation."
+msgstr "Al momento nessuna generazione."
+
+#: admin/partials/tabs/bulk_generation.php:161
+msgid "Steps to generate images:"
+msgstr "Passaggi per generare le immagini:"
+
+#: admin/partials/tabs/bulk_generation.php:162
+msgid "Choose your posts"
+msgstr "Scegli gli articoli"
+
+#: admin/partials/tabs/bulk_generation.php:163
+msgid "Generate images"
+msgstr "Genera immagini"
+
+#: admin/partials/tabs/compatibility.php:61
+msgid "Compatibility with REST Requests"
+msgstr "Compatibilità con le richieste REST"
+
+#: admin/partials/tabs/compatibility.php:80
+msgid ""
+"Enable compatibility with REST requests.<br><br> This can be useful, for example, if external services (such as AI posts) allow you to create posts directly in your WordPress."
+msgstr ""
+"Attiva la compatibilità con le richieste REST.<br><br> Può essere utile, ad esempio, se servizi esterni (come articoli IA) ti consentono di creare articoli direttamente nel tuo WordPress."
+
+#: admin/partials/tabs/compatibility.php:92
+msgid "Compatibility with WP All Import"
+msgstr "Compatibilità con WP All Import"
+
+#: admin/partials/tabs/compatibility.php:111
+msgid "Enable compatibility with the plugin \"WP All Import\"."
+msgstr "Attiva la compatibilità con il plugin \"WP All Import\"."
+
+#: admin/partials/tabs/compatibility.php:119
+msgid "Compatibility with WPeMatico"
+msgstr "Compatibilità con WPeMatico"
+
+#: admin/partials/tabs/compatibility.php:138
+msgid "Enable compatibility with the plugin \"WPeMatico\"."
+msgstr "Attiva la compatibilità con il plugin \"WPeMatico\"."
+
+#: admin/partials/tabs/compatibility.php:146
+msgid "Compatibility with FeedWordPress"
+msgstr "Compatibilità con FeedWordPress"
+
+#: admin/partials/tabs/compatibility.php:165
+msgid "Enable compatibility with the plugin \"FeedWordPress\"."
+msgstr "Attiva la compatibilità con il plugin \"FeedWordPress\"."
+
+#: admin/partials/tabs/compatibility.php:173
+msgid "Compatibility with WP Automatic Plugin"
+msgstr "Compatibilità con WP Automatic Plugin"
+
+#: admin/partials/tabs/compatibility.php:192
+msgid "Enable compatibility with the plugin \"WP Automatic Plugin\"."
+msgstr "Attiva la compatibilità con il plugin \"WP Automatic Plugin\"."
+
+#: admin/partials/tabs/compatibility.php:206
+msgid "Compatibility with FIFU"
+msgstr "Compatibilità con FIFU"
+
+#: admin/partials/tabs/compatibility.php:225
+msgid ""
+"Enable compatibility with the plugin \"Featured Image from URL\".<br><br> Warning: This option will not upload your images into your media anymore.<br><br> Warning 2: Does not work with DALL-E."
+msgstr ""
+"Attiva la compatibilità con il plugin \"Featured Image from URL\".<br><br> Attenzione: questa opzione non caricherà più le immagini nella libreria media.<br><br> Attenzione 2: non funziona con DALL-E."
+
+#: admin/partials/tabs/compatibility.php:233
+msgid "Compatibility with CMB2"
+msgstr "Compatibilità con CMB2"
+
+#: admin/partials/tabs/compatibility.php:252
+msgid "Enable compatibility with CMB2 plugin to set image to CMB2 field"
+msgstr ""
+"Attiva la compatibilità con il plugin CMB2 per impostare l'immagine nel campo CMB2"
+
+#: admin/partials/tabs/compatibility.php:260
+msgid "Compatibility with ACF"
+msgstr "Compatibilità con ACF"
+
+#: admin/partials/tabs/compatibility.php:279
+msgid ""
+"Enable compatibility with ACF plugin (Advanced Custom Fields) to set image to ACF field"
+msgstr ""
+"Attiva la compatibilità con il plugin ACF (Advanced Custom Fields) per impostare l'immagine nel campo ACF"
+
+#: admin/partials/tabs/compatibility.php:287
+msgid "Compatibility with Meta Box"
+msgstr "Compatibilità con Meta Box"
+
+#: admin/partials/tabs/compatibility.php:306
+msgid ""
+"Enable compatibility with Meta Box plugin (metabox.io) to set image to Meta Box field"
+msgstr ""
+"Attiva la compatibilità con il plugin Meta Box (metabox.io) per impostare l'immagine nel campo Meta Box"
+
+#: admin/partials/tabs/cron.php:31
+msgid "Enable cron"
+msgstr "Attiva cron"
+
+#: admin/partials/tabs/cron.php:42
+msgid "Relevant post type"
+msgstr "Tipo di contenuto pertinente"
+
+#: admin/partials/tabs/cron.php:67
+msgid "Every"
+msgstr "Ogni"
+
+#: admin/partials/tabs/cron.php:170
+msgid "Minutes"
+msgstr "Minuti"
+
+#: admin/partials/tabs/cron.php:171 admin/partials/tabs/cron.php:219
+msgid "Hours"
+msgstr "Ore"
+
+#: admin/partials/tabs/cron.php:172 admin/partials/tabs/cron.php:220
+msgid "Days"
+msgstr "Giorni"
+
+#: admin/partials/tabs/cron.php:186
+msgid "Posts date"
+msgstr "Data degli articoli"
+
+#: admin/partials/tabs/cron.php:195
+msgid "All Posts"
+msgstr "Tutti gli articoli"
+
+#: admin/partials/tabs/cron.php:221
+msgid "ago and newer"
+msgstr "fa e più recenti"
+
+#: admin/partials/tabs/cron.php:229
+msgid "Number of posts"
+msgstr "Numero di articoli"
+
+#: admin/partials/tabs/cron.php:255
+msgid "Number of posts to process each time the cron is run."
+msgstr "Numero di articoli da elaborare a ogni esecuzione del cron."
+
+#: admin/partials/tabs/dashboard.php:15
+msgid "Pro (licence expired)"
+msgstr "Pro (licenza scaduta)"
+
+#: admin/partials/tabs/dashboard.php:16 admin/partials/tabs/dashboard.php:23
+msgid "Upgrade the plugin"
+msgstr "Aggiorna il plugin"
+
+#: admin/partials/tabs/dashboard.php:20
+msgid "Free"
+msgstr "Gratuito"
+
+#: admin/partials/tabs/dashboard.php:79
+msgid "My account"
+msgstr "Il mio account"
+
+#: admin/partials/tabs/dashboard.php:124
+msgid "Version"
+msgstr "Versione"
+
+#: admin/partials/tabs/dashboard.php:135
+msgid "Verified"
+msgstr "Verificato"
+
+#: admin/partials/tabs/dashboard.php:144
+msgid "Not Verified"
+msgstr "Non verificato"
+
+#: admin/partials/tabs/dashboard.php:158
+msgid "Account Details"
+msgstr "Dettagli dell'account"
+
+#: admin/partials/tabs/dashboard.php:175
+msgid "Connect to pro account"
+msgstr "Collega all'account Pro"
+
+#: admin/partials/tabs/dashboard.php:176
+msgid "Pro Account"
+msgstr "Account Pro"
+
+#: admin/partials/tabs/dashboard.php:204
+msgid "Access to the WordPress.org support forum."
+msgstr "Accesso al forum di supporto di WordPress.org."
+
+#: admin/partials/tabs/dashboard.php:209
+msgid "Support"
+msgstr "Supporto"
+
+#: admin/partials/tabs/dashboard.php:226
+msgid "Get In Touch"
+msgstr "Mettiti in contatto"
+
+#: admin/partials/tabs/dashboard.php:229
+msgid "If you have any questions."
+msgstr "Se hai domande."
+
+#: admin/partials/tabs/dashboard.php:264
+msgid "Tutorials"
+msgstr "Tutorial"
+
+#: admin/partials/tabs/dashboard.php:283
+#, php-format
+msgid "<a href=\"%s\" target=\"_blank\">Youtube Tutorial</a>"
+msgstr "<a href=\"%s\" target=\"_blank\">Tutorial Youtube</a>"
+
+#: admin/partials/tabs/dashboard.php:286
+msgid "Frequently Asked Questions"
+msgstr "Domande frequenti"
+
+#: admin/partials/tabs/dashboard.php:311
+msgid "Reviews"
+msgstr "Recensioni"
+
+#: admin/partials/tabs/dashboard.php:314
+msgid "Like this plugin? Leave a 5-star review on WordPress."
+msgstr "Ti piace questo plugin? Lascia una recensione a 5 stelle su WordPress."
+
+#: admin/partials/tabs/dashboard.php:316
+msgid "Write a review"
+msgstr "Scrivi una recensione"
+
+#: admin/partials/tabs/dashboard.php:374
+msgid "Donate"
+msgstr "Dona"
+
+#: admin/partials/tabs/dashboard.php:378
+msgid "Make a donation"
+msgstr "Fai una donazione"
+
+#: admin/partials/tabs/logs.php:26
+msgid "No log yet"
+msgstr "Nessun log ancora"
+
+#: admin/partials/tabs/logs.php:35
+msgid "Enable Logs"
+msgstr "Attiva i log"
+
+#: admin/partials/tabs/logs.php:44
+msgid "Logs history"
+msgstr "Cronologia dei log"
+
+#: admin/partials/tabs/logs.php:55
+msgid "Download Log"
+msgstr "Scarica log"
+
+#: admin/partials/tabs/logs.php:57
+msgid "Delete all logs"
+msgstr "Elimina tutti i log"
+
+#: admin/partials/tabs/logs.php:65
+msgid "Show settings config"
+msgstr "Mostra la configurazione delle impostazioni"
+
+#: admin/partials/tabs/logs.php:66
+msgid "Hide settings config"
+msgstr "Nascondi la configurazione delle impostazioni"
+
+#: admin/partials/tabs/logs.php:67
+msgid "Copy settings config"
+msgstr "Copia la configurazione delle impostazioni"
+
+#: admin/partials/tabs/logs.php:68
+msgid "Copied !"
+msgstr "Copiato !"
+
+#: admin/partials/tabs/proxy.php:41
+msgid ""
+"If you have a free or paid proxy, you can setup it here. You must use a proxy with <strong>HTTPS protocol</strong>. Use it carefully. "
+msgstr ""
+"Se hai un proxy gratuito o a pagamento, puoi configurarlo qui. Devi usare un proxy con <strong>protocollo HTTPS</strong>. Usalo con attenzione. "
+
+#: admin/partials/tabs/proxy.php:55
+msgid ""
+"You have also to check your hosting. Some rules can block requests from these proxies. "
+msgstr ""
+"Devi anche controllare il tuo hosting. Alcune regole possono bloccare le richieste da questi proxy. "
+
+#: admin/partials/tabs/proxy.php:62
+msgid "Enable Proxy"
+msgstr "Attiva proxy"
+
+#: admin/partials/tabs/proxy.php:73
+msgid "Address"
+msgstr "Indirizzo"
+
+#: admin/partials/tabs/proxy.php:81
+msgid "Port"
+msgstr "Porta"
+
+#: admin/partials/tabs/proxy.php:89
+msgid "Username"
+msgstr "Nome utente"
+
+#: admin/partials/tabs/proxy.php:94
+msgid "Username if it requires authentication"
+msgstr "Nome utente se è richiesta l'autenticazione"
+
+#: admin/partials/tabs/proxy.php:100
+msgid "Password"
+msgstr "Password"
+
+#: admin/partials/tabs/proxy.php:105
+msgid "Password if it requires authentication"
+msgstr "Password se è richiesta l'autenticazione"
+
+#: admin/partials/tabs/rights.php:25
+msgid "Plugin Rights"
+msgstr "Diritti del plugin"
+
+#: admin/partials/tabs/rights.php:47
+msgid "Select which role has access to the Magic Post Thumbnail Dashboard"
+msgstr "Seleziona quale ruolo ha accesso alla bacheca di Magic Post Thumbnail"
+
+#: admin/partials/tabs/source.php:56
+msgid ""
+"Choose which database you want to search for pictures. You can select multiple sources, and drag & drop each banks to give priorities on image search."
+msgstr ""
+"Scegli in quali banche cercare le immagini. Puoi selezionare più fonti e trascinare ciascuna banca per impostare le priorità della ricerca."
+
+#: admin/partials/tabs/source.php:64
+msgid "Image Banks"
+msgstr "Banche immagini"
+
+#: admin/partials/tabs/source.php:170
+msgid "Banks Settings"
+msgstr "Impostazioni delle banche"
+
+msgid "Bing Images"
+msgstr "Bing Images"
+
+msgid "GPT Image"
+msgstr "GPT Image"
+
+msgid "Flux 2"
+msgstr "Flux 2"
+
+msgid "Gemini (Nano Banana)"
+msgstr "Gemini (Nano Banana)"
+
+msgid "Grok"
+msgstr "Grok"
+
+msgid "Ideogram"
+msgstr "Ideogram"
+
+msgid "Use the chain defined in Source"
+msgstr "Usa la catena definita in Sorgente"
+
+msgid "Source chain: %s"
+msgstr "Catena sorgente: %s"
+
+msgid "Automatic generation chain"
+msgstr "Catena di generazione automatica"
+
+msgid ""
+"Used by the editor button, bulk generation, cron and imports. Drag to reorder: the first bank is tried first."
+msgstr ""
+"Usata dal pulsante dell'editor, dalla generazione in blocco, dal cron e dalle importazioni. Trascina per riordinare: la prima banca viene provata per prima."
+
+msgid ""
+"No bank selected. Add at least one bank below, otherwise no image can be generated."
+msgstr ""
+"Nessuna banca selezionata. Aggiungi almeno una banca qui sotto, altrimenti non sarà possibile generare alcuna immagine."
+
+msgid "Configure"
+msgstr "Configura"
+
+msgid "Configure %s"
+msgstr "Configura %s"
+
+msgid "Gutenberg block (manual search)"
+msgstr "Blocco Gutenberg (ricerca manuale)"
+
+msgid "Banks shown as tabs when you search images from the Gutenberg block."
+msgstr "Banche mostrate come schede quando cerchi immagini dal blocco Gutenberg."
+
+msgid "API keys, sizes and filters are configured in %s."
+msgstr "Chiavi API, dimensioni e filtri si configurano in %s."
+
+msgid ""
+"This list is the fallback chain used by every automatic generation (editor button, bulk, cron, imports). Drag to set priority. Gutenberg search banks are chosen on the Gutenberg Block page."
+msgstr ""
+"Questo elenco è la catena di fallback usata da ogni generazione automatica (pulsante editor, blocco, cron, importazioni). Trascina per impostare la priorità. Le banche di ricerca Gutenberg si scelgono nella pagina del blocco Gutenberg."
+
+msgid "Preview a search"
+msgstr "Anteprima di una ricerca"
+
+msgid ""
+"Test this bank without creating an image on a post. Uses the last saved API key and filters."
+msgstr ""
+"Prova questa banca senza creare un'immagine su un articolo. Usa l'ultima chiave API e i filtri salvati."
+
+msgid "Preview"
+msgstr "Anteprima"
+
+msgid "Select a bank on the left to edit its API key, size, language and filters."
+msgstr ""
+"Seleziona una banca a sinistra per modificarne chiave API, dimensione, lingua e filtri."
+
+msgid "Photos"
+msgstr "Foto"
+
+msgid "AI"
+msgstr "IA"
+
+msgid "Ready"
+msgstr "Pronto"
+
+msgid "No key"
+msgstr "Nessuna chiave"
+
+msgid "Untested"
+msgstr "Non testato"
+
+msgid "Key OK"
+msgstr "Chiave OK"
+
+msgid "Key failed"
+msgstr "Chiave non valida"
+
+msgid "Your configuration"
+msgstr "La tua configurazione"
+
+msgid "Automatic bank chain"
+msgstr "Catena automatica delle banche"
+
+msgid "Image placement"
+msgstr "Posizionamento dell'immagine"
+
+msgid "API keys"
+msgstr "Chiavi API"
+
+msgid "Test configuration"
+msgstr "Prova la configurazione"
+
+msgid "Donate"
+msgstr "Dona"
+
+msgid "Loading preview…"
+msgstr "Caricamento anteprima…"
+
+msgid "Could not load a preview for this bank."
+msgstr "Impossibile caricare un'anteprima per questa banca."
+
+msgid "No images returned for this keyword."
+msgstr "Nessuna immagine restituita per questa parola chiave."
+
+msgid ""
+"The first bank in the chain is a generative AI service. Preview would consume credits — generate on a post instead, or put a photo bank first."
+msgstr ""
+"La prima banca della catena è un servizio di IA generativa. L'anteprima consumerebbe crediti — genera su un articolo oppure metti prima una banca fotografica."
+
+msgid "This bank (%s) is a generative AI service. Preview will consume tokens."
+msgstr "Questa banca (%s) è un servizio di IA generativa. L'anteprima consumerà token."
+
+msgid "Generating with AI, this can take up to 40 seconds…"
+msgstr "Generazione con IA, può richiedere fino a 40 secondi…"
+
+msgid "This preview will call a generative AI service and consume tokens. Continue?"
+msgstr ""
+"Questa anteprima chiamerà un servizio di IA generativa e consumerà token. Continuare?"
+
+msgid ""
+"Chain not saved yet. Generation on posts still uses the last saved chain until you click Save."
+msgstr ""
+"Catena non ancora salvata. La generazione sugli articoli usa ancora l'ultima catena salvata finché non fai clic su Salva."
+
+msgid "Unsaved changes"
+msgstr "Modifiche non salvate"
+
+msgid "You have unsaved settings. Save them before leaving this page?"
+msgstr "Hai impostazioni non salvate. Vuoi salvarle prima di lasciare questa pagina?"
+
+msgid "Leave without saving"
+msgstr "Esci senza salvare"
+
+msgid "Save changes"
+msgstr "Salva le modifiche"
+
+msgid "Cancel"
+msgstr "Annulla"
+
+msgid "Unexpected error:"
+msgstr "Errore imprevisto:"
+
+msgid ""
+"Magic Post Thumbnail now uses a single image-bank chain for every generation path (editor button, bulk, cron and imports). Configure it under Source. Each Automatic placement can still override that chain."
+msgstr ""
+"Magic Post Thumbnail ora usa un'unica catena di banche immagini per ogni percorso di generazione (pulsante editor, blocco, cron e importazioni). Configurala in Sorgente. Ogni posizionamento automatico può comunque sovrascrivere quella catena."
+
+msgid "Category"
+msgstr "Categoria"
+
+msgid "Tag"
+msgstr "Tag"
+
+msgid "Taxonomy"
+msgstr "Tassonomia"
+
+msgid "First image in content"
+msgstr "Prima immagine nel contenuto"
+
+msgid "Default image"
+msgstr "Immagine predefinita"
+
+msgid "Local"
+msgstr "Locale"
+
+msgid "Style"
+msgstr "Stile"
+
+msgid "Applied only when generating with an AI bank. Photo banks (Bing, Pexels…) ignore this."
+msgstr "Applicato solo con una banca IA. Le banche foto (Bing, Pexels…) lo ignorano."
+
+msgid "Default"
+msgstr "Predefinito"
+
+msgid "Photorealistic"
+msgstr "Fotorealistico"
+
+msgid "Oil painting"
+msgstr "Pittura a olio"
+
+msgid "Watercolor"
+msgstr "Acquerello"
+
+msgid "Cinematic"
+msgstr "Cinematografico"
+
+msgid "3D render"
+msgstr "Render 3D"
+
+msgid "Minimal"
+msgstr "Minimale"
+
+msgid "Anime"
+msgstr "Anime"
+
+msgid "Custom"
+msgstr "Personalizzato"
+
+msgid "Custom style"
+msgstr "Stile personalizzato"
+
+msgid "Extra instructions appended to the AI prompt."
+msgstr "Istruzioni aggiunte in fondo al prompt IA."
+
+msgid "e.g. editorial product shot, soft daylight"
+msgstr "es. foto prodotto editoriale, luce morbida"
+
+msgid "No text on the image"
+msgstr "Nessun testo sull’immagine"
+
+msgid "Ask the AI not to render captions, titles or watermarks."
+msgstr "Chiedere all’IA di non scrivere didascalie, titoli o filigrane."
+
+msgid "No API key. During generation, the first image already present in the post content is used if previous banks in the chain failed."
+msgstr "Nessuna chiave API. Se le banche precedenti falliscono, si usa la prima immagine già presente nell’articolo."
+
+msgid "Assigned when every other bank in the chain fails. Place this bank last."
+msgstr "Usata quando tutte le altre banche falliscono. Mettila in fondo."
+
+msgid "Select image"
+msgstr "Scegli immagine"
+
+msgid "Remove"
+msgstr "Rimuovi"
+
+msgid "Brand overlay"
+msgstr "Barra titolo / marca"
+
+msgid "Disabled"
+msgstr "Disattivato"
+
+msgid "Title bar"
+msgstr "Barra del titolo"
+
+msgid "Title and logo"
+msgstr "Titolo e logo"
+
+msgid "Draws a bar with the post title on the generated image. Disabled by default."
+msgstr "Disegna una barra con il titolo dell’articolo. Disattivato per impostazione predefinita."
+
+msgid "Overlay look"
+msgstr "Aspetto della barra"
+
+msgid "Bar color"
+msgstr "Colore della barra"
+
+msgid "Bar opacity"
+msgstr "Opacità della barra"
+
+msgid "Text color"
+msgstr "Colore del testo"
+
+msgid "Also show the first category"
+msgstr "Mostra anche la prima categoria"
+
+msgid "Overlay logo"
+msgstr "Logo della barra"
+
+msgid "Select logo"
+msgstr "Scegli logo"
+
+msgid "This bank does not support keyword preview. During generation it uses the first image already in the post."
+msgstr "Questa banca non supporta l’anteprima per parola chiave. In generazione usa la prima immagine dell’articolo."
+
+msgid "Choose a default image in the settings on the left."
+msgstr "Scegli un’immagine predefinita nelle impostazioni a sinistra."
+
+msgid "Generate"
+msgstr "Genera"
+
+msgid "Regenerate"
+msgstr "Rigenera"
+
+msgid "Generating…"
+msgstr "Generazione…"
+
+msgid "Generation failed"
+msgstr "Generazione non riuscita"
+
+msgid "Open in Media Library"
+msgstr "Apri nella libreria media"
+
+msgid "Ready to generate"
+msgstr "Pronto a generare"
+
+msgid "Needs attention"
+msgstr "Da controllare"
+
+msgid "Generate a test image"
+msgstr "Genera un’immagine di prova"
+
+msgid "Creates a draft post so your live articles are left untouched."
+msgstr "Crea una bozza senza modificare gli articoli pubblicati."
+
+msgid "This test will call a generative AI service and consume tokens. Continue?"
+msgstr "Questo test chiamerà un servizio IA generativa e consumerà token. Continuare?"
+
+msgid "Open the test draft"
+msgstr "Apri la bozza di prova"
+
+msgid "Magic Post Thumbnail — test"
+msgstr "Magic Post Thumbnail — test"
+
+msgid "This draft was created to verify image generation. You can delete it."
+msgstr "Questa bozza è stata creata per verificare la generazione di immagini. Puoi eliminarla."
+
+msgid "%s requires the Pro version"
+msgstr "%s richiede la versione Pro"
+
+msgid "%s: no API key"
+msgstr "%s: nessuna chiave API"
+
+msgid "%s: key failed"
+msgstr "%s: chiave non valida"
+
+msgid "%s: key not tested yet"
+msgstr "%s: chiave non ancora verificata"
+
+msgid "Add a bank to the chain first."
+msgstr "Aggiungi prima una banca alla catena."
+
+msgid "All banks in the chain are ready."
+msgstr "Tutte le banche della catena sono pronte."
+
+msgid "No image placement configured."
+msgstr "Nessuna posizione immagine configurata."
+
+msgid "Title bar will be drawn on generated images."
+msgstr "La barra del titolo verrà disegnata sulle immagini generate."
+
+msgid "PHP GD is missing; the overlay cannot be drawn."
+msgstr "Manca PHP GD; la barra non può essere disegnata."
+
+msgid "Overlay is on but this server cannot draw TrueType text. Accents may break."
+msgstr "La barra è attiva ma questo server non può disegnare testo TrueType. Gli accenti potrebbero non funzionare."
+

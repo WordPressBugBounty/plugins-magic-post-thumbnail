@@ -1,0 +1,3190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MPT\n"
+"POT-Creation-Date: 2026-08-14 12:00+0200\n"
+"PO-Revision-Date: 2026-08-14 12:00+0200\n"
+"Last-Translator: \n"
+"Language-Team: contact@magic-post-thumbnail.com\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+
+#: admin/blocks/mpt-images/index.js:39
+msgid "Search for Images"
+msgstr "Tìm kiếm hình ảnh"
+
+#: admin/blocks/mpt-images/index.js:40
+msgid "Close the window"
+msgstr "Đóng cửa sổ"
+
+#: admin/blocks/mpt-images/index.js:41
+msgid "Image is downloading to media, please wait a few seconds."
+msgstr "Hình ảnh đang được tải vào thư viện media, vui lòng đợi vài giây."
+
+#: admin/blocks/mpt-images/index.js:42
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#: admin/blocks/mpt-images/index.js:267
+msgid "Available in the Pro version only."
+msgstr "Chỉ có trong phiên bản Pro."
+
+#: admin/blocks/mpt-images/index.js:320
+msgid ""
+"No results were found for your search. There may be an API issue with your credentials. Please check your credentials on the "
+msgstr ""
+"Không tìm thấy kết quả cho tìm kiếm của bạn. Có thể có sự cố API với thông tin xác thực. Vui lòng kiểm tra thông tin xác thực trên "
+
+#: admin/blocks/mpt-images/index.js:324
+msgid "settings page"
+msgstr "trang cài đặt"
+
+#: admin/blocks/mpt-images/index.js:358
+msgid "No results found for your search."
+msgstr "Không tìm thấy kết quả cho tìm kiếm của bạn."
+
+#: admin/blocks/mpt-images/index.js:386
+msgid "Set as featured image"
+msgstr "Đặt làm ảnh đại diện"
+
+#: admin/blocks/mpt-images/index.js:390
+msgid "Use this image"
+msgstr "Dùng hình ảnh này"
+
+#: admin/blocks/mpt-images/index.js:410
+msgid "PRO VERSION OF MAGIC POST THUMBNAIL"
+msgstr "PHIÊN BẢN PRO CỦA MAGIC POST THUMBNAIL"
+
+#: admin/blocks/mpt-images/index.js:411
+msgid "UNLOCK MORE IMAGES WITH THE PRO VERSION"
+msgstr "MỞ KHÓA THÊM HÌNH ẢNH VỚI PHIÊN BẢN PRO"
+
+#: admin/class-magic-post-thumbnail-admin.php:355
+msgid "Your API key works!"
+msgstr "Khóa API của bạn hoạt động!"
+
+#: admin/class-magic-post-thumbnail-admin.php:356
+msgid "Your API key doesn't work."
+msgstr "Khóa API của bạn không hoạt động."
+
+#: admin/class-magic-post-thumbnail-admin.php:357
+msgid "An error has occurred with the remote API."
+msgstr "Đã xảy ra lỗi với API từ xa."
+
+#: admin/class-magic-post-thumbnail-admin.php:365
+msgid "Successful generation !!"
+msgstr "Tạo thành công !!"
+
+#: admin/class-magic-post-thumbnail-admin.php:366
+msgid "Error with images generation"
+msgstr "Lỗi khi tạo hình ảnh"
+
+#: admin/class-magic-post-thumbnail-admin.php:367
+msgid "Error with the plugin"
+msgstr "Lỗi với plugin"
+
+#: admin/class-magic-post-thumbnail-admin.php:368
+msgid "Search Terms"
+msgstr "Từ khóa tìm kiếm"
+
+#: admin/class-magic-post-thumbnail-admin.php:369
+msgid "Image Resolution"
+msgstr "Độ phân giải hình ảnh"
+
+#: admin/class-magic-post-thumbnail-admin.php:370
+msgid "Image Size"
+msgstr "Kích thước hình ảnh"
+
+#: admin/class-magic-post-thumbnail-admin.php:371
+msgid "Image Bank"
+msgstr "Ngân hàng ảnh"
+
+#: admin/class-magic-post-thumbnail-admin.php:484 admin/partials/sidebar.php:49
+msgid "Generation"
+msgstr "Tạo ảnh"
+
+#: admin/class-magic-post-thumbnail-admin.php:485
+msgid "Generate Automatically"
+msgstr "Tạo tự động"
+
+#: admin/class-magic-post-thumbnail-admin.php:486
+#: admin/partials/tabs/bulk_generation.php:93
+msgid "AI image generation may take 10 to 60 seconds. Please be patient"
+msgstr "Việc tạo ảnh AI có thể mất từ 10 đến 60 giây. Vui lòng kiên nhẫn"
+
+#: admin/class-magic-post-thumbnail-admin.php:487
+msgid "Generate Manually"
+msgstr "Tạo thủ công"
+
+#: admin/class-magic-post-thumbnail-admin.php:488
+msgid "Edit your overwrite settings if you want a new image"
+msgstr "Chỉnh cài đặt ghi đè nếu bạn muốn hình ảnh mới"
+
+#: admin/class-magic-post-thumbnail-admin.php:505
+msgid "Only available with the pro version."
+msgstr "Chỉ có với phiên bản Pro."
+
+#: admin/class-magic-post-thumbnail-admin.php:506
+msgid ""
+"The free version allows one block generation. Multiple blocks are available with the Pro version."
+msgstr "Phiên bản miễn phí cho phép tạo một khối. Nhiều khối có sẵn với phiên bản Pro."
+
+#: admin/class-magic-post-thumbnail-admin.php:507
+msgid "Only one featured image per post is possible"
+msgstr "Chỉ có thể có một ảnh đại diện cho mỗi bài viết"
+
+#: admin/class-magic-post-thumbnail-admin.php:508
+msgid "Are you sure to delete all logs ?"
+msgstr "Bạn có chắc muốn xóa tất cả nhật ký?"
+
+#: admin/class-magic-post-thumbnail-admin.php:509
+msgid "No interval"
+msgstr "Không có khoảng thời gian"
+
+#: admin/class-magic-post-thumbnail-admin.php:510
+msgid "per minute"
+msgstr "mỗi phút"
+
+#: admin/class-magic-post-thumbnail-admin.php:511
+msgid "per hour"
+msgstr "mỗi giờ"
+
+#: admin/class-magic-post-thumbnail-admin.php:514
+msgid ""
+"Thank you! We'd be thrilled if you could rate us 5 stars on WordPress.org. Your positive feedback will help others find and benefit from Magic Post Thumbnail!"
+msgstr ""
+"Cảm ơn bạn! Chúng tôi rất vui nếu bạn đánh giá 5 sao trên WordPress.org. Phản hồi tích cực sẽ giúp người khác tìm thấy và hưởng lợi từ Magic Post Thumbnail!"
+
+#: admin/class-magic-post-thumbnail-admin.php:516
+msgid "Yes, I'll rate it with 5-stars"
+msgstr "Có, tôi sẽ đánh giá 5 sao"
+
+#: admin/class-magic-post-thumbnail-admin.php:517
+msgid "No, maybe later"
+msgstr "Không, có lẽ để sau"
+
+#: admin/class-magic-post-thumbnail-admin.php:518
+msgid "I've already done it"
+msgstr "Tôi đã đánh giá rồi"
+
+#: admin/class-magic-post-thumbnail-admin.php:578
+msgid "Magic Post Thumbnail Options"
+msgstr "Tùy chọn Magic Post Thumbnail"
+
+#: admin/class-magic-post-thumbnail-admin.php:589
+#: admin/class-magic-post-thumbnail-admin.php:590
+#: admin/partials/magic-post-thumbnail-admin-display.php:91
+#: admin/partials/sidebar.php:21
+msgid "Dashboard"
+msgstr "Bảng điều khiển"
+
+#: admin/class-magic-post-thumbnail-admin.php:598
+#: admin/class-magic-post-thumbnail-admin.php:599 admin/partials/sidebar.php:27
+#: admin/partials/tabs/automatic/alteration.php:67
+#: admin/partials/tabs/banks/cc_search.php:23
+msgid "Source"
+msgstr "Nguồn"
+
+#: admin/class-magic-post-thumbnail-admin.php:607
+msgid "Automatic Settings"
+msgstr "Cài đặt tự động"
+
+#: admin/class-magic-post-thumbnail-admin.php:608
+#: admin/class-magic-post-thumbnail-admin.php:1846
+#: admin/partials/sidebar.php:24
+msgid "Settings"
+msgstr "Cài đặt"
+
+#: admin/class-magic-post-thumbnail-admin.php:701
+msgid "You do not have sufficient permissions."
+msgstr "Bạn không có đủ quyền."
+
+#: admin/class-magic-post-thumbnail-admin.php:758
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Bạn không có đủ quyền để truy cập trang này."
+
+#: admin/class-magic-post-thumbnail-admin.php:842
+msgid "Google Image (Scraping)"
+msgstr "Google Image (Thu thập)"
+
+#: admin/class-magic-post-thumbnail-admin.php:843
+msgid "Google Image (API)"
+msgstr "Google Image (API)"
+
+#: admin/class-magic-post-thumbnail-admin.php:844
+msgid "DALL·E (v3)"
+msgstr "DALL·E (v3)"
+
+#: admin/class-magic-post-thumbnail-admin.php:845
+#: admin/partials/tabs/source.php:25
+msgid "Openverse"
+msgstr "Openverse"
+
+#: admin/class-magic-post-thumbnail-admin.php:846
+#: admin/partials/tabs/source.php:26
+msgid "Flickr"
+msgstr "Flickr"
+
+#: admin/class-magic-post-thumbnail-admin.php:847
+#: admin/partials/tabs/source.php:27
+msgid "Pixabay"
+msgstr "Pixabay"
+
+#: admin/class-magic-post-thumbnail-admin.php:848
+#: admin/class-magic-post-thumbnail-admin.php:858
+#: admin/partials/tabs/source.php:28 admin/partials/tabs/source.php:38
+msgid "Youtube"
+msgstr "Youtube"
+
+#: admin/class-magic-post-thumbnail-admin.php:849
+#: admin/class-magic-post-thumbnail-admin.php:859
+#: admin/partials/tabs/source.php:29 admin/partials/tabs/source.php:39
+msgid "Unsplash"
+msgstr "Unsplash"
+
+#: admin/class-magic-post-thumbnail-admin.php:850
+#: admin/class-magic-post-thumbnail-admin.php:860
+#: admin/partials/tabs/source.php:30 admin/partials/tabs/source.php:40
+msgid "Pexels"
+msgstr "Pexels"
+
+#: admin/class-magic-post-thumbnail-admin.php:851
+#: admin/class-magic-post-thumbnail-admin.php:861
+#: admin/partials/tabs/source.php:31 admin/partials/tabs/source.php:41
+msgid "Envato Elements"
+msgstr "Envato Elements"
+
+#: admin/class-magic-post-thumbnail-admin.php:852
+#: admin/class-magic-post-thumbnail-admin.php:862
+msgid "Stable Diffusion"
+msgstr "Stable Diffusion"
+
+#: admin/class-magic-post-thumbnail-admin.php:1426
+msgid "Generate featured images"
+msgstr "Tạo ảnh đại diện"
+
+#: admin/class-magic-post-thumbnail-admin.php:1455
+msgid "Generate Images (MPT)"
+msgstr "Tạo hình ảnh (MPT)"
+
+#: admin/class-magic-post-thumbnail-admin.php:1871
+msgid ""
+"Do you enjoy using Magic Post Thumbnail? If so, please consider giving it a 5-star rating on WordPress.org. Your support helps others discover our plugin and means a lot to us!"
+msgstr ""
+"Bạn có thích dùng Magic Post Thumbnail không? Nếu có, hãy cân nhắc đánh giá 5 sao trên WordPress.org. Sự ủng hộ của bạn giúp người khác khám phá plugin và rất có ý nghĩa với chúng tôi!"
+
+#: admin/class-magic-post-thumbnail-admin.php:1873
+msgid "Sure!"
+msgstr "Chắc chắn!"
+
+#: admin/class-magic-post-thumbnail-admin.php:1874
+msgid "No, thanks"
+msgstr "Không, cảm ơn"
+
+#: admin/class-magic-post-thumbnail-generation.php:1935
+msgid " from "
+msgstr " từ "
+
+#: admin/inc/crons.php:65
+msgid "Magic Post Thumbnail Pro - Cron"
+msgstr "Magic Post Thumbnail Pro - Cron"
+
+#: admin/partials/footer.php:22
+msgid "Website"
+msgstr "Trang web"
+
+#: admin/partials/footer.php:23 admin/partials/tabs/dashboard.php:268
+msgid "Documentation"
+msgstr "Tài liệu"
+
+#: admin/partials/footer.php:24 admin/partials/tabs/dashboard.php:201
+msgid "Support Forum"
+msgstr "Diễn đàn hỗ trợ"
+
+#: admin/partials/footer.php:25 admin/partials/tabs/dashboard.php:237
+msgid "Contact Us"
+msgstr "Liên hệ"
+
+#: admin/partials/footer.php:26
+msgid "Leave a review"
+msgstr "Để lại đánh giá"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:26
+msgid "Settings [Posts]"
+msgstr "Cài đặt [Bài viết]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:30
+msgid "Settings [Block]"
+msgstr "Cài đặt [Khối]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:34
+msgid "Settings [Images]"
+msgstr "Cài đặt [Hình ảnh]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:38
+msgid "Settings [Automatic]"
+msgstr "Cài đặt [Tự động]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:42
+msgid "Settings [Source]"
+msgstr "Cài đặt [Nguồn]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:46
+msgid "Settings [Interval]"
+msgstr "Cài đặt [Khoảng thời gian]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:50
+msgid "Pro [Cron]"
+msgstr "Pro [Cron]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:54
+msgid "Settings [Proxy]"
+msgstr "Cài đặt [Proxy]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:58
+msgid "Miscellaneous [Affiliation]"
+msgstr "Khác [Tiếp thị liên kết]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:62
+msgid "Miscellaneous [Compatibility]"
+msgstr "Khác [Tương thích]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:66
+msgid "Miscellaneous [Rights]"
+msgstr "Khác [Quyền]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:70
+msgid "Miscellaneous [Logs]"
+msgstr "Khác [Nhật ký]"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:74
+#: admin/partials/sidebar.php:63
+msgid "Bulk Generation"
+msgstr "Tạo hàng loạt"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:78
+msgid "Bulk Generation with interval"
+msgstr "Tạo hàng loạt theo khoảng thời gian"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:82
+msgid "Account"
+msgstr "Tài khoản"
+
+#: admin/partials/magic-post-thumbnail-admin-display.php:87
+msgid "Contact"
+msgstr "Liên hệ"
+
+#: admin/partials/sidebar.php:28 admin/partials/tabs/source.php:68
+msgid "Automatic"
+msgstr "Tự động"
+
+#: admin/partials/sidebar.php:29 admin/partials/tabs/source.php:118
+msgid "Gutenberg Block"
+msgstr "Khối Gutenberg"
+
+#: admin/partials/sidebar.php:32 admin/partials/tabs/dashboard.php:12
+msgid "Pro"
+msgstr "Pro"
+
+#: admin/partials/sidebar.php:35
+msgid "Compatibility"
+msgstr "Tương thích"
+
+#: admin/partials/sidebar.php:36
+msgid "Cron"
+msgstr "Cron"
+
+#: admin/partials/sidebar.php:37
+msgid "Proxy"
+msgstr "Proxy"
+
+#: admin/partials/sidebar.php:40
+msgid "Miscellaneous"
+msgstr "Khác"
+
+#: admin/partials/sidebar.php:43 admin/partials/tabs/banks/cc_search.php:48
+#: admin/partials/tabs/banks/flickr.php:15
+#: admin/partials/tabs/banks/google_image.php:223
+#: admin/partials/tabs/banks/google_scraping.php:160
+msgid "Rights"
+msgstr "Quyền"
+
+#: admin/partials/sidebar.php:44
+msgid "Affiliation"
+msgstr "Tiếp thị liên kết"
+
+#: admin/partials/sidebar.php:45
+msgid "Upgrade"
+msgstr "Nâng cấp"
+
+#: admin/partials/sidebar.php:46
+msgid "Logs"
+msgstr "Nhật ký"
+
+#: admin/partials/tabs/automatic.php:85
+msgid "Image Placement"
+msgstr "Vị trí hình ảnh"
+
+#: admin/partials/tabs/automatic.php:90
+msgid "Post-Processing Image"
+msgstr "Xử lý hình ảnh sau"
+
+#: admin/partials/tabs/automatic.php:95
+msgid "Pre-Processing & Developer"
+msgstr "Tiền xử lý & Nhà phát triển"
+
+#: admin/partials/tabs/automatic/alteration.php:10
+msgid "Image Naming Convention"
+msgstr "Quy tắc đặt tên hình ảnh"
+
+#: admin/partials/tabs/automatic/alteration.php:13
+#: admin/partials/tabs/automatic/basedon.php:17
+#: admin/partials/tabs/automatic/basedon.php:156
+#: admin/partials/tabs/automatic/places_template.php:169
+#: admin/partials/tabs/automatic/places_template.php:305
+#: admin/partials/tabs/bulk_generation.php:101
+msgid "Title"
+msgstr "Tiêu đề"
+
+#: admin/partials/tabs/automatic/alteration.php:14
+msgid "Date"
+msgstr "Ngày"
+
+#: admin/partials/tabs/automatic/alteration.php:15
+msgid "Random number"
+msgstr "Số ngẫu nhiên"
+
+#: admin/partials/tabs/automatic/alteration.php:21
+msgid "Overwrite featured images"
+msgstr "Ghi đè ảnh đại diện"
+
+#: admin/partials/tabs/automatic/alteration.php:24
+msgid "Overwrite"
+msgstr "Ghi đè"
+
+#: admin/partials/tabs/automatic/alteration.php:26
+msgid "Warning: This option will overwrite existing featured images"
+msgstr "Cảnh báo: Tùy chọn này sẽ ghi đè ảnh đại diện hiện có"
+
+#: admin/partials/tabs/automatic/alteration.php:33
+msgid "Image Modifications"
+msgstr "Chỉnh sửa hình ảnh"
+
+#: admin/partials/tabs/automatic/alteration.php:36
+msgid "Flip horizontally"
+msgstr "Lật ngang"
+
+#: admin/partials/tabs/automatic/alteration.php:37
+msgid "Crop Image by 10%\t"
+msgstr "Cắt hình ảnh 10%\t"
+
+#: admin/partials/tabs/automatic/alteration.php:51
+#: admin/partials/tabs/automatic/alteration.php:200
+msgid "Add ALT Attribute to Image"
+msgstr "Thêm thuộc tính ALT cho hình ảnh"
+
+#: admin/partials/tabs/automatic/alteration.php:62
+msgid "Alt Text from"
+msgstr "Văn bản ALT từ"
+
+#: admin/partials/tabs/automatic/alteration.php:71
+msgid "Text \"based_on\""
+msgstr "Văn bản \"based_on\""
+
+#: admin/partials/tabs/automatic/alteration.php:87
+msgid "ALT Text Translation"
+msgstr "Dịch văn bản ALT"
+
+#: admin/partials/tabs/automatic/alteration.php:92
+#: admin/partials/tabs/block.php:67
+msgid "Translate alt text from english to"
+msgstr "Dịch văn bản alt từ tiếng Anh sang"
+
+#: admin/partials/tabs/automatic/alteration.php:99
+#: admin/partials/tabs/automatic/alteration.php:100
+#: admin/partials/tabs/banks/google_image.php:55
+#: admin/partials/tabs/banks/google_image.php:56
+#: admin/partials/tabs/banks/google_scraping.php:24
+#: admin/partials/tabs/banks/google_scraping.php:25
+#: admin/partials/tabs/block.php:74 admin/partials/tabs/block.php:75
+msgid "Afrikaans"
+msgstr "Tiếng Afrikaans"
+
+#: admin/partials/tabs/automatic/alteration.php:101
+#: admin/partials/tabs/banks/google_image.php:57
+#: admin/partials/tabs/banks/google_scraping.php:26
+#: admin/partials/tabs/block.php:76
+msgid "Albanian"
+msgstr "Tiếng Albania"
+
+#: admin/partials/tabs/automatic/alteration.php:102
+#: admin/partials/tabs/banks/google_image.php:58
+#: admin/partials/tabs/banks/google_scraping.php:27
+#: admin/partials/tabs/block.php:77
+msgid "Amharic"
+msgstr "Tiếng Amhara"
+
+#: admin/partials/tabs/automatic/alteration.php:103
+#: admin/partials/tabs/automatic/basedon.php:182
+#: admin/partials/tabs/automatic/places_template.php:326
+#: admin/partials/tabs/banks/google_image.php:59
+#: admin/partials/tabs/banks/google_scraping.php:28
+#: admin/partials/tabs/block.php:78
+msgid "Arabic"
+msgstr "Tiếng Ả Rập"
+
+#: admin/partials/tabs/automatic/alteration.php:104
+#: admin/partials/tabs/banks/google_image.php:60
+#: admin/partials/tabs/banks/google_scraping.php:29
+#: admin/partials/tabs/block.php:79
+msgid "Azerbaijani"
+msgstr "Tiếng Azerbaijan"
+
+#: admin/partials/tabs/automatic/alteration.php:105
+#: admin/partials/tabs/banks/google_image.php:61
+#: admin/partials/tabs/banks/google_scraping.php:30
+#: admin/partials/tabs/block.php:80
+msgid "Basque"
+msgstr "Tiếng Basque"
+
+#: admin/partials/tabs/automatic/alteration.php:106
+#: admin/partials/tabs/banks/google_image.php:62
+#: admin/partials/tabs/banks/google_scraping.php:31
+#: admin/partials/tabs/block.php:81
+msgid "Belarusian"
+msgstr "Tiếng Belarus"
+
+#: admin/partials/tabs/automatic/alteration.php:107
+#: admin/partials/tabs/banks/google_image.php:63
+#: admin/partials/tabs/banks/google_scraping.php:32
+#: admin/partials/tabs/block.php:82
+msgid "Bengali"
+msgstr "Tiếng Bengal"
+
+#: admin/partials/tabs/automatic/alteration.php:108
+#: admin/partials/tabs/banks/google_image.php:64
+#: admin/partials/tabs/banks/google_scraping.php:33
+#: admin/partials/tabs/block.php:83
+msgid "Bihari"
+msgstr "Tiếng Bihari"
+
+#: admin/partials/tabs/automatic/alteration.php:109
+#: admin/partials/tabs/banks/google_image.php:65
+#: admin/partials/tabs/banks/google_scraping.php:34
+#: admin/partials/tabs/block.php:84
+msgid "Bosnian"
+msgstr "Tiếng Bosnia"
+
+#: admin/partials/tabs/automatic/alteration.php:110
+#: admin/partials/tabs/automatic/basedon.php:183
+#: admin/partials/tabs/automatic/places_template.php:327
+#: admin/partials/tabs/banks/google_image.php:66
+#: admin/partials/tabs/banks/google_scraping.php:35
+#: admin/partials/tabs/banks/pixabay.php:110
+#: admin/partials/tabs/banks/unsplash.php:73 admin/partials/tabs/block.php:85
+msgid "Bulgarian"
+msgstr "Tiếng Bulgaria"
+
+#: admin/partials/tabs/automatic/alteration.php:111
+#: admin/partials/tabs/banks/google_image.php:67
+#: admin/partials/tabs/banks/google_scraping.php:36
+#: admin/partials/tabs/banks/pexels.php:57 admin/partials/tabs/block.php:86
+msgid "Catalan"
+msgstr "Tiếng Catalan"
+
+#: admin/partials/tabs/automatic/alteration.php:112
+#: admin/partials/tabs/banks/google_image.php:68
+#: admin/partials/tabs/banks/google_scraping.php:37
+#: admin/partials/tabs/block.php:87
+msgid "Chinese (Simplified)"
+msgstr "Tiếng Trung (Giản thể)"
+
+#: admin/partials/tabs/automatic/alteration.php:113
+#: admin/partials/tabs/banks/google_image.php:69
+#: admin/partials/tabs/banks/google_scraping.php:38
+#: admin/partials/tabs/block.php:88
+msgid "Chinese (Traditional)"
+msgstr "Tiếng Trung (Phồn thể)"
+
+#: admin/partials/tabs/automatic/alteration.php:114
+#: admin/partials/tabs/automatic/basedon.php:196
+#: admin/partials/tabs/automatic/places_template.php:340
+#: admin/partials/tabs/banks/google_image.php:70
+#: admin/partials/tabs/banks/google_scraping.php:39
+#: admin/partials/tabs/block.php:89
+msgid "Croatian"
+msgstr "Tiếng Croatia"
+
+#: admin/partials/tabs/automatic/alteration.php:115
+#: admin/partials/tabs/automatic/basedon.php:184
+#: admin/partials/tabs/automatic/places_template.php:328
+#: admin/partials/tabs/banks/google_image.php:71
+#: admin/partials/tabs/banks/google_scraping.php:40
+#: admin/partials/tabs/banks/pexels.php:52
+#: admin/partials/tabs/banks/pixabay.php:90
+#: admin/partials/tabs/banks/unsplash.php:53 admin/partials/tabs/block.php:90
+msgid "Czech"
+msgstr "Tiếng Séc"
+
+#: admin/partials/tabs/automatic/alteration.php:116
+#: admin/partials/tabs/automatic/basedon.php:185
+#: admin/partials/tabs/automatic/places_template.php:329
+#: admin/partials/tabs/banks/google_image.php:72
+#: admin/partials/tabs/banks/google_scraping.php:41
+#: admin/partials/tabs/banks/pexels.php:53
+#: admin/partials/tabs/banks/pixabay.php:91
+#: admin/partials/tabs/banks/unsplash.php:54 admin/partials/tabs/block.php:91
+msgid "Danish"
+msgstr "Tiếng Đan Mạch"
+
+#: admin/partials/tabs/automatic/alteration.php:117
+#: admin/partials/tabs/automatic/basedon.php:205
+#: admin/partials/tabs/automatic/places_template.php:349
+#: admin/partials/tabs/banks/google_image.php:73
+#: admin/partials/tabs/banks/google_scraping.php:42
+#: admin/partials/tabs/banks/pexels.php:62
+#: admin/partials/tabs/banks/pixabay.php:99
+#: admin/partials/tabs/banks/unsplash.php:62 admin/partials/tabs/block.php:92
+msgid "Dutch"
+msgstr "Tiếng Hà Lan"
+
+#: admin/partials/tabs/automatic/alteration.php:118
+#: admin/partials/tabs/banks/google_image.php:75
+#: admin/partials/tabs/banks/google_scraping.php:44
+#: admin/partials/tabs/block.php:93
+msgid "Esperanto"
+msgstr "Quốc tế ngữ Esperanto"
+
+#: admin/partials/tabs/automatic/alteration.php:119
+#: admin/partials/tabs/automatic/basedon.php:190
+#: admin/partials/tabs/automatic/places_template.php:334
+#: admin/partials/tabs/banks/google_image.php:76
+#: admin/partials/tabs/banks/google_scraping.php:45
+#: admin/partials/tabs/block.php:94
+msgid "Estonian"
+msgstr "Tiếng Estonia"
+
+#: admin/partials/tabs/automatic/alteration.php:120
+#: admin/partials/tabs/banks/google_image.php:77
+#: admin/partials/tabs/banks/google_scraping.php:46
+#: admin/partials/tabs/block.php:95
+msgid "Faroese"
+msgstr "Tiếng Faroe"
+
+#: admin/partials/tabs/automatic/alteration.php:121
+#: admin/partials/tabs/automatic/basedon.php:192
+#: admin/partials/tabs/automatic/places_template.php:336
+#: admin/partials/tabs/banks/google_image.php:78
+#: admin/partials/tabs/banks/google_scraping.php:47
+#: admin/partials/tabs/banks/pexels.php:68
+#: admin/partials/tabs/banks/pixabay.php:105
+#: admin/partials/tabs/banks/unsplash.php:68 admin/partials/tabs/block.php:96
+msgid "Finnish"
+msgstr "Tiếng Phần Lan"
+
+#: admin/partials/tabs/automatic/alteration.php:122
+#: admin/partials/tabs/automatic/basedon.php:193
+#: admin/partials/tabs/automatic/places_template.php:337
+#: admin/partials/tabs/banks/google_image.php:79
+#: admin/partials/tabs/banks/google_scraping.php:48
+#: admin/partials/tabs/banks/pexels.php:58
+#: admin/partials/tabs/banks/pixabay.php:95
+#: admin/partials/tabs/banks/unsplash.php:58 admin/partials/tabs/block.php:97
+msgid "French"
+msgstr "Tiếng Pháp"
+
+#: admin/partials/tabs/automatic/alteration.php:123
+#: admin/partials/tabs/banks/google_image.php:80
+#: admin/partials/tabs/banks/google_scraping.php:49
+#: admin/partials/tabs/block.php:98
+msgid "Frisian"
+msgstr "Tiếng Frisia"
+
+#: admin/partials/tabs/automatic/alteration.php:124
+#: admin/partials/tabs/banks/google_image.php:81
+#: admin/partials/tabs/banks/google_scraping.php:50
+#: admin/partials/tabs/block.php:99
+msgid "Galician"
+msgstr "Tiếng Galicia"
+
+#: admin/partials/tabs/automatic/alteration.php:125
+#: admin/partials/tabs/banks/google_image.php:82
+#: admin/partials/tabs/banks/google_scraping.php:51
+#: admin/partials/tabs/block.php:100
+msgid "Georgian"
+msgstr "Tiếng Gruzia"
+
+#: admin/partials/tabs/automatic/alteration.php:126
+#: admin/partials/tabs/automatic/basedon.php:186
+#: admin/partials/tabs/automatic/places_template.php:330
+#: admin/partials/tabs/banks/google_image.php:83
+#: admin/partials/tabs/banks/google_scraping.php:52
+#: admin/partials/tabs/banks/pexels.php:54
+#: admin/partials/tabs/banks/pixabay.php:92
+#: admin/partials/tabs/banks/unsplash.php:55 admin/partials/tabs/block.php:101
+msgid "German"
+msgstr "Tiếng Đức"
+
+#: admin/partials/tabs/automatic/alteration.php:127
+#: admin/partials/tabs/automatic/basedon.php:187
+#: admin/partials/tabs/automatic/places_template.php:331
+#: admin/partials/tabs/banks/google_image.php:84
+#: admin/partials/tabs/banks/google_scraping.php:53
+#: admin/partials/tabs/banks/pexels.php:75
+#: admin/partials/tabs/banks/pixabay.php:112
+#: admin/partials/tabs/banks/unsplash.php:75 admin/partials/tabs/block.php:102
+msgid "Greek"
+msgstr "Tiếng Hy Lạp"
+
+#: admin/partials/tabs/automatic/alteration.php:128
+#: admin/partials/tabs/banks/google_image.php:85
+#: admin/partials/tabs/banks/google_scraping.php:54
+#: admin/partials/tabs/block.php:103
+msgid "Gujarati"
+msgstr "Tiếng Gujarat"
+
+#: admin/partials/tabs/automatic/alteration.php:129
+#: admin/partials/tabs/automatic/basedon.php:194
+#: admin/partials/tabs/automatic/places_template.php:338
+#: admin/partials/tabs/banks/google_image.php:86
+#: admin/partials/tabs/banks/google_scraping.php:55
+#: admin/partials/tabs/block.php:104
+msgid "Hebrew"
+msgstr "Tiếng Do Thái"
+
+#: admin/partials/tabs/automatic/alteration.php:130
+#: admin/partials/tabs/automatic/basedon.php:195
+#: admin/partials/tabs/automatic/places_template.php:339
+#: admin/partials/tabs/banks/google_image.php:87
+#: admin/partials/tabs/banks/google_scraping.php:56
+#: admin/partials/tabs/block.php:105
+msgid "Hindi"
+msgstr "Tiếng Hindi"
+
+#: admin/partials/tabs/automatic/alteration.php:131
+#: admin/partials/tabs/automatic/basedon.php:197
+#: admin/partials/tabs/automatic/places_template.php:341
+#: admin/partials/tabs/banks/google_image.php:88
+#: admin/partials/tabs/banks/google_scraping.php:57
+#: admin/partials/tabs/banks/pexels.php:61
+#: admin/partials/tabs/banks/pixabay.php:98
+#: admin/partials/tabs/banks/unsplash.php:61 admin/partials/tabs/block.php:106
+msgid "Hungarian"
+msgstr "Tiếng Hungary"
+
+#: admin/partials/tabs/automatic/alteration.php:132
+#: admin/partials/tabs/banks/google_image.php:89
+#: admin/partials/tabs/banks/google_scraping.php:58
+#: admin/partials/tabs/block.php:107
+msgid "Icelandic"
+msgstr "Tiếng Iceland"
+
+#: admin/partials/tabs/automatic/alteration.php:133
+#: admin/partials/tabs/automatic/basedon.php:199
+#: admin/partials/tabs/automatic/places_template.php:343
+#: admin/partials/tabs/banks/google_image.php:90
+#: admin/partials/tabs/banks/google_scraping.php:59
+#: admin/partials/tabs/banks/pexels.php:59
+#: admin/partials/tabs/banks/pixabay.php:96
+#: admin/partials/tabs/banks/unsplash.php:59 admin/partials/tabs/block.php:108
+msgid "Indonesian"
+msgstr "Tiếng Indonesia"
+
+#: admin/partials/tabs/automatic/alteration.php:134
+#: admin/partials/tabs/banks/google_image.php:91
+#: admin/partials/tabs/banks/google_scraping.php:60
+#: admin/partials/tabs/block.php:109
+msgid "Interlingua"
+msgstr "Interlingua"
+
+#: admin/partials/tabs/automatic/alteration.php:135
+#: admin/partials/tabs/banks/google_image.php:92
+#: admin/partials/tabs/banks/google_scraping.php:61
+#: admin/partials/tabs/block.php:110
+msgid "Irish"
+msgstr "Tiếng Ireland"
+
+#: admin/partials/tabs/automatic/alteration.php:136
+#: admin/partials/tabs/automatic/basedon.php:200
+#: admin/partials/tabs/automatic/places_template.php:344
+#: admin/partials/tabs/banks/google_image.php:93
+#: admin/partials/tabs/banks/google_scraping.php:62
+#: admin/partials/tabs/banks/pexels.php:60
+#: admin/partials/tabs/banks/pixabay.php:97
+#: admin/partials/tabs/banks/unsplash.php:60 admin/partials/tabs/block.php:111
+msgid "Italian"
+msgstr "Tiếng Ý"
+
+#: admin/partials/tabs/automatic/alteration.php:137
+#: admin/partials/tabs/automatic/basedon.php:201
+#: admin/partials/tabs/automatic/places_template.php:345
+#: admin/partials/tabs/banks/google_image.php:94
+#: admin/partials/tabs/banks/google_scraping.php:63
+#: admin/partials/tabs/banks/pexels.php:76
+#: admin/partials/tabs/banks/pixabay.php:113
+#: admin/partials/tabs/banks/unsplash.php:76 admin/partials/tabs/block.php:112
+msgid "Japanese"
+msgstr "Tiếng Nhật"
+
+#: admin/partials/tabs/automatic/alteration.php:138
+#: admin/partials/tabs/banks/google_image.php:95
+#: admin/partials/tabs/banks/google_scraping.php:64
+#: admin/partials/tabs/block.php:113
+msgid "Javanese"
+msgstr "Tiếng Java"
+
+#: admin/partials/tabs/automatic/alteration.php:139
+#: admin/partials/tabs/banks/google_image.php:96
+#: admin/partials/tabs/banks/google_scraping.php:65
+#: admin/partials/tabs/block.php:114
+msgid "Kannada"
+msgstr "Tiếng Kannada"
+
+#: admin/partials/tabs/automatic/alteration.php:140
+#: admin/partials/tabs/automatic/basedon.php:202
+#: admin/partials/tabs/automatic/places_template.php:346
+#: admin/partials/tabs/banks/google_image.php:97
+#: admin/partials/tabs/banks/google_scraping.php:66
+#: admin/partials/tabs/banks/pexels.php:77
+#: admin/partials/tabs/banks/pixabay.php:114
+#: admin/partials/tabs/banks/unsplash.php:77 admin/partials/tabs/block.php:115
+msgid "Korean"
+msgstr "Tiếng Hàn"
+
+#: admin/partials/tabs/automatic/alteration.php:141
+#: admin/partials/tabs/banks/google_image.php:98
+#: admin/partials/tabs/banks/google_scraping.php:67
+#: admin/partials/tabs/block.php:116
+msgid "Latin"
+msgstr "Tiếng Latinh"
+
+#: admin/partials/tabs/automatic/alteration.php:142
+#: admin/partials/tabs/automatic/basedon.php:204
+#: admin/partials/tabs/automatic/places_template.php:348
+#: admin/partials/tabs/banks/google_image.php:99
+#: admin/partials/tabs/banks/google_scraping.php:68
+#: admin/partials/tabs/block.php:117
+msgid "Latvian"
+msgstr "Tiếng Latvia"
+
+#: admin/partials/tabs/automatic/alteration.php:143
+#: admin/partials/tabs/automatic/basedon.php:203
+#: admin/partials/tabs/automatic/places_template.php:347
+#: admin/partials/tabs/banks/google_image.php:100
+#: admin/partials/tabs/banks/google_scraping.php:69
+#: admin/partials/tabs/block.php:118
+msgid "Lithuanian"
+msgstr "Tiếng Litva"
+
+#: admin/partials/tabs/automatic/alteration.php:144
+#: admin/partials/tabs/banks/google_image.php:101
+#: admin/partials/tabs/banks/google_scraping.php:70
+#: admin/partials/tabs/block.php:119
+msgid "Macedonian"
+msgstr "Tiếng Macedonia"
+
+#: admin/partials/tabs/automatic/alteration.php:145
+#: admin/partials/tabs/banks/google_image.php:102
+#: admin/partials/tabs/banks/google_scraping.php:71
+#: admin/partials/tabs/block.php:120
+msgid "Malay"
+msgstr "Tiếng Mã Lai"
+
+#: admin/partials/tabs/automatic/alteration.php:146
+#: admin/partials/tabs/banks/google_image.php:103
+#: admin/partials/tabs/banks/google_scraping.php:72
+#: admin/partials/tabs/block.php:121
+msgid "Malayam"
+msgstr "Tiếng Malayalam"
+
+#: admin/partials/tabs/automatic/alteration.php:147
+#: admin/partials/tabs/banks/google_image.php:104
+#: admin/partials/tabs/banks/google_scraping.php:73
+#: admin/partials/tabs/block.php:122
+msgid "Maltese"
+msgstr "Tiếng Malta"
+
+#: admin/partials/tabs/automatic/alteration.php:148
+#: admin/partials/tabs/banks/google_image.php:105
+#: admin/partials/tabs/banks/google_scraping.php:74
+#: admin/partials/tabs/block.php:123
+msgid "Marathi"
+msgstr "Tiếng Marathi"
+
+#: admin/partials/tabs/automatic/alteration.php:149
+#: admin/partials/tabs/banks/google_image.php:106
+#: admin/partials/tabs/banks/google_scraping.php:75
+#: admin/partials/tabs/block.php:124
+msgid "Nepali"
+msgstr "Tiếng Nepal"
+
+#: admin/partials/tabs/automatic/alteration.php:150
+#: admin/partials/tabs/automatic/basedon.php:206
+#: admin/partials/tabs/automatic/places_template.php:350
+#: admin/partials/tabs/banks/google_image.php:107
+#: admin/partials/tabs/banks/google_scraping.php:76
+#: admin/partials/tabs/banks/pexels.php:63
+#: admin/partials/tabs/banks/pixabay.php:100
+#: admin/partials/tabs/banks/unsplash.php:63 admin/partials/tabs/block.php:125
+msgid "Norwegian"
+msgstr "Tiếng Na Uy"
+
+#: admin/partials/tabs/automatic/alteration.php:151
+#: admin/partials/tabs/banks/google_image.php:108
+#: admin/partials/tabs/banks/google_scraping.php:77
+#: admin/partials/tabs/block.php:126
+msgid "Norwegian (Nynorsk)"
+msgstr "Tiếng Na Uy (Nynorsk)"
+
+#: admin/partials/tabs/automatic/alteration.php:152
+#: admin/partials/tabs/banks/google_image.php:109
+#: admin/partials/tabs/banks/google_scraping.php:78
+#: admin/partials/tabs/block.php:127
+msgid "Occitan"
+msgstr "Tiếng Occitan"
+
+#: admin/partials/tabs/automatic/alteration.php:153
+#: admin/partials/tabs/automatic/basedon.php:191
+#: admin/partials/tabs/automatic/places_template.php:335
+#: admin/partials/tabs/banks/google_image.php:110
+#: admin/partials/tabs/banks/google_scraping.php:79
+#: admin/partials/tabs/block.php:128
+msgid "Persian"
+msgstr "Tiếng Ba Tư"
+
+#: admin/partials/tabs/automatic/alteration.php:154
+#: admin/partials/tabs/automatic/basedon.php:207
+#: admin/partials/tabs/automatic/places_template.php:351
+#: admin/partials/tabs/banks/google_image.php:111
+#: admin/partials/tabs/banks/google_scraping.php:80
+#: admin/partials/tabs/banks/pexels.php:64
+#: admin/partials/tabs/banks/pixabay.php:101
+#: admin/partials/tabs/banks/unsplash.php:64 admin/partials/tabs/block.php:129
+msgid "Polish"
+msgstr "Tiếng Ba Lan"
+
+#: admin/partials/tabs/automatic/alteration.php:155
+#: admin/partials/tabs/banks/google_image.php:112
+#: admin/partials/tabs/banks/google_scraping.php:81
+#: admin/partials/tabs/block.php:130
+msgid "Portuguese (Brazil)"
+msgstr "Tiếng Bồ Đào Nha (Brazil)"
+
+#: admin/partials/tabs/automatic/alteration.php:156
+#: admin/partials/tabs/banks/google_image.php:113
+#: admin/partials/tabs/banks/google_scraping.php:82
+#: admin/partials/tabs/block.php:131
+msgid "Portuguese (Portugal)"
+msgstr "Tiếng Bồ Đào Nha (Bồ Đào Nha)"
+
+#: admin/partials/tabs/automatic/alteration.php:157
+#: admin/partials/tabs/banks/google_image.php:114
+#: admin/partials/tabs/banks/google_scraping.php:83
+#: admin/partials/tabs/block.php:132
+msgid "Punjabi"
+msgstr "Tiếng Punjab"
+
+#: admin/partials/tabs/automatic/alteration.php:158
+#: admin/partials/tabs/automatic/basedon.php:209
+#: admin/partials/tabs/automatic/places_template.php:353
+#: admin/partials/tabs/banks/google_image.php:115
+#: admin/partials/tabs/banks/google_scraping.php:84
+#: admin/partials/tabs/banks/pexels.php:66
+#: admin/partials/tabs/banks/pixabay.php:103
+#: admin/partials/tabs/banks/unsplash.php:66 admin/partials/tabs/block.php:133
+msgid "Romanian"
+msgstr "Tiếng Romania"
+
+#: admin/partials/tabs/automatic/alteration.php:159
+#: admin/partials/tabs/automatic/basedon.php:210
+#: admin/partials/tabs/automatic/places_template.php:354
+#: admin/partials/tabs/banks/google_image.php:116
+#: admin/partials/tabs/banks/google_scraping.php:85
+#: admin/partials/tabs/banks/pexels.php:73
+#: admin/partials/tabs/banks/pixabay.php:111
+#: admin/partials/tabs/banks/unsplash.php:74 admin/partials/tabs/block.php:134
+msgid "Russian"
+msgstr "Tiếng Nga"
+
+#: admin/partials/tabs/automatic/alteration.php:160
+#: admin/partials/tabs/banks/google_image.php:117
+#: admin/partials/tabs/banks/google_scraping.php:86
+#: admin/partials/tabs/block.php:135
+msgid "Scots Gaelic"
+msgstr "Tiếng Gael Scotland"
+
+#: admin/partials/tabs/automatic/alteration.php:161
+#: admin/partials/tabs/banks/google_image.php:118
+#: admin/partials/tabs/banks/google_scraping.php:87
+#: admin/partials/tabs/block.php:136
+msgid "Serbian"
+msgstr "Tiếng Serbia"
+
+#: admin/partials/tabs/automatic/alteration.php:162
+#: admin/partials/tabs/banks/google_image.php:119
+#: admin/partials/tabs/banks/google_scraping.php:88
+#: admin/partials/tabs/block.php:137
+msgid "Sinhalese"
+msgstr "Tiếng Sinhala"
+
+#: admin/partials/tabs/automatic/alteration.php:163
+#: admin/partials/tabs/automatic/basedon.php:211
+#: admin/partials/tabs/automatic/places_template.php:355
+#: admin/partials/tabs/banks/google_image.php:120
+#: admin/partials/tabs/banks/google_scraping.php:89
+#: admin/partials/tabs/banks/pexels.php:67
+#: admin/partials/tabs/banks/pixabay.php:104
+#: admin/partials/tabs/banks/unsplash.php:67 admin/partials/tabs/block.php:138
+msgid "Slovak"
+msgstr "Tiếng Slovakia"
+
+#: admin/partials/tabs/automatic/alteration.php:164
+#: admin/partials/tabs/automatic/basedon.php:212
+#: admin/partials/tabs/automatic/places_template.php:356
+#: admin/partials/tabs/banks/google_image.php:121
+#: admin/partials/tabs/banks/google_scraping.php:90
+#: admin/partials/tabs/block.php:139
+msgid "Slovenian"
+msgstr "Tiếng Slovenia"
+
+#: admin/partials/tabs/automatic/alteration.php:165
+#: admin/partials/tabs/automatic/basedon.php:189
+#: admin/partials/tabs/automatic/places_template.php:333
+#: admin/partials/tabs/banks/google_image.php:122
+#: admin/partials/tabs/banks/google_scraping.php:91
+#: admin/partials/tabs/banks/pexels.php:56
+#: admin/partials/tabs/banks/pixabay.php:94
+#: admin/partials/tabs/banks/unsplash.php:57 admin/partials/tabs/block.php:140
+msgid "Spanish"
+msgstr "Tiếng Tây Ban Nha"
+
+#: admin/partials/tabs/automatic/alteration.php:166
+#: admin/partials/tabs/banks/google_image.php:123
+#: admin/partials/tabs/banks/google_scraping.php:92
+#: admin/partials/tabs/block.php:141
+msgid "Sudanese"
+msgstr "Tiếng Sudan"
+
+#: admin/partials/tabs/automatic/alteration.php:167
+#: admin/partials/tabs/banks/google_image.php:124
+#: admin/partials/tabs/banks/google_scraping.php:93
+#: admin/partials/tabs/block.php:142
+msgid "Swahili"
+msgstr "Tiếng Swahili"
+
+#: admin/partials/tabs/automatic/alteration.php:168
+#: admin/partials/tabs/automatic/basedon.php:213
+#: admin/partials/tabs/automatic/places_template.php:357
+#: admin/partials/tabs/banks/google_image.php:125
+#: admin/partials/tabs/banks/google_scraping.php:94
+#: admin/partials/tabs/banks/pexels.php:69
+#: admin/partials/tabs/banks/pixabay.php:106
+#: admin/partials/tabs/banks/unsplash.php:69 admin/partials/tabs/block.php:143
+msgid "Swedish"
+msgstr "Tiếng Thụy Điển"
+
+#: admin/partials/tabs/automatic/alteration.php:169
+#: admin/partials/tabs/banks/google_image.php:126
+#: admin/partials/tabs/banks/google_scraping.php:95
+#: admin/partials/tabs/block.php:144
+msgid "Tagalog"
+msgstr "Tiếng Tagalog"
+
+#: admin/partials/tabs/automatic/alteration.php:170
+#: admin/partials/tabs/banks/google_image.php:127
+#: admin/partials/tabs/banks/google_scraping.php:96
+#: admin/partials/tabs/block.php:145
+msgid "Tamil"
+msgstr "Tiếng Tamil"
+
+#: admin/partials/tabs/automatic/alteration.php:171
+#: admin/partials/tabs/banks/google_image.php:128
+#: admin/partials/tabs/banks/google_scraping.php:97
+#: admin/partials/tabs/block.php:146
+msgid "Telugu"
+msgstr "Tiếng Telugu"
+
+#: admin/partials/tabs/automatic/alteration.php:172
+#: admin/partials/tabs/automatic/basedon.php:214
+#: admin/partials/tabs/automatic/places_template.php:358
+#: admin/partials/tabs/banks/google_image.php:129
+#: admin/partials/tabs/banks/google_scraping.php:98
+#: admin/partials/tabs/banks/pexels.php:72
+#: admin/partials/tabs/banks/pixabay.php:109
+#: admin/partials/tabs/banks/unsplash.php:72 admin/partials/tabs/block.php:147
+msgid "Thai"
+msgstr "Tiếng Thái"
+
+#: admin/partials/tabs/automatic/alteration.php:173
+#: admin/partials/tabs/banks/google_image.php:130
+#: admin/partials/tabs/banks/google_scraping.php:99
+#: admin/partials/tabs/block.php:148
+msgid "Tigrinya"
+msgstr "Tiếng Tigrinya"
+
+#: admin/partials/tabs/automatic/alteration.php:174
+#: admin/partials/tabs/automatic/basedon.php:215
+#: admin/partials/tabs/automatic/places_template.php:359
+#: admin/partials/tabs/banks/google_image.php:131
+#: admin/partials/tabs/banks/google_scraping.php:100
+#: admin/partials/tabs/banks/pexels.php:70
+#: admin/partials/tabs/banks/pixabay.php:107
+#: admin/partials/tabs/banks/unsplash.php:70 admin/partials/tabs/block.php:149
+msgid "Turkish"
+msgstr "Tiếng Thổ Nhĩ Kỳ"
+
+#: admin/partials/tabs/automatic/alteration.php:175
+#: admin/partials/tabs/banks/google_image.php:132
+#: admin/partials/tabs/banks/google_scraping.php:101
+#: admin/partials/tabs/banks/pexels.php:74 admin/partials/tabs/block.php:150
+msgid "Ukrainian"
+msgstr "Tiếng Ukraina"
+
+#: admin/partials/tabs/automatic/alteration.php:176
+#: admin/partials/tabs/banks/google_image.php:133
+#: admin/partials/tabs/banks/google_scraping.php:102
+#: admin/partials/tabs/block.php:151
+msgid "Urdu"
+msgstr "Tiếng Urdu"
+
+#: admin/partials/tabs/automatic/alteration.php:177
+#: admin/partials/tabs/banks/google_image.php:134
+#: admin/partials/tabs/banks/google_scraping.php:103
+#: admin/partials/tabs/block.php:152
+msgid "Uzbek"
+msgstr "Tiếng Uzbek"
+
+#: admin/partials/tabs/automatic/alteration.php:178
+#: admin/partials/tabs/automatic/basedon.php:216
+#: admin/partials/tabs/automatic/places_template.php:360
+#: admin/partials/tabs/banks/google_image.php:135
+#: admin/partials/tabs/banks/google_scraping.php:104
+#: admin/partials/tabs/banks/pexels.php:71
+#: admin/partials/tabs/banks/pixabay.php:108
+#: admin/partials/tabs/banks/unsplash.php:71 admin/partials/tabs/block.php:153
+msgid "Vietnamese"
+msgstr "Tiếng Việt"
+
+#: admin/partials/tabs/automatic/alteration.php:179
+#: admin/partials/tabs/banks/google_image.php:136
+#: admin/partials/tabs/banks/google_scraping.php:105
+#: admin/partials/tabs/block.php:154
+msgid "Welsh"
+msgstr "Tiếng Wales"
+
+#: admin/partials/tabs/automatic/alteration.php:180
+#: admin/partials/tabs/banks/google_image.php:137
+#: admin/partials/tabs/banks/google_scraping.php:106
+#: admin/partials/tabs/block.php:155
+msgid "Xhosa"
+msgstr "Tiếng Xhosa"
+
+#: admin/partials/tabs/automatic/alteration.php:181
+#: admin/partials/tabs/banks/google_image.php:138
+#: admin/partials/tabs/banks/google_scraping.php:107
+#: admin/partials/tabs/block.php:156
+msgid "Zulu"
+msgstr "Tiếng Zulu"
+
+#: admin/partials/tabs/automatic/alteration.php:201
+#: admin/partials/tabs/automatic/developer.php:159
+#: admin/partials/tabs/automatic/developer.php:209
+#: admin/partials/tabs/block.php:176 admin/partials/tabs/compatibility.php:47
+#: admin/partials/tabs/cron.php:284 admin/partials/tabs/proxy.php:132
+msgid "Only available with the pro version"
+msgstr "Chỉ có với phiên bản Pro"
+
+#: admin/partials/tabs/automatic/alteration.php:215
+#: admin/partials/tabs/block.php:197
+msgid "Add caption tag on image"
+msgstr "Thêm thẻ chú thích cho hình ảnh"
+
+#: admin/partials/tabs/automatic/alteration.php:226
+msgid "Caption Format"
+msgstr "Định dạng chú thích"
+
+#: admin/partials/tabs/automatic/alteration.php:231
+msgid "Image Author"
+msgstr "Tác giả hình ảnh"
+
+#: admin/partials/tabs/automatic/alteration.php:235
+msgid "Image Author + Name of Image Bank (Example: <em>Author Name from Pixabay</em>)"
+msgstr "Tác giả hình ảnh + Tên ngân hàng ảnh (Ví dụ: <em>Tên tác giả từ Pixabay</em>)"
+
+#: admin/partials/tabs/automatic/basedon.php:12
+#: admin/partials/tabs/automatic/places_template.php:165
+msgid "Search Based on"
+msgstr "Tìm kiếm dựa trên"
+
+#: admin/partials/tabs/automatic/basedon.php:18
+#: admin/partials/tabs/automatic/places_template.php:170
+msgid "Text Analyzer: Full text"
+msgstr "Phân tích văn bản: Toàn bộ nội dung"
+
+#: admin/partials/tabs/automatic/basedon.php:19
+#: admin/partials/tabs/automatic/places_template.php:171
+msgid "Text Analyzer: Previous paragraph"
+msgstr "Phân tích văn bản: Đoạn trước"
+
+#: admin/partials/tabs/automatic/basedon.php:20
+#: admin/partials/tabs/automatic/places_template.php:172
+msgid "Text Analyzer: Next paragraph"
+msgstr "Phân tích văn bản: Đoạn sau"
+
+#: admin/partials/tabs/automatic/basedon.php:21
+#: admin/partials/tabs/automatic/basedon.php:37
+#: admin/partials/tabs/automatic/places_template.php:173
+#: admin/partials/tabs/automatic/places_template.php:189
+msgid "Tags"
+msgstr "Thẻ"
+
+#: admin/partials/tabs/automatic/basedon.php:22
+#: admin/partials/tabs/automatic/basedon.php:48
+#: admin/partials/tabs/automatic/places_template.php:174
+#: admin/partials/tabs/automatic/places_template.php:200
+msgid "Categories"
+msgstr "Chuyên mục"
+
+#: admin/partials/tabs/automatic/basedon.php:23
+#: admin/partials/tabs/automatic/places_template.php:175
+msgid "Custom Field"
+msgstr "Trường tùy chỉnh"
+
+#: admin/partials/tabs/automatic/basedon.php:24
+#: admin/partials/tabs/automatic/basedon.php:69
+#: admin/partials/tabs/automatic/places_template.php:176
+#: admin/partials/tabs/automatic/places_template.php:221
+msgid "Custom Request"
+msgstr "Yêu cầu tùy chỉnh"
+
+#: admin/partials/tabs/automatic/basedon.php:25
+#: admin/partials/tabs/automatic/places_template.php:177
+msgid "OpenAI Keyword Extractor"
+msgstr "Trích xuất từ khóa OpenAI"
+
+#: admin/partials/tabs/automatic/basedon.php:40
+#: admin/partials/tabs/automatic/places_template.php:192
+msgid "First tag"
+msgstr "Thẻ đầu tiên"
+
+#: admin/partials/tabs/automatic/basedon.php:41
+#: admin/partials/tabs/automatic/places_template.php:193
+msgid "Last tag"
+msgstr "Thẻ cuối cùng"
+
+#: admin/partials/tabs/automatic/basedon.php:42
+#: admin/partials/tabs/automatic/places_template.php:194
+msgid "Random tag"
+msgstr "Thẻ ngẫu nhiên"
+
+#: admin/partials/tabs/automatic/basedon.php:51
+#: admin/partials/tabs/automatic/places_template.php:203
+msgid "First category"
+msgstr "Chuyên mục đầu tiên"
+
+#: admin/partials/tabs/automatic/basedon.php:52
+#: admin/partials/tabs/automatic/places_template.php:204
+msgid "Last category"
+msgstr "Chuyên mục cuối cùng"
+
+#: admin/partials/tabs/automatic/basedon.php:53
+#: admin/partials/tabs/automatic/places_template.php:205
+msgid "Random category"
+msgstr "Chuyên mục ngẫu nhiên"
+
+#: admin/partials/tabs/automatic/basedon.php:59
+#: admin/partials/tabs/automatic/places_template.php:211
+msgid "Custom field Name"
+msgstr "Tên trường tùy chỉnh"
+
+msgid "This is a simple request including the %%Title%%"
+msgstr "Đây là một yêu cầu đơn giản bao gồm %%Title%%"
+
+#: admin/partials/tabs/automatic/basedon.php:90
+#: admin/partials/tabs/automatic/places_template.php:242
+msgid "Category Level"
+msgstr "Cấp chuyên mục"
+
+#: admin/partials/tabs/automatic/basedon.php:92
+#: admin/partials/tabs/automatic/places_template.php:244
+msgid "Choose the category level to use."
+msgstr "Chọn cấp chuyên mục cần dùng."
+
+#: admin/partials/tabs/automatic/basedon.php:96
+#: admin/partials/tabs/automatic/places_template.php:248
+msgid "Child category"
+msgstr "Chuyên mục con"
+
+#: admin/partials/tabs/automatic/basedon.php:97
+#: admin/partials/tabs/automatic/places_template.php:249
+msgid "Parent category"
+msgstr "Chuyên mục cha"
+
+#: admin/partials/tabs/automatic/basedon.php:98
+#: admin/partials/tabs/automatic/places_template.php:250
+msgid "Grandparent category"
+msgstr "Chuyên mục ông"
+
+#: admin/partials/tabs/automatic/basedon.php:105
+#: admin/partials/tabs/automatic/places_template.php:256
+msgid "Taxonomy Slug"
+msgstr "Slug phân loại"
+
+#: admin/partials/tabs/automatic/basedon.php:116
+#: admin/partials/tabs/automatic/places_template.php:265
+msgid "Taxonomy Level"
+msgstr "Cấp phân loại"
+
+#: admin/partials/tabs/automatic/basedon.php:118
+#: admin/partials/tabs/automatic/places_template.php:267
+msgid "Choose the taxonomy level to use."
+msgstr "Chọn cấp phân loại cần dùng."
+
+#: admin/partials/tabs/automatic/basedon.php:122
+#: admin/partials/tabs/automatic/places_template.php:271
+msgid "Child taxonomy"
+msgstr "Phân loại con"
+
+#: admin/partials/tabs/automatic/basedon.php:123
+#: admin/partials/tabs/automatic/places_template.php:272
+msgid "Parent taxonomy"
+msgstr "Phân loại cha"
+
+#: admin/partials/tabs/automatic/basedon.php:124
+#: admin/partials/tabs/automatic/places_template.php:273
+msgid "Grandparent taxonomy"
+msgstr "Phân loại ông"
+
+#: admin/partials/tabs/automatic/basedon.php:130
+#: admin/partials/tabs/automatic/places_template.php:279
+msgid "OpenAI API Key"
+msgstr "Khóa API OpenAI"
+
+#: admin/partials/tabs/automatic/basedon.php:140
+#: admin/partials/tabs/automatic/places_template.php:289
+msgid "Number of keywords to extract from title"
+msgstr "Số từ khóa cần trích từ tiêu đề"
+
+#: admin/partials/tabs/automatic/basedon.php:143
+#: admin/partials/tabs/automatic/places_template.php:292
+msgid "From 1 to 2 words"
+msgstr "Từ 1 đến 2 từ"
+
+#: admin/partials/tabs/automatic/basedon.php:144
+#: admin/partials/tabs/automatic/places_template.php:293
+msgid "2 words"
+msgstr "2 từ"
+
+#: admin/partials/tabs/automatic/basedon.php:145
+#: admin/partials/tabs/automatic/places_template.php:294
+msgid "3 words"
+msgstr "3 từ"
+
+#: admin/partials/tabs/automatic/basedon.php:159
+#: admin/partials/tabs/automatic/places_template.php:308
+msgid "Full title"
+msgstr "Toàn bộ tiêu đề"
+
+#: admin/partials/tabs/automatic/basedon.php:160
+#: admin/partials/tabs/automatic/places_template.php:309
+msgid "Specific Part"
+msgstr "Phần cụ thể"
+
+#: admin/partials/tabs/automatic/basedon.php:161
+#: admin/partials/tabs/automatic/places_template.php:310
+msgid "first words of the title"
+msgstr "những từ đầu tiên của tiêu đề"
+
+#: admin/partials/tabs/automatic/basedon.php:168
+#: admin/partials/tabs/automatic/places_template.php:316
+msgid "Post Content Language"
+msgstr "Ngôn ngữ nội dung bài viết"
+
+#: admin/partials/tabs/automatic/basedon.php:181
+#: admin/partials/tabs/automatic/places_template.php:325
+#: admin/partials/tabs/banks/cc_search.php:88
+#: admin/partials/tabs/banks/google_image.php:161
+#: admin/partials/tabs/banks/google_image.php:199
+#: admin/partials/tabs/banks/google_image.php:260
+#: admin/partials/tabs/banks/google_image.php:290
+#: admin/partials/tabs/banks/google_scraping.php:130
+#: admin/partials/tabs/banks/google_scraping.php:197
+#: admin/partials/tabs/banks/google_scraping.php:231
+#: admin/partials/tabs/banks/google_scraping.php:259
+msgid "-- Default --"
+msgstr "-- Mặc định --"
+
+#: admin/partials/tabs/automatic/basedon.php:188
+#: admin/partials/tabs/automatic/places_template.php:332
+#: admin/partials/tabs/banks/google_image.php:74
+#: admin/partials/tabs/banks/google_scraping.php:43
+#: admin/partials/tabs/banks/pexels.php:55
+#: admin/partials/tabs/banks/pixabay.php:93
+#: admin/partials/tabs/banks/unsplash.php:56
+msgid "English"
+msgstr "Tiếng Anh"
+
+#: admin/partials/tabs/automatic/basedon.php:198
+#: admin/partials/tabs/automatic/places_template.php:342
+msgid "Armenian"
+msgstr "Tiếng Armenia"
+
+#: admin/partials/tabs/automatic/basedon.php:208
+#: admin/partials/tabs/automatic/places_template.php:352
+#: admin/partials/tabs/banks/pexels.php:65
+#: admin/partials/tabs/banks/pixabay.php:102
+#: admin/partials/tabs/banks/unsplash.php:65
+msgid "Portuguese"
+msgstr "Tiếng Bồ Đào Nha"
+
+#: admin/partials/tabs/automatic/basedon.php:217
+#: admin/partials/tabs/automatic/places_template.php:361
+#: admin/partials/tabs/banks/pexels.php:78
+#: admin/partials/tabs/banks/pixabay.php:115
+#: admin/partials/tabs/banks/unsplash.php:78
+msgid "Chinese"
+msgstr "Tiếng Trung"
+
+#: admin/partials/tabs/automatic/basedon.php:232
+#: admin/partials/tabs/automatic/places_template.php:376
+msgid "Translate to English"
+msgstr "Dịch sang tiếng Anh"
+
+#: admin/partials/tabs/automatic/basedon.php:235
+#: admin/partials/tabs/automatic/places_template.php:379
+msgid "Translate"
+msgstr "Dịch"
+
+#: admin/partials/tabs/automatic/basedon.php:237
+#: admin/partials/tabs/automatic/places_template.php:381
+msgid ""
+"The \"based on\" phrase /keywords will be translated into English. This helps to get better results with most image databases."
+msgstr ""
+"Cụm từ/từ khóa \"dựa trên\" sẽ được dịch sang tiếng Anh. Điều này giúp có kết quả tốt hơn với hầu hết các cơ sở dữ liệu hình ảnh."
+
+#: admin/partials/tabs/automatic/basedon.php:244
+#: admin/partials/tabs/automatic/places_template.php:388
+msgid "Image Selection"
+msgstr "Chọn hình ảnh"
+
+#: admin/partials/tabs/automatic/basedon.php:247
+#: admin/partials/tabs/automatic/places_template.php:391
+msgid "First result"
+msgstr "Kết quả đầu tiên"
+
+#: admin/partials/tabs/automatic/basedon.php:248
+#: admin/partials/tabs/automatic/places_template.php:392
+msgid "Random result"
+msgstr "Kết quả ngẫu nhiên"
+
+#: admin/partials/tabs/automatic/developer.php:21
+msgid ""
+"Enable the \"save_post\" & \"wp_insert_post\" hook. <br/><br/>What does it means ? Everytime you create or update a post, an image will be generated.<br/><br/>Warning: Use it precautionary. If you don't understand what it is, disable it."
+msgstr ""
+"Bật hook \"save_post\" và \"wp_insert_post\". <br/><br/>Nghĩa là gì? Mỗi khi bạn tạo hoặc cập nhật bài viết, một hình ảnh sẽ được tạo.<br/><br/>Cảnh báo: Hãy dùng thận trọng. Nếu bạn không hiểu, hãy tắt nó."
+
+#: admin/partials/tabs/automatic/developer.php:31
+msgid "\"Save Post\" Hook"
+msgstr "Hook \"Save Post\""
+
+#: admin/partials/tabs/automatic/developer.php:53
+#: admin/partials/tabs/automatic/developer.php:117
+msgid "Select the post type on which you want to fire the hook."
+msgstr "Chọn loại bài viết mà bạn muốn kích hoạt hook."
+
+#: admin/partials/tabs/automatic/developer.php:61
+msgid "\"Save Post\" Hook post type"
+msgstr "Loại bài viết cho hook \"Save Post\""
+
+#: admin/partials/tabs/automatic/developer.php:64
+#: admin/partials/tabs/automatic/developer.php:128
+msgid "Select all"
+msgstr "Chọn tất cả"
+
+#: admin/partials/tabs/automatic/developer.php:95
+#: admin/partials/tabs/automatic/developer.php:158
+msgid "\"WP Insert Post\" Hook"
+msgstr "Hook \"WP Insert Post\""
+
+#: admin/partials/tabs/automatic/developer.php:125
+msgid "\"WP Insert Post\" Hook post type"
+msgstr "Loại bài viết cho hook \"WP Insert Post\""
+
+#: admin/partials/tabs/automatic/developer.php:183
+msgid ""
+"In strict search mode, quotation marks are added to the search term.<br/><br/>Warning:This may drastically reduce the number of results."
+msgstr ""
+"Ở chế độ tìm kiếm nghiêm ngặt, dấu ngoặc kép được thêm vào từ khóa tìm kiếm.<br/><br/>Cảnh báo: Điều này có thể giảm đáng kể số lượng kết quả."
+
+#: admin/partials/tabs/automatic/developer.php:196
+#: admin/partials/tabs/automatic/developer.php:208
+msgid "Strict Search Mode"
+msgstr "Chế độ tìm kiếm nghiêm ngặt"
+
+#: admin/partials/tabs/automatic/developer.php:221
+#: admin/partials/tabs/cron.php:64
+msgid "Interval"
+msgstr "Khoảng thời gian"
+
+#: admin/partials/tabs/automatic/places.php:35
+#: admin/partials/tabs/automatic/places_template.php:17
+msgid "Featured Image / Inline Content"
+msgstr "Ảnh đại diện / Nội dung nội tuyến"
+
+#: admin/partials/tabs/automatic/places.php:40
+#: admin/partials/tabs/automatic/places_template.php:22
+msgid "Featured Image"
+msgstr "Ảnh đại diện"
+
+#: admin/partials/tabs/automatic/places.php:44
+#: admin/partials/tabs/automatic/places_template.php:26
+msgid "Inline content"
+msgstr "Nội dung nội tuyến"
+
+#: admin/partials/tabs/automatic/places.php:56
+#: admin/partials/tabs/automatic/places_template.php:37
+msgid "FIFU plugin (Featured Image from URL)"
+msgstr "Plugin FIFU (Featured Image from URL)"
+
+#: admin/partials/tabs/automatic/places.php:66
+#: admin/partials/tabs/automatic/places_template.php:47
+msgid "CMB2 Field"
+msgstr "Trường CMB2"
+
+#: admin/partials/tabs/automatic/places.php:75
+#: admin/partials/tabs/automatic/places_template.php:56
+msgid "ACF Field"
+msgstr "Trường ACF"
+
+#: admin/partials/tabs/automatic/places.php:83
+#: admin/partials/tabs/automatic/places_template.php:64
+msgid "Meta Box Field"
+msgstr "Trường Meta Box"
+
+#: admin/partials/tabs/automatic/places.php:91
+#: admin/partials/tabs/automatic/places_template.php:72
+msgid "\"Inline content\" allows you to generate the image anywhere in the content"
+msgstr "\"Nội dung nội tuyến\" cho phép bạn tạo hình ảnh ở bất kỳ đâu trong nội dung"
+
+#: admin/partials/tabs/automatic/places.php:101
+#: admin/partials/tabs/automatic/places_template.php:83
+msgid "Field Name"
+msgstr "Tên trường"
+
+#: admin/partials/tabs/automatic/places.php:114
+#: admin/partials/tabs/automatic/places_template.php:96
+msgid "Image position"
+msgstr "Vị trí hình ảnh"
+
+#: admin/partials/tabs/automatic/places.php:117
+#: admin/partials/tabs/automatic/places_template.php:99
+msgid "Insert"
+msgstr "Chèn"
+
+#: admin/partials/tabs/automatic/places.php:119
+#: admin/partials/tabs/automatic/places_template.php:101
+msgid "Before"
+msgstr "Trước"
+
+#: admin/partials/tabs/automatic/places.php:120
+#: admin/partials/tabs/automatic/places_template.php:102
+msgid "After"
+msgstr "Sau"
+
+#: admin/partials/tabs/automatic/places.php:122
+#: admin/partials/tabs/automatic/places_template.php:103
+msgid "the"
+msgstr " "
+
+#: admin/partials/tabs/automatic/places.php:124
+#: admin/partials/tabs/automatic/places_template.php:105
+msgid "First"
+msgstr "Thứ nhất"
+
+#: admin/partials/tabs/automatic/places.php:125
+#: admin/partials/tabs/automatic/places_template.php:106
+msgid "Second"
+msgstr "Thứ hai"
+
+#: admin/partials/tabs/automatic/places.php:126
+#: admin/partials/tabs/automatic/places_template.php:107
+msgid "Third"
+msgstr "Thứ ba"
+
+#: admin/partials/tabs/automatic/places.php:127
+#: admin/partials/tabs/automatic/places_template.php:108
+msgid "Fourth"
+msgstr "Thứ tư"
+
+#: admin/partials/tabs/automatic/places.php:128
+#: admin/partials/tabs/automatic/places_template.php:109
+msgid "Fifth"
+msgstr "Thứ năm"
+
+#: admin/partials/tabs/automatic/places.php:129
+#: admin/partials/tabs/automatic/places_template.php:110
+msgid "Last"
+msgstr "Cuối cùng"
+
+#: admin/partials/tabs/automatic/places.php:132
+#: admin/partials/tabs/automatic/places_template.php:113
+msgid "paragraph (p)"
+msgstr "đoạn văn (p)"
+
+#: admin/partials/tabs/automatic/places.php:139
+#: admin/partials/tabs/automatic/places_template.php:120
+msgid "link (a)"
+msgstr "liên kết (a)"
+
+#: admin/partials/tabs/automatic/places.php:148
+#: admin/partials/tabs/automatic/places_template.php:128
+#: admin/partials/tabs/banks/dallev1.php:49
+#: admin/partials/tabs/banks/google_image.php:252
+#: admin/partials/tabs/banks/google_scraping.php:189
+msgid "Image size"
+msgstr "Kích thước hình ảnh"
+
+#: admin/partials/tabs/automatic/places.php:165
+#: admin/partials/tabs/automatic/places_template.php:145
+msgid "Image Source"
+msgstr "Nguồn hình ảnh"
+
+#: admin/partials/tabs/automatic/places.php:199
+msgid "Delete"
+msgstr "Xóa"
+
+#: admin/partials/tabs/automatic/places.php:227
+msgid "Add an image location"
+msgstr "Thêm vị trí hình ảnh"
+
+#: admin/partials/tabs/banks/cc_search.php:16
+msgid ""
+"<a target=\"_blank\" href=\"https://oldsearch.creativecommons.org/\">CC Search</a> provides Creative Commons images. You can search these images manually from <a target=\"_blank\" href=\"https://wordpress.org/openverse/\">Openverse (WordPress)</a>."
+msgstr ""
+"<a target=\"_blank\" href=\"https://oldsearch.creativecommons.org/\">CC Search</a> cung cấp hình ảnh Creative Commons. Bạn có thể tìm các hình ảnh này thủ công từ <a target=\"_blank\" href=\"https://wordpress.org/openverse/\">Openverse (WordPress)</a>."
+
+#: admin/partials/tabs/banks/cc_search.php:31
+msgid "All sources"
+msgstr "Tất cả nguồn"
+
+#: admin/partials/tabs/banks/cc_search.php:32
+msgid "All except flickr"
+msgstr "Tất cả trừ flickr"
+
+#: admin/partials/tabs/banks/cc_search.php:33
+#: admin/partials/tabs/banks/flickr.php:63
+msgid "Other"
+msgstr "Khác"
+
+#: admin/partials/tabs/banks/cc_search.php:52
+#: admin/partials/tabs/banks/google_image.php:227
+#: admin/partials/tabs/banks/google_scraping.php:164
+msgid ""
+"Choose these options can reduce relevance of results, but permit to use free-to-use images."
+msgstr ""
+"Chọn các tùy chọn này có thể giảm độ liên quan của kết quả, nhưng cho phép dùng hình ảnh miễn phí."
+
+#: admin/partials/tabs/banks/cc_search.php:56
+msgid "Zéro"
+msgstr "Zero"
+
+#: admin/partials/tabs/banks/cc_search.php:57
+msgid "Attribution-NoDerivs"
+msgstr "Attribution-NoDerivs"
+
+#: admin/partials/tabs/banks/cc_search.php:58
+msgid "Attribution-NonCommercial"
+msgstr "Attribution-NonCommercial"
+
+#: admin/partials/tabs/banks/cc_search.php:59
+msgid "Attribution-NonCommercial-ShareAlike"
+msgstr "Attribution-NonCommercial-ShareAlike"
+
+#: admin/partials/tabs/banks/cc_search.php:60
+msgid "Attribution-NonCommercial-NoDerivs"
+msgstr "Attribution-NonCommercial-NoDerivs"
+
+#: admin/partials/tabs/banks/cc_search.php:61
+msgid "Attribution-ShareAlike"
+msgstr "Attribution-ShareAlike"
+
+#: admin/partials/tabs/banks/cc_search.php:62
+msgid "Attribution"
+msgstr "Attribution"
+
+#: admin/partials/tabs/banks/cc_search.php:63
+msgid "Public Domain Mark"
+msgstr "Nhãn phạm vi công cộng"
+
+#: admin/partials/tabs/banks/cc_search.php:80
+#: admin/partials/tabs/banks/flickr.php:52
+#: admin/partials/tabs/banks/google_image.php:282
+#: admin/partials/tabs/banks/google_scraping.php:251
+#: admin/partials/tabs/banks/pixabay.php:57
+msgid "Image Type"
+msgstr "Loại hình ảnh"
+
+#: admin/partials/tabs/banks/cc_search.php:89
+#: admin/partials/tabs/banks/pixabay.php:67
+msgid "Illustration"
+msgstr "Minh họa"
+
+#: admin/partials/tabs/banks/cc_search.php:90
+msgid "Photography"
+msgstr "Nhiếp ảnh"
+
+#: admin/partials/tabs/banks/cc_search.php:91
+msgid "Digitized Artwork"
+msgstr "Tác phẩm nghệ thuật số hóa"
+
+#: admin/partials/tabs/banks/cc_search.php:106
+#: admin/partials/tabs/banks/stability.php:72
+msgid "Aspect Ratio"
+msgstr "Tỷ lệ khung hình"
+
+#: admin/partials/tabs/banks/cc_search.php:114
+msgid "Tall"
+msgstr "Cao"
+
+#: admin/partials/tabs/banks/cc_search.php:115
+msgid "Wide"
+msgstr "Rộng"
+
+#: admin/partials/tabs/banks/cc_search.php:116
+#: admin/partials/tabs/banks/envato.php:64
+#: admin/partials/tabs/banks/google_scraping.php:233
+#: admin/partials/tabs/banks/pexels.php:105
+msgid "Square"
+msgstr "Vuông"
+
+#: admin/partials/tabs/banks/dallev1.php:16
+msgid ""
+"<b>It's required</b> to provide your own <b>api key</b>. You can register in OpenAI API website <a target=\"_blank\" href=\"https://openai.com/\">here</a> and get api key."
+msgstr ""
+"<b>Bắt buộc</b> cung cấp <b>khóa api</b> của riêng bạn. Bạn có thể đăng ký trên trang OpenAI API <a target=\"_blank\" href=\"https://openai.com/\">tại đây</a> và lấy khóa api."
+
+#: admin/partials/tabs/banks/dallev1.php:19
+msgid ""
+"<b>Caution: DALL-E API can take a long time</b> to generate. About 20 seconds to get a 1024x1024 image."
+msgstr ""
+"<b>Lưu ý: API DALL-E có thể mất nhiều thời gian</b> để tạo. Khoảng 20 giây để có hình 1024x1024."
+
+#: admin/partials/tabs/banks/dallev1.php:22
+msgid ""
+"DALL-E API has some <b>restricted words</b> that will not generate any images. Please refer to the <a href=\"https://labs.openai.com/policies/content-policy\">content policy</a> if you want more details."
+msgstr ""
+"API DALL-E có một số <b>từ bị hạn chế</b> sẽ không tạo ra hình ảnh. Vui lòng xem <a href=\"https://labs.openai.com/policies/content-policy\">chính sách nội dung</a> nếu bạn muốn biết thêm chi tiết."
+
+#: admin/partials/tabs/banks/dallev1.php:29
+#: admin/partials/tabs/banks/pexels.php:23
+#: admin/partials/tabs/banks/stability.php:26
+msgid "API Key"
+msgstr "Khóa API"
+
+#: admin/partials/tabs/banks/dallev1.php:39
+#: admin/partials/tabs/banks/envato.php:45
+#: admin/partials/tabs/banks/pexels.php:33
+#: admin/partials/tabs/banks/pixabay.php:41
+#: admin/partials/tabs/banks/stability.php:36
+#: admin/partials/tabs/banks/unsplash.php:33
+#: admin/partials/tabs/banks/youtube.php:33
+msgid "API testing"
+msgstr "Kiểm tra API"
+
+#: admin/partials/tabs/banks/dallev1.php:57
+msgid "1024x1024"
+msgstr "1024x1024"
+
+#: admin/partials/tabs/banks/dallev1.php:58
+msgid "1792x1024"
+msgstr "1792x1024"
+
+#: admin/partials/tabs/banks/dallev1.php:59
+msgid "1024x1792"
+msgstr "1024x1792"
+
+#: admin/partials/tabs/banks/dallev1.php:74
+msgid "PNG to JPEG"
+msgstr "PNG sang JPEG"
+
+#: admin/partials/tabs/banks/dallev1.php:79
+msgid "Convert to Jpeg image extension"
+msgstr "Chuyển sang phần mở rộng hình Jpeg"
+
+#: admin/partials/tabs/banks/dallev1.php:81
+msgid ""
+"DALL-E will create a PNG file, click this option if you want to convert the file to a Jpeg image."
+msgstr "DALL-E sẽ tạo tệp PNG, chọn tùy chọn này nếu bạn muốn chuyển tệp sang hình Jpeg."
+
+msgid ""
+"You can use your Envato Elements subscription. You can sign up for <a target=\"_blank\" href=\"%1$s\">Envato Elements here</a> and <a target=\"_blank\" href=\"%2$s\">follow this link</a> to generate the token (one token per website)."
+msgstr ""
+"Bạn có thể dùng gói Envato Elements. Đăng ký <a target=\"_blank\" href=\"%1$s\">Envato Elements tại đây</a> và <a target=\"_blank\" href=\"%2$s\">làm theo liên kết này</a> để tạo token (một token cho mỗi trang web)."
+
+#: admin/partials/tabs/banks/envato.php:34
+msgid "Envato Token"
+msgstr "Token Envato"
+
+#: admin/partials/tabs/banks/envato.php:53
+#: admin/partials/tabs/banks/pexels.php:94
+#: admin/partials/tabs/banks/pixabay.php:130
+msgid "Orientation"
+msgstr "Hướng"
+
+#: admin/partials/tabs/banks/envato.php:61
+#: admin/partials/tabs/banks/envato.php:86
+#: admin/partials/tabs/banks/pexels.php:102
+msgid "All"
+msgstr "Tất cả"
+
+#: admin/partials/tabs/banks/envato.php:62
+#: admin/partials/tabs/banks/google_scraping.php:234
+#: admin/partials/tabs/banks/pexels.php:103
+msgid "Landscape"
+msgstr "Ngang"
+
+#: admin/partials/tabs/banks/envato.php:63
+#: admin/partials/tabs/banks/google_scraping.php:232
+#: admin/partials/tabs/banks/pexels.php:104
+msgid "Portrait"
+msgstr "Dọc"
+
+#: admin/partials/tabs/banks/envato.php:78
+msgid "Number of people"
+msgstr "Số người"
+
+#: admin/partials/tabs/banks/envato.php:87
+msgid "No people"
+msgstr "Không có người"
+
+#: admin/partials/tabs/banks/envato.php:88
+msgid "1 person"
+msgstr "1 người"
+
+#: admin/partials/tabs/banks/envato.php:89
+msgid "2 people"
+msgstr "2 người"
+
+#: admin/partials/tabs/banks/envato.php:90
+msgid "3+ people"
+msgstr "3+ người"
+
+#: admin/partials/tabs/banks/flickr.php:19
+msgid "Choose which licence works for pictures. Licences chosen are cumulative."
+msgstr "Chọn giấy phép phù hợp với hình ảnh. Các giấy phép đã chọn được cộng dồn."
+
+#: admin/partials/tabs/banks/flickr.php:20
+msgid "If none of these options are chosen, every licences will be used."
+msgstr "Nếu không chọn tùy chọn nào, mọi giấy phép sẽ được dùng."
+
+#: admin/partials/tabs/banks/flickr.php:24
+msgid "All Rights Reserved"
+msgstr "Giữ mọi quyền"
+
+#: admin/partials/tabs/banks/flickr.php:25
+msgid ""
+"Attribution-NonCommercial-ShareAlike License - <i><a href=\"http://creativecommons.org/licenses/by-nc-sa/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Giấy phép Attribution-NonCommercial-ShareAlike - <i><a href=\"http://creativecommons.org/licenses/by-nc-sa/2.0/\" target=\"_blank\">Chi tiết hơn</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:26
+msgid ""
+"Attribution-NonCommercial License - <i><a href=\"http://creativecommons.org/licenses/by-nc/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Giấy phép Attribution-NonCommercial - <i><a href=\"http://creativecommons.org/licenses/by-nc/2.0/\" target=\"_blank\">Chi tiết hơn</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:27
+msgid ""
+"Attribution-NonCommercial-NoDerivs License - <i><a href=\"http://creativecommons.org/licenses/by-nc-nd/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Giấy phép Attribution-NonCommercial-NoDerivs - <i><a href=\"http://creativecommons.org/licenses/by-nc-nd/2.0/\" target=\"_blank\">Chi tiết hơn</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:28
+msgid ""
+"Attribution License - <i><a href=\"http://creativecommons.org/licenses/by/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Giấy phép Attribution - <i><a href=\"http://creativecommons.org/licenses/by/2.0/\" target=\"_blank\">Chi tiết hơn</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:29
+msgid ""
+"Attribution License - <i><a href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Giấy phép Attribution - <i><a href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">Chi tiết hơn</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:30
+msgid ""
+"Attribution-NoDerivs License - <i><a href=\"http://creativecommons.org/licenses/by-nd/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Giấy phép Attribution-NoDerivs - <i><a href=\"http://creativecommons.org/licenses/by-nd/2.0/\" target=\"_blank\">Chi tiết hơn</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:31
+msgid ""
+"No known copyright restrictions - <i><a href=\"http://flickr.com/commons/usage/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Không có hạn chế bản quyền đã biết - <i><a href=\"http://flickr.com/commons/usage/\" target=\"_blank\">Chi tiết hơn</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:32
+msgid ""
+"United States Government Work - <i><a href=\"http://www.usa.gov/copyright.shtml\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+"Tác phẩm của Chính phủ Hoa Kỳ - <i><a href=\"http://www.usa.gov/copyright.shtml\" target=\"_blank\">Chi tiết hơn</a></i>"
+
+#: admin/partials/tabs/banks/flickr.php:60
+#: admin/partials/tabs/banks/pixabay.php:65
+#: admin/partials/tabs/banks/pixabay.php:138
+msgid "-- All --"
+msgstr "-- Tất cả --"
+
+#: admin/partials/tabs/banks/flickr.php:61
+#: admin/partials/tabs/banks/google_image.php:292
+#: admin/partials/tabs/banks/google_scraping.php:261
+#: admin/partials/tabs/banks/pixabay.php:66
+msgid "Photo"
+msgstr "Ảnh"
+
+#: admin/partials/tabs/banks/flickr.php:62
+msgid "Screenshot"
+msgstr "Ảnh chụp màn hình"
+
+#: admin/partials/tabs/banks/flickr.php:64
+msgid "Photo and screenshot"
+msgstr "Ảnh và ảnh chụp màn hình"
+
+#: admin/partials/tabs/banks/flickr.php:65
+msgid "Screenshot and \"other\""
+msgstr "Ảnh chụp màn hình và \"khác\""
+
+#: admin/partials/tabs/banks/flickr.php:66
+msgid "Photo and \"other\""
+msgstr "Ảnh và \"khác\""
+
+#: admin/partials/tabs/banks/google_image.php:16
+msgid ""
+"From now on, <b>it's required</b> to provide your own Google <i>Search engine ID</i> and <b>API Key</b>. You must follow the process <a target=\"_blank\" href=\"https://developers.google.com/custom-search/json-api/v1/overview#prerequisites\">here</a>. You must get both valid <strong>Search engine ID</strong> and <strong>API Key</strong>"
+msgstr ""
+"Từ nay, <b>bắt buộc</b> cung cấp <i>Search engine ID</i> Google và <b>khóa API</b> của riêng bạn. Bạn phải làm theo quy trình <a target=\"_blank\" href=\"https://developers.google.com/custom-search/json-api/v1/overview#prerequisites\">tại đây</a>. Bạn phải có cả <strong>Search engine ID</strong> và <strong>API Key</strong> hợp lệ"
+
+#: admin/partials/tabs/banks/google_image.php:23
+msgid "Custom Search Engine ID"
+msgstr "ID công cụ tìm kiếm tùy chỉnh"
+
+#: admin/partials/tabs/banks/google_image.php:31
+msgid "Google API Key"
+msgstr "Khóa API Google"
+
+#: admin/partials/tabs/banks/google_image.php:47
+#: admin/partials/tabs/banks/google_scraping.php:16
+#: admin/partials/tabs/banks/pexels.php:41
+#: admin/partials/tabs/banks/pixabay.php:82
+#: admin/partials/tabs/banks/unsplash.php:42
+msgid "Choose the language"
+msgstr "Chọn ngôn ngữ"
+
+#: admin/partials/tabs/banks/google_image.php:54
+#: admin/partials/tabs/banks/google_scraping.php:23
+msgid "English (default)"
+msgstr "Tiếng Anh (mặc định)"
+
+#: admin/partials/tabs/banks/google_image.php:153
+#: admin/partials/tabs/banks/google_scraping.php:122
+msgid "Specified color predominantly"
+msgstr "Màu chủ đạo được chỉ định"
+
+#: admin/partials/tabs/banks/google_image.php:162
+#: admin/partials/tabs/banks/google_scraping.php:131
+msgid "Black"
+msgstr "Đen"
+
+#: admin/partials/tabs/banks/google_image.php:163
+#: admin/partials/tabs/banks/google_scraping.php:132
+msgid "Blue"
+msgstr "Xanh dương"
+
+#: admin/partials/tabs/banks/google_image.php:164
+#: admin/partials/tabs/banks/google_scraping.php:133
+msgid "Brown"
+msgstr "Nâu"
+
+#: admin/partials/tabs/banks/google_image.php:165
+#: admin/partials/tabs/banks/google_scraping.php:134
+msgid "Gray"
+msgstr "Xám"
+
+#: admin/partials/tabs/banks/google_image.php:166
+#: admin/partials/tabs/banks/google_scraping.php:135
+msgid "Green"
+msgstr "Xanh lá"
+
+#: admin/partials/tabs/banks/google_image.php:167
+#: admin/partials/tabs/banks/google_scraping.php:136
+msgid "Pink"
+msgstr "Hồng"
+
+#: admin/partials/tabs/banks/google_image.php:168
+#: admin/partials/tabs/banks/google_scraping.php:137
+msgid "Purple"
+msgstr "Tím"
+
+#: admin/partials/tabs/banks/google_image.php:169
+#: admin/partials/tabs/banks/google_scraping.php:138
+msgid "Teal"
+msgstr "Xanh mòng két"
+
+#: admin/partials/tabs/banks/google_image.php:170
+#: admin/partials/tabs/banks/google_scraping.php:139
+msgid "White"
+msgstr "Trắng"
+
+#: admin/partials/tabs/banks/google_image.php:171
+#: admin/partials/tabs/banks/google_scraping.php:140
+msgid "Yellow"
+msgstr "Vàng"
+
+#: admin/partials/tabs/banks/google_image.php:183
+#: admin/partials/tabs/banks/google_scraping.php:152
+msgid "Experimental"
+msgstr "Thử nghiệm"
+
+#: admin/partials/tabs/banks/google_image.php:184
+#: admin/partials/tabs/banks/google_scraping.php:153
+msgid "Restricts results to images that contain a specified color predominantly"
+msgstr "Giới hạn kết quả ở hình ảnh có màu được chỉ định chiếm chủ đạo"
+
+#: admin/partials/tabs/banks/google_image.php:191
+msgid "Filetype"
+msgstr "Loại tệp"
+
+#: admin/partials/tabs/banks/google_image.php:200
+msgid "jpg"
+msgstr "jpg"
+
+#: admin/partials/tabs/banks/google_image.php:201
+msgid "png"
+msgstr "png"
+
+#: admin/partials/tabs/banks/google_image.php:202
+msgid "gif"
+msgstr "gif"
+
+#: admin/partials/tabs/banks/google_image.php:203
+msgid "bmp"
+msgstr "bmp"
+
+#: admin/partials/tabs/banks/google_image.php:204
+msgid "webp"
+msgstr "webp"
+
+#: admin/partials/tabs/banks/google_image.php:216
+msgid "Restricts image search to one of the following specific file types"
+msgstr "Giới hạn tìm kiếm hình ảnh ở một trong các loại tệp sau"
+
+#: admin/partials/tabs/banks/google_image.php:231
+msgid ""
+"Publicdomain - <i>restricts search results to images with the publicdomain label.</i>"
+msgstr "Publicdomain - <i>giới hạn kết quả tìm kiếm ở hình ảnh có nhãn publicdomain.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:232
+msgid "Attribute - <i>restricts search results to images with the attribute label.</i>"
+msgstr "Attribute - <i>giới hạn kết quả tìm kiếm ở hình ảnh có nhãn attribute.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:233
+msgid ""
+"Sharealike - <i>restricts search results to images with the sharealike label.</i>"
+msgstr "Sharealike - <i>giới hạn kết quả tìm kiếm ở hình ảnh có nhãn sharealike.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:234
+msgid ""
+"Noncommercial - <i>restricts search results to images with the noncomercial label.</i>"
+msgstr ""
+"Noncommercial - <i>giới hạn kết quả tìm kiếm ở hình ảnh có nhãn noncomercial.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:235
+msgid ""
+"Nonderived - <i>restricts search results to images with the nonderived label.</i>"
+msgstr "Nonderived - <i>giới hạn kết quả tìm kiếm ở hình ảnh có nhãn nonderived.</i>"
+
+#: admin/partials/tabs/banks/google_image.php:261
+#: admin/partials/tabs/banks/google_scraping.php:198
+msgid "icon"
+msgstr "icon"
+
+#: admin/partials/tabs/banks/google_image.php:262
+msgid "small"
+msgstr "small"
+
+#: admin/partials/tabs/banks/google_image.php:263
+#: admin/partials/tabs/banks/google_scraping.php:199
+msgid "medium"
+msgstr "medium"
+
+#: admin/partials/tabs/banks/google_image.php:264
+#: admin/partials/tabs/banks/google_scraping.php:200
+msgid "large"
+msgstr "large"
+
+#: admin/partials/tabs/banks/google_image.php:265
+msgid "xlarge"
+msgstr "xlarge"
+
+#: admin/partials/tabs/banks/google_image.php:266
+msgid "xxlarge"
+msgstr "xxlarge"
+
+#: admin/partials/tabs/banks/google_image.php:267
+msgid "huge"
+msgstr "huge"
+
+#: admin/partials/tabs/banks/google_image.php:291
+#: admin/partials/tabs/banks/google_scraping.php:260
+msgid "Face"
+msgstr "Khuôn mặt"
+
+#: admin/partials/tabs/banks/google_image.php:293
+#: admin/partials/tabs/banks/google_scraping.php:262
+msgid "Clipart"
+msgstr "Clipart"
+
+#: admin/partials/tabs/banks/google_image.php:294
+#: admin/partials/tabs/banks/google_scraping.php:263
+msgid "Lineart"
+msgstr "Hình nét"
+
+#: admin/partials/tabs/banks/google_image.php:308
+#: admin/partials/tabs/banks/google_scraping.php:278
+msgid "Safety level"
+msgstr "Mức an toàn"
+
+#: admin/partials/tabs/banks/google_image.php:316
+#: admin/partials/tabs/banks/google_scraping.php:286
+msgid "Moderate (default)"
+msgstr "Trung bình (mặc định)"
+
+#: admin/partials/tabs/banks/google_image.php:317
+#: admin/partials/tabs/banks/google_scraping.php:287
+#: admin/partials/tabs/banks/pixabay.php:188
+msgid "Active"
+msgstr "Bật"
+
+#: admin/partials/tabs/banks/google_image.php:318
+#: admin/partials/tabs/banks/google_scraping.php:288
+#: admin/partials/tabs/banks/pixabay.php:187
+msgid "Off"
+msgstr "Tắt"
+
+#: admin/partials/tabs/banks/google_scraping.php:171
+msgid "Not filtered by license (default)"
+msgstr "Không lọc theo giấy phép (mặc định)"
+
+#: admin/partials/tabs/banks/google_scraping.php:172
+msgid "Labeled for reuse with modification"
+msgstr "Được gắn nhãn tái sử dụng có chỉnh sửa"
+
+#: admin/partials/tabs/banks/google_scraping.php:173
+msgid "Labeled for reuse"
+msgstr "Được gắn nhãn tái sử dụng"
+
+#: admin/partials/tabs/banks/google_scraping.php:174
+msgid "Labeled for noncommercial reuse with modification"
+msgstr "Được gắn nhãn tái sử dụng phi thương mại có chỉnh sửa"
+
+#: admin/partials/tabs/banks/google_scraping.php:175
+msgid "Labeled for noncommercial reuse"
+msgstr "Được gắn nhãn tái sử dụng phi thương mại"
+
+#: admin/partials/tabs/banks/google_scraping.php:201
+msgid "More than 400x300"
+msgstr "Lớn hơn 400x300"
+
+#: admin/partials/tabs/banks/google_scraping.php:202
+msgid "More than 640x480"
+msgstr "Lớn hơn 640x480"
+
+#: admin/partials/tabs/banks/google_scraping.php:203
+msgid "More than 800x600"
+msgstr "Lớn hơn 800x600"
+
+#: admin/partials/tabs/banks/google_scraping.php:204
+msgid "More than 1024x768"
+msgstr "Lớn hơn 1024x768"
+
+#: admin/partials/tabs/banks/google_scraping.php:205
+msgid "More than 2Mpx"
+msgstr "Lớn hơn 2Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:206
+msgid "More than 4Mpx"
+msgstr "Lớn hơn 4Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:207
+msgid "More than 6Mpx"
+msgstr "Lớn hơn 6Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:208
+msgid "More than 8Mpx"
+msgstr "Lớn hơn 8Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:209
+msgid "More than 10Mpx"
+msgstr "Lớn hơn 10Mpx"
+
+#: admin/partials/tabs/banks/google_scraping.php:223
+msgid "Image format"
+msgstr "Định dạng hình ảnh"
+
+#: admin/partials/tabs/banks/google_scraping.php:235
+msgid "Panoramic"
+msgstr "Toàn cảnh"
+
+#: admin/partials/tabs/banks/google_scraping.php:264
+msgid "Animated"
+msgstr "Hoạt ảnh"
+
+#: admin/partials/tabs/banks/google_scraping.php:326
+msgid "Restricted domains"
+msgstr "Tên miền được phép"
+
+#: admin/partials/tabs/banks/google_scraping.php:328
+#: admin/partials/tabs/banks/google_scraping.php:364
+msgid "One domain per line"
+msgstr "Một tên miền mỗi dòng"
+
+#: admin/partials/tabs/banks/google_scraping.php:329
+#: admin/partials/tabs/banks/google_scraping.php:365
+msgid "Leave empty to disable it"
+msgstr "Để trống để tắt"
+
+#: admin/partials/tabs/banks/google_scraping.php:334
+msgid "Add domains here if you want image <strong>only</strong> from these domains."
+msgstr ""
+"Thêm tên miền tại đây nếu bạn muốn hình ảnh <strong>chỉ</strong> từ các tên miền này."
+
+#: admin/partials/tabs/banks/google_scraping.php:362
+msgid "Blacklisted domains"
+msgstr "Tên miền bị chặn"
+
+#: admin/partials/tabs/banks/google_scraping.php:370
+msgid "Add domains here if you want to blacklist them from results."
+msgstr "Thêm tên miền tại đây nếu bạn muốn loại chúng khỏi kết quả."
+
+#: admin/partials/tabs/banks/pexels.php:16
+msgid ""
+"<b>It's required</b> to provide your own Pexels <b>API Key</b>. You must follow the process. Registration is <a target=\"_blank\" href=\"https://www.pexels.com/join-consumer/\">here</a>. Application creation and <a target=\"_blank\" href=\"https://www.pexels.com/api/new/\">API Id are on this page</a>."
+msgstr ""
+"<b>Bắt buộc</b> cung cấp <b>khóa API</b> Pexels của riêng bạn. Bạn phải làm theo quy trình. Đăng ký <a target=\"_blank\" href=\"https://www.pexels.com/join-consumer/\">tại đây</a>. Tạo ứng dụng và <a target=\"_blank\" href=\"https://www.pexels.com/api/new/\">API Id nằm trên trang này</a>."
+
+#: admin/partials/tabs/banks/pexels.php:79
+msgid "Chinese (Taiwan)"
+msgstr "Tiếng Trung (Đài Loan)"
+
+#: admin/partials/tabs/banks/pexels.php:119
+msgid "Resolution"
+msgstr "Độ phân giải"
+
+#: admin/partials/tabs/banks/pexels.php:127
+msgid "Small (4MP)"
+msgstr "Nhỏ (4MP)"
+
+#: admin/partials/tabs/banks/pexels.php:128
+msgid "Medium (12MP)"
+msgstr "Trung bình (12MP)"
+
+#: admin/partials/tabs/banks/pexels.php:129
+msgid "Large (24MP)"
+msgstr "Lớn (24MP)"
+
+#: admin/partials/tabs/banks/pexels.php:138
+msgid "Minimum photo size"
+msgstr "Kích thước ảnh tối thiểu"
+
+#: admin/partials/tabs/banks/pixabay.php:16
+msgid ""
+"From now on, <b>it's required</b> to provide your own <b>username</b> and <b>api key</b>. You can register in Pixabay website <a target=\"_blank\" href=\"https://pixabay.com/en/accounts/register/\">here</a> and get api username/key <a target=\"_blank\" href=\"https://pixabay.com/api/docs/\">here</a>"
+msgstr ""
+"Từ nay, <b>bắt buộc</b> cung cấp <b>tên người dùng</b> và <b>khóa api</b> của riêng bạn. Bạn có thể đăng ký trên trang Pixabay <a target=\"_blank\" href=\"https://pixabay.com/en/accounts/register/\">tại đây</a> và lấy tên người dùng/khóa api <a target=\"_blank\" href=\"https://pixabay.com/api/docs/\">tại đây</a>"
+
+#: admin/partials/tabs/banks/pixabay.php:23
+msgid "Pixabay username"
+msgstr "Tên người dùng Pixabay"
+
+#: admin/partials/tabs/banks/pixabay.php:31
+#: admin/partials/tabs/banks/youtube.php:23
+msgid "Api key"
+msgstr "Khóa API"
+
+#: admin/partials/tabs/banks/pixabay.php:68
+msgid "Vector image"
+msgstr "Hình vector"
+
+#: admin/partials/tabs/banks/pixabay.php:139
+msgid "Horizontal"
+msgstr "Ngang"
+
+#: admin/partials/tabs/banks/pixabay.php:140
+msgid "Vertical"
+msgstr "Dọc"
+
+#: admin/partials/tabs/banks/pixabay.php:155
+msgid "Minimum width"
+msgstr "Chiều rộng tối thiểu"
+
+#: admin/partials/tabs/banks/pixabay.php:159
+msgid "px minimum for width"
+msgstr "px tối thiểu cho chiều rộng"
+
+#: admin/partials/tabs/banks/pixabay.php:167
+msgid "Minimum height"
+msgstr "Chiều cao tối thiểu"
+
+#: admin/partials/tabs/banks/pixabay.php:171
+msgid "px minimum for height"
+msgstr "px tối thiểu cho chiều cao"
+
+#: admin/partials/tabs/banks/pixabay.php:179
+msgid "Safesearch"
+msgstr "Tìm kiếm an toàn"
+
+#: admin/partials/tabs/banks/stability.php:16
+msgid ""
+"<b>It's required</b> to provide your own <b>api key</b>. You can register in Stability AI website <a target=\"_blank\" href=\"https://platform.stability.ai/account/keys\">here</a> and get api key."
+msgstr ""
+"<b>Bắt buộc</b> cung cấp <b>khóa api</b> của riêng bạn. Bạn có thể đăng ký trên trang Stability AI <a target=\"_blank\" href=\"https://platform.stability.ai/account/keys\">tại đây</a> và lấy khóa api."
+
+#: admin/partials/tabs/banks/stability.php:19
+msgid ""
+"<b>Caution: Stable Diffusion API can take a long time</b> to generate. From 4 to 9 seconds to get an image. Generation is <b>faster with SD3.5 Large Turbo</b>."
+msgstr ""
+"<b>Lưu ý: API Stable Diffusion có thể mất nhiều thời gian</b> để tạo. Từ 4 đến 9 giây để có một hình. Tạo ảnh <b>nhanh hơn với SD3.5 Large Turbo</b>."
+
+#: admin/partials/tabs/banks/stability.php:46
+msgid "Model"
+msgstr "Mô hình"
+
+#: admin/partials/tabs/banks/stability.php:54
+msgid "Stable Diffusion 3.5 Large"
+msgstr "Stable Diffusion 3.5 Large"
+
+#: admin/partials/tabs/banks/stability.php:55
+msgid "Stable Diffusion 3.5 Large Turbo"
+msgstr "Stable Diffusion 3.5 Large Turbo"
+
+#: admin/partials/tabs/banks/stability.php:56
+msgid "Stable Diffusion 3.5 Medium"
+msgstr "Stable Diffusion 3.5 Medium"
+
+#: admin/partials/tabs/banks/stability.php:80
+msgid "16:9"
+msgstr "16:9"
+
+#: admin/partials/tabs/banks/stability.php:81
+msgid "1:1"
+msgstr "1:1"
+
+#: admin/partials/tabs/banks/stability.php:82
+msgid "21:9"
+msgstr "21:9"
+
+#: admin/partials/tabs/banks/stability.php:83
+msgid "2:3"
+msgstr "2:3"
+
+#: admin/partials/tabs/banks/stability.php:84
+msgid "4:5"
+msgstr "4:5"
+
+#: admin/partials/tabs/banks/stability.php:85
+msgid "5:4"
+msgstr "5:4"
+
+#: admin/partials/tabs/banks/stability.php:86
+msgid "9:16"
+msgstr "9:16"
+
+#: admin/partials/tabs/banks/stability.php:87
+msgid "9:21"
+msgstr "9:21"
+
+#: admin/partials/tabs/banks/stability.php:102
+msgid "Output Format"
+msgstr "Định dạng đầu ra"
+
+#: admin/partials/tabs/banks/stability.php:110
+msgid "Jpeg"
+msgstr "Jpeg"
+
+#: admin/partials/tabs/banks/stability.php:111
+msgid "Png"
+msgstr "Png"
+
+#: admin/partials/tabs/banks/unsplash.php:16
+msgid ""
+"<b>It's required</b> to provide your own Unsplash <b>Access Key</b>. You must follow the process. Registration is <a target=\"_blank\" href=\"https://unsplash.com/join\">here</a>. Application creation and <a target=\"_blank\" href=\"https://unsplash.com/oauth/applications\">API Id are on this page</a>."
+msgstr ""
+"<b>Bắt buộc</b> cung cấp <b>Access Key</b> Unsplash của riêng bạn. Bạn phải làm theo quy trình. Đăng ký <a target=\"_blank\" href=\"https://unsplash.com/join\">tại đây</a>. Tạo ứng dụng và <a target=\"_blank\" href=\"https://unsplash.com/oauth/applications\">API Id nằm trên trang này</a>."
+
+#: admin/partials/tabs/banks/unsplash.php:23
+msgid "Access Key"
+msgstr "Khóa truy cập"
+
+#: admin/partials/tabs/banks/youtube.php:16
+msgid ""
+"<b>It's required</b> to provide your own Google/Youtube <b>API Key</b>. You must follow the process <a target=\"_blank\" href=\"https://developers.google.com/custom-search/json-api/v1/overview#prerequisites\">here</a>."
+msgstr ""
+"<b>Bắt buộc</b> cung cấp <b>khóa API</b> Google/Youtube của riêng bạn. Bạn phải làm theo quy trình <a target=\"_blank\" href=\"https://developers.google.com/custom-search/json-api/v1/overview#prerequisites\">tại đây</a>."
+
+#: admin/partials/tabs/block.php:24
+msgid "Display manual search for featured image "
+msgstr "Hiển thị tìm kiếm thủ công cho ảnh đại diện "
+
+#: admin/partials/tabs/block.php:42 admin/partials/tabs/block.php:175
+msgid "Add alt tag on image"
+msgstr "Thêm thẻ alt cho hình ảnh"
+
+#: admin/partials/tabs/block.php:62
+msgid "Translation"
+msgstr "Dịch"
+
+#: admin/partials/tabs/bulk_generation.php:67
+msgid "Progress"
+msgstr "Tiến trình"
+
+#: admin/partials/tabs/bulk_generation.php:75
+msgid "Time Before Next Generation"
+msgstr "Thời gian trước lần tạo tiếp theo"
+
+#: admin/partials/tabs/bulk_generation.php:78
+msgid "seconds"
+msgstr "giây"
+
+#: admin/partials/tabs/bulk_generation.php:102
+msgid "Status"
+msgstr "Trạng thái"
+
+#: admin/partials/tabs/bulk_generation.php:103
+msgid "Post Links"
+msgstr "Liên kết bài viết"
+
+#: admin/partials/tabs/bulk_generation.php:104
+msgid "Images"
+msgstr "Hình ảnh"
+
+#: admin/partials/tabs/bulk_generation.php:123
+msgid "Successful"
+msgstr "Thành công"
+
+#: admin/partials/tabs/bulk_generation.php:124
+msgid "Failed"
+msgstr "Thất bại"
+
+#: admin/partials/tabs/bulk_generation.php:125
+msgid "Error"
+msgstr "Lỗi"
+
+#: admin/partials/tabs/bulk_generation.php:126
+msgid "Image Already Exists"
+msgstr "Hình ảnh đã tồn tại"
+
+#: admin/partials/tabs/bulk_generation.php:127
+msgid "No image rewriting into post content"
+msgstr "Không ghi lại hình ảnh vào nội dung bài viết"
+
+#: admin/partials/tabs/bulk_generation.php:129
+msgid "Waiting for generation"
+msgstr "Đang chờ tạo"
+
+#: admin/partials/tabs/bulk_generation.php:130
+msgid "Show Image Details"
+msgstr "Hiện chi tiết hình ảnh"
+
+#: admin/partials/tabs/bulk_generation.php:131
+msgid "Hide Image Details"
+msgstr "Ẩn chi tiết hình ảnh"
+
+#: admin/partials/tabs/bulk_generation.php:137
+msgid "Edit"
+msgstr "Sửa"
+
+#: admin/partials/tabs/bulk_generation.php:138
+msgid "View"
+msgstr "Xem"
+
+#: admin/partials/tabs/bulk_generation.php:152
+msgid "Successful Generation"
+msgstr "Tạo thành công"
+
+#: admin/partials/tabs/bulk_generation.php:160
+msgid "Currently no generation."
+msgstr "Hiện chưa có lần tạo nào."
+
+#: admin/partials/tabs/bulk_generation.php:161
+msgid "Steps to generate images:"
+msgstr "Các bước để tạo hình ảnh:"
+
+#: admin/partials/tabs/bulk_generation.php:162
+msgid "Choose your posts"
+msgstr "Chọn bài viết"
+
+#: admin/partials/tabs/bulk_generation.php:163
+msgid "Generate images"
+msgstr "Tạo hình ảnh"
+
+#: admin/partials/tabs/compatibility.php:61
+msgid "Compatibility with REST Requests"
+msgstr "Tương thích với yêu cầu REST"
+
+#: admin/partials/tabs/compatibility.php:80
+msgid ""
+"Enable compatibility with REST requests.<br><br> This can be useful, for example, if external services (such as AI posts) allow you to create posts directly in your WordPress."
+msgstr ""
+"Bật tương thích với yêu cầu REST.<br><br> Hữu ích nếu các dịch vụ bên ngoài (như bài viết AI) cho phép bạn tạo bài trực tiếp trong WordPress."
+
+#: admin/partials/tabs/compatibility.php:92
+msgid "Compatibility with WP All Import"
+msgstr "Tương thích với WP All Import"
+
+#: admin/partials/tabs/compatibility.php:111
+msgid "Enable compatibility with the plugin \"WP All Import\"."
+msgstr "Bật tương thích với plugin \"WP All Import\"."
+
+#: admin/partials/tabs/compatibility.php:119
+msgid "Compatibility with WPeMatico"
+msgstr "Tương thích với WPeMatico"
+
+#: admin/partials/tabs/compatibility.php:138
+msgid "Enable compatibility with the plugin \"WPeMatico\"."
+msgstr "Bật tương thích với plugin \"WPeMatico\"."
+
+#: admin/partials/tabs/compatibility.php:146
+msgid "Compatibility with FeedWordPress"
+msgstr "Tương thích với FeedWordPress"
+
+#: admin/partials/tabs/compatibility.php:165
+msgid "Enable compatibility with the plugin \"FeedWordPress\"."
+msgstr "Bật tương thích với plugin \"FeedWordPress\"."
+
+#: admin/partials/tabs/compatibility.php:173
+msgid "Compatibility with WP Automatic Plugin"
+msgstr "Tương thích với WP Automatic Plugin"
+
+#: admin/partials/tabs/compatibility.php:192
+msgid "Enable compatibility with the plugin \"WP Automatic Plugin\"."
+msgstr "Bật tương thích với plugin \"WP Automatic Plugin\"."
+
+#: admin/partials/tabs/compatibility.php:206
+msgid "Compatibility with FIFU"
+msgstr "Tương thích với FIFU"
+
+#: admin/partials/tabs/compatibility.php:225
+msgid ""
+"Enable compatibility with the plugin \"Featured Image from URL\".<br><br> Warning: This option will not upload your images into your media anymore.<br><br> Warning 2: Does not work with DALL-E."
+msgstr ""
+"Bật tương thích với plugin \"Featured Image from URL\".<br><br> Cảnh báo: Tùy chọn này sẽ không tải hình ảnh vào thư viện media nữa.<br><br> Cảnh báo 2: Không hoạt động với DALL-E."
+
+#: admin/partials/tabs/compatibility.php:233
+msgid "Compatibility with CMB2"
+msgstr "Tương thích với CMB2"
+
+#: admin/partials/tabs/compatibility.php:252
+msgid "Enable compatibility with CMB2 plugin to set image to CMB2 field"
+msgstr "Bật tương thích với plugin CMB2 để gán hình vào trường CMB2"
+
+#: admin/partials/tabs/compatibility.php:260
+msgid "Compatibility with ACF"
+msgstr "Tương thích với ACF"
+
+#: admin/partials/tabs/compatibility.php:279
+msgid ""
+"Enable compatibility with ACF plugin (Advanced Custom Fields) to set image to ACF field"
+msgstr ""
+"Bật tương thích với plugin ACF (Advanced Custom Fields) để gán hình vào trường ACF"
+
+#: admin/partials/tabs/compatibility.php:287
+msgid "Compatibility with Meta Box"
+msgstr "Tương thích với Meta Box"
+
+#: admin/partials/tabs/compatibility.php:306
+msgid ""
+"Enable compatibility with Meta Box plugin (metabox.io) to set image to Meta Box field"
+msgstr "Bật tương thích với plugin Meta Box (metabox.io) để gán hình vào trường Meta Box"
+
+#: admin/partials/tabs/cron.php:31
+msgid "Enable cron"
+msgstr "Bật cron"
+
+#: admin/partials/tabs/cron.php:42
+msgid "Relevant post type"
+msgstr "Loại bài viết liên quan"
+
+#: admin/partials/tabs/cron.php:67
+msgid "Every"
+msgstr "Mỗi"
+
+#: admin/partials/tabs/cron.php:170
+msgid "Minutes"
+msgstr "Phút"
+
+#: admin/partials/tabs/cron.php:171 admin/partials/tabs/cron.php:219
+msgid "Hours"
+msgstr "Giờ"
+
+#: admin/partials/tabs/cron.php:172 admin/partials/tabs/cron.php:220
+msgid "Days"
+msgstr "Ngày"
+
+#: admin/partials/tabs/cron.php:186
+msgid "Posts date"
+msgstr "Ngày bài viết"
+
+#: admin/partials/tabs/cron.php:195
+msgid "All Posts"
+msgstr "Tất cả bài viết"
+
+#: admin/partials/tabs/cron.php:221
+msgid "ago and newer"
+msgstr "trước và mới hơn"
+
+#: admin/partials/tabs/cron.php:229
+msgid "Number of posts"
+msgstr "Số bài viết"
+
+#: admin/partials/tabs/cron.php:255
+msgid "Number of posts to process each time the cron is run."
+msgstr "Số bài viết xử lý mỗi lần chạy cron."
+
+#: admin/partials/tabs/dashboard.php:15
+msgid "Pro (licence expired)"
+msgstr "Pro (giấy phép hết hạn)"
+
+#: admin/partials/tabs/dashboard.php:16 admin/partials/tabs/dashboard.php:23
+msgid "Upgrade the plugin"
+msgstr "Nâng cấp plugin"
+
+#: admin/partials/tabs/dashboard.php:20
+msgid "Free"
+msgstr "Miễn phí"
+
+#: admin/partials/tabs/dashboard.php:79
+msgid "My account"
+msgstr "Tài khoản của tôi"
+
+#: admin/partials/tabs/dashboard.php:124
+msgid "Version"
+msgstr "Phiên bản"
+
+#: admin/partials/tabs/dashboard.php:135
+msgid "Verified"
+msgstr "Đã xác minh"
+
+#: admin/partials/tabs/dashboard.php:144
+msgid "Not Verified"
+msgstr "Chưa xác minh"
+
+#: admin/partials/tabs/dashboard.php:158
+msgid "Account Details"
+msgstr "Chi tiết tài khoản"
+
+#: admin/partials/tabs/dashboard.php:175
+msgid "Connect to pro account"
+msgstr "Kết nối tài khoản Pro"
+
+#: admin/partials/tabs/dashboard.php:176
+msgid "Pro Account"
+msgstr "Tài khoản Pro"
+
+#: admin/partials/tabs/dashboard.php:204
+msgid "Access to the WordPress.org support forum."
+msgstr "Truy cập diễn đàn hỗ trợ WordPress.org."
+
+#: admin/partials/tabs/dashboard.php:209
+msgid "Support"
+msgstr "Hỗ trợ"
+
+#: admin/partials/tabs/dashboard.php:226
+msgid "Get In Touch"
+msgstr "Liên hệ"
+
+#: admin/partials/tabs/dashboard.php:229
+msgid "If you have any questions."
+msgstr "Nếu bạn có câu hỏi."
+
+#: admin/partials/tabs/dashboard.php:264
+msgid "Tutorials"
+msgstr "Hướng dẫn"
+
+msgid "<a href=\"%s\" target=\"_blank\">Youtube Tutorial</a>"
+msgstr "<a href=\"%s\" target=\"_blank\">Hướng dẫn Youtube</a>"
+
+#: admin/partials/tabs/dashboard.php:286
+msgid "Frequently Asked Questions"
+msgstr "Câu hỏi thường gặp"
+
+#: admin/partials/tabs/dashboard.php:311
+msgid "Reviews"
+msgstr "Đánh giá"
+
+#: admin/partials/tabs/dashboard.php:314
+msgid "Like this plugin? Leave a 5-star review on WordPress."
+msgstr "Thích plugin này? Hãy để lại đánh giá 5 sao trên WordPress."
+
+#: admin/partials/tabs/dashboard.php:316
+msgid "Write a review"
+msgstr "Viết đánh giá"
+
+#: admin/partials/tabs/dashboard.php:374
+msgid "Donate"
+msgstr "Quyên góp"
+
+#: admin/partials/tabs/dashboard.php:378
+msgid "Make a donation"
+msgstr "Quyên góp"
+
+#: admin/partials/tabs/logs.php:26
+msgid "No log yet"
+msgstr "Chưa có nhật ký"
+
+#: admin/partials/tabs/logs.php:35
+msgid "Enable Logs"
+msgstr "Bật nhật ký"
+
+#: admin/partials/tabs/logs.php:44
+msgid "Logs history"
+msgstr "Lịch sử nhật ký"
+
+#: admin/partials/tabs/logs.php:55
+msgid "Download Log"
+msgstr "Tải nhật ký"
+
+#: admin/partials/tabs/logs.php:57
+msgid "Delete all logs"
+msgstr "Xóa tất cả nhật ký"
+
+#: admin/partials/tabs/logs.php:65
+msgid "Show settings config"
+msgstr "Hiện cấu hình cài đặt"
+
+#: admin/partials/tabs/logs.php:66
+msgid "Hide settings config"
+msgstr "Ẩn cấu hình cài đặt"
+
+#: admin/partials/tabs/logs.php:67
+msgid "Copy settings config"
+msgstr "Sao chép cấu hình cài đặt"
+
+#: admin/partials/tabs/logs.php:68
+msgid "Copied !"
+msgstr "Đã sao chép !"
+
+#: admin/partials/tabs/proxy.php:41
+msgid ""
+"If you have a free or paid proxy, you can setup it here. You must use a proxy with <strong>HTTPS protocol</strong>. Use it carefully. "
+msgstr ""
+"Nếu bạn có proxy miễn phí hoặc trả phí, bạn có thể thiết lập tại đây. Bạn phải dùng proxy với <strong>giao thức HTTPS</strong>. Hãy dùng thận trọng. "
+
+#: admin/partials/tabs/proxy.php:55
+msgid ""
+"You have also to check your hosting. Some rules can block requests from these proxies. "
+msgstr ""
+"Bạn cũng cần kiểm tra hosting. Một số quy tắc có thể chặn yêu cầu từ các proxy này. "
+
+#: admin/partials/tabs/proxy.php:62
+msgid "Enable Proxy"
+msgstr "Bật Proxy"
+
+#: admin/partials/tabs/proxy.php:73
+msgid "Address"
+msgstr "Địa chỉ"
+
+#: admin/partials/tabs/proxy.php:81
+msgid "Port"
+msgstr "Cổng"
+
+#: admin/partials/tabs/proxy.php:89
+msgid "Username"
+msgstr "Tên người dùng"
+
+#: admin/partials/tabs/proxy.php:94
+msgid "Username if it requires authentication"
+msgstr "Tên người dùng nếu cần xác thực"
+
+#: admin/partials/tabs/proxy.php:100
+msgid "Password"
+msgstr "Mật khẩu"
+
+#: admin/partials/tabs/proxy.php:105
+msgid "Password if it requires authentication"
+msgstr "Mật khẩu nếu cần xác thực"
+
+#: admin/partials/tabs/rights.php:25
+msgid "Plugin Rights"
+msgstr "Quyền plugin"
+
+#: admin/partials/tabs/rights.php:47
+msgid "Select which role has access to the Magic Post Thumbnail Dashboard"
+msgstr "Chọn vai trò nào được truy cập Bảng điều khiển Magic Post Thumbnail"
+
+#: admin/partials/tabs/source.php:56
+msgid ""
+"Choose which database you want to search for pictures. You can select multiple sources, and drag & drop each banks to give priorities on image search."
+msgstr ""
+"Chọn cơ sở dữ liệu bạn muốn tìm hình. Bạn có thể chọn nhiều nguồn và kéo thả từng ngân hàng để ưu tiên tìm kiếm hình ảnh."
+
+#: admin/partials/tabs/source.php:64
+msgid "Image Banks"
+msgstr "Ngân hàng ảnh"
+
+#: admin/partials/tabs/source.php:170
+msgid "Banks Settings"
+msgstr "Cài đặt ngân hàng"
+
+msgid "Bing Images"
+msgstr "Bing Images"
+
+msgid "GPT Image"
+msgstr "GPT Image"
+
+msgid "Flux 2"
+msgstr "Flux 2"
+
+msgid "Gemini (Nano Banana)"
+msgstr "Gemini (Nano Banana)"
+
+msgid "Grok"
+msgstr "Grok"
+
+msgid "Ideogram"
+msgstr "Ideogram"
+
+msgid "Use the chain defined in Source"
+msgstr "Dùng chuỗi được định nghĩa trong Nguồn"
+
+msgid "Source chain: %s"
+msgstr "Chuỗi nguồn: %s"
+
+msgid "Automatic generation chain"
+msgstr "Chuỗi tạo tự động"
+
+msgid ""
+"Used by the editor button, bulk generation, cron and imports. Drag to reorder: the first bank is tried first."
+msgstr ""
+"Dùng bởi nút trình soạn thảo, tạo hàng loạt, cron và nhập. Kéo để sắp xếp lại: ngân hàng đầu tiên được thử trước."
+
+msgid ""
+"No bank selected. Add at least one bank below, otherwise no image can be generated."
+msgstr ""
+"Chưa chọn ngân hàng. Thêm ít nhất một ngân hàng bên dưới, nếu không sẽ không tạo được hình ảnh."
+
+msgid "Configure"
+msgstr "Cấu hình"
+
+msgid "Configure %s"
+msgstr "Cấu hình %s"
+
+msgid "Gutenberg block (manual search)"
+msgstr "Khối Gutenberg (tìm kiếm thủ công)"
+
+msgid "Banks shown as tabs when you search images from the Gutenberg block."
+msgstr "Các ngân hàng hiện dạng tab khi bạn tìm hình từ khối Gutenberg."
+
+msgid "API keys, sizes and filters are configured in %s."
+msgstr "Khóa API, kích thước và bộ lọc được cấu hình trong %s."
+
+msgid ""
+"This list is the fallback chain used by every automatic generation (editor button, bulk, cron, imports). Drag to set priority. Gutenberg search banks are chosen on the Gutenberg Block page."
+msgstr ""
+"Danh sách này là chuỗi dự phòng dùng cho mọi lần tạo tự động (nút trình soạn thảo, hàng loạt, cron, nhập). Kéo để đặt ưu tiên. Ngân hàng tìm Gutenberg được chọn trên trang Khối Gutenberg."
+
+msgid "Preview a search"
+msgstr "Xem trước tìm kiếm"
+
+msgid ""
+"Test this bank without creating an image on a post. Uses the last saved API key and filters."
+msgstr ""
+"Thử ngân hàng này mà không tạo hình trên bài viết. Dùng khóa API và bộ lọc đã lưu lần cuối."
+
+msgid "Preview"
+msgstr "Xem trước"
+
+msgid "Select a bank on the left to edit its API key, size, language and filters."
+msgstr "Chọn một ngân hàng bên trái để sửa khóa API, kích thước, ngôn ngữ và bộ lọc."
+
+msgid "Photos"
+msgstr "Ảnh"
+
+msgid "AI"
+msgstr "AI"
+
+msgid "Ready"
+msgstr "Sẵn sàng"
+
+msgid "No key"
+msgstr "Không có khóa"
+
+msgid "Untested"
+msgstr "Chưa kiểm tra"
+
+msgid "Key OK"
+msgstr "Khóa OK"
+
+msgid "Key failed"
+msgstr "Khóa thất bại"
+
+msgid "Your configuration"
+msgstr "Cấu hình của bạn"
+
+msgid "Automatic bank chain"
+msgstr "Chuỗi ngân hàng tự động"
+
+msgid "Image placement"
+msgstr "Vị trí hình ảnh"
+
+msgid "API keys"
+msgstr "Khóa API"
+
+msgid "Test configuration"
+msgstr "Kiểm tra cấu hình"
+
+msgid "Donate"
+msgstr "Quyên góp"
+
+msgid "Loading preview…"
+msgstr "Đang tải xem trước…"
+
+msgid "Could not load a preview for this bank."
+msgstr "Không thể tải xem trước cho ngân hàng này."
+
+msgid "No images returned for this keyword."
+msgstr "Không có hình nào cho từ khóa này."
+
+msgid ""
+"The first bank in the chain is a generative AI service. Preview would consume credits — generate on a post instead, or put a photo bank first."
+msgstr ""
+"Ngân hàng đầu trong chuỗi là dịch vụ AI tạo sinh. Xem trước sẽ tiêu tốn tín dụng — hãy tạo trên bài viết, hoặc đặt ngân hàng ảnh lên trước."
+
+msgid "This bank (%s) is a generative AI service. Preview will consume tokens."
+msgstr "Ngân hàng này (%s) là dịch vụ AI tạo sinh. Xem trước sẽ tiêu tốn token."
+
+msgid "Generating with AI, this can take up to 40 seconds…"
+msgstr "Đang tạo bằng AI, có thể mất tới 40 giây…"
+
+msgid "This preview will call a generative AI service and consume tokens. Continue?"
+msgstr "Xem trước này sẽ gọi dịch vụ AI tạo sinh và tiêu tốn token. Tiếp tục?"
+
+msgid ""
+"Chain not saved yet. Generation on posts still uses the last saved chain until you click Save."
+msgstr ""
+"Chuỗi chưa được lưu. Việc tạo trên bài viết vẫn dùng chuỗi đã lưu lần cuối cho đến khi bạn nhấn Lưu."
+
+msgid "Unsaved changes"
+msgstr "Thay đổi chưa lưu"
+
+msgid "You have unsaved settings. Save them before leaving this page?"
+msgstr "Bạn có cài đặt chưa lưu. Lưu trước khi rời trang này?"
+
+msgid "Leave without saving"
+msgstr "Rời đi mà không lưu"
+
+msgid "Save changes"
+msgstr "Lưu thay đổi"
+
+msgid "Cancel"
+msgstr "Hủy"
+
+msgid "Unexpected error:"
+msgstr "Lỗi không mong đợi:"
+
+msgid ""
+"Magic Post Thumbnail now uses a single image-bank chain for every generation path (editor button, bulk, cron and imports). Configure it under Source. Each Automatic placement can still override that chain."
+msgstr ""
+"Magic Post Thumbnail hiện dùng một chuỗi ngân hàng ảnh duy nhất cho mọi đường tạo (nút trình soạn thảo, hàng loạt, cron và nhập). Cấu hình trong Nguồn. Mỗi vị trí Tự động vẫn có thể ghi đè chuỗi đó."
+
+msgid "Category"
+msgstr "Chuyên mục"
+
+msgid "Tag"
+msgstr "Thẻ"
+
+msgid "Taxonomy"
+msgstr "Phân loại"
+
+msgid "First image in content"
+msgstr "Ảnh đầu tiên trong nội dung"
+
+msgid "Default image"
+msgstr "Ảnh mặc định"
+
+msgid "Local"
+msgstr "Nội bộ"
+
+msgid "Style"
+msgstr "Phong cách"
+
+msgid "Applied only when generating with an AI bank. Photo banks (Bing, Pexels…) ignore this."
+msgstr "Chỉ áp dụng với ngân hàng AI. Ngân hàng ảnh (Bing, Pexels…) sẽ bỏ qua."
+
+msgid "Default"
+msgstr "Mặc định"
+
+msgid "Photorealistic"
+msgstr "Chân thực"
+
+msgid "Oil painting"
+msgstr "Sơn dầu"
+
+msgid "Watercolor"
+msgstr "Màu nước"
+
+msgid "Cinematic"
+msgstr "Điện ảnh"
+
+msgid "3D render"
+msgstr "Kết xuất 3D"
+
+msgid "Minimal"
+msgstr "Tối giản"
+
+msgid "Anime"
+msgstr "Anime"
+
+msgid "Custom"
+msgstr "Tùy chỉnh"
+
+msgid "Custom style"
+msgstr "Phong cách tùy chỉnh"
+
+msgid "Extra instructions appended to the AI prompt."
+msgstr "Hướng dẫn thêm vào cuối prompt AI."
+
+msgid "e.g. editorial product shot, soft daylight"
+msgstr "vd. ảnh sản phẩm editorial, ánh sáng ban ngày dịu"
+
+msgid "No text on the image"
+msgstr "Không có chữ trên ảnh"
+
+msgid "Ask the AI not to render captions, titles or watermarks."
+msgstr "Yêu cầu AI không vẽ chú thích, tiêu đề hay watermark."
+
+msgid "No API key. During generation, the first image already present in the post content is used if previous banks in the chain failed."
+msgstr "Không cần khóa API. Nếu các ngân hàng trước thất bại, dùng ảnh đầu tiên đã có trong bài."
+
+msgid "Assigned when every other bank in the chain fails. Place this bank last."
+msgstr "Dùng khi mọi ngân hàng khác thất bại. Đặt ngân hàng này cuối chuỗi."
+
+msgid "Select image"
+msgstr "Chọn ảnh"
+
+msgid "Remove"
+msgstr "Gỡ"
+
+msgid "Brand overlay"
+msgstr "Thanh tiêu đề / thương hiệu"
+
+msgid "Disabled"
+msgstr "Tắt"
+
+msgid "Title bar"
+msgstr "Thanh tiêu đề"
+
+msgid "Title and logo"
+msgstr "Tiêu đề và logo"
+
+msgid "Draws a bar with the post title on the generated image. Disabled by default."
+msgstr "Vẽ thanh chứa tiêu đề bài viết. Mặc định tắt."
+
+msgid "Overlay look"
+msgstr "Giao diện thanh"
+
+msgid "Bar color"
+msgstr "Màu thanh"
+
+msgid "Bar opacity"
+msgstr "Độ mờ thanh"
+
+msgid "Text color"
+msgstr "Màu chữ"
+
+msgid "Also show the first category"
+msgstr "Cũng hiện chuyên mục đầu tiên"
+
+msgid "Overlay logo"
+msgstr "Logo trên thanh"
+
+msgid "Select logo"
+msgstr "Chọn logo"
+
+msgid "This bank does not support keyword preview. During generation it uses the first image already in the post."
+msgstr "Ngân hàng này không hỗ trợ xem trước theo từ khóa. Khi tạo sẽ dùng ảnh đầu tiên trong bài."
+
+msgid "Choose a default image in the settings on the left."
+msgstr "Chọn ảnh mặc định trong cài đặt bên trái."
+
+msgid "Generate"
+msgstr "Tạo"
+
+msgid "Regenerate"
+msgstr "Tạo lại"
+
+msgid "Generating…"
+msgstr "Đang tạo…"
+
+msgid "Generation failed"
+msgstr "Tạo thất bại"
+
+msgid "Open in Media Library"
+msgstr "Mở trong thư viện media"
+
+msgid "Ready to generate"
+msgstr "Sẵn sàng tạo"
+
+msgid "Needs attention"
+msgstr "Cần kiểm tra"
+
+msgid "Generate a test image"
+msgstr "Tạo ảnh thử"
+
+msgid "Creates a draft post so your live articles are left untouched."
+msgstr "Tạo bản nháp, bài đã xuất bản không bị đổi."
+
+msgid "This test will call a generative AI service and consume tokens. Continue?"
+msgstr "Bài thử này sẽ gọi dịch vụ AI và dùng token. Tiếp tục?"
+
+msgid "Open the test draft"
+msgstr "Mở bản nháp thử"
+
+msgid "Magic Post Thumbnail — test"
+msgstr "Magic Post Thumbnail — test"
+
+msgid "This draft was created to verify image generation. You can delete it."
+msgstr "Bản nháp này dùng để kiểm tra tạo ảnh. Bạn có thể xóa."
+
+msgid "%s requires the Pro version"
+msgstr "%s cần phiên bản Pro"
+
+msgid "%s: no API key"
+msgstr "%s: không có khóa API"
+
+msgid "%s: key failed"
+msgstr "%s: khóa không hợp lệ"
+
+msgid "%s: key not tested yet"
+msgstr "%s: khóa chưa được kiểm tra"
+
+msgid "Add a bank to the chain first."
+msgstr "Hãy thêm một ngân hàng vào chuỗi trước."
+
+msgid "All banks in the chain are ready."
+msgstr "Mọi ngân hàng trong chuỗi đều sẵn sàng."
+
+msgid "No image placement configured."
+msgstr "Chưa cấu hình vị trí ảnh."
+
+msgid "Title bar will be drawn on generated images."
+msgstr "Thanh tiêu đề sẽ được vẽ trên ảnh đã tạo."
+
+msgid "PHP GD is missing; the overlay cannot be drawn."
+msgstr "Thiếu PHP GD; không vẽ được thanh."
+
+msgid "Overlay is on but this server cannot draw TrueType text. Accents may break."
+msgstr "Thanh đang bật nhưng máy chủ không vẽ được chữ TrueType. Dấu có thể lỗi."
+

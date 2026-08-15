@@ -30,7 +30,8 @@ class Magic_Post_Thumbnail_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
-
+		wp_clear_scheduled_hook( 'mpt_scheduled_cron' );
+		wp_clear_scheduled_hook( 'mpt_generate_async' );
 	}
 
 }

@@ -806,9 +806,163 @@ var KTBootstrapSwitch = function() {
 jQuery(document).ready(function() {
     KTBootstrapSwitch.init();
 
-    // Tabs for settings
-    jQuery('#tabs').tabs();
+    // Tabs for settings (skip forms that only reuse #tabs for layout)
+    if ( jQuery.fn.tabs ) {
+        jQuery('#tabs, #mpt-automatic-tabs').each(function() {
+            var $el = jQuery(this);
+            if ( $el.find('> ul').length ) {
+                $el.tabs();
+            }
+        });
+    }
+
+    if ( jQuery.fn.sortable && jQuery('#mpt-sortable-manual').length ) {
+        jQuery('#mpt-sortable-manual').sortable({
+            stop: function() {
+                jQuery(this).find('.ordered-checkbox').each(function(index) {
+                    jQuery(this).attr('data-order', index + 1);
+                });
+            }
+        });
+        if ( jQuery.fn.disableSelection ) {
+            jQuery('#mpt-sortable-manual').disableSelection();
+        }
+    }
+
+    mptInitUnsavedSettingsGuard();
 });
+
+function mptInitUnsavedSettingsGuard() {
+    var $ = jQuery;
+    var $form = $('form[action="options.php"]').first();
+    if ( ! $form.length ) {
+        return;
+    }
+
+    var t = ( window.translationsJsVars && translationsJsVars.translations ) ? translationsJsVars.translations : {};
+    var initial = $form.serialize();
+    var pendingHref = null;
+
+    function escHtml( str ) {
+        return String( str || '' ).replace( /&/g, '&amp;' ).replace( /</g, '&lt;' ).replace( /"/g, '&quot;' );
+    }
+
+    function isDirty() {
+        return $form.serialize() !== initial;
+    }
+
+    function onBeforeUnload( e ) {
+        if ( ! isDirty() ) {
+            return;
+        }
+        e.preventDefault();
+        e.returnValue = '';
+    }
+    window.addEventListener( 'beforeunload', onBeforeUnload );
+
+    $form.on( 'submit', function() {
+        initial = $form.serialize();
+        window.removeEventListener( 'beforeunload', onBeforeUnload );
+    });
+
+    if ( ! document.getElementById( 'mpt-unsaved-modal' ) ) {
+        var modal = document.createElement( 'div' );
+        modal.id = 'mpt-unsaved-modal';
+        modal.hidden = true;
+        modal.innerHTML =
+            '<div class="mpt-unsaved-backdrop"></div>' +
+            '<div class="mpt-unsaved-dialog" role="dialog" aria-modal="true" aria-labelledby="mpt-unsaved-title">' +
+            '<h2 id="mpt-unsaved-title">' + escHtml( t.unsaved_title || 'Unsaved changes' ) + '</h2>' +
+            '<p>' + escHtml( t.unsaved_text || '' ) + '</p>' +
+            '<p class="mpt-unsaved-actions">' +
+            '<button type="button" class="button button-primary" data-mpt-unsaved="save">' + escHtml( t.unsaved_save || 'Save changes' ) + '</button> ' +
+            '<button type="button" class="button" data-mpt-unsaved="leave">' + escHtml( t.unsaved_leave || 'Leave without saving' ) + '</button> ' +
+            '<button type="button" class="button" data-mpt-unsaved="stay">' + escHtml( t.unsaved_stay || 'Cancel' ) + '</button>' +
+            '</p>' +
+            '</div>';
+        document.body.appendChild( modal );
+    }
+
+    function closeModal() {
+        var el = document.getElementById( 'mpt-unsaved-modal' );
+        if ( el ) {
+            el.hidden = true;
+        }
+        pendingHref = null;
+    }
+
+    function showModal( href ) {
+        pendingHref = href;
+        var el = document.getElementById( 'mpt-unsaved-modal' );
+        if ( el ) {
+            el.hidden = false;
+        }
+    }
+
+    $( document ).on( 'click', '#mpt-unsaved-modal [data-mpt-unsaved]', function() {
+        var action = this.getAttribute( 'data-mpt-unsaved' );
+        if ( 'stay' === action ) {
+            closeModal();
+            return;
+        }
+        if ( 'save' === action ) {
+            closeModal();
+            var submit = $form.find( 'input[type="submit"], button[type="submit"]' ).first();
+            if ( submit.length ) {
+                submit.trigger( 'click' );
+            } else {
+                $form.trigger( 'submit' );
+            }
+            return;
+        }
+        if ( 'leave' === action && pendingHref ) {
+            var href = pendingHref;
+            initial = $form.serialize();
+            window.removeEventListener( 'beforeunload', onBeforeUnload );
+            closeModal();
+            window.location.href = href;
+        }
+    });
+
+    $( document ).on( 'click', '#mpt-unsaved-modal .mpt-unsaved-backdrop', closeModal );
+
+    function shouldIgnoreLink( a ) {
+        var href = a.getAttribute( 'href' );
+        if ( ! href || '#' === href.charAt( 0 ) || 0 === href.indexOf( 'javascript:' ) ) {
+            return true;
+        }
+        if ( a.getAttribute( 'target' ) === '_blank' || a.hasAttribute( 'download' ) ) {
+            return true;
+        }
+        if ( a.closest( '#mpt-unsaved-modal' ) ) {
+            return true;
+        }
+        try {
+            var next = new URL( href, window.location.href );
+            var cur  = new URL( window.location.href );
+            if ( next.pathname === cur.pathname && next.search === cur.search ) {
+                return true;
+            }
+        } catch ( err ) {
+            return true;
+        }
+        return false;
+    }
+
+    $( document ).on( 'click', 'a[href]', function( e ) {
+        if ( e.isDefaultPrevented() || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey ) {
+            return;
+        }
+        if ( 0 !== e.which && 1 !== e.which ) {
+            return;
+        }
+        if ( ! isDirty() || shouldIgnoreLink( this ) ) {
+            return;
+        }
+        e.preventDefault();
+        showModal( this.href );
+    });
+}
 
 
 
