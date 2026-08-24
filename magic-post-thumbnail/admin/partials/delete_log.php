@@ -19,7 +19,7 @@ if ( ! class_exists( 'Magic_Post_Thumbnail_Helpers' ) ) {
 }
 
 if ( class_exists( 'Magic_Post_Thumbnail_Helpers' ) ) {
-	$version = defined( 'MAGIC_POST_THUMBNAIL_VERSION' ) ? MAGIC_POST_THUMBNAIL_VERSION : '7.0.0';
+	$version = defined( 'MAGIC_POST_THUMBNAIL_VERSION' ) ? MAGIC_POST_THUMBNAIL_VERSION : '7.0.1';
 	$helpers = new Magic_Post_Thumbnail_Helpers( 'magic-post-thumbnail', $version );
 	$path    = $helpers->MPT_log_file_path( true );
 	if ( $path && is_writable( $path ) ) {

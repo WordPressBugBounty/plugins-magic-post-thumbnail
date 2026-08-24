@@ -1478,6 +1478,133 @@ class Magic_Post_Thumbnail_Helpers {
     }
 
     /**
+     * Translate text. Never throws: returns the original string if every provider fails.
+     *
+     * The old translate.googleapis.com?client=gtx gateway is rate-limited / 429'd
+     * by Google since mid-2026. Primary path is the Translate Element gateway
+     * (translate-pa), then MyMemory.
+     *
+     * @since 7.0.1
+     * @param string $text   Text to translate.
+     * @param string $source Source language code, or "auto".
+     * @param string $target Target language code.
+     * @return string
+     */
+    public function MPT_translate( $text, $source = 'auto', $target = 'en' ) {
+        $text = ( is_string( $text ) ? trim( $text ) : '' );
+        if ( '' === $text ) {
+            return $text;
+        }
+        $source = $this->MPT_sanitize_lang_code( $source, true );
+        $target = $this->MPT_sanitize_lang_code( $target, false );
+        if ( '' === $target ) {
+            return $text;
+        }
+        if ( 'auto' !== $source && $source === $target ) {
+            return $text;
+        }
+        $translated = $this->MPT_translate_google_pa( $text, $source, $target );
+        if ( false !== $translated ) {
+            return $translated;
+        }
+        $translated = $this->MPT_translate_mymemory( $text, $source, $target );
+        if ( false !== $translated ) {
+            return $translated;
+        }
+        $log = $this->MPT_monolog_call();
+        $log->error( 'Translation failed, keeping original text', array(
+            'source' => $source,
+            'target' => $target,
+        ) );
+        return $text;
+    }
+
+    /**
+     * Sanitize a language code used in translation requests.
+     *
+     * @param string $code       Raw code.
+     * @param bool   $allow_auto Allow "auto".
+     * @return string
+     */
+    protected function MPT_sanitize_lang_code( $code, $allow_auto = false ) {
+        $code = strtolower( trim( (string) $code ) );
+        if ( $allow_auto && ('auto' === $code || 'autodetect' === $code) ) {
+            return 'auto';
+        }
+        if ( !preg_match( '/^[a-z]{2,3}(?:-[a-z]{2,8})?$/', $code ) ) {
+            return '';
+        }
+        return $code;
+    }
+
+    /**
+     * Google Translate Element gateway (translate-pa). Replaces client=gtx.
+     *
+     * @param string $text   Text to translate.
+     * @param string $source Source language or "auto".
+     * @param string $target Target language.
+     * @return string|false
+     */
+    protected function MPT_translate_google_pa( $text, $source, $target ) {
+        $escaped = str_replace( array('&', '<', '>'), array('&amp;', '&lt;', '&gt;'), $text );
+        $args = $this->MPT_http_defaults();
+        $args['method'] = 'POST';
+        $args['timeout'] = 12;
+        $args['redirection'] = 2;
+        $args['headers'] = array(
+            'Accept'         => 'application/json+protobuf, application/json, */*',
+            'Content-Type'   => 'application/json+protobuf',
+            'X-Goog-API-Key' => 'AIzaSyATBXajvzQLTDHEQbcpq0Ihe0vWDHmO520',
+        );
+        $args['body'] = wp_json_encode( array(array(array($escaped), $source, $target), 'te_lib') );
+        $response = wp_remote_request( 'https://translate-pa.googleapis.com/v1/translateHtml', $args );
+        if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
+            return false;
+        }
+        $data = json_decode( wp_remote_retrieve_body( $response ), true );
+        if ( !is_array( $data ) || !isset( $data[0][0] ) || !is_string( $data[0][0] ) ) {
+            return false;
+        }
+        $translated = html_entity_decode( $data[0][0], ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+        $translated = trim( $translated );
+        return ( '' !== $translated ? $translated : false );
+    }
+
+    /**
+     * MyMemory free translation API (fallback).
+     *
+     * @param string $text   Text to translate.
+     * @param string $source Source language or "auto".
+     * @param string $target Target language.
+     * @return string|false
+     */
+    protected function MPT_translate_mymemory( $text, $source, $target ) {
+        $pair = (( 'auto' === $source ? 'Autodetect' : $source )) . '|' . $target;
+        $url = add_query_arg( array(
+            'q'        => $text,
+            'langpair' => $pair,
+        ), 'https://api.mymemory.translated.net/get' );
+        $args = $this->MPT_http_defaults();
+        $args['timeout'] = 12;
+        $response = wp_remote_request( $url, $args );
+        if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
+            return false;
+        }
+        $data = json_decode( wp_remote_retrieve_body( $response ), true );
+        if ( !is_array( $data ) || empty( $data['responseData']['translatedText'] ) ) {
+            return false;
+        }
+        if ( isset( $data['responseStatus'] ) && 200 !== (int) $data['responseStatus'] ) {
+            return false;
+        }
+        $translated = trim( (string) $data['responseData']['translatedText'] );
+        if ( '' === $translated || false !== stripos( $translated, 'MYMEMORY WARNING' ) ) {
+            return false;
+        }
+        return $translated;
+    }
+
+    /**
      * Define proxy constants early and scope them to MPT requests.
      *
      * @since 7.0.0

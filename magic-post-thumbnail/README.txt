@@ -1,14 +1,14 @@
 === Generate Images (AI) - Magic Post Thumbnail ===
 Plugin Name:       Generate Images (AI) - Magic Post Thumbnail
-Version:           7.0.0
+Version:           7.0.1
 Tags:              featured image, ai image, image generator, thumbnail, bulk
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
 Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
-Tested up to:      7.0.4
-Stable tag:        7.0.0
+Tested up to:      7.1 
+Stable tag:        7.0.1
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -157,6 +157,10 @@ Upgrade to **<a target="_blank" href="https://magic-post-thumbnail.com/pricing/"
 
 
 == Changelog ==
+
+= 7.0.1 - August 24, 2026 =
+* Fix generation aborting when Google Translate is rate-limited
+* Switch to the current Google Translate API, with MyMemory as fallback
 
 = 7.0.0 - August 15, 2026 =
 * Bing Images replaces Google scraping (settings migrated automatically)
