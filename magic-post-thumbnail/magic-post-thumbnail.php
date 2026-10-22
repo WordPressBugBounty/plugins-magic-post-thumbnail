@@ -10,7 +10,7 @@
  * Plugin Name:       Magic Post Thumbnail
  * Plugin URI:        http://wordpress.org/plugins/magic-post-thumbnail/
  * Description:       Generate featured and in-content images from Bing, GPT Image, Unsplash and more — automatically, in bulk, or from Gutenberg.
- * Version:           7.0.1
+ * Version:           7.0.2
  * Author:            Magic Post Thumbnail
  * Author URI:        https://magic-post-thumbnail.com/
  * License:           GPL-2.0+
@@ -72,7 +72,7 @@ if ( function_exists( 'mpt_freemius' ) ) {
      * Start at version 1.0.0 and use SemVer - https://semver.org
      * Rename this for your plugin and update it as you release new versions.
      */
-    define( 'MAGIC_POST_THUMBNAIL_VERSION', '7.0.1' );
+    define( 'MAGIC_POST_THUMBNAIL_VERSION', '7.0.2' );
     /**
      * The code that runs during plugin activation.
      * This action is documented in includes/class-magic-post-thumbnail-activator.php
