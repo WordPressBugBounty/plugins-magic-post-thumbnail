@@ -1,6 +1,6 @@
 === Generate Images (AI) - Magic Post Thumbnail ===
 Plugin Name:       Generate Images (AI) - Magic Post Thumbnail
-Version:           7.0.2
+Version:           7.0.3
 Tags:              featured image, ai image, image generator, thumbnail, bulk
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40magic-post-thumbnail.com&item_name=Donation+for+Magic+Post+Thumbnail&currency_code=EUR&source=url
 Contributors:      Mcurly, wondercode
@@ -8,7 +8,7 @@ Author URI:        https://magic-post-thumbnail.com/
 Author:            Magic Post Thumbnail
 Requires at least: 6.0
 Tested up to:      7.1
-Stable tag:        7.0.2
+Stable tag:        7.0.3
 Requires PHP:      7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,6 +16,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Generate featured images from Bing, GPT Image, Unsplash and more. Automatic, bulk or Gutenberg — based on your post title.
 
 == Description ==
+
+**Black Friday: 30% off the Pro version until November 30, 2026.** Use the code **MPTBLACKFRIDAY26** on the <a target="_blank" href="https://magic-post-thumbnail.com/pricing/">pricing page</a>.
 
 **Magic Post Thumbnail generates images for your posts** — as featured images or inside the content — from image sources and AI models.
 
@@ -153,10 +155,16 @@ Yes! You can ask us any question through our <a href="https://magic-post-thumbna
 
 == Upgrade Notice ==
 
+= 7.0.3 =
+Black Friday: 30% off Pro until November 30, 2026 with the code MPTBLACKFRIDAY26.
+
 Upgrade to **<a target="_blank" href="https://magic-post-thumbnail.com/pricing/">Pro</a>** for advanced AI models, scheduled generation, additional image sources and integrations.
 
 
 == Changelog ==
+
+= 7.0.3 - November 6, 2026 =
+* Black Friday: 30% off Pro until November 30, 2026 with the code MPTBLACKFRIDAY26
 
 = 7.0.2 - October 22, 2026 =
 * Update Freemius SDK to 2.13.5

@@ -905,12 +905,14 @@ class Magic_Post_Thumbnail_Helpers {
     }
 
     /**
-     * Black Friday promo banner (free build, before expiry).
+     * Black Friday promo banner (free build, 6–30 November 2026, Europe/Paris).
      *
-     * @since 7.1.0
+     * @since 7.0.3
      */
     public function MPT_promo_black_friday_html() {
-        if ( (int) current_time( 'U' ) >= 1764543599 ) {
+        // 2026-11-06 00:00:00 +01 through 2026-11-30 23:59:59 +01.
+        $now = time();
+        if ( $now < 1793919600 || $now >= 1796079599 ) {
             return;
         }
         $pricing = admin_url( 'admin.php?page=magic-post-thumbnail-admin-display-pricing' );
@@ -930,7 +932,7 @@ class Magic_Post_Thumbnail_Helpers {
             /* translators: 1: pricing admin URL, 2: coupon code */
             __( 'Get a <strong>30%% discount for BLACK FRIDAY until November 30</strong> when you upgrade to the <a href="%1$s">Pro version</a> with the code: <strong>%2$s</strong>', 'magic-post-thumbnail' ),
             esc_url( $pricing ),
-            'MPTBLACKFRIDAY25'
+            'MPTBLACKFRIDAY26'
          ), array(
             'strong' => array(),
             'a'      => array(
